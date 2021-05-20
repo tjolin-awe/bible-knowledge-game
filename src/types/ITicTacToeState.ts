@@ -44,6 +44,7 @@ export interface IPlayer extends Schema
 
 	score: number
 
+	ready: boolean
 
 }
 
@@ -68,6 +69,9 @@ export interface ITicTacToeState extends Schema
 	unlock: boolean
 
 	currentScreen: string
+
+	ready: boolean
+	
 
 }
 

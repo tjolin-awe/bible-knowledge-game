@@ -24,9 +24,7 @@ export default class AnswerGivenCommand extends Command<ITicTacToeState, Payload
 		}
 
 		const clientIndex = this.room.clients.findIndex(c => c.id === client.id)
-		console.log('Answer given')
-		
-		console.log("Answring Player: " + index.toString())
+
 		//this.room.state.answeringPlayer = index
 		let nAnser = new Answer()
 		nAnser.correct = correct 

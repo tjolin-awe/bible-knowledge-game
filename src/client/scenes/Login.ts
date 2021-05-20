@@ -27,37 +27,59 @@ export default class Login extends Phaser.Scene
 		
 	}
 
+	private loggedIn:boolean = false
 	preload() {
         
-		this.load.scenePlugin({
-			key: 'rexuiplugin',
-			url: 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js',
-			sceneKey: 'rexUI'
-		})
 		
-		this.load.plugin('rextexteditplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rextexteditplugin.min.js', true)
+		this.load.image('bible','assets/bible.png')
     }
 	private onGameOver?: (data: IGameOverSceneData) => void
 	private inputtext : string = ""
 	private emitter : Phaser.GameObjects.Particles.ParticleEmitter | undefined 
     create(data: IGameSceneData) {           
        
-		const { server, onGameOver, currentcells } = data
+
 		
+		const { server, onGameOver, currentcells } = data
+
+		
+		
+		const screenCenterX = this.cameras.main.worldView.x + this.cameras.main.width / 2;
+		const screenCenterY = this.cameras.main.worldView.y + this.cameras.main.height /2;
+   
 		this.server = server
 		
 		this.onGameOver = onGameOver
-		const text = this.add.text(400, 300, 'Enter Name', { fixedWidth: 200, fixedHeight: 38}).setOrigin(0.5)
+
+		if (this.loggedIn) {
+			this.scene.start('game', {
+				server: this.server,
+				onGameOver: this.onGameOver,
+				currentcells: null,
+				name: this.inputtext		
+			})
+
+			return 
+		}
+
+		let bible = this.add.image(0,0,'bible').setOrigin(0)
+		bible.displayWidth = this.game.scale.width
+		bible.displayHeight = this.game.scale.height
+		
+		
+		var text1 = this.add.text(screenCenterX,screenCenterY / 3, "BIBLE KNOWLEDGE GAMES", { fontFamily: "swiss921", fontSize: 72, color: "#cd934a" }).setAlign('center').setOrigin(0.5)
+		text1.setStroke('white', 12).setFontStyle('bold').setWordWrapWidth(780)
+	
+		//  Apply the shadow to the Stroke only
+		text1.setShadow(2, 2, 'black', 2, true, false);
+	
+		const text = this.add.text(screenCenterX, screenCenterY + screenCenterY / 2, 'Enter Name',{ fixedWidth: 200, fixedHeight: 38}).setOrigin(0.5)
 		text.setBackgroundColor('green').setAlign('center').setFontSize(32).setFontFamily('impact')
 		
-		const subtitle = this.add.text(400,350,'press [ENTER] to start').setOrigin(0.5).setAlign('center')
-		var shape1 = new Phaser.Geom.Circle(0, 0, 160);
+		const subtitle = this.add.text(text.x, text.y + 50,'press [ENTER] to start').setOrigin(0.5).setAlign('center')
+	
 		var shape2 = new Phaser.Geom.Ellipse(0, 0, 600, 200);
-		var shape3 = new Phaser.Geom.Rectangle(-150, -150, 400, 400);
-		var shape4 = new Phaser.Geom.Line(-150, -150, 150, 150);
-		var shape5 = new Phaser.Geom.Triangle(-150,150,150);
-
-		var shapes = [ shape1, shape2, shape3, shape4 ];
+		
 	
 		var i = 0;
 	
@@ -65,8 +87,8 @@ export default class Login extends Phaser.Scene
 	
 	    this.emitter = particles.createEmitter({
 			frame: { frames: [ 'green', 'purple', 'blue' ], cycle: true },
-			x: 400,
-			y: 300,
+			x: screenCenterX,
+			y: text.y,
 			scale: { start: 0.5, end: 0 },
 			blendMode: 'ADD',
 			emitZone: { type: 'edge', source: shape2, quantity: 48, yoyo:false, }
@@ -87,6 +109,7 @@ export default class Login extends Phaser.Scene
 						this.emitter.stop()
 		
 
+					this.loggedIn = true
 					this.scene.start('game', {
 						server: this.server,
 						onGameOver: this.onGameOver,

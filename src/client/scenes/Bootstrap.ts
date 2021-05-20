@@ -5,7 +5,7 @@ import Server from '../services/Server'
 export default class Bootstrap extends Phaser.Scene
 {
 	private server!: Server
-
+	
 	constructor()
 	{
 		super('bootstrap')

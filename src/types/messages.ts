@@ -3,5 +3,6 @@ export enum Message
 	PlayerRegistration,
 	PlayerSelection,
 	PlayerIndex,
-	AnswerGiven
+	AnswerGiven,
+	PlayerReady
 }

@@ -85,18 +85,22 @@ export default class Server
 				switch (field)
 				{
 					case 'board':
-						console.log('here')
-						console.log(field, value)
+						
 					 	this.events.emit('board-changed', value)
 					 	break
 					
 					case 'lastAnswer':
 						    
 					console.log('lastAnswer')
-						console.log(value)
+						
 						this.events.emit('player-answered', value)
 						break;
 
+					case 'ready':
+					
+						this.events.emit('ready', value)
+						break;
+				
 					
 					case 'unlock':
 						this._locked = false
@@ -141,13 +145,6 @@ export default class Server
 		}
 		
 		
-		//console.log('register')
-		//console.log(name)
-		
-
-		
-		//this.events.emit('player-registered', this._playerIndex, name, this.room.state.players)
-		
 	}
 
 	makeSelection(idx: number, result: boolean, score: number, name: string)
@@ -172,6 +169,12 @@ export default class Server
 			
 		}
 
+		if (this.room.state.ready == false)
+		{
+			console.warn('CONTROL IS LOCKED - players not ready yet')
+			return 
+		}
+
 		if (result)
 			score = -score
 
@@ -179,9 +182,18 @@ export default class Server
 		
 	}
 
+	playerReady(player: number)
+	{
+		if (!this.room)
+			return
+
+		console.log('player ready fired on server')
+		this.room.send(Message.PlayerReady,{ player: player, state: true })
+	}
+
 	playerAnswer(idx: number, answer: string, result: boolean, value: number)
 	{
-
+		console.log('player Answer fired on server')
 		if (!this.room)
 			return
 
@@ -192,8 +204,7 @@ export default class Server
 		
 		this._locked = true;
 	
-		console.log('got to server')
-		console.log('answer locked')
+	
 		this.room.send(Message.AnswerGiven,{ index: idx, answer: answer, correct: result, value: value })
 
 	}
@@ -203,7 +214,13 @@ export default class Server
 		this.events.once('once-state-changed', cb, context)
 	}
 
-	  
+	onReady(cb: (ready: boolean) => void, context?: any)
+	{
+		console.log('player answered fired')
+		this.events.on('ready', cb, context)
+	}
+
+	
 	onPlayerAnswered(cb: (answer: Answer) => void, context?: any)
 	{
 		console.log('player answered fired')

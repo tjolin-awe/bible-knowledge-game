@@ -59,6 +59,9 @@ export default class Game extends Phaser.Scene
 			  this.stopcurrentaction = false;
 			  this.scene.setActive(true)
 			  this.scene.stop('question')
+			  this.scene.stop('answer')
+			  this.scene.wake('game')
+			  this.server?.playerReady(this.server?.playerIndex)
 
 
 
@@ -99,6 +102,7 @@ export default class Game extends Phaser.Scene
 		}
 		this.server = server
 		this.server?.onGameStateChanged(this.handleGameStateChanged, this)
+		this.server?.onReady(this.handleReady, this)
 		this.onGameOver = onGameOver
 
 		if (!this.server)
@@ -126,7 +130,6 @@ export default class Game extends Phaser.Scene
 		const screenCenterY = this.cameras.main.worldView.y + this.cameras.main.height /2;
    
 		this.add.image(0,0,'background2').setScale(0.5,0.55).setPosition(400,260)
-	
 		this.turnText = this.add.text(screenCenterX, 50, '')
 		.setOrigin(0.5).setFontFamily('Impact').setFontSize(42)
 
@@ -224,10 +227,15 @@ export default class Game extends Phaser.Scene
 						cell.fillRect(0, 0 , sizex - 10, sizey - 10);
 					}).on(Phaser.Input.Events.GAMEOBJECT_POINTER_UP, () => {
 						
-						let result = this.tempCounter > 3					
-						this.server?.makeSelection(Number.parseInt(idx), result, this.cells[Number.parseInt(idx)].score, this.name)
+						let result = this.tempCounter > 3	
+
+						if (!this.locked)
+						{
+							this.turnText?.setText('Question in Progress...')
+				
+							this.server?.makeSelection(Number.parseInt(idx), result, this.cells[Number.parseInt(idx)].score, this.name)
 						
-						
+						}
 						this.tempCounter++
 					})
 
@@ -334,6 +342,7 @@ export default class Game extends Phaser.Scene
 				this.arrow?.setPosition(this.playerText.x - this.playerText.width, this.playerText.y).setOrigin(0.5)
 				this.playerText.setColor('green')
 				this.player2Text?.setColor('white')
+				this.turnText?.setText("It's your turn!")
 			}
 			console.log('in control')
 		}
@@ -342,6 +351,7 @@ export default class Game extends Phaser.Scene
 				this.arrow?.setPosition(this.player2Text.x - this.player2Text.width, this.player2Text.y).setOrigin(0.5)
 				this.playerText?.setColor('white')
 				this.player2Text.setColor('green')
+				this.turnText?.setText("It's your opponents Turn")
 			}
 		}
 
@@ -435,6 +445,23 @@ export default class Game extends Phaser.Scene
 		// TODO: show a message letting the player know it is their turn
 	}
 
+	private locked: boolean = false
+	private handleReady(ready: boolean)
+	{
+
+
+		this.locked = !ready
+		console.log('handler for ready fired: ')
+		if (ready == true) {
+			console.log('control unlocked')
+		}
+		else {
+			console.log('control locked')
+		} 
+
+		this.displayPlayers()
+		
+	}
 	private handlePlayerWon(playerIndex: number)
 	{
 		this.time.delayedCall(1000, () => {

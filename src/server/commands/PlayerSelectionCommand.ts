@@ -30,10 +30,17 @@ export default class PlayerSelectionCommand extends Command<ITicTacToeState, Pay
 			return
 		}
 		
+
+
 		let player = this.room.state.players.get(clientIndex.toString())
 		
 	
-		
+
+		this.state.ready = false
+
+		this.room.state.players.forEach((value: Player, key: string)=> {
+			value.ready = false 
+		})
 
 		let cell = this.room.state.board.get(index.toString())
 

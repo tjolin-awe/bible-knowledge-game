@@ -26,8 +26,7 @@ export default class CheckWinnerCommand extends Command<ITicTacToeState, Payload
 			
 	 		let cell = this.room.state.board.get(idx)
 
-			console.log(idx)
-			console.log(cell?.result)
+			
 			if (parseInt(idx) > 6) {
 				if (cell?.result === false)
 					hasWinner = false
@@ -36,7 +35,7 @@ export default class CheckWinnerCommand extends Command<ITicTacToeState, Payload
 
 			
 		})
-		return  hasWinner;
+		return hasWinner;
 	}
 
 	execute()

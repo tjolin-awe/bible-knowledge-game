@@ -84,8 +84,10 @@ export default class Question extends Phaser.Scene
          
                 this.time.delayedCall(2000, ()=> {
 
+
                     this.scene.stop()
                     this.scene.stop('answer')
+                    this.scene.sleep('game')
                     this.scene.start('answer', {
                         server: this.server,
                         question: this.question,
@@ -107,7 +109,13 @@ export default class Question extends Phaser.Scene
     private handlePlayerAnswered(answer: Answer)
 	{
 
+
+        if (this.hasBeenAnwswered == true || this.timeExpired == true)
+            return 
+
         this.cameras.main.shake(500,0.01)
+
+    
 
         this.hasBeenAnwswered = true
         console.log('handlePlayerAnswered')

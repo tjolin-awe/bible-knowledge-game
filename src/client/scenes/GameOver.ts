@@ -12,6 +12,7 @@ export default class GameOver extends Phaser.Scene
 	{
 		this.load.image('spark0', 'assets/green.png');
 		this.load.image('spark1', 'assets/particles/red.png');
+		this.load.image('winscreen','assets/winscreen.png')
 		
 	}
 
@@ -19,6 +20,9 @@ export default class GameOver extends Phaser.Scene
 	{
 
 	
+		let background = this.add.image(0,0,'winscreen').setOrigin(0)
+		background.displayWidth = this.game.scale.width
+		background.displayHeight = this.game.scale.height
 		const text = data.winner
 			? 'You Won!'
 			: 'You Lost!'
@@ -86,10 +90,12 @@ export default class GameOver extends Phaser.Scene
 		this.input.keyboard.once('keyup-SPACE', () => {
 			if (data.onRestart)
 			{
+				
 				data.onRestart()
+				this.scene.wake('game')
 			}
 		})
 
-		this.add.image(400, 400, 'background2');
+		//this.add.image(400, 400, 'background2');
 	}
 }

@@ -7,6 +7,7 @@ import AnswerGivenCommand from './commands/AnswerGivenCommand'
 
 import { GameState } from '../types/ITicTacToeState'
 import { Cell, Player } from './TicTacToeState'
+import PlayerReadyCommand from './commands/PlayerReadyCommand'
 
 
 
@@ -37,6 +38,15 @@ export default class TicTacToe extends Room<TicTacToeState>
 				answer: message.answer,
 				correct: message.correct,
 				value: message.value
+			
+			})
+		})
+
+		this.onMessage(Message.PlayerReady, (client, message: { player: number }) => {
+			console.log('onMessage')
+			this.dispatcher.dispatch(new PlayerReadyCommand(), {
+				client,
+				player: message.player
 			
 			})
 		})

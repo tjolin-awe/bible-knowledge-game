@@ -39,21 +39,27 @@ export default class AnswerScreen extends Phaser.Scene
     async create(data: IAnswerData)
 	{
 		
+	
+		
+		this.scene.sleep('game')
+
 		let { server, question, image, answer, correctAnswer, timeout } = data
+		this.server =server
 		const screenCenterX = this.cameras.main.worldView.x + this.cameras.main.width / 2;
 		const screenCenterY = this.cameras.main.worldView.y + this.cameras.main.height /2;
    
 		
-		let card = this.add.image(screenCenterX, screenCenterY, 'image').setOrigin(0.5).setVisible(false)
-
-		// ask the LoaderPlugin to load the texture
+			// ask the LoaderPlugin to load the texture
 		this.load.image(image, `assets/images/${image}`)
 		this.load.once(Phaser.Loader.Events.COMPLETE, () => {
 			// texture loaded so use instead of the placeholder
+			this.add.image(0,0,'bible').setOrigin(0).setDisplaySize(this.game.scale.width, this.game.scale.height)
+			let card = this.add.image(screenCenterX, screenCenterY, 'image').setOrigin(0.5).setVisible(false)
+
+	
 			card.setTexture(image)
 
 			let status = this.add.text(screenCenterX, 20, '').setFontSize(42).setFontFamily('impact').setOrigin(0.5)
-		
 		
 		if (timeout) {
 			this.add.text(screenCenterX, 100,'The correct answer is ' + correctAnswer.name).setFontFamily('swiss921')
@@ -136,7 +142,7 @@ export default class AnswerScreen extends Phaser.Scene
 				y: '+=64',
 				angle: 180,
 				ease: 'Power1',
-				duration: 3000,
+				duration: 2000,
 				delay: 1000 + (i * 100)
 			});
 			
@@ -163,7 +169,7 @@ export default class AnswerScreen extends Phaser.Scene
 			if (document.visibilityState == "visible") {
 			  console.log("tab is active -answer")
               this.scene.stop()
-              
+			 
 
 			} else {
 			  console.log("tab is inactive -answer")
@@ -196,6 +202,9 @@ export default class AnswerScreen extends Phaser.Scene
 			
 			this.blocks?.destroy();
 		
+
+			console.log('firing player ready!')
+			this.server?.playerReady(this.server?.playerIndex)
 			this.scene.stop()			
 			this.scene.wake('game')
 		})

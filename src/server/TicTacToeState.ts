@@ -59,6 +59,8 @@ export class Player extends Schema implements IPlayer
 	@type('number')
 	score = 0
 
+	@type('boolean')
+	ready = true
 }
 
 
@@ -94,6 +96,11 @@ export default class TicTacToeState extends Schema implements ITicTacToeState
 
 	@type('string')
 	currentScreen = ''
+
+	@type('boolean')
+	ready = true 
+
+	
 
 	constructor()
 	{
