@@ -1,15 +1,13 @@
 import Phaser from 'phaser'
-import { IAnswerData, IGameOverSceneData, IGameSceneData, IQuestionData } from '../../types/scenes'
-import ITicTacToeState, { ICell, GameState, IAnswer } from '../../types/ITicTacToeState'
-import { Schema, ArraySchema, MapSchema, type } from '@colyseus/schema'
+import Base from 'phaser3-rex-plugins/plugins/gameobjects/containerlite/Base'
+import { IAnswerData } from '../../types/scenes'
 import type Server from '../services/Server'
-import { text } from 'express'
-import { Answer } from '../../server/TicTacToeState'
-import Tween from 'phaser3-rex-plugins/plugins/gameobjects/containerlite/Tween'
+
 
 export default class AnswerScreen extends Phaser.Scene
 {
    
+	private card? : Phaser.GameObjects.Image
     private server?: Server
 	constructor()
 	{
@@ -25,6 +23,8 @@ export default class AnswerScreen extends Phaser.Scene
 	
 	preload() {
 
+		
+		
 		this.load.image('question_background', 'assets/question_background.png')
 	
 		this.load.atlas('flood', 'assets/blobs.png', 'assets/blobs.json')
@@ -53,35 +53,48 @@ export default class AnswerScreen extends Phaser.Scene
 		this.load.image(image, `assets/images/${image}`)
 		this.load.once(Phaser.Loader.Events.COMPLETE, () => {
 			// texture loaded so use instead of the placeholder
-			this.add.image(0,0,'bible').setOrigin(0).setDisplaySize(this.game.scale.width, this.game.scale.height)
-			let card = this.add.image(screenCenterX, screenCenterY, 'image').setOrigin(0.5).setVisible(false)
+			this.add.image(0,0,'loginbackground').setOrigin(0).setDisplaySize(this.game.scale.width, this.game.scale.height)
+			this.card = this.add.image(screenCenterX, 0, 'image').setOrigin(0.5).setVisible(false)
 
 	
-			card.setTexture(image)
+			this.card.setTexture(image)
 
-			let status = this.add.text(screenCenterX, 20, '').setFontSize(42).setFontFamily('impact').setOrigin(0.5)
+			let status = this.add.text(screenCenterX, 30, '').setFontSize(72).setFontFamily('impact').setOrigin(0.5)
 		
-		if (timeout) {
-			this.add.text(screenCenterX, 100,'The correct answer is ' + correctAnswer.name).setFontFamily('swiss921')
-			.setFontSize(48).setShadow(2,2,'black',2,true).setOrigin(0.5).setFontStyle('bold')
-			.setWordWrapWidth(this.cameras.main.width * 0.8).setAlign('center')
-		} else {
-		if (answer.correct == false){
-			status.setColor('red').setText('INCORRECT!')
-			this.add.text(screenCenterX, 100, 'The correct answer is ' + correctAnswer.name).setFontFamily('swiss921')
-		.setFontSize(48).setShadow(2,2,'black',2,true).setOrigin(0.5).setFontStyle('bold')
-		.setWordWrapWidth(this.cameras.main.width * 0.8).setAlign('center')
+			if (timeout) {
+				this.add.text(screenCenterX, 100,'The correct answer is ' + correctAnswer.name).setFontFamily('swiss921')
+				.setFontSize(48).setShadow(2,2,'black',2,true).setOrigin(0.5).setFontStyle('bold')
+				.setWordWrapWidth(this.cameras.main.width * 0.8).setAlign('center')
+			} else {
+				if (answer.correct == false){
+					status.setColor('red').setText('INCORRECT!')
+					this.add.text(screenCenterX, 100, 'The correct answer is ' + correctAnswer.name).setFontFamily('swiss921')
+					.setFontSize(48).setShadow(2,2,'black',2,true).setOrigin(0.5).setFontStyle('bold')
+					.setWordWrapWidth(this.cameras.main.width * 0.8).setAlign('center')
 
-		} else {
-			status.setColor('green').setText('CORRECT')
-			this.add.text(screenCenterX, 100, correctAnswer.name).setFontFamily('swiss921')
-		.setFontSize(48).setShadow(2,2,'black',2,true).setOrigin(0.5).setFontStyle('bold')
-		.setWordWrapWidth(this.cameras.main.width * 0.8).setAlign('center')
+				} else {
+					status.setColor('green').setText('CORRECT')
+					this.add.text(screenCenterX, 100, correctAnswer.name).setFontFamily('swiss921')
+					.setFontSize(48).setShadow(2,2,'black',2,true).setOrigin(0.5).setFontStyle('bold')
+					.setWordWrapWidth(this.cameras.main.width * 0.8).setAlign('center')
 
-		}
-	}
+				}
+			}
 
-			card.setVisible(true)
+			this.card.setVisible(true)
+			var tween = this.tweens.add({
+				targets: this.card,
+				y: screenCenterY,
+				ease: 'Power4',
+				duration: 1000,
+				yoyo: false,
+				repeat: 0,
+				onStart: function () { console.log('onStart'); console.log(arguments); },
+				onComplete: function () { console.log('onComplete'); console.log(arguments); },
+				onYoyo: function () { console.log('onYoyo'); console.log(arguments); },
+				onRepeat: function () { console.log('onRepeat'); console.log(arguments); },
+			});
+		
 			/*let textures = this.textures;
 			var origin = card.getTopLeft();
 	
@@ -112,50 +125,50 @@ export default class AnswerScreen extends Phaser.Scene
 				emitZone: { type: 'random', source: logoSource }
 			});*/
 
-			this.blocks = this.add.group({key: 'block', repeat: 191 });
-		Phaser.Actions.GridAlign(this.blocks.getChildren(), {
-			width: 16,
-			cellWidth: 50,
-			cellHeight: 50,
-			x: 25,
-			y: 25
-		})
+		//	this.blocks = this.add.group({key: 'block', repeat: 191 });
+		//Phaser.Actions.GridAlign(this.blocks.getChildren(), {
+	//		width: 25,
+	//		cellWidth: 150,
+	//		cellHeight: 150,
+	//		x: 25,
+	//		y: 25
+	//	})
 		
 		
 	
 	
 	
-		let i = 0;
-		let _this = this
+	//	let i = 0;
+	//	let _this = this
 
 	
 
-		this.blocks.children.iterate(function (child) {
+	//	this.blocks.children.iterate(function (child) {
 	
 		
 		
-		 	let tween = _this.tweens.add({
-				targets: child,
-				scaleX: 0,
-				scaleY: 0,
-				alpha: 0,
-				y: '+=64',
-				angle: 180,
-				ease: 'Power1',
-				duration: 2000,
-				delay: 1000 + (i * 100)
-			});
+	//	 	let tween = _this.tweens.add({
+	//			targets: child,
+	///			scaleX: 0,
+		///		scaleY: 0,
+			//	alpha: 0,
+			//	y: '+=64',
+			//	angle: 180,
+			//	ease: 'Power1',
+			//	duration: 2000,
+			//	delay: 1000 + (i * 100)
+		//	});
 			
 		
-			i++;
+	//		i++;
 	
 			//  Change the value 32 for different results
-			if (i % 16 === 0)
-			{
-				i = 0;
-			}
+	//		if (i % 16 === 0)
+	//		{
+	//			i = 0;
+	//		}
 	
-		})
+	//	})
 
       
 
@@ -190,6 +203,22 @@ export default class AnswerScreen extends Phaser.Scene
        
 		this.time.delayedCall(8000,()=>{
 
+
+			if (this.card) {
+				var tween = this.tweens.add({
+				targets: this.card,
+				y: this.game.scale.height  + this.card.height / 2,
+				ease: 'Power4',
+				duration: 1000,
+				yoyo: false,
+				repeat: 0,
+				onStart: function () { console.log('onStart'); console.log(arguments); },
+				onComplete: function () { console.log('onComplete'); console.log(arguments); },
+				onYoyo: function () { console.log('onYoyo'); console.log(arguments); },
+				onRepeat: function () { console.log('onRepeat'); console.log(arguments); },
+			});
+		}
+		
 			this.cameras.main.fadeOut(1000)
 			
 			
@@ -204,13 +233,13 @@ export default class AnswerScreen extends Phaser.Scene
 		
 
 			console.log('firing player ready!')
-			this.server?.playerReady(this.server?.playerIndex)
+			this.server?.playerReady(this.server?.playerId)
 			this.scene.stop()			
 			this.scene.wake('game')
 		})
 	
 		
-    }	
+		}
 
 	
 }

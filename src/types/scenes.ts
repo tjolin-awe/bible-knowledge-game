@@ -1,9 +1,7 @@
 import type Server from '../client/services/Server'
-import ITicTacToeState, { Cell, GameState } from '../../types/ITicTacToeState'
+import ITicTacToeState, { Cell } from '../server/TicTacToeState'
 import { Answer } from '~/server/TicTacToeState'
 import { Schema, ArraySchema, MapSchema, type } from '@colyseus/schema'
-import { ServerError } from 'colyseus'
-import { IAnswer } from './ITicTacToeState'
 export interface IGameOverSceneData
 {
 	winner: boolean
@@ -15,7 +13,8 @@ export interface IGameSceneData
 	server: Server
 	onGameOver: (data: IGameOverSceneData) => void
 	currentcells: { display: Phaser.GameObjects.Graphics, value: Cell }[] 
-	name: string
+	name: string,
+	multiplayer: boolean
 }
 
 export interface IQuestionData

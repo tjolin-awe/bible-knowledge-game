@@ -1,21 +1,17 @@
 import Phaser from 'phaser'
 import { IGameOverSceneData, IGameSceneData } from '../../types/scenes'
-import ITicTacToeState, { GameState, ICell, IPlayer} from '../../types/ITicTacToeState'
 import type Server from '../services/Server'
-import { text } from 'express'
-import { Schema, ArraySchema, MapSchema, type } from '@colyseus/schema'
-
-import RexUIPlugin from 'phaser3-rex-plugins/templates/ui/ui-plugin'
-import Bootstrap from './Bootstrap'
-
-
 
 export default class Login extends Phaser.Scene
 {
-	private server?: Server
-	private message? : Phaser.GameObjects.Text
+	private server?: Server 
+    private inputname: string = ""
+	private loggedIn: boolean = false
+    private multiplayer: boolean = false
 
-	private name? : Element
+	private onGameOver?: (data: IGameOverSceneData) => void
+	private emitter?: Phaser.GameObjects.Particles.ParticleEmitter
+    private particles?: Phaser.GameObjects.Particles.ParticleEmitterManager
 
 	constructor()
 	{
@@ -27,20 +23,30 @@ export default class Login extends Phaser.Scene
 		
 	}
 
-	private loggedIn:boolean = false
+    
+
+
 	preload() {
         
-		
-		this.load.image('bible','assets/bible.png')
+        
+		this.load.image('block', 'assets/input/block.png');
+    	this.load.image('rub', 'assets/input/rub.png');
+    	this.load.image('end', 'assets/input/end.png');
+    	this.load.bitmapFont('arcade', 'assets/fonts/bitmap/arcade.png', 'assets/fonts/bitmap/arcade.xml');
+
+		this.load.image('bible','assets/bible_img.png')
+		this.load.image('loginbackground','assets/loginbackground.png')
+       
     }
-	private onGameOver?: (data: IGameOverSceneData) => void
-	private inputtext : string = ""
-	private emitter : Phaser.GameObjects.Particles.ParticleEmitter | undefined 
+
+    
     create(data: IGameSceneData) {           
        
 
 		
-		const { server, onGameOver, currentcells } = data
+		const { server, onGameOver, currentcells, name, multiplayer } = data
+
+        
 
 		
 		
@@ -49,104 +55,200 @@ export default class Login extends Phaser.Scene
    
 		this.server = server
 		
+
+        this.multiplayer = multiplayer
+
 		this.onGameOver = onGameOver
 
 		if (this.loggedIn) {
-			this.scene.start('game', {
-				server: this.server,
-				onGameOver: this.onGameOver,
-				currentcells: null,
-				name: this.inputtext		
-			})
-
-			return 
+			this.startgame()
 		}
 
-		let bible = this.add.image(0,0,'bible').setOrigin(0)
-		bible.displayWidth = this.game.scale.width
-		bible.displayHeight = this.game.scale.height
-		
-		
-		var text1 = this.add.text(screenCenterX,screenCenterY / 3, "BIBLE KNOWLEDGE GAMES", { fontFamily: "swiss921", fontSize: 72, color: "#cd934a" }).setAlign('center').setOrigin(0.5)
-		text1.setStroke('white', 12).setFontStyle('bold').setWordWrapWidth(780)
+			
+		let background = this.add.image(0,0,'loginbackground').setOrigin(0)
+		background.displayWidth = this.game.scale.width
+	    background.displayHeight = this.game.scale.height
+
+		let title = this.add.text(screenCenterX,screenCenterY /4, "ENTER YOUR NAME", { fontFamily: "swiss921", color: "white" }).setAlign('center').setOrigin(0.5).setFontSize(52)
+		title.setFontStyle('bold').setWordWrapWidth(780)
+
+       
 	
+       
 		//  Apply the shadow to the Stroke only
-		text1.setShadow(2, 2, 'black', 2, true, false);
+		title.setShadow(2, 2, 'black', 2, true, false)
 	
-		const text = this.add.text(screenCenterX, screenCenterY + screenCenterY / 2, 'Enter Name',{ fixedWidth: 200, fixedHeight: 38}).setOrigin(0.5)
-		text.setBackgroundColor('green').setAlign('center').setFontSize(32).setFontFamily('impact')
-		
-		const subtitle = this.add.text(text.x, text.y + 50,'press [ENTER] to start').setOrigin(0.5).setAlign('center')
-	
-		var shape2 = new Phaser.Geom.Ellipse(0, 0, 600, 200);
+		const playerText = this.add.text(screenCenterX, screenCenterY + screenCenterY / 2, 'Enter Name',{ fixedWidth: 200, fixedHeight: 38}).setOrigin(0.5)
+		playerText.setBackgroundColor('green').setAlign('center').setFontSize(32).setFontFamily('impact')
+
 		
 	
-		var i = 0;
+
+		const subtitle = this.add.text(playerText.x, playerText.y + 50,'press [ENTER] to start').setOrigin(0.5).setAlign('center')
 	
-		var particles = this.add.particles('flares');
+
+    
+    var chars = [
+        [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J' ],
+        [ 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T' ],
+        [ 'U', 'V', 'W', 'X', 'Y', 'Z', '.', '-', '<', '>' ]
+    ];
+    var cursor = { x: 0, y: 0 };
+    
 	
-	    this.emitter = particles.createEmitter({
+    let input = this.add.bitmapText(screenCenterX, screenCenterY - screenCenterY / 3, 'arcade', 'ABCDEFGHIJ\n\nKLMNOPQRST\n\nUVWXYZ.-').setLetterSpacing(20).setOrigin(0.5)
+    input.setInteractive()
+
+    let rub = this.add.image(input.x - input.width * 0.5 + 430, input.y - input.height * 0.5 + 148, 'rub')
+    let end = this.add.image(input.x - input.width *0.5 + 482, input.y - input.height * 0.5 + 148, 'end')
+
+    var block = this.add.image(input.x - 10, input.y - 2, 'block').setOrigin(0)
+    let _this = this
+    this.input.keyboard.on('keyup', function (event) {
+
+        if (event.keyCode === 37)
+        {
+            //  left
+            if (cursor.x > 0)
+            {
+                cursor.x--;
+                block.x -= 52;
+            }
+        }
+        else if (event.keyCode === 39)
+        {
+            //  right
+            if (cursor.x < 9)
+            {
+                cursor.x++;
+                block.x += 52;
+            }
+        }
+        else if (event.keyCode === 38)
+        {
+            //  up
+            if (cursor.y > 0)
+            {
+                cursor.y--;
+                block.y -= 64;
+            }
+        }
+        else if (event.keyCode === 40)
+        {
+            //  down
+            if (cursor.y < 2)
+            {
+                cursor.y++;
+                block.y += 64;
+            }
+        }
+        else if (event.keyCode === 13 || event.keyCode === 32)
+        {
+            //  Enter or Space
+            if (cursor.x === 9 && cursor.y === 2 && _this.inputname.length > 0)
+            {
+                _this.startgame()
+            }
+            else if (cursor.x === 8 && cursor.y === 2 && _this.inputname.length > 0)
+            {
+                //  Rub
+                _this.inputname = _this.inputname.substr(0, _this.inputname.length - 1);
+
+                playerText.text = _this.inputname;
+            }
+            else if (name.length < 3)
+            {
+                //  Add
+                _this.inputname = _this.inputname.concat(chars[cursor.y][cursor.x]);
+
+                playerText.text = _this.inputname;
+            }
+        }
+
+    });
+
+    input.on('pointermove', function (pointer, x, y) {
+
+        var cx = Phaser.Math.Snap.Floor(x, 52, 0, true)
+        var cy = Phaser.Math.Snap.Floor(y, 64, 0, true)
+        var char = chars[cy][cx];
+
+        cursor.x = cx;
+        cursor.y = cy;
+
+        block.x = input.x - 10 + (cx * 52 - input.width * 0.5)
+        block.y = input.y - 2 + (cy * 64 - input.height * 0.5)
+ 
+    }, this);
+
+    input.on('pointerup', function (pointer, x, y) {
+
+        var cx = Phaser.Math.Snap.Floor(x, 52, 0, true);
+        var cy = Phaser.Math.Snap.Floor(y, 64, 0, true);
+        var char = chars[cy][cx];
+
+        cursor.x = cx;
+        cursor.y = cy;
+
+       block.x = input.x - input.width / 2 - 10 + (cx * 52);
+       block.y = input.y - input.height / 2 - 2 + (cy * 64);
+
+        if (char === '<' && _this.inputname.length > 0)
+        {
+            //  Rub
+            _this.inputname = _this.inputname.substr(0, _this.inputname.length - 1);
+
+            playerText.text = _this.inputname;
+        }
+        else if (char === '>' && _this.inputname.length > 0)
+        {
+          _this.startgame()
+        }
+        else if (_this.inputname.length < 10)
+        {
+            //  Add
+            _this.inputname = _this.inputname.concat(char);
+
+			playerText.setText(_this.inputname)
+			
+        }
+
+    }, this);
+		
+		
+		
+	
+		this.particles = this.add.particles('flares');
+	
+	    this.emitter = this.particles.createEmitter({
 			frame: { frames: [ 'green', 'purple', 'blue' ], cycle: true },
 			x: screenCenterX,
-			y: text.y,
+			y: playerText.y,
 			scale: { start: 0.5, end: 0 },
 			blendMode: 'ADD',
-			emitZone: { type: 'edge', source: shape2, quantity: 48, yoyo:false, }
+			emitZone: { type: 'edge', source: new Phaser.Geom.Ellipse(0, 0, 600, 200), quantity: 48, yoyo:false, }
 		});
 		
+		
 	
-		this.input.keyboard.on('keyup', (e: { keyCode: any })=> {
-		//  Only allow A-Z . and -
 		
-				let code = e.keyCode
-		
-				if (code === Phaser.Input.Keyboard.KeyCodes.ENTER)
-				{
-					if (this.inputtext.length < 0)
-						return
-
-					if (this.emitter != undefined)
-						this.emitter.stop()
-		
-
-					this.loggedIn = true
-					this.scene.start('game', {
-						server: this.server,
-						onGameOver: this.onGameOver,
-						currentcells: null,
-						name: this.inputtext		
-					})
-				}
-				else if (code === Phaser.Input.Keyboard.KeyCodes.PERIOD)
-				{
-					
-				}
-				else if (code === Phaser.Input.Keyboard.KeyCodes.MINUS)
-				{
-					
-				}
-				else if (code === Phaser.Input.Keyboard.KeyCodes.BACKSPACE || code === Phaser.Input.Keyboard.KeyCodes.DELETE)
-				{
-					if (this.inputtext.length > 0)
-						this.inputtext = this.inputtext.slice(0,-1)
-					
-					console.log(this.inputtext)
-					text.setText(this.inputtext)
-				}
-				else if (code >= Phaser.Input.Keyboard.KeyCodes.A && code <= Phaser.Input.Keyboard.KeyCodes.Z)
-				{
-						
-					
-					if (this.inputtext.length > 12)
-						return
-					this.inputtext+= String.fromCharCode(code)
-					console.log(this.inputtext);
-				    text.setText(this.inputtext.toUpperCase())
-				}
-		},this)
     }
 
-	
+	private startgame() {
+      
+        if (this.particles)
+            this.particles.destroy()
+       
+        this.loggedIn = true
+        //  Submit
+	    this.scene.start('game', {
+			server: this.server,
+			onGameOver: this.onGameOver,
+			currentcells: null,
+			name: this.inputname,
+            multiplayer: this.multiplayer
+        })
+    }
 
 
 	

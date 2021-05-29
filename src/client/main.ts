@@ -1,19 +1,21 @@
 import 'regenerator-runtime/runtime'
 import Phaser from 'phaser'
 
+
 import Bootstrap from './scenes/Bootstrap'
 import Game from './scenes/Game'
 import GameOver from './scenes/GameOver'
 import Question from './scenes/Question'
 import Login from './scenes/Login'
-import RexUIPlugin from 'phaser3-rex-plugins/templates/ui/ui-plugin'
 import AnswerScreen from './scenes/AnswerScreen'
+import Title from './scenes/Title'
+
 
 
 const config: Phaser.Types.Core.GameConfig = {
 	type: Phaser.AUTO,
-	width: 800, // window.innerWidth * window.devicePixelRatio,
-	height: 600, //  window.innerHeight * window.devicePixelRatio,
+	width:  1280,
+	height:  800,
 
 	physics: {
 		default: 'arcade',
@@ -21,24 +23,11 @@ const config: Phaser.Types.Core.GameConfig = {
 			gravity: { y: 200 }
 		}
 	}, 
-    parent: 'phaser-container',
-	dom: {
-        createContainer: true
-    },
 	scale: {
-        mode: Phaser.Scale.FIT,
-        autoCenter: Phaser.Scale.CENTER_BOTH
+       mode: Phaser.Scale.FIT,
+       autoCenter: Phaser.Scale.CENTER_BOTH
     },
-	plugins: {
-		scene: [
-			{
-				key: 'rexUI',
-				plugin: RexUIPlugin,
-				mapping: 'rexUI'
-			}
-		]
-    },  
-	scene: [Bootstrap, Login, Game, Question, AnswerScreen, GameOver]
+	scene: [Bootstrap, Title, Login, Game, Question, AnswerScreen, GameOver]
 
 }
 

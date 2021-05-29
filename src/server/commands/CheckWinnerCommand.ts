@@ -17,37 +17,35 @@ export default class CheckWinnerCommand extends Command<ITicTacToeState, Payload
 {
 	private determineWin()
 	{
+		// Check the board to see if there are any squares left
+		let isgameover = true
+	    this.room.state.board.forEach((cell : Cell, key: string) => {
 
-		let hasWinner = true
 		
-		
-	    this.room.state.board.forEach((cellState, idx) => {
-		
-			
-	 		let cell = this.room.state.board.get(idx)
-
-			
-			if (parseInt(idx) > 6) {
-				if (cell?.result === false)
-					hasWinner = false
+			if (parseInt(key) > 6) {
+				console.log(cell.result)
+				if (cell.result === false)   
+					isgameover = false  // There is at least one square left
+				
 			}
-			
-
-			
 		})
-		return hasWinner;
+		return  isgameover 
 	}
 
 	execute()
 	{
-		const win = this.determineWin()	
-		if (win)
+		if (this.determineWin())
 		{
-			let player1 = this.state.players.get('0')
-			let player2 = this.state.players.get('1')
-			
-			if (player1 && player2)
-				this.state.winningPlayer = player1.score > player2.score ? player1.id : player2.id
+			let winningplayer = ''
+			let highscore = 0
+			this.state.players.forEach((player: Player, key: string)=> {
+				if (player.score > highscore) {
+					highscore = player.score 
+					winningplayer = player.id
+				}
+				
+			})			
+			this.state.winningPlayer = winningplayer
 		}
 		else
 		{

@@ -1,3 +1,4 @@
+import { getRoomById } from 'colyseus/lib/MatchMaker'
 import Phaser from 'phaser'
 import { IGameOverSceneData } from '../../types/scenes'
 import Server from '../services/Server'
@@ -20,9 +21,18 @@ export default class Bootstrap extends Phaser.Scene
 	preload() {
 
 
+		this.load.atlas('flood', 'assets/blobs.png', 'assets/blobs.json');
+		this.load.image('background2', 'assets/character-select.png')
+		this.load.image('green', 'assets/green.png')
+		this.load.image('red', 'assets/particles/red.png')
+		this.load.image('square', 'assets/square.png')
+		this.load.image('square_highlighted','assets/square_highlighted.png')
+
+		this.load.image('header','assets/header.png')
+
 	
-		let background2  = this.load.image('logo','assets/Tux-c4c-192.png')
-		console.log(background2);
+		this.load.image('logo','assets/logo.png')
+	
 		this.load.atlas('flares', 'assets/particles/flares.png', 'assets/particles/flares.json');
 	
 		console.log('preload')
@@ -50,9 +60,12 @@ export default class Bootstrap extends Phaser.Scene
 			}
 		  })
 
+		  const screenCenterX = this.cameras.main.worldView.x + this.cameras.main.width / 2;
+		  const screenCenterY = this.cameras.main.worldView.y + this.cameras.main.height /2;
+	 
 		var textures = this.textures;
 
-		let logo = this.add.image(400,300, 'logo')
+		let logo = this.add.image(screenCenterX,screenCenterY, 'logo').setOrigin(0.5)
 
 		this.logo = logo
 		var origin = this.logo.getTopLeft();
@@ -109,7 +122,16 @@ export default class Bootstrap extends Phaser.Scene
 	private createNewGame()
 	{
 
+		/*
+		this.gameLaunched = true
+		this.scene.launch('game', {
+			server: this.server,
+			onGameOver: this.handleGameOver,
+			name: 'tom',
+
+		})
 	
+		return */
 
 		this.cameras.main.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, (cam, effect) => {
 
@@ -117,7 +139,7 @@ export default class Bootstrap extends Phaser.Scene
 		this.emitter?.stop()
 		
 		this.gameLaunched = true
-		this.scene.launch('login', {
+		this.scene.launch('title', {
 			server: this.server,
 			onGameOver: this.handleGameOver,
 		

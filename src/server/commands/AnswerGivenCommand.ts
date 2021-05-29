@@ -1,66 +1,69 @@
 import { Command } from '@colyseus/command'
 import { Client } from 'colyseus'
 import ITicTacToeState, {  GameState } from '../../types/ITicTacToeState'
-import { Cell, Player, Answer } from '../TicTacToeState'
+import { Player } from '../TicTacToeState'
 import CheckWinnerCommand from './CheckWinnerCommand'
 
 type Payload = {
 	client: Client
-	index: number
-	answer: string,
-	correct: boolean
-	value: number
+	cellId: number
+	answerId: number
 }
 
 export default class AnswerGivenCommand extends Command<ITicTacToeState, Payload>
 {
 	execute(data: Payload)
 	{
-		const { client, index, answer, correct, value} = data
+		const { client, cellId, answerId } = data
 
 		if (this.room.state.gameState !== GameState.Playing)
-		{
-			
-		}
+			return
 
-		const clientIndex = this.room.clients.findIndex(c => c.id === client.id)
 
-		//this.room.state.answeringPlayer = index
-		let nAnser = new Answer()
-		nAnser.correct = correct 
-		nAnser.name = answer 
-		nAnser.player = index 
+		const cellKey = cellId.toString()
+		const answerKey = answerId.toString()
 		
+		let cell = this.room.state.board.get(cellKey)
+		let player = this.room.state.players.get(client.sessionId)
 
-		this.room.state.lastAnswer = nAnser
-		
-		let player = this.room.state.players.get(index.toString())
+		if (!cell || !player)
+			return 
 
-		if (this.room.state.activePlayer == index)
-			this.room.state.turnSwitch = !correct
-		else 
-			this.room.state.turnSwitch = correct
-
-		
+		let answer = cell.answers.get(answerKey)
 	
-		if (player) {
-			
-			console.log(value)
-			console.log('score ' + player.score.toString())
-			if (correct == true) {
-				player.score = player.score + value 
-			}
-			else  {
-				player.score = player.score - value
-			}
-			
-			console.log('score ' + player.score.toString())
+
+		if (!answer) 
+			return 
 		
-			//this.room.state.players.set(clientIndex.toString(),player)
-			console.log('player score change')
+		answer.player = client.sessionId
+
+		this.state.answeringPlayer = client.sessionId
+
+		// Notify the system that a player has answered
+		this.room.state.lastAnswer = answer 
+								
+	    // Synchronize players current score
+		this.room.state.players.forEach((p: Player, key: string)=> {
+			p.lastscore = p.score
+			this.room.state.players.set(key, p)
+		})
+
+		// Add or subtract the cell value based on whether it was correct
+		player.score += answer.correct ? cell.value : -cell.value				
+			
+		console.log('player score: ' + player.score.toString())
+		// Determine player control based on whether who answered and whether it was correct 
+		if (player.id == this.room.state.activePlayer)
+		{
+			this.room.state.turnSwitch = !answer.correct
+		} 
+		else {
+
+			this.room.state.turnSwitch = answer.correct
 		}
-			
-		
+				
+		this.room.state.players.set(client.sessionId, player)
+						
 		return [
 			new CheckWinnerCommand()
 		]

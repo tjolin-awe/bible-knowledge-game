@@ -1,4 +1,4 @@
-import { Schema, MapSchema, ArraySchema } from '@colyseus/schema'
+import { Schema, MapSchema } from '@colyseus/schema'
 
 
 export enum GameState
@@ -10,9 +10,11 @@ export enum GameState
 
 export interface IAnswer extends Schema
 {
+	id: number
 	name: string
 	correct: boolean
-	player: number
+	player: string
+	cellId: number
 }
 
 
@@ -38,14 +40,42 @@ export interface ICell extends Schema
 
 export interface IPlayer extends Schema
 {
-	id: number 
+	id: string 
 	
 	name: string
 
 	score: number
 
+	lastscore: number
+
 	ready: boolean
 
+	connected: boolean
+
+}
+
+export interface IBKGSinglePlayerState extends Schema 
+{
+
+	turnSwitch: boolean
+
+	gameState: GameState
+	
+	board: MapSchema<ICell>
+
+	activePlayer: string
+
+	winningPlayer: string
+
+	answeringPlayer: string
+
+	lastAnswer: IAnswer
+
+	players: MapSchema<IPlayer>
+	
+	locked: boolean
+
+	playersReady: boolean
 }
 
 export interface ITicTacToeState extends Schema
@@ -56,21 +86,19 @@ export interface ITicTacToeState extends Schema
 	
 	board: MapSchema<ICell>
 
-	activePlayer: number
+	activePlayer: string
 
-	winningPlayer: number
+	winningPlayer: string
 
-	answeringPlayer: number
+	answeringPlayer: string
 
 	lastAnswer: IAnswer
 
 	players: MapSchema<IPlayer>
 	
-	unlock: boolean
+	locked: boolean
 
-	currentScreen: string
-
-	ready: boolean
+	playersReady: boolean
 	
 
 }

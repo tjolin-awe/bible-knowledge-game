@@ -1,25 +1,33 @@
 import { Client, Room } from 'colyseus.js'
 import Phaser from 'phaser'
-import ITicTacToeState, { GameState, ICell, IPlayer } from '../../types/ITicTacToeState'
+import ITicTacToeState, { GameState, IBKGSinglePlayerState, ICell, IPlayer } from '../../types/ITicTacToeState'
 import { Message } from '../../types/messages'
-import { Schema, ArraySchema, MapSchema, type } from '@colyseus/schema'
-import { Answer } from '~/server/TicTacToeState'
+import { MapSchema, type } from '@colyseus/schema'
+import { Answer, Player } from '../../server/TicTacToeState'
 
+export class TurnResult 
+{
+	result : boolean = false
+	message : string = ''
+}
 export default class Server
 {
-	tabRestore() {
-		
-		//this.room?.state.currentScreen
-
-	}
+	
 	private client: Client
 	private events: Phaser.Events.EventEmitter
 
 	private room?: Room<ITicTacToeState>
-	private _playerIndex = -1
-	private _name = ""
+	private _playerIndex: number = -1
+	private _playerId: string = ''
+	private _name: string = ''
+	private _multiplayer: boolean = false
 
-	private _locked = false;
+	get playerId()
+	{
+		return this._playerId
+	}
+
+	
 
 	get playerIndex()
 	{
@@ -38,7 +46,13 @@ export default class Server
 
 	get activePlayer()
 	{
+
 		return this.room?.state.activePlayer
+	}
+
+	get lastPlayer()
+	{
+		return this.room?.state.answeringPlayer
 	}
 
 	get players()
@@ -53,21 +67,29 @@ export default class Server
 
 	constructor()
 	{
-		this.client = new Client('ws://192.168.1.5:2567')
+		this.client = new Client('ws://localhost:2567')
 		this.events = new Phaser.Events.EventEmitter()
 	}
 
-	async join(name: string)
+	async join(name: string, multiplayer: boolean)
 	{
-		this.room = await this.client.joinOrCreate<ITicTacToeState>('tic-tac-toe', { name: name})
-	
-	
+		this._multiplayer = multiplayer
+		this._name = name
+
+		console.log(multiplayer)
 		
-		this.room.onMessage(Message.PlayerIndex, (message: { playerIndex: number, name: string }) => {
+		if (multiplayer)
+			this.room = await this.client.joinOrCreate<ITicTacToeState>('tic-tac-toe', { name: name, multiplayer: multiplayer})
+		else {
+			console.log('joining single player')
+			this.room = await this.client.joinOrCreate<IBKGSinglePlayerState>('bkg-single-player-game', {name: name, multiplayer: multiplayer})
+		}
+		this.room.onMessage(Message.PlayerIndex, (message: { playerId: string, playerIndex: number, name: string }) => {
 			
-				console.log('got player index ' + message.playerIndex.toString()  )
 				this._playerIndex = message.playerIndex
+				this._playerId = message.playerId
 				this._name = message.name
+				
 				
 		})
 
@@ -91,19 +113,17 @@ export default class Server
 					
 					case 'lastAnswer':
 						    
-					console.log('lastAnswer')
-						
+					console.log('lastAnswer')				
 						this.events.emit('player-answered', value)
 						break;
 
-					case 'ready':
-					
-						this.events.emit('ready', value)
+					case 'playersReady':					
+						this.events.emit('players-ready', value)
 						break;
 				
 					
-					case 'unlock':
-						this._locked = false
+					case 'locked':
+						
 						break;
 			
 					case 'activePlayer':
@@ -137,75 +157,72 @@ export default class Server
 		this.events.removeAllListeners()
 	}
 
-	register(name:string)
+
+	makeSelection(cellId: number) : TurnResult
 	{
-		if (this.room == null)
-		{
-			return
-		}
+		let turnresult = new TurnResult()
 		
-		
-	}
-
-	makeSelection(idx: number, result: boolean, score: number, name: string)
-	{
-		
-		if (!this.room)
-		{
-			return
+		if (!this.room){
+			turnresult.message = 'room doesn\'t exist!'
+		    turnresult.result = false
+			return turnresult
 		}
 
-		if (this.room.state.gameState !== GameState.Playing)
-		{
-		
-			return
+		if (this.room.state.gameState !== GameState.Playing) {
+			turnresult.message = 'The game hasn\'t started!'
+			turnresult.result = false
+		    return turnresult
 		}
+		
 
-		if (this.playerIndex !== this.room.state.activePlayer)
-		{
-			console.warn('not this player\'s turn')
-			return
-
+		if (this._multiplayer) {
+			if (this.playerId !== this.room.state.activePlayer) {
+				turnresult.message = 'It is not your turn!'
+				turnresult.result = false
+				return turnresult
+			}
 			
+		
+
+			if (!this.room.state.playersReady)
+			{
+				turnresult.message = "Your opponent's not ready"
+				turnresult.result = false
+				return turnresult
+			}
 		}
 
-		if (this.room.state.ready == false)
-		{
-			console.warn('CONTROL IS LOCKED - players not ready yet')
-			return 
-		}
-
-		if (result)
-			score = -score
-
-		this.room.send(Message.PlayerSelection, { index: idx, result: result, score:score })
+		this.room.send(Message.PlayerSelection, { cellId: cellId })
+		turnresult.message ='success'
+		turnresult.result = true 
+		return turnresult
 		
 	}
 
-	playerReady(player: number)
+	playerReady(player: string)
 	{
 		if (!this.room)
 			return
 
 		console.log('player ready fired on server')
+
+	
 		this.room.send(Message.PlayerReady,{ player: player, state: true })
 	}
 
-	playerAnswer(idx: number, answer: string, result: boolean, value: number)
+	playerAnswer(cellId: number, answerId: number)
 	{
-		console.log('player Answer fired on server')
-		if (!this.room)
-			return
-
-		if (this._locked == true) {
-			console.log('Your answer came too late')
+		if (!this.room) {
+			console.warn('Room is empty!')
 			return
 		}
-		
-		this._locked = true;
-	
-	
-		this.room.send(Message.AnswerGiven,{ index: idx, answer: answer, correct: result, value: value })
+
+		if (this.room.state.locked) {
+			console.warn('Sorry, your answer came in too late!')
+			return
+		}
+
+		this.room.send(Message.AnswerGiven,{ cellId: cellId, answerId: answerId })
 
 	}
 
@@ -214,10 +231,10 @@ export default class Server
 		this.events.once('once-state-changed', cb, context)
 	}
 
-	onReady(cb: (ready: boolean) => void, context?: any)
+	onPlayersReady(cb: (ready: boolean) => void, context?: any)
 	{
-		console.log('player answered fired')
-		this.events.on('ready', cb, context)
+		console.log('player ready fired')
+		this.events.on('players-ready', cb, context)
 	}
 
 	
@@ -238,7 +255,7 @@ export default class Server
 		this.events.on('player-turn-changed', cb, context)
 	}
 
-	onPlayerWon(cb: (playerIndex: number) => void, context?: any)
+	onPlayerWon(cb: (playerId: string) => void, context?: any)
 	{
 		this.events.on('player-win', cb, context)
 	}

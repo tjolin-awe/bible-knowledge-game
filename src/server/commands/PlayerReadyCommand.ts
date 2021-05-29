@@ -1,34 +1,38 @@
 import { Command } from '@colyseus/command'
-import { Client } from 'colyseus.js'
-import ITicTacToeState from '../../types/ITicTacToeState'
+import { Client } from 'colyseus'
+import ITicTacToeState, { GameState } from '../../types/ITicTacToeState'
 import { Player } from '../TicTacToeState'
 
 type Payload = {
 	client: Client
-	player: number
 	state: boolean
 }
 export default class PlayerReadyCommand extends Command<ITicTacToeState>
 {
 	execute(data: Payload)
 	{
-		let { client, player, state} = data
-	  
+		let { client, state } = data
 
-		console.log('player ready command fired for player ' + player.toString())
-		let thisPlayer = this.state.players.get(player.toString())
+		if (this.room.state.gameState !== GameState.Playing)
+			return
 
-		if (thisPlayer)
-			thisPlayer.ready = state
+	
+
+		let player = this.state.players.get(client.sessionId)
+
+		// Change player ready state
+		if (player)
+			player.ready = state	
 		
-		
-		let bothready = true
-		this.state.players.forEach((value:Player, key: string)=>{
+		// Check the status of all players
+		let playersready = true	
+		this.state.players.forEach((value:Player, key: string) => {
 			if (value.ready == false)
-				bothready = false
+				playersready = false
 		})
 
-		this.state.ready = bothready
+		// Update room status
+		this.state.playersReady = playersready
 
 	}
 }

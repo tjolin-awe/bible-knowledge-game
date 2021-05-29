@@ -1,11 +1,8 @@
 import Phaser from 'phaser'
-import { IGameOverSceneData, IGameSceneData, IQuestionData } from '../../types/scenes'
-import ITicTacToeState, { ICell, GameState } from '../../types/ITicTacToeState'
-import { Schema, ArraySchema, MapSchema, type } from '@colyseus/schema'
+import { IQuestionData } from '../../types/scenes'
 import type Server from '../services/Server'
-import { text } from 'express'
-import { Answer, Cell } from '../../server/TicTacToeState'
-import AnswerScreen from './AnswerScreen'
+import { Answer } from '../../server/TicTacToeState'
+
 
 export default class Question extends Phaser.Scene
 {
@@ -119,6 +116,7 @@ export default class Question extends Phaser.Scene
 
         this.hasBeenAnwswered = true
         console.log('handlePlayerAnswered')
+        console.log(answer.player)
         this.emitter?.stop()
         this.start_text?.setVisible(false)
         this.timeExpired = true
@@ -126,9 +124,9 @@ export default class Question extends Phaser.Scene
         const screenCenterY = this.cameras.main.height - this.cameras.main.height /2;
         const screenBottomY = this.cameras.main.height - this.cameras.main.height /6;
  
-        let playerobj = this.server?.players?.get(answer.player.toString())
+        let playerobj = this.server?.players?.get(answer.player)
 
-            if (playerobj && answer.player != this.server?.playerIndex) {
+            if (playerobj && answer.player != this.server?.playerId) {
                 
                 let playertext = this.add.text(0, screenBottomY,playerobj.name + '  has ANSWERED!').setFontFamily('impact').setFontSize(48).setShadow(4,4,'black',2,true).setOrigin(0,0).setColor('white')
                 var tween = this.tweens.add({
@@ -249,11 +247,11 @@ export default class Question extends Phaser.Scene
             this.timeExpired = false
            
             this.lights.setAmbientColor(0x555555)
-        	this.add.image(0,0,'question_background').setOrigin(0,0)
+        	this.add.image(0,0,'question_background').setOrigin(0,0).setDisplaySize(this.game.scale.width, this.game.scale.height)
 
              
 
-            const screenCenterX = this.cameras.main.worldView.x + this.cameras.main.width / 2;
+            const screenCenterX = this.cameras.main.worldView.y + this.cameras.main.width / 2;
             const screenCenterY = this.cameras.main.worldView.y + this.cameras.main.height /2;
             let header = this.add.text(screenCenterX, 30, category).setOrigin(0.5).setFontFamily('impact')
             .setFontSize(42).setColor('#cd934a').setFontStyle('bold').setShadow(2,2,'black',2,true).setPipeline('Light2D')
@@ -274,7 +272,7 @@ export default class Question extends Phaser.Scene
             let particles = this.add.particles('flares')
             this.emitter = particles.createEmitter({
                 frame: 'green',
-                x: 300, y: 250,
+                x: screenCenterX, y: screenCenterY,
                 lifespan: { min: 300, max: 400 },
                 angle: { start: 0, end: 360, steps: 64 },
                 speed: 300,
@@ -286,7 +284,7 @@ export default class Question extends Phaser.Scene
             this.start_text = this.add.text(screenCenterX, screenCenterY, this.startCounter.toString()).setFontSize(120).setColor('white')
             .setStroke('black',12).setOrigin(0.5)
 
-            this.emitter.startFollow(this.start_text)
+            //this.emitter.startFollow(this.start_text)
             this.countdown()
            
             let i = 0
@@ -329,7 +327,7 @@ export default class Question extends Phaser.Scene
                     console.log('clicked')
                 
                     if (!this.hasBeenAnwswered)
-                        this.server?.playerAnswer(this.server?.playerIndex, value.name, value.correct, amount)
+                        this.server?.playerAnswer(value.cellId, value.id)
                     else {
                         console.log('question has been answered already!')
                     }

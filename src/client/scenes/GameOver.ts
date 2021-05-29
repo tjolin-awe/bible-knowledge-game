@@ -19,20 +19,22 @@ export default class GameOver extends Phaser.Scene
 	create(data: IGameOverSceneData)
 	{
 
+		let screenCenterX = this.game.scale.width / 2
+		let screenCenterY = this.game.scale.height / 2
 	
 		let background = this.add.image(0,0,'winscreen').setOrigin(0)
 		background.displayWidth = this.game.scale.width
 		background.displayHeight = this.game.scale.height
-		const text = data.winner
+		const text = data.winner 
 			? 'You Won!'
 			: 'You Lost!'
 
 
 		if (data.winner) {
-			var p0 = new Phaser.Math.Vector2(200, 500);
-			var p1 = new Phaser.Math.Vector2(200, 150);
-			var p2 = new Phaser.Math.Vector2(600, 150);
-			var p3 = new Phaser.Math.Vector2(600, 500);
+			var p0 = new Phaser.Math.Vector2(screenCenterX - 400, 500);
+			var p1 = new Phaser.Math.Vector2(screenCenterX - 400, 150);
+			var p2 = new Phaser.Math.Vector2(screenCenterX + 400, 150);
+			var p3 = new Phaser.Math.Vector2(screenCenterX + 400, 500);
 		
 			var curve = new Phaser.Curves.CubicBezier(p0, p1, p2, p3);
 		
@@ -92,7 +94,14 @@ export default class GameOver extends Phaser.Scene
 			{
 				
 				data.onRestart()
-				this.scene.wake('game')
+			
+				this.scene.stop('login')
+				this.scene.stop('game')
+				this.scene.stop('question')
+				this.scene.stop('answer')
+			
+				this.scene.wake('title')
+				this.scene.stop()
 			}
 		})
 

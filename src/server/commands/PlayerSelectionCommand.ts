@@ -1,97 +1,47 @@
 import { Command } from '@colyseus/command'
 import { Client } from 'colyseus'
 import ITicTacToeState, {  GameState } from '../../types/ITicTacToeState'
-import { Cell, Player, Answer } from '../TicTacToeState'
-import CheckWinnerCommand from './CheckWinnerCommand'
+import { Player } from '../TicTacToeState'
 
 type Payload = {
 	client: Client
-	index: number
-	value: boolean
-	score: number
+	cellId: number
 }
 
 export default class PlayerSelectionCommand extends Command<ITicTacToeState, Payload>
 {
 	execute(data: Payload)
 	{
-		const { client, index, value, score} = data
+		const { client, cellId } = data
 
-		if (this.room.state.gameState !== GameState.Playing)
-		{
-			
-		}
-
-		const clientIndex = this.room.clients.findIndex(c => c.id === client.id)
-		console.log(clientIndex)
-		if (clientIndex !== this.room.state.activePlayer)
-		{
-
-			return
-		}
-		
-
-
-		let player = this.room.state.players.get(clientIndex.toString())
-		
+		let cellKey = cellId.toString()
 	
+		if (this.room.state.gameState !== GameState.Playing)
+			return
+		
+		//const clientIndex = this.room.clients.findIndex(c => c.id === client.id)
+	
+		// If the player sending this action isn't the active player, ignore it
+		if (client.sessionId !== this.room.state.activePlayer)
+			return
 
-		this.state.ready = false
-
+		// Lock board until this play finishes
+		this.state.playersReady = false
+	
+		// Reset player readiness flags
 		this.room.state.players.forEach((value: Player, key: string)=> {
 			value.ready = false 
 		})
 
-		let cell = this.room.state.board.get(index.toString())
+		// update the current cell
+		let cell = this.room.state.board.get(cellKey)
 
-		if (cell) {
-
-			console.log('checking cell during room check')
-			console.log(cell)
-			console.log(cell.question)
-			console.log(cell.image)
-			cell.visible = false
-			cell.result = true
-
-
-			let newCell = new Cell()
-			newCell.category = cell.category
+		if (cell)
+		{			
+			const newCell = cell.clone()
 			newCell.visible = false
-			newCell.question = cell.question
-			newCell.result = true
-			newCell.value = cell.value
-			newCell.type = cell.type
-			newCell.image = cell.image
-			
-
-			cell.answers.forEach((value: Answer, key: string)=>{
-
-				let nAnswer = new Answer()
-				nAnswer.name = value.name
-				nAnswer.correct = value.correct
-
-				
-				newCell.answers.set(key,nAnswer)
-
-			})
-			
-
-
-			this.room.state.board.set(index.toString(), newCell)
-			this.room.state.turnSwitch = value
+			newCell.result = true 			
+			this.room.state.board.set(cellKey, newCell)	 // we reseat the cell to force an onChange event	
 		}
-		else {
-			console.log('console is null')
-		}
-		
-		
-		if (player) {
-	
-			this.room.state.players.set(clientIndex.toString(),player)
-			
-		}
-		//return [
-		//	new CheckWinnerCommand()
-		//]
 	}
 }
