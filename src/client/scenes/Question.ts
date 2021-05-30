@@ -2,6 +2,7 @@ import Phaser from 'phaser'
 import { IQuestionData } from '../../types/scenes'
 import type Server from '../services/Server'
 import { Answer } from '../../server/TicTacToeState'
+import Bootstrap from './Bootstrap'
 
 
 export default class Question extends Phaser.Scene
@@ -65,6 +66,7 @@ export default class Question extends Phaser.Scene
                 const screenCenterX = this.cameras.main.worldView.x + this.cameras.main.width / 2;
                 const screenCenterY = this.cameras.main.worldView.y + this.cameras.main.height / 2;
 
+                this.music?.stop()
                 let timeout = this.add.text(screenCenterX, 0,'TIME IS UP!').setFontFamily('impact').setFontSize(72).setShadow(4,4,'black',2,true).setOrigin(0.5).setColor('red')
                 var tween = this.tweens.add({
                     targets: timeout,
@@ -85,6 +87,8 @@ export default class Question extends Phaser.Scene
                     this.scene.stop()
                     this.scene.stop('answer')
                     this.scene.sleep('game')
+                    Bootstrap.openingmusic?.play();
+	
                     this.scene.start('answer', {
                         server: this.server,
                         question: this.question,
@@ -107,6 +111,8 @@ export default class Question extends Phaser.Scene
 	{
 
 
+        this.music?.stop()
+        this.answersound?.play()
         if (this.hasBeenAnwswered == true || this.timeExpired == true)
             return 
 
@@ -203,6 +209,8 @@ export default class Question extends Phaser.Scene
             this.time.delayedCall(4000, ()=> {
             this.scene.stop('answer')
             this.scene.stop()
+            Bootstrap.openingmusic?.play();
+	
             this.scene.start('answer', {
                 server: this.server,
                 question: this.question,
@@ -217,8 +225,16 @@ export default class Question extends Phaser.Scene
     }
        
 
+    private music?:Phaser.Sound.BaseSound
+    private answersound?: Phaser.Sound.BaseSound
 	async create(data: IQuestionData)
 	{
+        Bootstrap.openingmusic?.stop()
+        this.music = this.sound.add("question_music", { loop: true });
+
+       this.music.play();
+       this.answersound = this.sound.add("player_answer")
+
         document.addEventListener("visibilitychange", event => {
 			if (document.visibilityState == "visible") {
 			  console.log("tab is active -question")

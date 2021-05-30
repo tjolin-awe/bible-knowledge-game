@@ -43,6 +43,7 @@ export default class Login extends Phaser.Scene
     create(data: IGameSceneData) {           
        
 
+       let click = this.sound.add('click')
 		
 		const { server, onGameOver, currentcells, name, multiplayer } = data
 
@@ -183,6 +184,7 @@ export default class Login extends Phaser.Scene
 
     input.on('pointerup', function (pointer, x, y) {
 
+        click.play()
         var cx = Phaser.Math.Snap.Floor(x, 52, 0, true);
         var cy = Phaser.Math.Snap.Floor(y, 64, 0, true);
         var char = chars[cy][cx];

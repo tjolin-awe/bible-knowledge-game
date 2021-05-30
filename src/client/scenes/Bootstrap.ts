@@ -33,8 +33,15 @@ export default class Bootstrap extends Phaser.Scene
 	
 		this.load.image('logo','assets/logo.png')
 	
-		this.load.atlas('flares', 'assets/particles/flares.png', 'assets/particles/flares.json');
+		this.load.atlas('flares', 'assets/particles/flares.png', 'assets/particles/flares.json')
 	
+		    //  Firefox doesn't support mp3 files, so use ogg
+		this.load.audio('question_music', 'assets/music/question.ogg')
+		this.load.audio('player_answer', 'assets/sound/playeranswer.ogg')
+		this.load.audio('correct_answer', 'assets/sound/correct.ogg')
+		this.load.audio('opening','assets/music/opening.ogg')
+		this.load.audio('click','assets/sound/click.ogg')
+		this.load.audio('choose','assets/sound/choose.ogg')
 		console.log('preload')
 	}
 	
@@ -42,8 +49,11 @@ export default class Bootstrap extends Phaser.Scene
 	private logo?: Phaser.GameObjects.Image
 	private emitter?: Phaser.GameObjects.Particles.ParticleEmitter
 	private gameLaunched: boolean = false
+	static openingmusic?: Phaser.Sound.BaseSound
 	create()
 	{
+		Bootstrap.openingmusic = this.sound.add("opening", { loop: true, volume: 0.3});
+		Bootstrap.openingmusic?.play();
 		document.addEventListener("visibilitychange", event => {
 			if (document.visibilityState == "visible") {
 			  console.log("tab is active -bootstrap")

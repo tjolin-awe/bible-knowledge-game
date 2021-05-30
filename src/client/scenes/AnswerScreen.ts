@@ -2,6 +2,7 @@ import Phaser from 'phaser'
 import Base from 'phaser3-rex-plugins/plugins/gameobjects/containerlite/Base'
 import { IAnswerData } from '../../types/scenes'
 import type Server from '../services/Server'
+import Bootstrap from './Bootstrap'
 
 
 export default class AnswerScreen extends Phaser.Scene
@@ -39,8 +40,7 @@ export default class AnswerScreen extends Phaser.Scene
     async create(data: IAnswerData)
 	{
 		
-	
-		
+			
 		this.scene.sleep('game')
 
 		let { server, question, image, answer, correctAnswer, timeout } = data

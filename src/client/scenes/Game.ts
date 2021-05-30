@@ -4,6 +4,7 @@ import ITicTacToeState, { GameState, ICell, IPlayer } from '../../types/ITicTacT
 import type Server from '../services/Server'
 import {  MapSchema } from '@colyseus/schema'
 import { Cell, Player } from '../../server/TicTacToeState'
+import Bootstrap from './Bootstrap'
 
 // add to top of file to help with typing
 interface TrailToData
@@ -22,6 +23,7 @@ export default class Game extends Phaser.Scene {
 	private turnText?: Phaser.GameObjects.Text
 	private player1score?: Phaser.GameObjects.Text
 	private player2score?: Phaser.GameObjects.Text
+	private choose?: Phaser.Sound.BaseSound
 	
 	private lastSquare?: Phaser.GameObjects.Image
 	private waitMessage?: Phaser.GameObjects.Text
@@ -40,6 +42,7 @@ export default class Game extends Phaser.Scene {
 	private handleCollectMoney(obj1: Phaser.GameObjects.Image, obj2: Phaser.GameObjects.Text, score: number)
 	{
 		
+		this.answersound?.play()
 		console.log('emit trail')
 		console.log(`x = ${obj2.x}`)
 		this.events.emit('trail-to', {
@@ -96,11 +99,15 @@ export default class Game extends Phaser.Scene {
 					trail.explode(50, data.toX, data.toY)
 					trail.stop()
 	
+				
 					data.display.setText(data.score.toString())
 					data.display?.setColor(data.score >= 0 ? 'white' : 'red')
 					this.time.delayedCall(1000, () => {
 						particles.removeEmitter(trail)
 					})
+
+					this.tweens.add({ targets: data.display, duration: 1000, scale: 1.3, ease: 'Sine.easeInOut', yoyo: true });
+
 				}
 			})
 		})
@@ -131,9 +138,12 @@ export default class Game extends Phaser.Scene {
 
 	private stopcurrentaction: boolean = false
 	private lastAmount: number = 0
+	private answersound? : Phaser.Sound.BaseSound
 	async create(data: IGameSceneData) {
 
+		this.answersound = this.sound.add('correct_answer')
 	
+		this.choose = this.sound.add('choose')
 		document.addEventListener("visibilitychange", event => {
 			if (document.visibilityState == "visible") {
 				console.log("tab is active -game")
@@ -177,6 +187,7 @@ export default class Game extends Phaser.Scene {
 		});
 
 
+		
 
 		const { server, onGameOver, currentcells, name, multiplayer } = data	
 
@@ -224,6 +235,8 @@ export default class Game extends Phaser.Scene {
 		this.add.image(screenCenterX,10,'notification')
 		this.turnText = this.add.text(screenCenterX, 30, 'Waiting for another player')
 			.setOrigin(0.5).setFontFamily('Impact').setFontSize(32)
+
+		this.tweens.add({ targets: this.turnText, duration: 1000, scale: 1.05, ease: 'Sine.easeInOut', yoyo: true, loop:-1 });
 
 		const { width, height } = this.scale
 		const sizex = 180
@@ -286,6 +299,7 @@ export default class Game extends Phaser.Scene {
 
 						
 							let turn = this.server?.makeSelection(Number.parseInt(idx))
+							this.choose?.play()
 							console.log(turn)
 							if (turn?.result == false) {
 						

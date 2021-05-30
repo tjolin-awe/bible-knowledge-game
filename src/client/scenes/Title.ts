@@ -4,6 +4,7 @@ import ITicTacToeState, { GameState, ICell, IPlayer } from '../../types/ITicTacT
 import type Server from '../services/Server'
 import { text } from 'express'
 import { Schema, ArraySchema, MapSchema, type } from '@colyseus/schema'
+import Bootstrap from './Bootstrap'
 
 
 
@@ -34,6 +35,10 @@ export default class Title extends Phaser.Scene {
     private emitter: Phaser.GameObjects.Particles.ParticleEmitter | undefined
     create(data: IGameSceneData) {
 
+       
+       
+        let click = this.sound.add('click')
+	
 
 
         const { server, onGameOver, currentcells } = data
@@ -117,10 +122,12 @@ export default class Title extends Phaser.Scene {
 
         playMenuItem.on('pointerup', () => {
 
+            click.play()
             this.login(false)
         })
 
         multiMenuItem.on('pointerup', () => {       
+            click.play()
             this.login(true)
         })
 

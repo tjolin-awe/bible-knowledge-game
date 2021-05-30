@@ -5,7 +5,7 @@ import { Server } from 'colyseus'
 import { monitor } from '@colyseus/monitor'
 import TicTacToe, { BKGSingle } from './TicTacToe'
 
-const port = Number(process.env.PORT || 2567)
+const port = Number(process.env.PORT || 9091)
 const app = express()
 
 app.use(cors())
