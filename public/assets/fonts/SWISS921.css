@@ -1,0 +1,10 @@
+@font-face {
+	font-family: 'swiss921';
+	src: url('SWISS921.eot');
+	src: local('☺'),
+		url('SWISS921.woff') format('woff'),
+		url('SWISS921.ttf') format('truetype'),
+		url('SWISS921.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}

@@ -1,5 +1,6 @@
 import Phaser from 'phaser'
 import Base from 'phaser3-rex-plugins/plugins/gameobjects/containerlite/Base'
+import { BKG } from '../../types/BKG'
 import { IAnswerData } from '../../types/scenes'
 import type Server from '../services/Server'
 import Bootstrap from './Bootstrap'
@@ -22,24 +23,12 @@ export default class AnswerScreen extends Phaser.Scene
 
 
 	
-	preload() {
-
-		
-		
-		this.load.image('question_background', 'assets/question_background.png')
-	
-		this.load.atlas('flood', 'assets/blobs.png', 'assets/blobs.json')
-		this.load.image('block', 'assets/50x50-black.png')
-		this.load.atlas('flares', 'assets/particles/flares.png', 'assets/particles/flares.json');
-	
-	}
-
-	
-	
 	private blocks?:Phaser.GameObjects.Group
     async create(data: IAnswerData)
 	{
-		
+		let fontAnswer = {font: '46px ' + BKG.text['GAMEFONT'], fill: 'white', stroke: 'black', strokeThickness: 6}
+		let fontTitle = {font: '72px ' + BKG.text['FONT'], fill: 'white', stroke: 'black', strokeThickness: 16}
+      
 			
 		this.scene.sleep('game')
 
@@ -59,17 +48,15 @@ export default class AnswerScreen extends Phaser.Scene
 	
 			this.card.setTexture(image)
 
-			let status = this.add.text(screenCenterX, 30, '').setFontSize(72).setFontFamily('impact').setOrigin(0.5)
+			let status = this.add.text(screenCenterX, 30, '',fontTitle).setOrigin(0.5)
 		
 			if (timeout) {
-				this.add.text(screenCenterX, 100,'The correct answer is ' + correctAnswer.name).setFontFamily('swiss921')
-				.setFontSize(48).setShadow(2,2,'black',2,true).setOrigin(0.5).setFontStyle('bold')
+				this.add.text(screenCenterX, 120,'The correct answer is ' + correctAnswer.name, fontAnswer).setOrigin(0.5).setFontStyle('bold')
 				.setWordWrapWidth(this.cameras.main.width * 0.8).setAlign('center')
 			} else {
 				if (answer.correct == false){
 					status.setColor('red').setText('INCORRECT!')
-					this.add.text(screenCenterX, 100, 'The correct answer is ' + correctAnswer.name).setFontFamily('swiss921')
-					.setFontSize(48).setShadow(2,2,'black',2,true).setOrigin(0.5).setFontStyle('bold')
+					this.add.text(screenCenterX, 120, 'The correct answer is ' + correctAnswer.name, fontAnswer).setOrigin(0.5).setFontStyle('bold')
 					.setWordWrapWidth(this.cameras.main.width * 0.8).setAlign('center')
 
 				} else {

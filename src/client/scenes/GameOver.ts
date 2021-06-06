@@ -8,13 +8,7 @@ export default class GameOver extends Phaser.Scene
 		super('game-over')
 	}
 
-	preload()
-	{
-		this.load.image('spark0', 'assets/green.png');
-		this.load.image('spark1', 'assets/particles/red.png');
-		this.load.image('winscreen','assets/winscreen.png')
-		
-	}
+	
 
 	create(data: IGameOverSceneData)
 	{

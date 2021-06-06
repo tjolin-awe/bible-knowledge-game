@@ -5,6 +5,7 @@ import type Server from '../services/Server'
 import {  MapSchema } from '@colyseus/schema'
 import { Cell, Player } from '../../server/TicTacToeState'
 import Bootstrap from './Bootstrap'
+import { BKG } from '../../types/BKG'
 
 // add to top of file to help with typing
 interface TrailToData
@@ -123,17 +124,7 @@ export default class Game extends Phaser.Scene {
 	}
 
 
-	preload() {
-
-
-		this.load.image('player', 'assets/player.png')
-		this.load.image('nametag', 'assets/nametag.png')
-		this.load.image('square','assets/square.png')
-		this.load.image('notification', 'assets/notification.png')
-		this.load.image('star', 'assets/star.png')
-
 	
-	}
 
 
 	private stopcurrentaction: boolean = false
@@ -141,6 +132,8 @@ export default class Game extends Phaser.Scene {
 	private answersound? : Phaser.Sound.BaseSound
 	async create(data: IGameSceneData) {
 
+		
+		
 		this.answersound = this.sound.add('correct_answer')
 	
 		this.choose = this.sound.add('choose')
@@ -230,29 +223,52 @@ export default class Game extends Phaser.Scene {
 		const screenCenterX = this.cameras.main.worldView.x + this.cameras.main.width / 2;
 		const screenCenterY = this.cameras.main.worldView.y + this.cameras.main.height / 2;
 
-		this.add.image(0, 0, 'background2').setDisplaySize(this.game.scale.width, this.game.scale.height).setOrigin(0)
+		var fontScore = {font: '24px ' + BKG.text['FONT'], fill: 'white', stroke: 'black', strokeThickness: 4}
+		var fontTitle = {font: '32px ' + BKG.text['FONT'], fill: 'white', stroke: 'black', strokeThickness: 6}
+
+		if (this.game.device.os.desktop){
+			this.add.image(0, 0, 'background2').setDisplaySize(this.game.scale.width, this.game.scale.height).setOrigin(0)
 	
-		this.add.image(screenCenterX,10,'notification')
-		this.turnText = this.add.text(screenCenterX, 30, 'Waiting for another player')
-			.setOrigin(0.5).setFontFamily('Impact').setFontSize(32)
+		} else {
+		this.add.image(-120, 0, 'background2').setDisplaySize(this.game.scale.width + 250, this.game.scale.height).setOrigin(0)
+		}
+		let notification = this.add.image(screenCenterX,10,'notification')
+		this.turnText = this.add.text(screenCenterX, 30, 'Waiting for another player', fontTitle)
+			.setOrigin(0.5).setWordWrapWidth(notification.width - 20)
 
 		this.tweens.add({ targets: this.turnText, duration: 1000, scale: 1.05, ease: 'Sine.easeInOut', yoyo: true, loop:-1 });
 
 		const { width, height } = this.scale
-		const sizex = 180
-		const sizey = 120
 
-		let x = 1
+		let sizex = 0
+		let sizey = 0
+		if(this.sys.game.device.os.desktop) {
+			sizex = 180
+			sizey = 120
+			
+		} else {
+			sizex = 130//  180
+			sizey = 130// 120
+		}
+
+		let x = this.game.device.os.desktop ? 1 : 0
 		let y = 1
 		let squareval = 0
-
+		var fontSquares = {font: '42px ' + BKG.text['GAMEFONT'], fill: '#cd934a', stroke: 'black', strokeThickness: 6}
+        var fontCategories = {font: '24px ' + BKG.text['GAMEFONT'], fill: 'white', stroke: 'black', strokeThickness: 4}
+       
 		state.board.forEach((cellState, idx) => {
 
-			let cellposx = x  * sizex + sizex / 2 + 10
-			let cellposy = y  * sizey + sizey / 2
-			const cell = this.add.image(cellposx, cellposy,'square').setOrigin(0.5,0.5).setDisplaySize(sizex -10, sizey -10)
-			let text = this.add.text(0, 0, '')
+			let cellposx = x  * sizex + sizex / 2 
+			let cellposy = y  * sizey + sizey / 2 + 12
 
+			if (x == 0)
+				cellposx -= 1
+		
+			const cell = this.add.image(cellposx, cellposy,'square').setOrigin(0.5,0.5).setDisplaySize(sizex -5, sizey -5)
+			let text =  cellState.type == 0 ? this.add.text(cellposx, cellposy,'', fontCategories) : this.add.text(cellposx,cellposy,'',fontSquares) 
+
+			console.log(cellposx, cellposy)
 			this.cells.push({
 				display: cell,
 				value: cellState,
@@ -271,28 +287,25 @@ export default class Game extends Phaser.Scene {
 			
 				if (cellState.type == 0) {
 					cell.setTexture('header')
-					text.setPosition(cellposx, cellposy)
-					text.setText(cellState.category).setWordWrapWidth(sizex - 10)
-						.setAlign('left').setOrigin(0.5)
-						.setColor('white')
-						.setFontSize(24)
-						.setFontFamily('swiss921').setFontStyle('bold').setShadow(2, 2, 'black', 2, false, true)
+					text.setText(cellState.category)
+					
+					text.setWordWrapWidth(sizex - 10).setAlign('left').setOrigin(0.5)
 
 				}
 				else {
 					cell.setTexture('square')
-					text.setPosition(cellposx, cellposy).setOrigin(0.5)
+					text.setOrigin(0.5)
 					text.setText('$' + (cellState.value).toString())
-						.setPipeline('Light2D').setColor('#cd934a').setFontSize(48).setFontFamily('swiss921').setFontStyle('bold').setShadow(2, 2, 'black', 2, true, true).setLineSpacing(0.5)
+					text.setPipeline('Light2D')
 					text.setInteractive().on('pointerover', () => {
 
 						cell.setTexture('header')
-						text.setFontSize(50)
+						text.setFontSize(48)
 					})
 					text.setInteractive().on('pointerout', function () {
 
 						cell.setTexture('square')
-						text.setFontSize(48)
+						text.setFontSize(42)
 					}).on(Phaser.Input.Events.GAMEOBJECT_POINTER_UP, () => {
 
 					
@@ -333,9 +346,16 @@ export default class Game extends Phaser.Scene {
 
 			x++
 
-			if (x > 5) {
-				x = 1
-				y++
+			if (this.game.device.os.desktop){
+				if (x > 5) {
+					x = 1
+					y++
+				}
+			} else {
+				if (x > 4) {
+					x = 0
+					y++
+				}
 			}
 
 		})
@@ -558,6 +578,8 @@ export default class Game extends Phaser.Scene {
 	private handleGameStateChanged(state: GameState) {
 		if (state === GameState.Playing) {
 
+			var fontScore = {font: '32px ' + BKG.text['FONT'], fill: 'white', stroke: 'black', strokeThickness: 4}
+		
 			if (!this.server)
 				return
 			if (!this.server.players)
@@ -567,18 +589,18 @@ export default class Game extends Phaser.Scene {
 			
 			
 
-				let col1 = 80
+				let col1 = 60
 				let col2 = this.game.scale.width - col1
 				
 				console.log('HANDLE GAMESTATE CHANGE!')
 				
 				let player = this.server.players.get(this.server.playerId)
 				if (player) {
-					this.add.image(col1, 140, 'nametag').setOrigin(0.5).setDepth(998).alpha = 0.7
-				    this.player1img = this.add.image(col1, 60,'player').setOrigin(0.5,0.5).setDepth(998)
+					this.add.image(col1, 120, 'nametag').setOrigin(0.5).setDepth(998).alpha = 0.7
+				    this.player1img = this.add.image(col1, 50,'player').setOrigin(0.5,0.5).setDepth(998)
 					this.player1img.alpha = 0.7
-					this.player1score = this.add.text(80, 135,'').setFontSize(32).setShadow(2,2,'black').setFontFamily('impact').setOrigin(0.5).setDepth(999)						
-					this.add.text(col1, 85, player.name).setFontSize(24).setShadow(2, 2, 'black').setFontFamily('impact').setOrigin(0.5,0.5).setDepth(999)
+					this.player1score = this.add.text(60, 115,'',fontScore).setOrigin(0.5).setDepth(999)						
+					this.add.text(col1, 80, player.name, fontScore).setOrigin(0.5,0.5).setDepth(999)
 					
 					var shape3 = new Phaser.Geom.Rectangle(0, 0, this.player1img.width, this.player1img.height)
 					var particles = this.add.particles('flares')
@@ -610,11 +632,11 @@ export default class Game extends Phaser.Scene {
 
 				
 				if (opponent !== undefined) {
-					this.add.image(col2, 140, 'nametag').setOrigin(0.5).setDepth(998).alpha = 0.7
-					this.player2img = this.add.image(col2, 60,'player').setOrigin(0.5,0.5).setDepth(998)
+					this.add.image(col2, 120, 'nametag').setOrigin(0.5).setDepth(998).alpha = 0.7
+					this.player2img = this.add.image(col2, 50,'player').setOrigin(0.5,0.5).setDepth(998)
 					this.player2img.alpha = 0.7
-					this.player2score = this.add.text(col2, 135,'').setFontSize(32).setShadow(2,2,'black').setFontFamily('impact').setOrigin(0.5).setDepth(999)						
-					this.add.text(col2, 85, opponent.name).setFontSize(24).setShadow(2, 2, 'black').setFontFamily('impact').setOrigin(0.5,0.5).setDepth(999)
+					this.player2score = this.add.text(col2, 115,'',fontScore).setOrigin(0.5).setDepth(999)						
+					this.add.text(col2, 80, opponent.name, fontScore).setDepth(999).setOrigin(0.5)
 					
 				}
 				}

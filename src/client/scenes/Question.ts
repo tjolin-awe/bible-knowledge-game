@@ -3,6 +3,7 @@ import { IQuestionData } from '../../types/scenes'
 import type Server from '../services/Server'
 import { Answer } from '../../server/TicTacToeState'
 import Bootstrap from './Bootstrap'
+import { BKG } from '../../types/BKG'
 
 
 export default class Question extends Phaser.Scene
@@ -19,17 +20,9 @@ export default class Question extends Phaser.Scene
 		
 	}
 
-
-	preload() {
-
-		this.load.image('question_background', 'assets/question_background.png')
-	
-		this.load.atlas('flood', 'assets/blobs.png', 'assets/blobs.json');
-	}
-
     
     
-    startCounter:number = 7
+    startCounter:number = 10
     start_text?: Phaser.GameObjects.Text
     emitter?:Phaser.GameObjects.Particles.ParticleEmitter
 
@@ -67,10 +60,12 @@ export default class Question extends Phaser.Scene
                 const screenCenterY = this.cameras.main.worldView.y + this.cameras.main.height / 2;
 
                 this.music?.stop()
-                let timeout = this.add.text(screenCenterX, 0,'TIME IS UP!').setFontFamily('impact').setFontSize(72).setShadow(4,4,'black',2,true).setOrigin(0.5).setColor('red')
+                let fontTimeout= {font: '120px ' + BKG.text['GAMEFONT'], fill: 'red', stroke: 'black', strokeThickness: 24}
+       
+                let timeout = this.add.text(screenCenterX, 0,'TIME IS UP!',fontTimeout).setOrigin(0.5)
                 var tween = this.tweens.add({
                     targets: timeout,
-                    y: 300,
+                    y: BKG.world.centerY,
                     ease: 'Bounce',
                     duration: 1000,
                     yoyo: false,
@@ -133,11 +128,12 @@ export default class Question extends Phaser.Scene
         let playerobj = this.server?.players?.get(answer.player)
 
             if (playerobj && answer.player != this.server?.playerId) {
-                
-                let playertext = this.add.text(0, screenBottomY,playerobj.name + '  has ANSWERED!').setFontFamily('impact').setFontSize(48).setShadow(4,4,'black',2,true).setOrigin(0,0).setColor('white')
+                let fontAnswerPlayer = {font: '46px ' + BKG.text['FONT'], fill: 'white', stroke: 'black', strokeThickness: 6}
+       
+                let playertext = this.add.text(0, screenBottomY,playerobj.name + '  has ANSWERED!',fontAnswerPlayer).setOrigin(0.5)
                 var tween = this.tweens.add({
                     targets: playertext,
-                    x: 200,
+                    x: BKG.world.centerX,
                     ease: 'Elastic',
                     duration: 3000,
                     yoyo: false,
@@ -229,6 +225,13 @@ export default class Question extends Phaser.Scene
     private answersound?: Phaser.Sound.BaseSound
 	async create(data: IQuestionData)
 	{
+
+       let fontTitle = {font: '42px ' + BKG.text['FONT'], fill: '#cd934a', stroke: 'black', strokeThickness: 6}
+         let fontQuestion = {font: '48px ' + BKG.text['FONT'], fill: '#ffffff', stroke: 'black', strokeThickness: 6}
+        let fontAnswer = {font: '46px ' + BKG.text['FONT'], fill: 'white', stroke: 'black', strokeThickness: 6}
+        let fontTimeout = {font: '120px ' + BKG.text['FONT'], fill: '#cd934a', stroke: 'black', strokeThickness: 24}
+       
+       
         Bootstrap.openingmusic?.stop()
         this.music = this.sound.add("question_music", { loop: true });
 
@@ -250,7 +253,7 @@ export default class Question extends Phaser.Scene
 		  })
 
         this.hasBeenAnwswered =false
-            this.startCounter = 7
+            this.startCounter = 10
             this.answers = []
             const { server, question, image, answers, category, amount} = data
              this.server = server
@@ -269,19 +272,16 @@ export default class Question extends Phaser.Scene
 
             const screenCenterX = this.cameras.main.worldView.y + this.cameras.main.width / 2;
             const screenCenterY = this.cameras.main.worldView.y + this.cameras.main.height /2;
-            let header = this.add.text(screenCenterX, 30, category).setOrigin(0.5).setFontFamily('impact')
-            .setFontSize(42).setColor('#cd934a').setFontStyle('bold').setShadow(2,2,'black',2,true).setPipeline('Light2D')
-            this.add.text(screenCenterX, 70, "FOR " + amount.toString()).setOrigin(0.5).setColor('#cd940a')
-            .setFontFamily('swiss921').setFontSize(32).setFontStyle('bold').setShadow(2,2,'black',2,true)
-            .setPipeline('Light2D')
+            let header = this.add.text(screenCenterX, 30, category.toUpperCase(), fontTitle).setOrigin(0.5).setPipeline('Light2D')
+            this.add.text(screenCenterX, 70, "FOR " + amount.toString(), fontTitle).setOrigin(0.5).setPipeline('Light2D')
+            
             this.lights.addLight(screenCenterX - header.width / 2, 50, 280).setIntensity(2);
             this.lights.addLight(screenCenterX, 50, 280).setIntensity(3);
             this.lights.addLight(screenCenterX + header.width / 2, 50, 280).setIntensity(2);
             this.lights.disable().enable()
          
-            this.add.text(screenCenterX, 150,question).setFontFamily('swiss921')
-            .setFontSize(48).setShadow(2,2,'black',2,true).setOrigin(0.5).setFontStyle('bold')
-            .setWordWrapWidth(this.cameras.main.width * 0.8).setAlign('center')
+            this.add.text(screenCenterX, 200,question, fontQuestion)
+            .setWordWrapWidth(this.cameras.main.width * 0.8).setAlign('center').setOrigin(0.5)
      
 
             
@@ -297,7 +297,7 @@ export default class Question extends Phaser.Scene
                 frequency: 32,
                 blendMode: 'ADD'
             });
-            this.start_text = this.add.text(screenCenterX, screenCenterY, this.startCounter.toString()).setFontSize(120).setColor('white')
+            this.start_text = this.add.text(screenCenterX, screenCenterY, this.startCounter.toString(), fontTimeout).setColor('white')
             .setStroke('black',12).setOrigin(0.5)
 
             //this.emitter.startFollow(this.start_text)
@@ -306,8 +306,18 @@ export default class Question extends Phaser.Scene
             let i = 0
             const col1 = this.cameras.main.worldView.x + this.cameras.main.width / 4;
             const col2 = this.cameras.main.worldView.x + this.cameras.main.width - col1 
-            const row1 = 350
-            const row2 = 450
+
+
+            let row1 = BKG.world.centerY + 100
+
+           
+            let row2 = row1 + 100
+
+            if (this.game.device.os.desktop){
+                row1 = 350
+                row2 = 450
+            }
+           
             answers.forEach((value: Answer, key: string)=> {
 
                 let col,row = 0
@@ -330,8 +340,7 @@ export default class Question extends Phaser.Scene
                     row = row2
                 }
             
-                let display = this.add.text(col, row, value.name, { fontFamily: "swiss921" })
-                .setFontSize(52).setStroke('black', 16).setShadow(2, 2, "black", 2, false, true)
+                let display = this.add.text(col, row, value.name, fontAnswer)
                 .setOrigin(0.5).setFontStyle('bold').setInteractive().on('pointerover', ()=>{
                     if (this.timeExpired == false)
                         display.setColor('#cd934a').setFontStyle('bold')

@@ -1,5 +1,9 @@
 import { getRoomById } from 'colyseus/lib/MatchMaker'
+import { World } from 'matter'
 import Phaser from 'phaser'
+import WebFont from 'webfontloader'
+import { BKG } from '../../types/BKG'
+
 import { IGameOverSceneData } from '../../types/scenes'
 import Server from '../services/Server'
 
@@ -20,29 +24,20 @@ export default class Bootstrap extends Phaser.Scene
 
 	preload() {
 
-
-		this.load.atlas('flood', 'assets/blobs.png', 'assets/blobs.json');
-		this.load.image('background2', 'assets/character-select.png')
-		this.load.image('green', 'assets/green.png')
-		this.load.image('red', 'assets/particles/red.png')
-		this.load.image('square', 'assets/square.png')
-		this.load.image('square_highlighted','assets/square_highlighted.png')
-
-		this.load.image('header','assets/header.png')
-
 	
+
+		
+		this.load.image('background', 'assets/background.png')
+		this.load.image('loading-background', 'assets/loading-background.png')
+		this.load.image('overlay', 'assets/overlay.png')
 		this.load.image('logo','assets/logo.png')
+		this.load.image('bible','assets/bible_img.png')
+		this.load.atlas('flares', 'assets/particles/flares.png', 'assets/particles/flares.json')	
 	
-		this.load.atlas('flares', 'assets/particles/flares.png', 'assets/particles/flares.json')
+		WebFont.load({ custom: { families: ['Berlin'], urls: ['assets/fonts/BRLNSDB.css'] } });
+		WebFont.load({ custom: { families: ['swiss921'], urls: ['assets/fonts/SWISS921.css'] } });
 	
-		    //  Firefox doesn't support mp3 files, so use ogg
-		this.load.audio('question_music', 'assets/music/question.ogg')
-		this.load.audio('player_answer', 'assets/sound/playeranswer.ogg')
-		this.load.audio('correct_answer', 'assets/sound/correct.ogg')
-		this.load.audio('opening','assets/music/opening.ogg')
-		this.load.audio('click','assets/sound/click.ogg')
-		this.load.audio('choose','assets/sound/choose.ogg')
-		console.log('preload')
+
 	}
 	
 
@@ -52,8 +47,18 @@ export default class Bootstrap extends Phaser.Scene
 	static openingmusic?: Phaser.Sound.BaseSound
 	create()
 	{
-		Bootstrap.openingmusic = this.sound.add("opening", { loop: true, volume: 0.3});
-		Bootstrap.openingmusic?.play();
+		
+		BKG.world = {
+            width: this.cameras.main.width,
+            height: this.cameras.main.height,
+            centerX: this.cameras.main.centerX,
+            centerY: this.cameras.main.centerY
+        };
+        BKG.Lang.updateLanguage('en');
+        BKG.text = BKG.Lang.text[BKG.Lang.current];
+		
+		
+	
 		document.addEventListener("visibilitychange", event => {
 			if (document.visibilityState == "visible") {
 			  console.log("tab is active -bootstrap")
@@ -143,18 +148,20 @@ export default class Bootstrap extends Phaser.Scene
 	
 		return */
 
-		this.cameras.main.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, (cam, effect) => {
+		
+		
+		this.cameras.main.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, (cam: Phaser.Cameras.Scene2D.Camera, effect: Phaser.Cameras.Scene2D.Effects.Fade) => {
 
 			this.logo?.destroy()
-		this.emitter?.stop()
+			this.emitter?.stop()
 		
-		this.gameLaunched = true
-		this.scene.launch('title', {
-			server: this.server,
-			onGameOver: this.handleGameOver,
-		
+			this.gameLaunched = true
+			this.scene.launch('preloader', {
+				server: this.server,
+				onGameOver: this.handleGameOver,
+			
 
-		})
+			})
 	
 	})
 	
