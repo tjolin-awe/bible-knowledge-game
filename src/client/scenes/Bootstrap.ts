@@ -59,28 +59,12 @@ export default class Bootstrap extends Phaser.Scene
 		
 		
 	
-		document.addEventListener("visibilitychange", event => {
-			if (document.visibilityState == "visible") {
-			  console.log("tab is active -bootstrap")
-
-			   if (this.gameLaunched)
-			   {
-				   
-				   
-				
-			   }
-
-			} else {
-			  
-			}
-		  })
-
-		  const screenCenterX = this.cameras.main.worldView.x + this.cameras.main.width / 2;
-		  const screenCenterY = this.cameras.main.worldView.y + this.cameras.main.height /2;
-	 
+		
+			
+		
 		var textures = this.textures;
 
-		let logo = this.add.image(screenCenterX,screenCenterY, 'logo').setOrigin(0.5)
+		let logo = this.add.image(BKG.world.centerX,BKG.world.centerY, 'logo').setOrigin(0.5)
 
 		this.logo = logo
 		var origin = this.logo.getTopLeft();

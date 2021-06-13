@@ -130,7 +130,7 @@ export default class Game extends Phaser.Scene {
 	private stopcurrentaction: boolean = false
 	private lastAmount: number = 0
 	private answersound? : Phaser.Sound.BaseSound
-	async create(data: IGameSceneData) {
+	create(data: IGameSceneData) {
 
 		
 		
@@ -215,7 +215,7 @@ export default class Game extends Phaser.Scene {
 			console.log('game onStart event END')
 		})
 
-		await this.server.join(name, multiplayer)
+		this.server.join(name, multiplayer)
 
 	}
 

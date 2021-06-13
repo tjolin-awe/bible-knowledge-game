@@ -7,8 +7,10 @@ export default class Preloader extends Phaser.Scene {
     }
     preload() {
 		this.add.sprite(0, 0, 'overlay').setOrigin(0).setDisplaySize(this.game.scale.width, this.game.scale.height)
-        var logoEnclave = this.add.sprite(BKG.world.centerX, BKG.world.centerY-100, 'bible').setScale(0.5)
-        logoEnclave.setOrigin(0.5, 0.5);
+        var bible = this.add.sprite(BKG.world.centerX, BKG.world.centerY-100, 'bible').setScale(0.5)
+        bible.setOrigin(0.5, 0.5);
+		this.tweens.add({ targets: bible, duration: 2000, scale: 0.6, ease: 'Sine.easeInOut', yoyo:true, loop:-1 });
+       
 		var loadingBg = this.add.sprite(BKG.world.centerX, BKG.world.centerY+100, 'loading-background');
 		loadingBg.setOrigin(0.5, 0.5);
 
@@ -27,6 +29,7 @@ export default class Preloader extends Phaser.Scene {
 			'image': [
 				
 				['title', 'assets/title.png'],
+				['gamelogo','assets/gamelogo.png'],
 				['question_background', 'assets/question_background.png'],
 				['rub','assets/input/rub.png'],
 				['background2', 'assets/character-select.png'],
@@ -42,7 +45,9 @@ export default class Preloader extends Phaser.Scene {
 				['loginbackground','assets/loginbackground.png'],
 				['spark0', 'assets/green.png'],
 				['spark1', 'assets/particles/red.png'],
-				['winscreen','assets/winscreen.png']
+				['winscreen','assets/winscreen.png'],
+			    ['singleplayer_button','assets/singleplayer_button.png'],
+				['multiplayer_button','assets/multiplayer_button.png'],
 			],
 			'spritesheet': [
 				['button-start', 'assets/button-start.png', {frameWidth:180,frameHeight:180}],
@@ -61,13 +66,14 @@ export default class Preloader extends Phaser.Scene {
 				['button-back', 'assets/button-back.png', {frameWidth:70,frameHeight:70}]
 
 			],
+		
 			'audio': [
-				['question_music', 'assets/music/question.ogg'],
-				['player_answer', 'assets/sound/playeranswer.ogg'],
-				['correct_answer', 'assets/sound/correct.ogg'],
-				['opening','assets/music/opening.ogg'],
-				['click','assets/sound/click.ogg'],
-				['choose','assets/sound/choose.ogg'],
+				['question_music', ['assets/music/question.ogg', 'assets/music/question.mp3']],
+				['player_answer', ['assets/sound/playeranswer.ogg','assets/sound/playeranswer.mp3']],
+				['correct_answer', ['assets/sound/correct.ogg','assets/sound/correct.mp3']],
+				['opening',['assets/music/opening.ogg','assets/music/opening.mp3']],
+				['click',['assets/sound/click.ogg','assets/sound/click.mp3']],
+				['choose',['assets/sound/choose.ogg','assets/sound/choose.mp3']],
 				['startbtn', 'assets/startbtn.png']
 			],
 		}
@@ -80,6 +86,8 @@ export default class Preloader extends Phaser.Scene {
 		};
     }
     create(data: IGameSceneData) {
+
+		
 		BKG.fadeOutScene('title', this, data);
 	}
 }

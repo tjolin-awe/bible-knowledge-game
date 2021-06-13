@@ -24,7 +24,7 @@ export default class AnswerScreen extends Phaser.Scene
 
 	
 	private blocks?:Phaser.GameObjects.Group
-    async create(data: IAnswerData)
+    create(data: IAnswerData)
 	{
 		let fontAnswer = {font: '46px ' + BKG.text['GAMEFONT'], fill: 'white', stroke: 'black', strokeThickness: 6}
 		let fontTitle = {font: '72px ' + BKG.text['FONT'], fill: 'white', stroke: 'black', strokeThickness: 16}

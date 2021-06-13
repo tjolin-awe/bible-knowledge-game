@@ -20,7 +20,7 @@ export default class Story extends Phaser.Scene
         this.add.text(BKG.world.centerX,30,'Select game mode', fontTitle).setOrigin(0.5)
 
 
-        let singleMenuItem = this.add.text(BKG.world.centerX,BKG.world.centerY - 100, 'Single Player',fontMenu)
+        let singleMenuItem = this.add.image(BKG.world.centerX,BKG.world.centerY - 100, 'singleplayer_button')
         .setOrigin(0.5).setInteractive().on('pointerup',()=>{
             this.scene.start('game', {
                 server: server,
@@ -32,16 +32,15 @@ export default class Story extends Phaser.Scene
         }).on('pointerover',()=>{
             this.tweens.add({ targets:  singleMenuItem, duration: 500, scale: 1.2, ease: 'Sine.easeInOut' })
 
-            singleMenuItem.setColor('#cd934a')
         }).on('pointerout', ()=> {
             this.tweens.add({ targets:  singleMenuItem, duration: 500, scale: 1, ease: 'Sine.easeInOut' })
-            singleMenuItem.setColor('white')
+           
         })
         
 
 
 
-        let multiMenuItem = this.add.text(BKG.world.centerX,BKG.world.centerY + 100, 'Mulit Player',fontMenu)
+        let multiMenuItem = this.add.image(BKG.world.centerX,BKG.world.centerY + 100, 'multiplayer_button')
         .setOrigin(0.5).setInteractive().on('pointerup',()=>{
             this.scene.start('game', {
                 server: server,
@@ -52,11 +51,19 @@ export default class Story extends Phaser.Scene
             })
         }).on('pointerover',()=>{
             this.tweens.add({ targets:  multiMenuItem, duration: 500, scale: 1.2, ease: 'Sine.easeInOut' })
-            multiMenuItem.setColor('#cd934a')
+
         }).on('pointerout', ()=> {
             this.tweens.add({ targets:  multiMenuItem, duration: 500, scale: 1, ease: 'Sine.easeInOut' })
-            multiMenuItem.setColor('white')
+           
         })
+
+        this.tweens.add({targets: multiMenuItem, angle: multiMenuItem.angle-2, duration: 1100, ease: 'Sine.easeInOut' });
+        this.tweens.add({targets: multiMenuItem, angle: multiMenuItem.angle+3, duration: 2000, ease: 'Sine.easeInOut', yoyo: 1, loop: -1, delay: 1000 });
+
+        this.tweens.add({targets: singleMenuItem, angle: singleMenuItem.angle+4, duration: 1000, ease: 'Sine.easeInOut' });
+        this.tweens.add({targets: singleMenuItem, angle: singleMenuItem.angle-1, duration: 1500, ease: 'Sine.easeInOut', yoyo: 1, loop: -1, delay: 1000 });
+
+     
       
     }
 

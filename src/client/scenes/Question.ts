@@ -223,7 +223,7 @@ export default class Question extends Phaser.Scene
 
     private music?:Phaser.Sound.BaseSound
     private answersound?: Phaser.Sound.BaseSound
-	async create(data: IQuestionData)
+	create(data: IQuestionData)
 	{
 
        let fontTitle = {font: '42px ' + BKG.text['FONT'], fill: '#cd934a', stroke: 'black', strokeThickness: 6}

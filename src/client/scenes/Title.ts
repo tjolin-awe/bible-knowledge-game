@@ -41,10 +41,8 @@ export default class Title extends Phaser.Scene {
     create(data: IGameSceneData) {
 
 
-        Bootstrap.openingmusic = this.sound.add("opening", { loop: true, volume: 0.3});
-		Bootstrap.openingmusic?.resume();
-        let fontTitle = {font: '62px ' + BKG.text['FONT'], fill: 'white', stroke: 'black', strokeThickness: 6}
-      
+        
+       
         
         let click = this.sound.add('click')
 	
@@ -66,33 +64,39 @@ export default class Title extends Phaser.Scene {
         this.onGameOver = onGameOver
 
 
-        let background = this.add.image(0, 0, 'background').setOrigin(0.5,0)
-        if (this.game.device.os.desktop) {
-           background = this.add.image(0, 0, 'background').setOrigin(0).setDisplaySize(this.game.scale.width, this.game.scale.height)
-        }
+        let background = this.add.image(0,0,'background').setOrigin(0)
+        let bible = this.add.image(BKG.world.centerX, 80,'bible').setOrigin(0.5).setScale(0.3)
+
+        let title  = this.add.image(BKG.world.centerX, 300, 'gamelogo').setOrigin(0.5)
+       
+        
+    
+       this.tweens.add({targets: bible, angle: title.angle-2, duration: 1000, ease: 'Sine.easeInOut' });
+       this.tweens.add({targets: bible, angle: title.angle+4, duration: 2000, ease: 'Sine.easeInOut', yoyo: 1, loop: -1, delay: 1000 });
+
+    
+     
       
-  
-        let bible = this.add.image(BKG.world.centerX,BKG.world.centerY,'bible').setOrigin(0.5)
-
-        let title = this.add.text(BKG.world.centerX, 30, "Bible\nKnowledge Games", fontTitle).setWordWrapWidth(this.game.scale.width - 100)
-        title.setOrigin(0.5,0).setAlign('center')
-
-      
-        let startbtn = new Button(BKG.world.width-20, BKG.world.height-20,'button-start', this.login,this,false).setOrigin(1,1)
-      //  startbtn.setInteractive().on('pointerup',()=>{
-      //      click.play()
-       ///     this.login(false)
-       // })
-
-        this.tweens.add({ targets: bible, duration: 2000, scale: 1.1, ease: 'Sine.easeInOut', yoyo:true, loop:-1 });
+      let startbtn = new Button(BKG.world.width-20, BKG.world.centerY + BKG.world.height / 4,'button-start', this.login,this,false).setOrigin(0.5)
+       startbtn.setInteractive().on('pointerup',()=>{
+           click.play()
+          this.login(false)
+        })
+    
+       this.tweens.add({ targets: startbtn, duration: 1000, scale: 1.1, ease: 'Sine.easeInOut', yoyo: true, repeat: -1 })
         
-        if (!this.game.device.os.desktop)
-        this.tweens.add({ targets: background, x:200, y:-100,  duration: 10000, ease: 'Sine.easeInOut', yoyo:true, loop:-1 });
+       if (!this.game.device.os.desktop)    {
+        background.setOrigin(0.5,0)        
+          this.tweens.add({ targets: background, x:200, y:-100,  duration: 10000, ease: 'Sine.easeInOut', yoyo:true, loop:-1 });
+       }
+    else 
         
-        startbtn.x = BKG.world.width+startbtn.width+20;
-        this.tweens.add({targets: startbtn, x: BKG.world.width-20, duration: 500, ease: 'Back'});
+            background.setOrigin(0).setDisplaySize(BKG.world.width, BKG.world.height)
+
+       startbtn.x = BKG.world.width+startbtn.width+20;
+       this.tweens.add({targets: startbtn, x: BKG.world.centerX, duration: 500, ease: 'Back'});
         
-        let buttonSettings = new Button(20, 20, 'button-settings', this.settings, this, false);
+        let buttonSettings = new Button(20, 20, 'button-settings', null, this, false);
         buttonSettings.setOrigin(0, 0);
 
         buttonSettings.y = buttonSettings.height-20
@@ -108,43 +112,7 @@ export default class Title extends Phaser.Scene {
         //title.setShadow(2, 2, 'black', 2, true, false)
 
 
-      
-        let multiMenuItem = this.add.text(BKG.world.centerX, startbtn.y + 300, 'Multiplayer',fontTitle).setFontSize(48).setOrigin(0.5)
-
-        let grow = this.tweens.add({ targets:  multiMenuItem, duration: 500, scale: 1.2, ease: 'Sine.easeInOut' }).pause()
-        let shrink = this.tweens.add({ targets:  multiMenuItem, duration: 500, scale: 1.2, ease: 'Sine.easeInOut' }).pause()
-      
-        multiMenuItem.setInteractive().on('pointerover', () => {
-            // this.tweens.add({targets: playMenuItem, angle: title.angle-2, duration: 1000, ease: 'Sine.easeInOut' });
-            // this.tweens.add({targets: playMenuItem, angle: title.angle+4, duration: 2000, ease: 'Sine.easeInOut', yoyo: 1, loop: -1, delay: 1000 });  
-            multiMenuItem.setColor('blue')
-            grow.restart()
-            shrink.stop()
-
-
-        })
-
-        multiMenuItem.on('pointerout', () => {
-            // this.tweens.add({targets: playMenuItem, angle: title.angle-2, duration: 1000, ease: 'Sine.easeInOut' });
-            // this.tweens.add({targets: playMenuItem, angle: title.angle+4, duration: 2000, ease: 'Sine.easeInOut', yoyo: 1, loop: -1, delay: 1000 });  
-            multiMenuItem.setColor('white')
-            grow.stop()
-            shrink.restart()
-
-        })
-
-      
-
-      
-
-       
-
-        multiMenuItem.on('pointerup', () => {       
-            click.play()
-            this.login(true)
-        })
-
-
+    
 
         this.input.keyboard.on('keydown', this.handleKey, this);
 
@@ -169,9 +137,13 @@ export default class Title extends Phaser.Scene {
         }
     }
 
+  
     private login: (multiplayer: boolean) => void
     = (multiplayer) => 
-
+    {
+        Bootstrap.openingmusic = this.sound.add("opening", { loop: true, volume: 0.3});
+		Bootstrap.openingmusic?.resume();
+        
         this.scene.start('login', {
                 server: this.server,
                 onGameOver: this.onGameOver,
@@ -180,12 +152,13 @@ export default class Title extends Phaser.Scene {
                 multiplayer: multiplayer
 
     })
+}
 
     private settings: ()=> void 
     = () => this.scene.start('settings', { 
     })
 
-    
+  
 
 }
 
