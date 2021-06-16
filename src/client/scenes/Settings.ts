@@ -7,10 +7,12 @@ export default class Settings extends Phaser.Scene {
     textSound?: Phaser.GameObjects.Text
     textMusic?: Phaser.GameObjects.Text
     textCredits?: Phaser.GameObjects.Text
+    textServer?: Phaser.GameObjects.Text
     buttonSound?: Button
     buttonMusic?: Button
     buttonCredits?: Button
     buttonBack?: Button
+    buttonServer?: Button
     screenName?: string
     containerCredits?: Phaser.GameObjects.Container
     containerKeyboard?: Phaser.GameObjects.Container
@@ -52,10 +54,20 @@ export default class Settings extends Phaser.Scene {
         this.buttonMusic.setOrigin(0.5, 0.5);
         this.textMusic = this.add.text(offsetLeft + 30 + this.buttonMusic.width, 375, BKG.text['music-on'], fontSubtitle);
         this.textMusic.setOrigin(0, 0.5);
-        this.buttonCredits = new Button(offsetLeft + 40, 500, 'button-credits', this.clickCredits, this);
+      
+        this.buttonServer = new Button(offsetLeft + 40, 500, 'button-credits', this.clickServer, this);
+        this.buttonServer.setOrigin(0.5, 0.5);
+
+        this.textServer = this.add.text(offsetLeft + 30 + this.buttonServer.width, 500, BKG.text['server'], fontSubtitle);
+        this.textServer.setOrigin(0, 0.5);
+
+        this.buttonCredits = new Button(offsetLeft + 40, 625, 'button-home', this.clickCredits, this);
         this.buttonCredits.setOrigin(0.5, 0.5);
-        this.textCredits = this.add.text(offsetLeft + 30 + this.buttonCredits.width, 500, BKG.text['credits'], fontSubtitle);
+
+        this.textCredits = this.add.text(offsetLeft + 30 + this.buttonCredits.width, 625, BKG.text['credits'], fontSubtitle);
         this.textCredits.setOrigin(0, 0.5);
+
+
 
         BKG.Sfx.update('sound', this.buttonSound, this.textSound);
         BKG.Sfx.update('music', this.buttonMusic, this.textMusic);
@@ -69,6 +81,12 @@ export default class Settings extends Phaser.Scene {
         this.tweens.add({ targets: this.buttonMusic, scaleX: 1, scaleY: 1, duration: 500, delay: 250, ease: 'Cubic.easeOut' });
         this.textMusic.setScale(0.5);
         this.tweens.add({ targets: this.textMusic, scaleX: 1, scaleY: 1, duration: 500, delay: 250, ease: 'Cubic.easeOut' });
+       
+        this.buttonServer.setScale(0.5);
+        this.tweens.add({ targets: this.buttonServer, scaleX: 1, scaleY: 1, duration: 500, delay: 500, ease: 'Cubic.easeOut' });
+        this.textServer.setScale(0.5);
+        this.tweens.add({ targets: this.textServer, scaleX: 1, scaleY: 1, duration: 500, delay: 500, ease: 'Cubic.easeOut' });
+
         this.buttonCredits.setScale(0.5);
         this.tweens.add({ targets: this.buttonCredits, scaleX: 1, scaleY: 1, duration: 500, delay: 500, ease: 'Cubic.easeOut' });
         this.textCredits.setScale(0.5);
@@ -174,6 +192,7 @@ export default class Settings extends Phaser.Scene {
 
     }
 
+
     clickSound() {
         BKG.Sfx.play('click');
         BKG.Sfx.manage('sound', 'switch', this, this.buttonSound, this.textSound);
@@ -183,7 +202,13 @@ export default class Settings extends Phaser.Scene {
         BKG.Sfx.manage('music', 'switch', this, this.buttonMusic, this.textMusic);
     }
     clickAttr(){
+        BKG.Sfx.play('click');
+
         BKG.fadeOutScene('attribution',this)
+    }
+    clickServer() {
+        BKG.Sfx.play('click');
+        BKG.fadeOutScene('gameconnection',this)
     }
     clickCredits() {
         BKG.Sfx.play('click');
@@ -202,6 +227,7 @@ export default class Settings extends Phaser.Scene {
             this.buttonCredits.input.enabled = false;
 
         this.screenName = 'credits';
+
 
 
     }

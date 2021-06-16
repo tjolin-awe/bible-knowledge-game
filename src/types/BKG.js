@@ -252,6 +252,8 @@ BKG.Lang = {
       'music-off': 'Music: OFF',
       'keyboard-info': 'Press K for keyboard shortcuts',
       'credits': 'CREDITS',
+      'server':'Game Server',
+      'server-address': 'Enter Server IP Address',
       'madeby': 'BKG made by',
       'team': 'THE TEAM',
       'coding': 'coding',

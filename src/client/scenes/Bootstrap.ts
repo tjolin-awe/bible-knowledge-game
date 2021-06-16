@@ -18,6 +18,8 @@ export default class Bootstrap extends Phaser.Scene
 
 	init()
 	{
+		BKG.Storage.initUnset('gameserver','34.72.31.244')
+    
 		this.server = new Server()
 	
 	}
@@ -57,10 +59,6 @@ export default class Bootstrap extends Phaser.Scene
         };
         BKG.Lang.updateLanguage('en');
         BKG.text = BKG.Lang.text[BKG.Lang.current];
-		
-		
-	
-	
 
 		
 		var textures = this.textures;

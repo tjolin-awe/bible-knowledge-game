@@ -13,6 +13,7 @@ import Preloader from './scenes/Preloader'
 import Story from './scenes/Story'
 import Settings from './scenes/Settings'
 import Attribution from './scenes/Attribution'
+import GameConnection from './scenes/GameConnection'
 
 let width = 1280
 let height = 800
@@ -38,7 +39,7 @@ const config: Phaser.Types.Core.GameConfig = {
 	   width: width,
 	   height: height
     },
-	scene: [Bootstrap, Preloader, Title, Settings, Attribution, Login, Story, Game, Question, AnswerScreen, GameOver]
+	scene: [Bootstrap, Preloader, Title, Settings, Attribution, GameConnection, Login, Story, Game, Question, AnswerScreen, GameOver]
 
 }
 

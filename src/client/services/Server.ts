@@ -4,6 +4,7 @@ import ITicTacToeState, { GameState, IBKGSinglePlayerState, ICell, IPlayer } fro
 import { Message } from '../../types/messages'
 import { MapSchema, type } from '@colyseus/schema'
 import { Answer, Player } from '../../server/TicTacToeState'
+import { BKG } from '../../types/BKG'
 
 export class TurnResult 
 {
@@ -13,7 +14,7 @@ export class TurnResult
 export default class Server
 {
 	
-	private client: Client
+	private client!: Client
 	private events: Phaser.Events.EventEmitter
 
 	private room?: Room<ITicTacToeState>
@@ -67,11 +68,15 @@ export default class Server
 
 	constructor()
 	{
-		this.client = new Client('ws://34.72.31.244:9091')
-		//this.client = new Client('ws://192.168.1.5:9091')
+
+		let server_address = BKG.Storage.get('gameserver')
 	
+		console.log(server_address)
+		//this.client = new Client('ws://34.72.31.244:9091')
+		this.client = new Client('ws://' + server_address + ':9091')
 		this.events = new Phaser.Events.EventEmitter()
 	}
+
 
 	async join(name: string, multiplayer: boolean)
 	{
