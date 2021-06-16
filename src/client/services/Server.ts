@@ -68,6 +68,8 @@ export default class Server
 	constructor()
 	{
 		this.client = new Client('ws://34.72.31.244:9091')
+		//this.client = new Client('ws://192.168.1.5:9091')
+	
 		this.events = new Phaser.Events.EventEmitter()
 	}
 

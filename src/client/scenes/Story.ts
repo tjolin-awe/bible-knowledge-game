@@ -13,11 +13,11 @@ export default class Story extends Phaser.Scene
 
         const { server, onGameOver, currentcells, name, multiplayer } = data
 
-        this.add.image(0,0,'overlay').setDisplaySize(this.game.scale.width, this.game.scale.height).setOrigin(0)
+        this.add.image(0,0,'levelmodebg').setDisplaySize(this.game.scale.width, this.game.scale.height).setOrigin(0)
         var fontTitle = { font: '42px '+ BKG.text['FONT'], fill: '#000', stroke: '#ffffff', strokeThickness: 6 }  
         var fontMenu =  {font: '48px ' + BKG.text['FONT'], fill: '#fff', stroke: 'black', strokeThickness: 6}
 
-        this.add.text(BKG.world.centerX,30,'Select game mode', fontTitle).setOrigin(0.5)
+        this.add.text(BKG.world.centerX,50,`Hi ${name}, \n Please select game mode`, fontTitle).setOrigin(0.5,0).setAlign('center')
 
 
         let singleMenuItem = this.add.image(BKG.world.centerX,BKG.world.centerY - 100, 'singleplayer_button')

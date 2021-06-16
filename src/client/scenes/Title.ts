@@ -44,8 +44,7 @@ export default class Title extends Phaser.Scene {
         
        
         
-        let click = this.sound.add('click')
-	
+        
         
 
 
@@ -64,39 +63,43 @@ export default class Title extends Phaser.Scene {
         this.onGameOver = onGameOver
 
 
-        let background = this.add.image(0,0,'background').setOrigin(0)
-        let bible = this.add.image(BKG.world.centerX, 80,'bible').setOrigin(0.5).setScale(0.3)
+        let background = this.add.image(0,0,'background').setOrigin(0).setScale(0.9)
+       // let bible = this.add.image(BKG.world.centerX, 80,'bible').setOrigin(0.5).setScale(0.3)
 
-        let title  = this.add.image(BKG.world.centerX, 300, 'gamelogo').setOrigin(0.5)
+        let title  = this.add.image(BKG.world.centerX, 150, 'gamelogo').setOrigin(0.5)
        
-        
-    
-       this.tweens.add({targets: bible, angle: title.angle-2, duration: 1000, ease: 'Sine.easeInOut' });
-       this.tweens.add({targets: bible, angle: title.angle+4, duration: 2000, ease: 'Sine.easeInOut', yoyo: 1, loop: -1, delay: 1000 });
+        BKG.Storage.initUnset('BKG-highscore', 0);
+		var highscore = BKG.Storage.get('BKG-highscore');
+
+        var fontHighscore = { font: '38px '+BKG.text['FONT'], fill: '#ffde00', stroke: '#000', strokeThickness: 5 };
+		var textHighscore = this.add.text(BKG.world.width-20, 20, BKG.text['menu-highscore']+highscore, fontHighscore);
+		textHighscore.setOrigin(1, 0);
 
     
-     
+       //this.tweens.add({targets: bible, angle: title.angle-2, duration: 1000, ease: 'Sine.easeInOut' });
+       //this.tweens.add({targets: bible, angle: title.angle+4, duration: 2000, ease: 'Sine.easeInOut', yoyo: 1, loop: -1, delay: 1000 });
+
+      if (!this.game.device.os.desktop) {
+            title.y = 200
+      }
       
-      let startbtn = new Button(BKG.world.width-20, BKG.world.centerY + BKG.world.height / 4,'button-start', this.login,this,false).setOrigin(0.5)
+      
+      let startbtn = new Button(BKG.world.width-20, BKG.world.centerY,'button-start', this.login,this,false).setOrigin(0.5)
        startbtn.setInteractive().on('pointerup',()=>{
-           click.play()
+          BKG.Sfx.play('click')
           this.login(false)
         })
     
        this.tweens.add({ targets: startbtn, duration: 1000, scale: 1.1, ease: 'Sine.easeInOut', yoyo: true, repeat: -1 })
         
-       if (!this.game.device.os.desktop)    {
-        background.setOrigin(0.5,0)        
-          this.tweens.add({ targets: background, x:200, y:-100,  duration: 10000, ease: 'Sine.easeInOut', yoyo:true, loop:-1 });
-       }
-    else 
+       
         
-            background.setOrigin(0).setDisplaySize(BKG.world.width, BKG.world.height)
+        background.setOrigin(0).setDisplaySize(BKG.world.width, BKG.world.height)
 
        startbtn.x = BKG.world.width+startbtn.width+20;
        this.tweens.add({targets: startbtn, x: BKG.world.centerX, duration: 500, ease: 'Back'});
         
-        let buttonSettings = new Button(20, 20, 'button-settings', null, this, false);
+        let buttonSettings = new Button(20, 20, 'button-settings', this.settings, this, false);
         buttonSettings.setOrigin(0, 0);
 
         buttonSettings.y = buttonSettings.height-20
@@ -116,6 +119,10 @@ export default class Title extends Phaser.Scene {
 
         this.input.keyboard.on('keydown', this.handleKey, this);
 
+     
+            BKG.Sfx.manage('music', 'init', this);
+            BKG.Sfx.manage('sound', 'init', this);
+        
     
         
         //this.add.image(400, 300, 'logo').setBlendMode(Phaser.BlendModes.SCREEN);
@@ -141,8 +148,8 @@ export default class Title extends Phaser.Scene {
     private login: (multiplayer: boolean) => void
     = (multiplayer) => 
     {
-        Bootstrap.openingmusic = this.sound.add("opening", { loop: true, volume: 0.3});
-		Bootstrap.openingmusic?.resume();
+        
+        BKG.Sfx.playMusic('opening')
         
         this.scene.start('login', {
                 server: this.server,
@@ -151,12 +158,15 @@ export default class Title extends Phaser.Scene {
                 name: this.inputtext,
                 multiplayer: multiplayer
 
+
     })
+    this.scene.sleep()
+  
 }
 
     private settings: ()=> void 
-    = () => this.scene.start('settings', { 
-    })
+    = () => BKG.fadeOutScene('settings',this, {screen:'title'}) 
+
 
   
 

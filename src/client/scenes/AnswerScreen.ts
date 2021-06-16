@@ -42,28 +42,39 @@ export default class AnswerScreen extends Phaser.Scene
 		this.load.image(image, `assets/images/${image}`)
 		this.load.once(Phaser.Loader.Events.COMPLETE, () => {
 			// texture loaded so use instead of the placeholder
-			this.add.image(0,0,'loginbackground').setOrigin(0).setDisplaySize(this.game.scale.width, this.game.scale.height)
+			this.add.image(0,0,'levelmodebg').setOrigin(0).setDisplaySize(this.game.scale.width, this.game.scale.height)
 			this.card = this.add.image(screenCenterX, 0, 'image').setOrigin(0.5).setVisible(false)
 
 	
 			this.card.setTexture(image)
 
-			let status = this.add.text(screenCenterX, 30, '',fontTitle).setOrigin(0.5)
+			let status = this.add.text(BKG.world.centerX, 60, '',fontTitle).setOrigin(0.5)
+
+			status.x = BKG.world.width+status.width+20;
+			this.tweens.add({targets: status, x: BKG.world.centerX, duration: 500, ease: 'Back'});
+      
 		
 			if (timeout) {
-				this.add.text(screenCenterX, 120,'The correct answer is ' + correctAnswer.name, fontAnswer).setOrigin(0.5).setFontStyle('bold')
+				this.add.text(screenCenterX, 130,'The correct answer is ' + correctAnswer.name, fontAnswer).setOrigin(0.5).setFontStyle('bold')
 				.setWordWrapWidth(this.cameras.main.width * 0.8).setAlign('center')
 			} else {
 				if (answer.correct == false){
 					status.setColor('red').setText('INCORRECT!')
-					this.add.text(screenCenterX, 120, 'The correct answer is ' + correctAnswer.name, fontAnswer).setOrigin(0.5).setFontStyle('bold')
+					let w = this.add.text(screenCenterX, 140, 'The correct answer is ' + correctAnswer.name, fontAnswer).setOrigin(0.5).setFontStyle('bold')
 					.setWordWrapWidth(this.cameras.main.width * 0.8).setAlign('center')
+					w.y = -w.height+20;
+					this.tweens.add({targets: w, y: 140, duration: 500, ease: 'Back'});
 
 				} else {
 					status.setColor('green').setText('CORRECT')
-					this.add.text(screenCenterX, 100, correctAnswer.name).setFontFamily('swiss921')
+					let a = this.add.text(screenCenterX, 100, correctAnswer.name).setFontFamily('swiss921')
 					.setFontSize(48).setShadow(2,2,'black',2,true).setOrigin(0.5).setFontStyle('bold')
 					.setWordWrapWidth(this.cameras.main.width * 0.8).setAlign('center')
+
+					a.y = -a.height+20;
+					this.tweens.add({targets: a, y: 140, duration: 500, ease: 'Back'});
+			  
+			
 
 				}
 			}

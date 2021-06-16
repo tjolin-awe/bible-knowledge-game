@@ -1,24 +1,29 @@
 import Phaser from 'phaser'
-import { IGameOverSceneData } from '../../types/scenes'
+import { BKG, Button } from '../../types/BKG'
+import { IGameOverSceneData, IGameSceneData } from '../../types/scenes'
 
 export default class GameOver extends Phaser.Scene
 {
 	constructor()
 	{
 		super('game-over')
+		
 	}
 
-	
 
+	private onRestart?: () => void
 	create(data: IGameOverSceneData)
 	{
 
+		
+		const { winner , onRestart, server } = data
+
+		this.onRestart = onRestart 
 		let screenCenterX = this.game.scale.width / 2
 		let screenCenterY = this.game.scale.height / 2
 	
-		let background = this.add.image(0,0,'winscreen').setOrigin(0)
-		background.displayWidth = this.game.scale.width
-		background.displayHeight = this.game.scale.height
+		let background = this.add.image(0,0,'winscreen').setOrigin(0).setDisplaySize(BKG.world.width, BKG.world.height)
+	
 		const text = data.winner 
 			? 'You Won!'
 			: 'You Lost!'
@@ -31,6 +36,17 @@ export default class GameOver extends Phaser.Scene
 			var p3 = new Phaser.Math.Vector2(screenCenterX + 400, 500);
 		
 			var curve = new Phaser.Curves.CubicBezier(p0, p1, p2, p3);
+
+			let highscore = BKG.Storage.get('BKG-highscore')
+
+			let player = server.players?.get(server.playerId)
+
+			if (player){
+				highscore += player.score 
+
+				console.log(highscore)
+				BKG.Storage.setHighscore('BKG-highscore',highscore);
+			}
 		
 			var max = 28;
 			var points = [];
@@ -80,25 +96,22 @@ export default class GameOver extends Phaser.Scene
 		})
 		.setOrigin(0.5)
 
-		this.add.text(title.x, title.y + 100, 'Press space to play again')
-			.setOrigin(0.5)
+		
+
+		let restart = new Button(BKG.world.centerX, BKG.world.centerY + 150,'button-restart', this.restart,this)
+
+
 
 		this.input.keyboard.once('keyup-SPACE', () => {
-			if (data.onRestart)
-			{
-				
-				data.onRestart()
 			
-				this.scene.stop('login')
-				this.scene.stop('game')
-				this.scene.stop('question')
-				this.scene.stop('answer')
-			
-				this.scene.wake('title')
-				this.scene.stop()
-			}
 		})
 
 		//this.add.image(400, 400, 'background2');
+	}
+	restart(){
+	
+			this.onRestart?.call(this)
+			
+			
 	}
 }

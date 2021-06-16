@@ -19,6 +19,7 @@ export default class Bootstrap extends Phaser.Scene
 	init()
 	{
 		this.server = new Server()
+	
 	}
 
 
@@ -44,7 +45,7 @@ export default class Bootstrap extends Phaser.Scene
 	private logo?: Phaser.GameObjects.Image
 	private emitter?: Phaser.GameObjects.Particles.ParticleEmitter
 	private gameLaunched: boolean = false
-	static openingmusic?: Phaser.Sound.BaseSound
+	
 	create()
 	{
 		
@@ -59,8 +60,8 @@ export default class Bootstrap extends Phaser.Scene
 		
 		
 	
-		
-			
+	
+
 		
 		var textures = this.textures;
 
@@ -109,13 +110,31 @@ export default class Bootstrap extends Phaser.Scene
 
 		this.scene.launch('game-over', {
 			...data,
-			onRestart: this.handleRestart
+			onRestart: this.handleRestart,
+			server: this.server
 		})
 	}
 
 	private handleRestart = () => {
+					
+		this.scene.stop('login')
+		this.scene.stop('game')
+		this.scene.stop('question')
+		this.scene.stop('answer')
 		this.scene.stop('game-over')
-		this.createNewGame()
+
+	
+		this.restartGame()
+	}
+
+	private restartGame(){
+	 
+		this.scene.launch('title', {
+			server: this.server,
+			onGameOver: this.handleGameOver,
+		
+
+		})
 	}
 
 	private createNewGame()
@@ -136,18 +155,22 @@ export default class Bootstrap extends Phaser.Scene
 		
 		this.cameras.main.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, (cam: Phaser.Cameras.Scene2D.Camera, effect: Phaser.Cameras.Scene2D.Effects.Fade) => {
 
+		
 			this.logo?.destroy()
 			this.emitter?.stop()
 		
-			this.gameLaunched = true
-			this.scene.launch('preloader', {
-				server: this.server,
-				onGameOver: this.handleGameOver,
-			
+		
+				this.gameLaunched = true
+				this.scene.launch('preloader', {
+					server: this.server,
+					onGameOver: this.handleGameOver,
+				
 
-			})
-	
-	})
+				})
+			
+			
+		})
+		
 	
 		
 		

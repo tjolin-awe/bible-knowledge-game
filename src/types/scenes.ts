@@ -6,6 +6,7 @@ export interface IGameOverSceneData
 {
 	winner: boolean
 	onRestart?: () => void
+	server: Server
 }
 
 export interface IGameSceneData

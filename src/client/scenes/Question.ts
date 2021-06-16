@@ -26,7 +26,7 @@ export default class Question extends Phaser.Scene
     start_text?: Phaser.GameObjects.Text
     emitter?:Phaser.GameObjects.Particles.ParticleEmitter
 
-    answers: { name: string, display: Phaser.GameObjects.Text, correct: boolean, answer: Answer}[] = []
+    answers: { name: string, display: Phaser.GameObjects.Text, displaybg: Phaser.GameObjects.Image, correct: boolean, answer: Answer}[] = []
  
     private countdown()
     {
@@ -59,7 +59,7 @@ export default class Question extends Phaser.Scene
                 const screenCenterX = this.cameras.main.worldView.x + this.cameras.main.width / 2;
                 const screenCenterY = this.cameras.main.worldView.y + this.cameras.main.height / 2;
 
-                this.music?.stop()
+                BKG.Sfx.stopMusic()
                 let fontTimeout= {font: '120px ' + BKG.text['GAMEFONT'], fill: 'red', stroke: 'black', strokeThickness: 24}
        
                 let timeout = this.add.text(screenCenterX, 0,'TIME IS UP!',fontTimeout).setOrigin(0.5)
@@ -82,7 +82,7 @@ export default class Question extends Phaser.Scene
                     this.scene.stop()
                     this.scene.stop('answer')
                     this.scene.sleep('game')
-                    Bootstrap.openingmusic?.play();
+                    BKG.Sfx.playMusic('opening')
 	
                     this.scene.start('answer', {
                         server: this.server,
@@ -105,9 +105,8 @@ export default class Question extends Phaser.Scene
     private handlePlayerAnswered(answer: Answer)
 	{
 
-
-        this.music?.stop()
-        this.answersound?.play()
+        BKG.Sfx.stopMusic('question-music')
+        BKG.Sfx.play('answer-sound')
         if (this.hasBeenAnwswered == true || this.timeExpired == true)
             return 
 
@@ -159,7 +158,7 @@ export default class Question extends Phaser.Scene
                       
                         var _this = this
                         var tween2 = this.tweens.add({
-                            targets: this.answers[i].display ,
+                            targets: [this.answers[i].display, this.answers[i].displaybg],
                             x: screenCenterX,
                             y: screenCenterY,
                             ease: 'Linear',
@@ -190,9 +189,11 @@ export default class Question extends Phaser.Scene
                         });
 
                        
+                       
                     }
                 
                 else {
+                    this.physics.world.enable(this.answers[i].displaybg)
                     this.physics.world.enable(this.answers[i].display)
                 }
             }
@@ -205,7 +206,7 @@ export default class Question extends Phaser.Scene
             this.time.delayedCall(4000, ()=> {
             this.scene.stop('answer')
             this.scene.stop()
-            Bootstrap.openingmusic?.play();
+            BKG.Sfx.playMusic('opening')
 	
             this.scene.start('answer', {
                 server: this.server,
@@ -221,8 +222,6 @@ export default class Question extends Phaser.Scene
     }
        
 
-    private music?:Phaser.Sound.BaseSound
-    private answersound?: Phaser.Sound.BaseSound
 	create(data: IQuestionData)
 	{
 
@@ -232,11 +231,10 @@ export default class Question extends Phaser.Scene
         let fontTimeout = {font: '120px ' + BKG.text['FONT'], fill: '#cd934a', stroke: 'black', strokeThickness: 24}
        
        
-        Bootstrap.openingmusic?.stop()
-        this.music = this.sound.add("question_music", { loop: true });
+        BKG.Sfx.stopMusic('opening')
+        BKG.Sfx.playMusic("question-music");
 
-       this.music.play();
-       this.answersound = this.sound.add("player_answer")
+        BKG.Sfx.sounds['answer-sound'] = this.sound.add("player_answer")
 
         document.addEventListener("visibilitychange", event => {
 			if (document.visibilityState == "visible") {
@@ -280,7 +278,7 @@ export default class Question extends Phaser.Scene
             this.lights.addLight(screenCenterX + header.width / 2, 50, 280).setIntensity(2);
             this.lights.disable().enable()
          
-            this.add.text(screenCenterX, 200,question, fontQuestion)
+            this.add.text(screenCenterX, 200, question, fontQuestion)
             .setWordWrapWidth(this.cameras.main.width * 0.8).setAlign('center').setOrigin(0.5)
      
 
@@ -308,14 +306,14 @@ export default class Question extends Phaser.Scene
             const col2 = this.cameras.main.worldView.x + this.cameras.main.width - col1 
 
 
-            let row1 = BKG.world.centerY + 100
+            let row1 = BKG.world.centerY + 200
 
            
-            let row2 = row1 + 100
+            let row2 = row1 + 150
 
             if (this.game.device.os.desktop){
                 row1 = 350
-                row2 = 450
+                row2 = 550
             }
            
             answers.forEach((value: Answer, key: string)=> {
@@ -340,6 +338,20 @@ export default class Question extends Phaser.Scene
                     row = row2
                 }
             
+
+
+                let bg = this.add.image(col, row, 'answerbutton').setOrigin(0.5).setInteractive().on('pointerdown', ()=> {
+                    console.log('clicked')
+                
+                    if (!this.hasBeenAnwswered)
+                        this.server?.playerAnswer(value.cellId, value.id)
+                    else {
+                        console.log('question has been answered already!')
+                    }
+                })
+                if (!this.game.device.os.desktop){
+                    bg.setScale(0.8)
+                }
                 let display = this.add.text(col, row, value.name, fontAnswer)
                 .setOrigin(0.5).setFontStyle('bold').setInteractive().on('pointerover', ()=>{
                     if (this.timeExpired == false)
@@ -358,10 +370,17 @@ export default class Question extends Phaser.Scene
                     }
                    
                 })
-                
+                bg.on('pointerover', ()=> {
+                    if (this.timeExpired == false || this.hasBeenAnwswered)
+                        display.setColor('#cd934a').setFontStyle('bold')
+                }).on('pointerout',()=> {
+                    if (this.timeExpired == false || this.hasBeenAnwswered)
+                    display.setColor('white')
+                })
                 this.answers.push({
                     name: value.name,
                     display: display,
+                    displaybg: bg,
                     correct: value.correct,
                     answer: value
                 })

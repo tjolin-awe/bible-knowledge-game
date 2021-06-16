@@ -72,7 +72,8 @@ export default class Login extends Phaser.Scene
 	  
        
         this.startbtn.setInteractive().on('pointerup',()=>{
-            this.startgame()
+            if (this.canLogin())
+                this.startgame()
         })
 
        
@@ -107,7 +108,7 @@ export default class Login extends Phaser.Scene
         let input =  this.add.text(BKG.world.centerX, BKG.world.centerY - BKG.world.centerY / 3 , 'ABCDEFGHIJ\n\nKLMNOPQRST\n\nUVWXYZ.-', fontKeys).setOrigin(0.5).setVisible(false)
 
 
-        let click = this.sound.add('click')
+        
        let textline = 'ABCDEFGH=IJKLMNOP=QRSTUVW=XYZ.-';
     let letterSpacing = 70;
  
@@ -150,7 +151,7 @@ export default class Login extends Phaser.Scene
             if (!this.inputReady)
                 return
             this.playerText.setText(this.playerText.text + letter.text)
-            click.play()
+            BKG.Sfx.play('click')
     
             this.pulseButton(this.canLogin())
           
@@ -179,7 +180,7 @@ export default class Login extends Phaser.Scene
         if (this.canLogin()) 
             this.playerText.setText(this.playerText.text.slice(0,-1))
         
-        click.play()
+        BKG.Sfx.play('click')
 
 
         this.pulseButton(this.canLogin())
@@ -209,12 +210,20 @@ export default class Login extends Phaser.Scene
                 if (this.playerText.text.length > 0)
                     this.playerText.setText(this.playerText.text.slice(0,-1))
             }
-            else {
-              this.playerText.setText(this.playerText.text + event.key.toUpperCase())
+            else if (event.keyCode > 31 && (event.keyCode < 65 || event.keyCode > 90) && (event.keyCode < 97 || event.keyCode > 122))
+            {        
 
-              this.pulseButton(this.canLogin())
             }
-
+            else 
+            {
+                    if (event.key.length == 1) 
+                    {
+                        this.playerText.setText(this.playerText.text + event.key.toUpperCase())
+                        this.pulseButton(this.canLogin())
+                    }
+            }
+            
+            
         });
     
        
@@ -227,9 +236,10 @@ export default class Login extends Phaser.Scene
     create(data: IGameSceneData) {           
       
         this.inputReady = false
+       
 		const { server, onGameOver, currentcells, name, multiplayer } = data
 
-        let background = this.add.image(0,0,'overlay').setOrigin(0).setDisplaySize(BKG.world.width, BKG.world.height)
+        let background = this.add.image(0,0,'loginbackground').setOrigin(0).setDisplaySize(BKG.world.width, BKG.world.height)
 
         this.createui()
 
@@ -251,6 +261,7 @@ export default class Login extends Phaser.Scene
 		this.onGameOver = onGameOver
 
 		if (this.loggedIn) {
+            this.playerText.setText(this.inputname)
 			this.startgame()
 		}
 
@@ -296,6 +307,7 @@ export default class Login extends Phaser.Scene
             this.particles.destroy()
        
         this.loggedIn = true
+        this.inputname = this.playerText.text
         //  Submit
 	    this.scene.start('story', {
 			server: this.server,

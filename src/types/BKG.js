@@ -7,14 +7,18 @@ BKG.Sfx = {
         BKG.Storage.initUnset('BKG-'+type, true);
         BKG.Sfx.status = BKG.Sfx.status || [];
         BKG.Sfx.status[type] = BKG.Storage.get('BKG-'+type);
+
+        console.log(type)
         if(type == 'sound') {
           BKG.Sfx.sounds = [];
-          BKG.Sfx.sounds['click'] = game.sound.add('sound-click');
+          BKG.Sfx.sounds['click'] = game.sound.add('click');
         }
         else { // music
           if(!BKG.Sfx.music || !BKG.Sfx.music.isPlaying) {
-            BKG.Sfx.music = game.sound.add('music-theme');
-            BKG.Sfx.music.volume = 0.5;
+            BKG.Sfx.music = [];
+            BKG.Sfx.music['opening'] = game.sound.add('opening');
+            BKG.Sfx.music['question-music'] = game.sound.add('question_music');
+            BKG.Sfx.music['opening'].volume = 0.5;
           }
         }
 				break;
@@ -38,27 +42,41 @@ BKG.Sfx = {
     if(type == 'music' && BKG.Sfx.music) {
       if(BKG.Sfx.status['music']) {
         if(!BKG.Sfx.music.isPlaying) {
-          BKG.Sfx.music.play({loop:true});
+          BKG.Sfx.music['opening'].play({loop:true});
         }
       }
       else {
-        BKG.Sfx.music.stop();
+        BKG.Sfx.music['opening'].stop();
       }
     }
 
     BKG.Storage.set('BKG-'+type, BKG.Sfx.status[type]);
 	},
-	play: function(audio) {
-    if(audio == 'music') {
-      if(BKG.Sfx.status['music'] && BKG.Sfx.music && !BKG.Sfx.music.isPlaying) {
-        BKG.Sfx.music.play({loop:true});
-      }
+  stopMusic: function(audio){
+    if(BKG.Sfx.status['music'] && BKG.Sfx.music && BKG.Sfx.music[audio].isPlaying) {
+      BKG.Sfx.music[audio].stop()
     }
-    else { // sound
-      if(BKG.Sfx.status['sound'] && BKG.Sfx.sounds && BKG.Sfx.sounds[audio]) {
+  },
+  resume: function(audio){
+    if(BKG.Sfx.status['music'] && BKG.Sfx.music && !BKG.Sfx.music[audio].isPlaying) {
+      BKG.Sfx.music[audio].resume()
+    }
+  },
+  playMusic: function(audio) {
+   
+      if(BKG.Sfx.status['music'] && BKG.Sfx.music && !BKG.Sfx.music[audio].isPlaying) {
+        BKG.Sfx.music[audio].play({loop:true});
+      }
+    
+  },
+	play: function(audio) {
+   
+   
+      if (BKG.Sfx.status['sound'] && BKG.Sfx.sounds && BKG.Sfx.sounds[audio]) {
         BKG.Sfx.sounds[audio].play();
       }
-    }
+      
+    
   },
   update: function(type, button, label) {
     if(button) {
@@ -237,9 +255,9 @@ BKG.Lang = {
       'madeby': 'BKG made by',
       'team': 'THE TEAM',
       'coding': 'coding',
-      'design': 'design',
+      'design': 'creator',
       'testing': 'testing',
-      'musicby': 'Music by',
+      'musicby': 'Music Composed/Authored by',
       'key-title': 'KEYBOARD SHORTCUTS',
       'key-settings-title': 'Settings',
       'key-settings-onoff': 'S - show/hide settings',
@@ -262,7 +280,7 @@ BKG.Lang = {
       'gameplay-timeleft': 'Time left: ',
       'gameplay-paused': 'PAUSED',
       'gameplay-gameover': 'GAME OVER',
-      'menu-highscore': 'Highscore: ',
+      'menu-highscore': 'Score: ',
       'screen-story-howto': 'Story / how to play\nscreen'
     },
     'pl': {

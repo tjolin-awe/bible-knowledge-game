@@ -2,14 +2,12 @@ import Phaser from 'phaser'
 import { IGameOverSceneData, IGameSceneData } from '../../types/scenes'
 import ITicTacToeState, { GameState, ICell, IPlayer } from '../../types/ITicTacToeState'
 import type Server from '../services/Server'
-import {  MapSchema } from '@colyseus/schema'
+import { MapSchema } from '@colyseus/schema'
 import { Cell, Player } from '../../server/TicTacToeState'
-import Bootstrap from './Bootstrap'
-import { BKG } from '../../types/BKG'
+import { BKG, Button } from '../../types/BKG'
 
 // add to top of file to help with typing
-interface TrailToData
-{
+interface TrailToData {
 	fromX: number
 	fromY: number
 	toX: number
@@ -20,87 +18,84 @@ interface TrailToData
 export default class Game extends Phaser.Scene {
 	private server?: Server
 	private onGameOver?: (data: IGameOverSceneData) => void
-	
+
 	private turnText?: Phaser.GameObjects.Text
 	private player1score?: Phaser.GameObjects.Text
 	private player2score?: Phaser.GameObjects.Text
-	private choose?: Phaser.Sound.BaseSound
 	
 	private lastSquare?: Phaser.GameObjects.Image
 	private waitMessage?: Phaser.GameObjects.Text
-	
+
 	private arrow?: Phaser.GameObjects.Image
 	private cells: { display: Phaser.GameObjects.Image, value: ICell, text: Phaser.GameObjects.Text, score: number }[] = []
 	private player1img?: Phaser.GameObjects.Image
 	private emitter?: Phaser.GameObjects.Particles.ParticleEmitter
 	private correcteffect?: Phaser.GameObjects.Particles.ParticleEmitter
-	private wrongeffect?: Phaser.GameObjects.Particles.ParticleEmitter 
+	private wrongeffect?: Phaser.GameObjects.Particles.ParticleEmitter
 	private player2img?: Phaser.GameObjects.Image
 	private multiplayer: boolean = false
-	
+
 	private stopEffect: boolean = false
-	
-	private handleCollectMoney(obj1: Phaser.GameObjects.Image, obj2: Phaser.GameObjects.Text, score: number)
-	{
-		
-		this.answersound?.play()
+
+	private handleCollectMoney(obj1: Phaser.GameObjects.Image, obj2: Phaser.GameObjects.Text, score: number) {
+
+		BKG.Sfx.play('correct_answer')
 		console.log('emit trail')
 		console.log(`x = ${obj2.x}`)
 		this.events.emit('trail-to', {
-		fromX: obj1.x,
-		fromY: obj1.y,
-		toX: obj2.x + obj2.width * 0.5,
-		toY: obj2.y + obj2.height * 0.5,
-		score: score,
-		display: obj2
+			fromX: obj1.x,
+			fromY: obj1.y,
+			toX: obj2.x + obj2.width * 0.5,
+			toY: obj2.y + obj2.height * 0.5,
+			score: score,
+			display: obj2
 
-	})
-	
-		
+		})
+
+
 	}
 
-	private blockId?:number = 0
-    
-	private createAnswerEffect()
-	{
+	private blockId?: number = 0
+
+	private createAnswerEffect() {
 		const particles = this.add.particles('star')
 
 		this.events.on('trail-to', (data: TrailToData) => {
-			
-				const trail = particles.createEmitter({
-					x: data.fromX,
-					y: data.fromY,
-					quantity: 5,
-					speed: { random: [50, 100] },
-					lifespan: { random: [200, 400]},
-					scale: { random: true, start: 1, end: 0 },
-					rotate: { random: true, start: 0, end: 180 },
-					angle: { random: true, start: 0, end: 270 },
-					blendMode: 'ADD'
-				})
-			
+
+			const trail = particles.createEmitter({
+				x: data.fromX,
+				y: data.fromY,
+				quantity: 5,
+				speed: { random: [50, 100] },
+				lifespan: { random: [200, 400] },
+				scale: { random: true, start: 1, end: 0 },
+				rotate: { random: true, start: 0, end: 180 },
+				angle: { random: true, start: 0, end: 270 },
+				blendMode: 'ADD'
+			})
+
 			let screenCenterX = this.game.scale.width / 2
 			let screenCenterY = this.game.scale.height / 2
 			const xVals = [data.fromX, screenCenterX + 100, screenCenterX - 100, data.toX]
 			const yVals = [data.fromY, screenCenterY + 100, screenCenterY - 100, data.toY]
-			
+
 			this.tweens.addCounter({
 				from: 0,
 				to: 1,
 				ease: Phaser.Math.Easing.Sine.InOut,
-				duration: 1000,				
+				duration: 1000,
 				onUpdate: tween => {
 					const v = tween.getValue()
 					const x = Phaser.Math.Interpolation.CatmullRom(xVals, v)
 					const y = Phaser.Math.Interpolation.CatmullRom(yVals, v)
-	
+
 					trail.setPosition(x, y)
 				},
 				onComplete: () => {
 					trail.explode(50, data.toX, data.toY)
 					trail.stop()
-	
-				
+
+
 					data.display.setText(data.score.toString())
 					data.display?.setColor(data.score >= 0 ? 'white' : 'red')
 					this.time.delayedCall(1000, () => {
@@ -120,23 +115,23 @@ export default class Game extends Phaser.Scene {
 
 	init() {
 		this.cells = []
-	
+
 	}
 
 
-	
+
 
 
 	private stopcurrentaction: boolean = false
 	private lastAmount: number = 0
-	private answersound? : Phaser.Sound.BaseSound
+	private answersound?: Phaser.Sound.BaseSound
 	create(data: IGameSceneData) {
 
-		
-		
-		this.answersound = this.sound.add('correct_answer')
-	
-		this.choose = this.sound.add('choose')
+
+		BKG.Sfx.sounds['correct_answer'] = this.sound.add('correct_answer');
+		//this.answersound = this.sound.add('correct_answer')
+
+		BKG.Sfx.sounds['choose-square'] = this.sound.add('choose')
 		document.addEventListener("visibilitychange", event => {
 			if (document.visibilityState == "visible") {
 				console.log("tab is active -game")
@@ -180,34 +175,33 @@ export default class Game extends Phaser.Scene {
 		});
 
 
-		
 
-		const { server, onGameOver, currentcells, name, multiplayer } = data	
+
+		const { server, onGameOver, currentcells, name, multiplayer } = data
 
 		this.multiplayer = multiplayer
 		this.server = server
 
-	
-			if (!this.server) {
-				throw new Error('server instance missing')
-			}
-			this.server.onGameStateChanged(this.handleGameStateChanged, this)
-			this.server.onPlayersReady(this.handlePlayersReady, this)
-			this.server.onceStateChanged(this.createBoard, this)
-			this.onGameOver = onGameOver
 
-		
-		
-		this.events.on('wake',(sys: Phaser.Scenes.Systems, data: any)=>{
+		if (!this.server) {
+			throw new Error('server instance missing')
+		}
+		this.server.onGameStateChanged(this.handleGameStateChanged, this)
+		this.server.onPlayersReady(this.handlePlayersReady, this)
+		this.server.onceStateChanged(this.createBoard, this)
+		this.onGameOver = onGameOver
+
+
+
+		this.events.on('wake', (sys: Phaser.Scenes.Systems, data: any) => {
 
 			console.log('game onStart event START')
 			if (!this.server)
 				return
 
-			this.time.delayedCall(200, ()=> {
-				if (this.server?.playerId)
-				{
-				
+			this.time.delayedCall(200, () => {
+				if (this.server?.playerId) {
+
 					this.displayPlayers(true)
 				}
 			})
@@ -223,29 +217,29 @@ export default class Game extends Phaser.Scene {
 		const screenCenterX = this.cameras.main.worldView.x + this.cameras.main.width / 2;
 		const screenCenterY = this.cameras.main.worldView.y + this.cameras.main.height / 2;
 
-		var fontScore = {font: '24px ' + BKG.text['FONT'], fill: 'white', stroke: 'black', strokeThickness: 4}
-		var fontTitle = {font: '32px ' + BKG.text['FONT'], fill: 'white', stroke: 'black', strokeThickness: 6}
+		var fontScore = { font: '24px ' + BKG.text['FONT'], fill: 'white', stroke: 'black', strokeThickness: 4 }
+		var fontTitle = { font: '32px ' + BKG.text['FONT'], fill: 'white', stroke: 'black', strokeThickness: 6 }
 
-		if (this.game.device.os.desktop){
+		if (this.game.device.os.desktop) {
 			this.add.image(0, 0, 'background2').setDisplaySize(this.game.scale.width, this.game.scale.height).setOrigin(0)
-	
+
 		} else {
-		this.add.image(-120, 0, 'background2').setDisplaySize(this.game.scale.width + 250, this.game.scale.height).setOrigin(0)
+			this.add.image(-120, 0, 'background2').setDisplaySize(this.game.scale.width + 250, this.game.scale.height).setOrigin(0)
 		}
-		let notification = this.add.image(screenCenterX,10,'notification')
+		let notification = this.add.image(screenCenterX, 10, 'notification')
 		this.turnText = this.add.text(screenCenterX, 30, 'Waiting for another player', fontTitle)
 			.setOrigin(0.5).setWordWrapWidth(notification.width - 20)
 
-		this.tweens.add({ targets: this.turnText, duration: 1000, scale: 1.05, ease: 'Sine.easeInOut', yoyo: true, loop:-1 });
+		this.tweens.add({ targets: this.turnText, duration: 1000, scale: 1.05, ease: 'Sine.easeInOut', yoyo: true, loop: -1 });
 
 		const { width, height } = this.scale
 
 		let sizex = 0
 		let sizey = 0
-		if(this.sys.game.device.os.desktop) {
+		if (this.sys.game.device.os.desktop) {
 			sizex = 180
 			sizey = 120
-			
+
 		} else {
 			sizex = 130//  180
 			sizey = 130// 120
@@ -254,19 +248,19 @@ export default class Game extends Phaser.Scene {
 		let x = this.game.device.os.desktop ? 1 : 0
 		let y = 1
 		let squareval = 0
-		var fontSquares = {font: '42px ' + BKG.text['GAMEFONT'], fill: '#cd934a', stroke: 'black', strokeThickness: 6}
-        var fontCategories = {font: '24px ' + BKG.text['GAMEFONT'], fill: 'white', stroke: 'black', strokeThickness: 4}
-       
+		var fontSquares = { font: '42px ' + BKG.text['GAMEFONT'], fill: '#cd934a', stroke: 'black', strokeThickness: 6 }
+		var fontCategories = { font: '24px ' + BKG.text['GAMEFONT'], fill: 'white', stroke: 'black', strokeThickness: 4 }
+
 		state.board.forEach((cellState, idx) => {
 
-			let cellposx = x  * sizex + sizex / 2 
-			let cellposy = y  * sizey + sizey / 2 + 12
+			let cellposx = x * sizex + sizex / 2
+			let cellposy = y * sizey + sizey / 2 + 12
 
 			if (x == 0)
 				cellposx -= 1
-		
-			const cell = this.add.image(cellposx, cellposy,'square').setOrigin(0.5,0.5).setDisplaySize(sizex -5, sizey -5)
-			let text =  cellState.type == 0 ? this.add.text(cellposx, cellposy,'', fontCategories) : this.add.text(cellposx,cellposy,'',fontSquares) 
+
+			const cell = this.add.image(cellposx, cellposy, 'square').setOrigin(0.5, 0.5).setDisplaySize(sizex - 5, sizey - 5)
+			let text = cellState.type == 0 ? this.add.text(cellposx, cellposy, '', fontCategories) : this.add.text(cellposx, cellposy, '', fontSquares)
 
 			console.log(cellposx, cellposy)
 			this.cells.push({
@@ -284,11 +278,11 @@ export default class Game extends Phaser.Scene {
 
 			}
 			else {
-			
+
 				if (cellState.type == 0) {
 					cell.setTexture('header')
 					text.setText(cellState.category)
-					
+
 					text.setWordWrapWidth(sizex - 10).setAlign('left').setOrigin(0.5)
 
 				}
@@ -308,18 +302,18 @@ export default class Game extends Phaser.Scene {
 						text.setFontSize(42)
 					}).on(Phaser.Input.Events.GAMEOBJECT_POINTER_UP, () => {
 
-					
 
-						
-							let turn = this.server?.makeSelection(Number.parseInt(idx))
-							this.choose?.play()
-							console.log(turn)
-							if (turn?.result == false) {
-						
-							this.waitMessage?.setPosition(screenCenterX,0)
+
+
+						let turn = this.server?.makeSelection(Number.parseInt(idx))
+						BKG.Sfx.play('choose')
+						console.log(turn)
+						if (turn?.result == false) {
+
+							this.waitMessage?.setPosition(screenCenterX, 0)
 							this.waitMessage?.setText(turn.message)
 							this.waitMessage?.setVisible(true)
-							
+
 							var _this = this
 							var tween = this.tweens.add({
 								targets: this.waitMessage,
@@ -329,15 +323,15 @@ export default class Game extends Phaser.Scene {
 								yoyo: false,
 								repeat: 0,
 								onStart: function () { },
-								onComplete: function () { _this.waitMessage?.setVisible(false).setPosition(screenCenterX,0) },
+								onComplete: function () { _this.waitMessage?.setVisible(false).setPosition(screenCenterX, 0) },
 								onYoyo: function () { console.log('onYoyo'); console.log(arguments); },
 								onRepeat: function () { console.log('onRepeat'); console.log(arguments); },
 							});
 						}
-					
+
 					})
 
-				
+
 
 					this.cells[Number.parseInt(idx)].text = text
 					this.cells[Number.parseInt(idx)].score = squareval
@@ -346,7 +340,7 @@ export default class Game extends Phaser.Scene {
 
 			x++
 
-			if (this.game.device.os.desktop){
+			if (this.game.device.os.desktop) {
 				if (x > 5) {
 					x = 1
 					y++
@@ -360,71 +354,120 @@ export default class Game extends Phaser.Scene {
 
 		})
 
-		
-		
+
+
 		if (this.multiplayer) {
-			this.time.delayedCall(500,()=> {
-			if (this.server?.players) {
-				if (this.server.players.size > 1) {
+			this.time.delayedCall(500, () => {
+				if (this.server?.players) {
+					if (this.server.players.size > 1) {
 						this.handleGameStateChanged(GameState.Playing)
-					
-				}	
-				else {
-					this.turnText?.setText('Waiting for another player')			
+
+					}
+					else {
+						this.turnText?.setText('Waiting for another player')
+					}
 				}
-			}
 			})
 		} else {
-			this.time.delayedCall(1000, ()=> {
-			
+			this.time.delayedCall(1000, () => {
+
 				this.turnText?.setText('Bible Knowledge Game')
 				this.handleGameStateChanged(GameState.Playing)
 
 			})
 		}
 
-		this.waitMessage = this.add.text(screenCenterX, 0,'Not your turn yet').setFontSize(72).setFontFamily('impact').setVisible(false).setOrigin(0.5).setShadow(2,2,'black',2,true)
+		this.waitMessage = this.add.text(screenCenterX, 0, 'Not your turn yet').setFontSize(72).setFontFamily('impact').setVisible(false).setOrigin(0.5).setShadow(2, 2, 'black', 2, true)
 		this.server?.onBoardChanged(this.handleBoardChanged, this)
 		this.server?.onPlayerTurnChanged(this.handlePlayerTurnChanged, this)
 		this.server?.onPlayerWon(this.handlePlayerWon, this)
 
-		
+
 		this.createAnswerEffect()
-	
+
+		
+
+		let startbtn = this.game.device.os.desktop 
+			? new Button(BKG.world.width - 50, BKG.world.height /4, 'button-home', this.clickHome, this, false).setOrigin(0.5)
+			: new Button(50, BKG.world.height - 100, 'button-home',this.clickHome, this, false).setOrigin(0.5)
+
+
+		startbtn.on('pointerover',()=>{
+            this.tweens.add({ targets:  startbtn, duration: 500, scale: 1.2, ease: 'Sine.easeInOut' })
+
+        }).on('pointerout', ()=> {
+            this.tweens.add({ targets:  startbtn, duration: 500, scale: 1, ease: 'Sine.easeInOut' })
+           
+        })
+
+		let settingsbtn = this.game.device.os.desktop 
+			? new Button(BKG.world.width - 50, BKG.world.height /4 + startbtn.height * 1.5, 'button-settings', this.clickSettings, this, false).setOrigin(0.5).setScale(0.9)
+			: new Button(50 + startbtn.width * 1.5, BKG.world.height - 100, 'button-settings',this.clickSettings, this, false).setOrigin(0.5).setScale(0.9)
+
+
+		settingsbtn.on('pointerover',()=>{
+            this.tweens.add({ targets:  settingsbtn, duration: 500, scale: 1.1, ease: 'Sine.easeInOut' })
+
+        }).on('pointerout', ()=> {
+            this.tweens.add({ targets:  settingsbtn, duration: 500, scale: 0.9, ease: 'Sine.easeInOut' })
+           
+        })
+
 		this.cameras.main.fadeIn(2000, 0, 0, 0)
 
 
 	}
 
+	private clickSettings: () => void
+		= () => {
+
+			this.scene.sleep()
+			this.scene.launch('settings', {screen: 'game'})
+		}
+
+	private clickHome: () => void
+		= () => {
+
+			let name = this.server?.playerId
+			this.server?.leave()
+			this.scene.start('title', {
+				server: this.server,
+				onGameOver: this.onGameOver,
+				cells: null,
+				name: name
+				
+
+			})
+		}
+
 	private displayPlayers(effect: boolean) {
 
 		if (!this.server || !this.server?.players)
-			return 
+			return
 
 
 		if (this.server?.playerId == '')
 			return
-		
+
 		this.server.players?.forEach((player: Player, key: string) => {
 
-			if (player.id === this.server?.playerId) 
-			{
-			
+			if (player.id === this.server?.playerId) {
+
 				// Me - I'm always going to be player1score
 				if (player.lastscore < player.score) {
-					
+
 					console.log('I answered correct')
 					if (this.lastSquare != null && this.player1score) {
 						console.log(this.stopEffect)
 						if (!this.stopEffect)
-							this.handleCollectMoney(this.lastSquare, this.player1score, player.score) 
+							this.handleCollectMoney(this.lastSquare, this.player1score, player.score)
 						else {
 							this.player1score.setText(player.score.toString())
 							this.player1score.setColor(player.score < 0 ? 'red' : 'white')
 						}
 					}
-				
-									
+
+
 				}
 				else {
 
@@ -432,61 +475,60 @@ export default class Game extends Phaser.Scene {
 					this.player1score?.setText(player.score.toString())
 					this.player1score?.setColor(player.score >= 0 ? 'white' : 'red')
 				}
-				
+
 			}
-			else 
-			{
+			else {
 				if (player.lastscore < player.score) {
-					
+
 					console.log('other player answered correct')
 					if (this.lastSquare != null && this.player2score) {
 						if (!this.stopEffect)
-						this.handleCollectMoney(this.lastSquare, this.player2score, player.score) 
+							this.handleCollectMoney(this.lastSquare, this.player2score, player.score)
 					}
-				
-									
+
+
 				}
 				else {
 					console.log('other player answered wrong')
 					this.player2score?.setText(player.score.toString())
 					this.player2score?.setColor(player.score >= 0 ? 'white' : 'red')
 				}
-				
+
 			}
-			
+
 		})
 
 		if (this.server.players.size > 1) {
-			let x,y = 0
+			let x, y = 0
 
-			 
+
 			if (this.multiplayer) {
-			if (this.server.activePlayer === this.server?.playerId) {
-				
-				this.turnText?.setText("It's your turn!")
+				if (this.server.activePlayer === this.server?.playerId) {
 
-				if (this.player1img) {
-					x = this.player1img.x - this.player1img.width / 2
-					y = this.player1img.y - this.player1img.height / 2
+					this.turnText?.setText("It's your turn!")
+
+					if (this.player1img) {
+						x = this.player1img.x - this.player1img.width / 2
+						y = this.player1img.y - this.player1img.height / 2
+					}
+				}
+				else {
+					this.turnText?.setText("It's your opponents turn")
+
+					if (this.player2img) {
+						x = this.player2img.x - this.player2img.width / 2
+						y = this.player2img.y - this.player2img.height / 2
+					}
 				}
 			}
 			else {
-				this.turnText?.setText("It's your opponents turn")
-				
-				if (this.player2img) {
-					x = this.player2img.x - this.player2img.width / 2
-					y = this.player2img.y - this.player2img.height / 2
-				}
+				this.turnText?.setText('Bible Knowledge Game')
 			}
-		}
-		else {
-			this.turnText?.setText('Bible Knowledge Game')
-		}
-			
-		this.emitter?.setPosition(x,y)
-		this.stopEffect =true 
 
-	}
+			this.emitter?.setPosition(x, y)
+			this.stopEffect = true
+
+		}
 
 
 
@@ -528,7 +570,7 @@ export default class Game extends Phaser.Scene {
 
 				} else {
 					this.stopcurrentaction = false
-				
+
 
 				}
 
@@ -551,7 +593,7 @@ export default class Game extends Phaser.Scene {
 	private handlePlayersReady(ready: boolean) {
 
 		console.log('player ready!')
-		
+
 		this.locked = !ready
 		if (ready == true) {
 			console.log('control unlocked')
@@ -559,8 +601,8 @@ export default class Game extends Phaser.Scene {
 		else {
 			console.log('control locked')
 		}
-		
-	
+
+
 
 	}
 	private handlePlayerWon(playerId: string) {
@@ -569,83 +611,84 @@ export default class Game extends Phaser.Scene {
 				return
 			}
 
-			this.onGameOver({
-				winner: playerId == this.server?.playerId 
-			})
+			if (this.server) {
+				this.onGameOver({
+					winner: playerId == this.server?.playerId,
+					server: this.server
+				})
+			}
 		})
 	}
 
 	private handleGameStateChanged(state: GameState) {
 		if (state === GameState.Playing) {
 
-			var fontScore = {font: '32px ' + BKG.text['FONT'], fill: 'white', stroke: 'black', strokeThickness: 4}
-		
+			var fontScore = { font: '32px ' + BKG.text['FONT'], fill: 'white', stroke: 'black', strokeThickness: 4 }
+
 			if (!this.server)
 				return
 			if (!this.server.players)
 				return
 
 			// The game has begun create and display the player names and scores
-			
-			
 
-				let col1 = 60
-				let col2 = this.game.scale.width - col1
-				
-				console.log('HANDLE GAMESTATE CHANGE!')
-				
-				let player = this.server.players.get(this.server.playerId)
-				if (player) {
-					this.add.image(col1, 120, 'nametag').setOrigin(0.5).setDepth(998).alpha = 0.7
-				    this.player1img = this.add.image(col1, 50,'player').setOrigin(0.5,0.5).setDepth(998)
-					this.player1img.alpha = 0.7
-					this.player1score = this.add.text(60, 115,'',fontScore).setOrigin(0.5).setDepth(999)						
-					this.add.text(col1, 80, player.name, fontScore).setOrigin(0.5,0.5).setDepth(999)
-					
-					var shape3 = new Phaser.Geom.Rectangle(0, 0, this.player1img.width, this.player1img.height)
-					var particles = this.add.particles('flares')
 
-					if (this.emitter)
-						this.emitter.stop()
 
-						this.emitter = particles.createEmitter({
-							frame: { frames: [ 'red', 'green', 'blue' ], cycle: true },
-							x: this.player1img.x - this.player1img.width / 2,
-							y: this.player1img.y - this.player1img.height / 2,
-							scale: { start: 0.5, end: 0 },
-							
-						  
-							blendMode: 'ADD',
-							emitZone: { type: 'random', source: shape3, quantity: 42, yoyo: false }
-						})
-	
-					
+			let col1 = 60
+			let col2 = this.game.scale.width - col1
 
-				
+			console.log('HANDLE GAMESTATE CHANGE!')
 
-				if (this.multiplayer) {
-				let opponent: Player | undefined
-				this.server.players.forEach((player2: Player, key: string)=> {
-					if (key !== player?.id)
-						opponent = player2
+			let player = this.server.players.get(this.server.playerId)
+			if (player) {
+				this.add.image(col1, 120, 'nametag').setOrigin(0.5).setDepth(998).alpha = 0.7
+				this.player1img = this.add.image(col1, 50, 'player').setOrigin(0.5, 0.5).setDepth(998)
+				this.player1img.alpha = 0.7
+				this.player1score = this.add.text(60, 115, '', fontScore).setOrigin(0.5).setDepth(999)
+				this.add.text(col1, 80, player.name, fontScore).setOrigin(0.5, 0.5).setDepth(999)
+
+				var shape3 = new Phaser.Geom.Rectangle(0, 0, this.player1img.width, this.player1img.height)
+				var particles = this.add.particles('flares')
+
+				if (this.emitter)
+					this.emitter.stop()
+
+				this.emitter = particles.createEmitter({
+					frame: { frames: ['red', 'green', 'blue'], cycle: true },
+					x: this.player1img.x - this.player1img.width / 2,
+					y: this.player1img.y - this.player1img.height / 2,
+					scale: { start: 0.5, end: 0 },
+
+
+					blendMode: 'ADD',
+					emitZone: { type: 'random', source: shape3, quantity: 42, yoyo: false }
 				})
 
-				
-				if (opponent !== undefined) {
-					this.add.image(col2, 120, 'nametag').setOrigin(0.5).setDepth(998).alpha = 0.7
-					this.player2img = this.add.image(col2, 50,'player').setOrigin(0.5,0.5).setDepth(998)
-					this.player2img.alpha = 0.7
-					this.player2score = this.add.text(col2, 115,'',fontScore).setOrigin(0.5).setDepth(999)						
-					this.add.text(col2, 80, opponent.name, fontScore).setDepth(999).setOrigin(0.5)
-					
-				}
+
+
+
+
+				if (this.multiplayer) {
+					let opponent: Player | undefined
+					this.server.players.forEach((player2: Player, key: string) => {
+						if (key !== player?.id)
+							opponent = player2
+					})
+
+
+					if (opponent !== undefined) {
+						this.add.image(col2, 120, 'nametag').setOrigin(0.5).setDepth(998).alpha = 0.7
+						this.player2img = this.add.image(col2, 50, 'player').setOrigin(0.5, 0.5).setDepth(998)
+						this.player2img.alpha = 0.7
+						this.player2score = this.add.text(col2, 115, '', fontScore).setOrigin(0.5).setDepth(999)
+						this.add.text(col2, 80, opponent.name, fontScore).setDepth(999).setOrigin(0.5)
+
+					}
 				}
 			}
 
-				//if (player.id === this.server?.activePlayer)
-				//	this.arrow = this.add.image(playerdisplay.x, playerdisplay.y, 'flood', 'arrow-white').setOrigin(0.5)
+			
 
-		
 			this.displayPlayers(false)
 		}
 	}

@@ -48,6 +48,11 @@ export default class Preloader extends Phaser.Scene {
 				['winscreen','assets/winscreen.png'],
 			    ['singleplayer_button','assets/singleplayer_button.png'],
 				['multiplayer_button','assets/multiplayer_button.png'],
+				['answerbackground', 'assets/answerbackground.png'],
+				['answerbutton','assets/answerbutton.png'],
+				['phaser','assets/phaser.png'],
+				['loginbackground','assets/loginbackground.png'],
+				['levelmodebg','assets/levelmodebg.png']
 			],
 			'spritesheet': [
 				['button-start', 'assets/button-start.png', {frameWidth:180,frameHeight:180}],
@@ -63,10 +68,10 @@ export default class Preloader extends Phaser.Scene {
 				['button-sound-off', 'assets/button-sound-off.png', {frameWidth:80,frameHeight:80}],
 				['button-music-on', 'assets/button-music-on.png', {frameWidth:80,frameHeight:80}],
 				['button-music-off', 'assets/button-music-off.png', {frameWidth:80,frameHeight:80}],
-				['button-back', 'assets/button-back.png', {frameWidth:70,frameHeight:70}]
+				['button-back', 'assets/button-back.png', {frameWidth:70,frameHeight:70}],
+				['button-home','assets/button-home.png', {frameWidth:70, frameHeight:70}],
 
 			],
-		
 			'audio': [
 				['question_music', ['assets/music/question.ogg', 'assets/music/question.mp3']],
 				['player_answer', ['assets/sound/playeranswer.ogg','assets/sound/playeranswer.mp3']],
@@ -74,7 +79,7 @@ export default class Preloader extends Phaser.Scene {
 				['opening',['assets/music/opening.ogg','assets/music/opening.mp3']],
 				['click',['assets/sound/click.ogg','assets/sound/click.mp3']],
 				['choose',['assets/sound/choose.ogg','assets/sound/choose.mp3']],
-				['startbtn', 'assets/startbtn.png']
+
 			],
 		}
 		for(var method in resources) {

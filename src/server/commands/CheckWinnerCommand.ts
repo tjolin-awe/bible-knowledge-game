@@ -22,14 +22,14 @@ export default class CheckWinnerCommand extends Command<ITicTacToeState, Payload
 	    this.room.state.board.forEach((cell : Cell, key: string) => {
 
 		
-			if (parseInt(key) > 6) {
+			if (parseInt(key) > 5) {
 				console.log(cell.result)
 				if (cell.result === false)   
 					isgameover = false  // There is at least one square left
 				
 			}
 		})
-		return  isgameover 
+		return isgameover 
 	}
 
 	execute()
