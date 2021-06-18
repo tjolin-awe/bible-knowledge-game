@@ -285,46 +285,7 @@ BKG.Lang = {
       'menu-highscore': 'Score: ',
       'screen-story-howto': 'Story / how to play\nscreen'
     },
-    'pl': {
-      'FONT': 'Arial',
-      'settings': 'USTAWIENIA',
-      'sound-on': 'Dźwięk: WŁ.',
-      'sound-off': 'Dźwięk: WYŁ.',
-      'music-on': 'Muzyka: WŁ.',
-      'music-off': 'Muzyka: WYŁ.',
-      'keyboard-info': 'Wciśnij K by zobaczyć skróty klawiszowe',
-      'credits': 'AUTORZY',
-      'madeby': 'BKG stworzone przez',
-      'team': 'ZESPÓŁ',
-      'coding': 'kodowanie',
-      'design': 'grafika',
-      'testing': 'testowanie',
-      'musicby': 'Muzyka autorstwa',
-      'key-title': 'SKRÓTY KLAWISZOWE',
-      'key-settings-title': 'Ustawienia',
-      'key-settings-onoff': 'S - pokaż/ukryj ustawienia',
-      'key-audio': 'A - włącz/wyłącz dźwięk',
-      'key-music': 'M - włącz/wyłącz muzykę',
-      'key-credits': 'C - pokaż/ukryj autorów',
-      'key-shortcuts': 'K - pokaż/ukryj skróty klawiszowe',
-      'key-menu': 'Menu główne',
-      'key-start': 'Enter - zacznij grę',
-      'key-continue': 'Enter - kontynuuj',
-      'key-gameplay': 'Rozgrywka',
-      'key-button': 'Enter - aktywuj przycisk CLICK ME',
-      'key-pause': 'P - włącz/wyłącz pauzę',
-      'key-pause-title': 'Ekran pauzy',
-      'key-back': 'B - powrót do menu głównego',
-      'key-return': 'P - powrót do gry',
-      'key-gameover': 'Ekran końca gry',
-      'key-try': 'T - spróbuj ponownie',
-      'gameplay-score': 'Wynik: ',
-      'gameplay-timeleft': 'Pozostały czas: ',
-      'gameplay-paused': 'PAUZA',
-      'gameplay-gameover': 'KONIEC GRY',
-      'menu-highscore': 'Rekord: ',
-      'screen-story-howto': 'Ekran fabuły / jak grać'
-    }
+    
   }
 };
 

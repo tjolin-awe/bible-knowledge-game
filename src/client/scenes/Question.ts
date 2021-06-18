@@ -59,7 +59,7 @@ export default class Question extends Phaser.Scene
                 const screenCenterX = this.cameras.main.worldView.x + this.cameras.main.width / 2;
                 const screenCenterY = this.cameras.main.worldView.y + this.cameras.main.height / 2;
 
-                BKG.Sfx.stopMusic()
+                BKG.Sfx.stopMusic('question-music')
                 let fontTimeout= {font: '120px ' + BKG.text['GAMEFONT'], fill: 'red', stroke: 'black', strokeThickness: 24}
        
                 let timeout = this.add.text(screenCenterX, 0,'TIME IS UP!',fontTimeout).setOrigin(0.5)
