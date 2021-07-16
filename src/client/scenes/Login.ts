@@ -8,7 +8,7 @@ import type Server from '../services/Server'
 export default class Login extends Phaser.Scene
 {
 	private server?: Server 
-    private inputname: string = ""
+ 
 	private loggedIn: boolean = false
     private multiplayer: boolean = false
     private startbtn?: Phaser.GameObjects.Image
@@ -84,7 +84,6 @@ export default class Login extends Phaser.Scene
       
 
 
-         this.createKeyboard()
      
     }
 
@@ -131,8 +130,7 @@ export default class Login extends Phaser.Scene
         else 
             nextLetterX = this.letters[this.letters.length - 1].display.getCenter().x + letterSpacing
         
-        console.log(`${nextLetterX}, ${nextLetterY}`)
-    
+       
      
         let letter = this.add.text(nextLetterX, nextLetterY , textline[i], fontKeys).setOrigin(0.5).setInteractive()
     
@@ -237,7 +235,7 @@ export default class Login extends Phaser.Scene
       
         this.inputReady = false
        
-		const { server, onGameOver, currentcells, name, multiplayer } = data
+		const { server, onGameOver, currentcells, multiplayer } = data
 
         let background = this.add.image(0,0,'loginbackground').setOrigin(0).setDisplaySize(BKG.world.width, BKG.world.height)
 
@@ -248,8 +246,8 @@ export default class Login extends Phaser.Scene
         this.cameras.main.fadeIn(1000)
         this.cameras.main.once(Phaser.Cameras.Scene2D.Events.FADE_IN_COMPLETE, (cam: Phaser.Cameras.Scene2D.Camera, effect: Phaser.Cameras.Scene2D.Effects.Fade) => {
 
-            this.inputReady = true
-
+            this.createKeyboard()
+            this.inputReady =true
         })
 		
 		
@@ -260,10 +258,15 @@ export default class Login extends Phaser.Scene
 
 		this.onGameOver = onGameOver
 
-		if (this.loggedIn) {
-            this.playerText.setText(this.inputname)
-			this.startgame()
-		}
+		
+
+        let player = BKG.Storage.get('BKG-player')
+        this.playerText.setText(player)
+        if (player !== '' && player !== undefined) {
+            this.startgame()		   
+        }
+
+        
 
 			
 		
@@ -307,13 +310,13 @@ export default class Login extends Phaser.Scene
             this.particles.destroy()
        
         this.loggedIn = true
-        this.inputname = this.playerText.text
+        
+        BKG.Storage.set('BKG-player',this.playerText.text)
         //  Submit
 	    this.scene.start('story', {
 			server: this.server,
 			onGameOver: this.onGameOver,
 			currentcells: null,
-			name: this.playerText.text,
             multiplayer: this.multiplayer
         })
     }

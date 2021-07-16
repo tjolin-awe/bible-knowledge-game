@@ -38,6 +38,11 @@ export interface ICell extends Schema
 
 }
 
+export interface ICategory extends Schema
+{
+	title: string
+}
+
 export interface IPlayer extends Schema
 {
 	id: string 
@@ -76,6 +81,10 @@ export interface IBKGSinglePlayerState extends Schema
 	locked: boolean
 
 	playersReady: boolean
+
+	level: number 
+
+	categories: MapSchema<ICategory>
 }
 
 export interface ITicTacToeState extends Schema
@@ -100,6 +109,11 @@ export interface ITicTacToeState extends Schema
 
 	playersReady: boolean
 	
+	level: number
+
+	categories: MapSchema<ICategory>
+
+	multiplayer: boolean
 
 }
 

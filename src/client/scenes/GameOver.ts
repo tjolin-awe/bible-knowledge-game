@@ -1,9 +1,13 @@
 import Phaser from 'phaser'
+import { Player } from '~/server/TicTacToeState'
 import { BKG, Button } from '../../types/BKG'
 import { IGameOverSceneData, IGameSceneData } from '../../types/scenes'
 
 export default class GameOver extends Phaser.Scene
 {
+	private screenGameoverScore?: Phaser.GameObjects.Text
+	private pointsTween?: Phaser.Tweens.Tween
+	private _score: any
 	constructor()
 	{
 		super('game-over')
@@ -16,37 +20,28 @@ export default class GameOver extends Phaser.Scene
 	{
 
 		
-		const { winner , onRestart, server } = data
+		const { winningPlayerId, winner , onRestart, server } = data
 
-		this.onRestart = onRestart 
-		let screenCenterX = this.game.scale.width / 2
-		let screenCenterY = this.game.scale.height / 2
-	
+		this.onRestart= onRestart
+		
 		let background = this.add.image(0,0,'winscreen').setOrigin(0).setDisplaySize(BKG.world.width, BKG.world.height)
 	
-		const text = data.winner 
-			? 'You Won!'
-			: 'You Lost!'
+		
+	    let winningPlayer = server.players?.get(winningPlayerId)
+		const text = `${winningPlayer?.name} Wins!`
 
+		this._score = winningPlayer?.score
 
-		if (data.winner) {
-			var p0 = new Phaser.Math.Vector2(screenCenterX - 400, 500);
-			var p1 = new Phaser.Math.Vector2(screenCenterX - 400, 150);
-			var p2 = new Phaser.Math.Vector2(screenCenterX + 400, 150);
-			var p3 = new Phaser.Math.Vector2(screenCenterX + 400, 500);
+		
+
+			var p0 = new Phaser.Math.Vector2(BKG.world.centerX - 400, 500);
+			var p1 = new Phaser.Math.Vector2(BKG.world.centerX - 400, 150);
+			var p2 = new Phaser.Math.Vector2(BKG.world.centerX + 400, 150);
+			var p3 = new Phaser.Math.Vector2(BKG.world.centerX + 400, 500);
 		
 			var curve = new Phaser.Curves.CubicBezier(p0, p1, p2, p3);
 
-			let highscore = BKG.Storage.get('BKG-highscore')
-
-			let player = server.players?.get(server.playerId)
-
-			if (player){
-				highscore += player.score 
-
-				console.log(highscore)
-				BKG.Storage.setHighscore('BKG-highscore',highscore);
-			}
+		
 		
 			var max = 28;
 			var points = [];
@@ -87,20 +82,25 @@ export default class GameOver extends Phaser.Scene
 				});
 			}
 		
-		}
-		const { width, height } = this.scale
+		
+		var fontScoreWhite = { font: '38px ' + BKG.text['FONT'], fill: '#000', stroke: '#ffde00', strokeThickness: 5 };
 
-		const title = this.add.text(width * 0.5, height * 0.5, text, {
-			fontSize: '72px',
-			fontFamily: 'impact'
-		})
-		.setOrigin(0.5)
+		let fontTitle = { font: '48px ' + BKG.text['FONT'], fill: 'white', stroke: 'black', strokeThickness: 6 }
+
+		this.add.text(BKG.world.centerX, BKG.world.centerY, text, fontTitle).setOrigin(0.5)
+
+		
+		let restart = new Button(BKG.world.centerX, BKG.world.centerY + 200,'button-restart', this.restart,this)
 
 		
 
-		let restart = new Button(BKG.world.centerX, BKG.world.centerY + 150,'button-restart', this.restart,this)
+		if (data.winner) {
+			this.screenGameoverScore = this.add.text(BKG.world.centerX, BKG.world.centerY + 50,'0', fontScoreWhite).setOrigin(0.5)
 
+			this.gameoverScoreTween()
 
+		}
+		
 
 		this.input.keyboard.once('keyup-SPACE', () => {
 			
@@ -113,5 +113,46 @@ export default class GameOver extends Phaser.Scene
 			this.onRestart?.call(this)
 			
 			
+	}
+	gameoverScoreTween() {
+
+	
+
+		let highscore = BKG.Storage.get('BKG-highscore')
+
+	
+			
+		this.screenGameoverScore?.setText(highscore);
+		let self = this
+		if(this._score) {
+			this.pointsTween = this.tweens.addCounter({
+				from: 0, to: this._score, duration: 2000, delay: 250,
+				onUpdateScope: this, onCompleteScope: this,
+				onUpdate: function(){
+					self.screenGameoverScore?.setText(highscore+Math.floor(self.pointsTween!.getValue()));
+				},
+				onComplete: function(){
+					var emitter = self.add.particles('green').createEmitter({
+						x: BKG.world.centerX,
+						y: BKG.world.centerY,
+						speed: { min: -600, max: 600 },
+						angle: { min: 0, max: 360 },
+						scale: { start: 0.5, end: 3 },
+						blendMode: 'ADD',
+						active: true,
+						lifespan: 2000,
+						gravityY: 1000,
+						quantity: 400
+
+						
+		
+					});
+				
+					
+					BKG.Storage.setHighscore('BKG-highscore',Number.parseInt(self.screenGameoverScore!.text));
+					emitter.explode(50,BKG.world.centerX,BKG.world.centerY);
+				}
+			});
+		}
 	}
 }

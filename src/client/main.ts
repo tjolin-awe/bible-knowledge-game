@@ -14,6 +14,9 @@ import Story from './scenes/Story'
 import Settings from './scenes/Settings'
 import Attribution from './scenes/Attribution'
 import GameConnection from './scenes/GameConnection'
+import LevelSelect from './scenes/LevelSelect'
+import Restart from './scenes/Restart'
+import LevelComplete from './scenes/LevelComplete'
 
 let width = 1280
 let height = 800
@@ -24,9 +27,6 @@ if( /Android|webOS|iPhone|iPad|Mac|Macintosh|iPod|BlackBerry|IEMobile|Opera Mini
 
 const config: Phaser.Types.Core.GameConfig = {
 	type: Phaser.AUTO,
-	//width:  ,
-	//height:  800,
-
 	physics: {
 		default: 'arcade',
 		arcade: {
@@ -39,8 +39,9 @@ const config: Phaser.Types.Core.GameConfig = {
 	   width: width,
 	   height: height
     },
-	scene: [Bootstrap, Preloader, Title, Settings, Attribution, GameConnection, Login, Story, Game, Question, AnswerScreen, GameOver]
+	scene: [Bootstrap, Preloader, Title, Settings, Attribution, GameConnection, Login, Story, LevelSelect, Game, Question, AnswerScreen, GameOver, Restart, LevelComplete]
 
-}
-
+	}
+	
 export default new Phaser.Game(config)
+

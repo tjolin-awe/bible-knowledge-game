@@ -68,8 +68,19 @@ export default class Title extends Phaser.Scene {
 
         let title  = this.add.image(BKG.world.centerX, 150, 'gamelogo').setOrigin(0.5)
        
+        BKG.Storage.initUnset('BKG-level-1', true);
+        BKG.Storage.initUnset('BKG-level-2', false);
+       
+        BKG.Storage.initUnset('BKG-level-3', false);
+        BKG.Storage.initUnset('BKG-level-4', false);
+        BKG.Storage.initUnset('BKG-level-5', false);
+        BKG.Storage.initUnset('BKG-level-6', false);
+        BKG.Storage.initUnset('BKG-player', '')
+
+        BKG.Storage.initUnset('BKG-active-level',1);
         BKG.Storage.initUnset('BKG-highscore', 0);
 		var highscore = BKG.Storage.get('BKG-highscore');
+
 
         var fontHighscore = { font: '38px '+BKG.text['FONT'], fill: '#ffde00', stroke: '#000', strokeThickness: 5 };
 		var textHighscore = this.add.text(BKG.world.width-20, 20, BKG.text['menu-highscore']+highscore, fontHighscore);
@@ -155,7 +166,6 @@ export default class Title extends Phaser.Scene {
                 server: this.server,
                 onGameOver: this.onGameOver,
                 currentcells: null,
-                name: this.inputtext,
                 multiplayer: multiplayer
 
 

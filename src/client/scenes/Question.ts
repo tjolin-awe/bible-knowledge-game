@@ -4,6 +4,7 @@ import type Server from '../services/Server'
 import { Answer } from '../../server/TicTacToeState'
 import Bootstrap from './Bootstrap'
 import { BKG } from '../../types/BKG'
+import Shuffle from 'phaser3-rex-plugins/plugins/utils/array/Shuffle'
 
 
 export default class Question extends Phaser.Scene
@@ -28,6 +29,25 @@ export default class Question extends Phaser.Scene
 
     answers: { name: string, display: Phaser.GameObjects.Text, displaybg: Phaser.GameObjects.Image, correct: boolean, answer: Answer}[] = []
  
+
+    private shuffle(array: [string, Answer][]) {
+        var currentIndex = array.length,  randomIndex: number;
+      
+        // While there remain elements to shuffle...
+        while (0 !== currentIndex) {
+      
+          // Pick a remaining element...
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex--;
+      
+          // And swap it with the current element.
+          [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+        }
+      
+        return array;
+    }
+
     private countdown()
     {
         this.startCounter--;
@@ -316,8 +336,13 @@ export default class Question extends Phaser.Scene
                 row2 = 550
             }
            
-            answers.forEach((value: Answer, key: string)=> {
+            let answerarray =  Array.from(answers)
+            
+            answerarray = this.shuffle(answerarray)
+            answerarray.forEach((value: [string,Answer], index: number)=> {
 
+                let key = value[0]
+                let answer = value[1]
                 let col,row = 0
 
                 if (i == 0)
@@ -344,7 +369,7 @@ export default class Question extends Phaser.Scene
                     console.log('clicked')
                 
                     if (!this.hasBeenAnwswered)
-                        this.server?.playerAnswer(value.cellId, value.id)
+                        this.server?.playerAnswer(answer.cellId, answer.id)
                     else {
                         console.log('question has been answered already!')
                     }
@@ -352,7 +377,7 @@ export default class Question extends Phaser.Scene
                 if (!this.game.device.os.desktop){
                     bg.setScale(0.8)
                 }
-                let display = this.add.text(col, row, value.name, fontAnswer)
+                let display = this.add.text(col, row, answer.name, fontAnswer).setWordWrapWidth(bg.displayWidth - 20).setAlign('center')
                 .setOrigin(0.5).setFontStyle('bold').setInteractive().on('pointerover', ()=>{
                     if (this.timeExpired == false)
                         display.setColor('#cd934a').setFontStyle('bold')
@@ -364,7 +389,7 @@ export default class Question extends Phaser.Scene
                     console.log('clicked')
                 
                     if (!this.hasBeenAnwswered)
-                        this.server?.playerAnswer(value.cellId, value.id)
+                        this.server?.playerAnswer(answer.cellId, answer.id)
                     else {
                         console.log('question has been answered already!')
                     }
@@ -378,11 +403,11 @@ export default class Question extends Phaser.Scene
                     display.setColor('white')
                 })
                 this.answers.push({
-                    name: value.name,
+                    name: answer.name,
                     display: display,
                     displaybg: bg,
-                    correct: value.correct,
-                    answer: value
+                    correct: answer.correct,
+                    answer: answer
                 })
                 i++
             

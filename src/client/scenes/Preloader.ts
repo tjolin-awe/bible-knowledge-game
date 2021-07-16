@@ -52,7 +52,19 @@ export default class Preloader extends Phaser.Scene {
 				['answerbutton','assets/answerbutton.png'],
 				['phaser','assets/phaser.png'],
 				['loginbackground','assets/loginbackground.png'],
-				['levelmodebg','assets/levelmodebg.png']
+				['levelmodebg','assets/levelmodebg.png'],
+				['level1','assets/Window.png'],
+				['levellocked','assets/levellocked.png'],
+				['winscreen', 'assets/winscreen.png'],
+				['backbtn','assets/Backward_BTN.png'],
+				['nextbtn','assets/Forward_BTN.png'],
+				['level1_img', 'assets/levels/level1_img1.png'],
+				['level2_img', 'assets/levels/level2_img1.png'],
+				['level3_img', 'assets/levels/level3_img1.png'],
+				['particle','assets/particle.png'],
+				
+				
+			
 			],
 			'spritesheet': [
 				['button-start', 'assets/button-start.png', {frameWidth:180,frameHeight:180}],

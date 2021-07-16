@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <root>
-    <board id="level 1">
+    <board id="1" name="">
         <cell id="0" type="0">
             <category>Important Figures in the Bible</category>
                  <score>0</score>
@@ -225,4 +225,5 @@
         </cell>
 
     </board>
+    
 </root>

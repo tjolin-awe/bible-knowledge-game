@@ -19,8 +19,12 @@ export default class CheckWinnerCommand extends Command<ITicTacToeState, Payload
 	{
 		// Check the board to see if there are any squares left
 		let isgameover = true
+
+		console.log('determine winner')
+		console.log(this.room.state.board.keys.length)		
 	    this.room.state.board.forEach((cell : Cell, key: string) => {
 
+			console.log(cell.question, cell.result)
 		
 			if (parseInt(key) > 5) {
 				console.log(cell.result)
@@ -29,13 +33,19 @@ export default class CheckWinnerCommand extends Command<ITicTacToeState, Payload
 				
 			}
 		})
-		return isgameover 
+
+		return true // isgameover
+		
+
+	
 	}
 
 	execute()
 	{
 		if (this.determineWin())
 		{
+			
+
 			let winningplayer = ''
 			let highscore = 0
 			this.state.players.forEach((player: Player, key: string)=> {
@@ -44,8 +54,17 @@ export default class CheckWinnerCommand extends Command<ITicTacToeState, Payload
 					winningplayer = player.id
 				}
 				
-			})			
-			this.state.winningPlayer = winningplayer
+			})		
+			if (this.state.multiplayer)	
+				this.state.winningPlayer = winningplayer
+			else 
+			{
+				if (highscore >= 5000) {
+					this.state.winningPlayer = winningplayer
+				} else {
+					this.state.winningPlayer = ''
+				}
+			}
 		}
 		else
 		{

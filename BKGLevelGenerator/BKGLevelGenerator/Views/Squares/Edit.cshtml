@@ -1,0 +1,125 @@
+﻿@model BKGLevelGenerator.Models.Square
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+<h1>Details</h1>
+<h2>Square</h2>
+<hr />
+<div class="row">
+    <form enctype="multipart/form-data" asp-action="Edit">
+        <div class="form-group">
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <p class="panel-title">Question</p>
+                    </div>
+                    <div class="panel-body">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="Id" />
+                        <input type="hidden" asp-for="CategoryId" />
+                        <input type="hidden" asp-for="SquareId" />
+                        <input type="hidden" name="board" value="@ViewBag.Board" />
+
+                        <div class="form-group">
+
+                            <label class="control-label">Category</label>
+                            <p class="form-control-static">@Model.Category.Title</p>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Question"  class="control-label"></label>
+                            <input asp-for="Question" class="form-control" placeholder="Enter Question..." autocomplete="off" />
+                            <span asp-validation-for="Question" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Value" class="control-label"></label>
+                            <input asp-for="Value" type="number" class="form-control" placeholder="Enter Value..." autocomplete="off" />
+                            <span asp-validation-for="Value" class="text-danger"></span>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <hr />
+                            <table class="table table-bordered table-condensed table-hover table-responsive table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Answer</th>
+                                        <th>Correct</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @for (int i = 0; i < Model.Answers.Count(); i++)
+                                    {
+
+                                        <tr>
+
+                                            <td>
+                                                <input id="answerId_@i" value="@Model.Answers.ElementAt(i).Id" name="Answers[@i].Id" type="hidden" checked="" />
+                                         
+                                                <input id="answerDisplay_@i" value="@Model.Answers.ElementAt(i).Display" name="Answers[@i].Display" type="text" class="form-control" autocomplete="off" />
+                                            </td>
+                                            <td>
+
+                                                <input id="answerCorrect_@i" value="@Model.Answers.ElementAt(i).Correct" name="Answers[@i].Correct" type="checkbox" class="checkbox" checked="@Model.Answers.ElementAt(i).Correct" />
+                                                <input id="answerCorrect_@i" type="hidden" name="Answers[@i].Correct" value="@Model.Answers.ElementAt(i).Correct" />
+                                            </td>
+
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+
+                        </div>
+
+
+                        <input type="submit" class="btn btn-primary btn-block" style="width:80%;margin:auto" />
+                    </div>
+                </div>
+            </div><div class="col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <p class="panel-title">Image</p>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group">
+
+
+                            <img class="img-thumbnail" src="@ViewBag.ImageBase64" />
+                            <label class="control-label">Upload New Image</label>
+
+                            <input id="file" name="file" class="form-control" type="file" />
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('form').on('change', ':checkbox', function () {
+            if (this.checked) {
+                $(this).val(true);
+            }
+            else {
+                $(this).val(false);
+            }
+        });
+    });</script>
+}

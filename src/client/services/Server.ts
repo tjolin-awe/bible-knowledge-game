@@ -22,12 +22,27 @@ export default class Server
 	private _playerId: string = ''
 	private _name: string = ''
 	private _multiplayer: boolean = false
+	private _level: string = ''
 
 	get playerId()
 	{
 		return this._playerId
 	}
 
+	get otherPlayerName()
+	{
+		this.players?.forEach((value: IPlayer, key: string)=> {
+			if (this._playerId != key)
+				return value.name
+		});
+		return ''
+	}
+
+
+	get level()
+	{
+		return this._level
+	}
 	
 
 	get playerIndex()
@@ -66,6 +81,7 @@ export default class Server
 	}
 
 
+
 	constructor()
 	{
 
@@ -78,7 +94,7 @@ export default class Server
 	}
 
 
-	async join(name: string, multiplayer: boolean)
+	async join(name: string, level: string, multiplayer: boolean)
 	{
 		this._multiplayer = multiplayer
 		this._name = name
@@ -86,17 +102,17 @@ export default class Server
 		console.log(multiplayer)
 		
 		if (multiplayer)
-			this.room = await this.client.joinOrCreate<ITicTacToeState>('tic-tac-toe', { name: name, multiplayer: multiplayer})
+			this.room = await this.client.joinOrCreate<ITicTacToeState>('tic-tac-toe', { name: name, level:level, multiplayer: multiplayer})
 		else {
 			console.log('joining single player')
-			this.room = await this.client.joinOrCreate<IBKGSinglePlayerState>('bkg-single-player-game', {name: name, multiplayer: multiplayer})
+			this.room = await this.client.joinOrCreate<IBKGSinglePlayerState>('bkg-single-player-game', {name: name, level: level, multiplayer: multiplayer})
 		}
-		this.room.onMessage(Message.PlayerIndex, (message: { playerId: string, playerIndex: number, name: string }) => {
+		this.room.onMessage(Message.PlayerIndex, (message: { playerId: string, level:string, playerIndex: number, name: string }) => {
 			
 				this._playerIndex = message.playerIndex
 				this._playerId = message.playerId
 				this._name = message.name
-				
+				this._level = level
 				
 		})
 
@@ -191,12 +207,12 @@ export default class Server
 			
 		
 
-			if (!this.room.state.playersReady)
+			/*if (!this.room.state.playersReady)
 			{
 				turnresult.message = "Your opponent's not ready"
 				turnresult.result = false
 				return turnresult
-			}
+			}*/
 		}
 
 		this.room.send(Message.PlayerSelection, { cellId: cellId })

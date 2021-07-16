@@ -101,33 +101,50 @@ export default class Bootstrap extends Phaser.Scene
 	}
 
 
+	
 
 	private handleGameOver = (data: IGameOverSceneData) => {
+		
+		
 		this.server.leave()
 		this.scene.stop('game')
 
-		this.scene.launch('game-over', {
-			...data,
-			onRestart: this.handleRestart,
-			server: this.server
-		})
-	}
+		console.log('game over')
+		console.log(data)
 
-	private handleRestart = () => {
+		let screen = data.multiplayer ? 'game-over' : 'levelcomplete'
+			this.scene.launch(screen, {
+				...data,
+				onRestart: this.handleRestart,
+				onGameOver: this.handleGameOver,
+				server: this.server
+			})
+		
+
+		}
+
+	public handleRestart = () => {
 					
-		this.scene.stop('login')
+		this.scene.stop('login')	
 		this.scene.stop('game')
 		this.scene.stop('question')
 		this.scene.stop('answer')
 		this.scene.stop('game-over')
-
+		this.scene.stop('levelselect')
+		
 	
 		this.restartGame()
 	}
 
 	private restartGame(){
 	 
-		this.scene.launch('title', {
+		
+		this.server.leave()
+		this.server = new Server()
+		
+
+
+		this.scene.start('title', {
 			server: this.server,
 			onGameOver: this.handleGameOver,
 		

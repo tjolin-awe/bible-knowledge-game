@@ -1,10 +1,12 @@
 import Phaser from 'phaser'
-import { IGameOverSceneData, IGameSceneData } from '../../types/scenes'
+import { IGameOverSceneData, IGameSceneData, IGameWakeSceneData } from '../../types/scenes'
 import ITicTacToeState, { GameState, ICell, IPlayer } from '../../types/ITicTacToeState'
-import type Server from '../services/Server'
+import Server from '../services/Server'
 import { MapSchema } from '@colyseus/schema'
 import { Cell, Player } from '../../server/TicTacToeState'
 import { BKG, Button } from '../../types/BKG'
+import Bootstrap from './Bootstrap'
+import GetValue from 'phaser3-rex-plugins/plugins/utils/object/GetValue'
 
 // add to top of file to help with typing
 interface TrailToData {
@@ -22,26 +24,49 @@ export default class Game extends Phaser.Scene {
 	private turnText?: Phaser.GameObjects.Text
 	private player1score?: Phaser.GameObjects.Text
 	private player2score?: Phaser.GameObjects.Text
-	
+
 	private lastSquare?: Phaser.GameObjects.Image
 	private waitMessage?: Phaser.GameObjects.Text
 
 	private arrow?: Phaser.GameObjects.Image
 	private cells: { display: Phaser.GameObjects.Image, value: ICell, text: Phaser.GameObjects.Text, score: number }[] = []
-	private player1img?: Phaser.GameObjects.Image
+	private player1img!: Phaser.GameObjects.Image
 	private emitter?: Phaser.GameObjects.Particles.ParticleEmitter
 	private correcteffect?: Phaser.GameObjects.Particles.ParticleEmitter
 	private wrongeffect?: Phaser.GameObjects.Particles.ParticleEmitter
 	private player2img?: Phaser.GameObjects.Image
 	private multiplayer: boolean = false
-
-	private stopEffect: boolean = false
+	private screenGameoverGroup?: Phaser.GameObjects.Group
+	private screenGameoverBg?: Phaser.GameObjects.Image
+	private screenGameoverText?: Phaser.GameObjects.Text
+	private screenGameoverBack?: Button
+	private screenGameoverRestart?: Button
+	private screenGameoverScore?: Phaser.GameObjects.Text
+	private player1DisplayGroup?: Phaser.GameObjects.Group
+	private level?: string
+	private player1Nametag?: Phaser.GameObjects.Image
+	private animationPlayer = false
+	private stopcurrentaction: boolean = false
+	private lastAmount: number = 0
+	private answersound?: Phaser.Sound.BaseSound
+	private player1name?: Phaser.GameObjects.Text
+	private player2DisplayGroup?: Phaser.GameObjects.Group
+	private player2Nametag?: Phaser.GameObjects.Image
+	private player2name?: Phaser.GameObjects.Text
+	private homebtn?: Button
+	private settingsbtn?: Button
+	private fontTitle!: { font: string; fill: string; stroke: string; strokeThickness: number }
+	private screenPausedGroup?: Phaser.GameObjects.Group
+	private screenPausedBg?: Phaser.GameObjects.Sprite
+	private screenPausedText?: Phaser.GameObjects.Text
+	private screenPausedBack: any
+	private screenPausedContinue?: Button
+	private _gamePaused: any
+	private screenPausedMessage?: Phaser.GameObjects.Text
 
 	private handleCollectMoney(obj1: Phaser.GameObjects.Image, obj2: Phaser.GameObjects.Text, score: number) {
 
 		BKG.Sfx.play('correct_answer')
-		console.log('emit trail')
-		console.log(`x = ${obj2.x}`)
 		this.events.emit('trail-to', {
 			fromX: obj1.x,
 			fromY: obj1.y,
@@ -74,10 +99,8 @@ export default class Game extends Phaser.Scene {
 				blendMode: 'ADD'
 			})
 
-			let screenCenterX = this.game.scale.width / 2
-			let screenCenterY = this.game.scale.height / 2
-			const xVals = [data.fromX, screenCenterX + 100, screenCenterX - 100, data.toX]
-			const yVals = [data.fromY, screenCenterY + 100, screenCenterY - 100, data.toY]
+			const xVals = [data.fromX, BKG.world.centerX + 100, BKG.world.centerX - 100, data.toX]
+			const yVals = [data.fromY, BKG.world.centerY + 100, BKG.world.centerY - 100, data.toY]
 
 			this.tweens.addCounter({
 				from: 0,
@@ -104,6 +127,7 @@ export default class Game extends Phaser.Scene {
 
 					this.tweens.add({ targets: data.display, duration: 1000, scale: 1.3, ease: 'Sine.easeInOut', yoyo: true });
 
+					this.displayPlayers(true)
 				}
 			})
 		})
@@ -116,15 +140,52 @@ export default class Game extends Phaser.Scene {
 	init() {
 		this.cells = []
 
+		this.events.on('wake', (sys: Phaser.Scenes.Systems, data: IGameWakeSceneData) => {
+
+
+			this.server?.playerReady(this.server?.playerId)
+			if (data === undefined)
+				return
+
+			let { correct, answering_player, score, answered } = data
+
+			console.log(correct)
+			if (!answered && !this.multiplayer) {
+				this.stateGameover()
+				return
+			}
+
+			if (correct == true) {
+
+
+				let scorelabel = answering_player == this.server?.playerId ? this.player1score : this.player2score
+
+
+				if (this.lastSquare && scorelabel)
+					this.handleCollectMoney(this.lastSquare, scorelabel, score)
+			}
+			else {
+				if (this.multiplayer == false) {
+					this.stateGameover()
+					return
+				} else {
+					this.displayPlayers(true)
+
+				}
+			}
+
+			//this.displayPlayers(true)
+
+		})
+
 	}
 
 
 
 
 
-	private stopcurrentaction: boolean = false
-	private lastAmount: number = 0
-	private answersound?: Phaser.Sound.BaseSound
+
+
 	create(data: IGameSceneData) {
 
 
@@ -132,9 +193,10 @@ export default class Game extends Phaser.Scene {
 		//this.answersound = this.sound.add('correct_answer')
 
 		BKG.Sfx.sounds['choose-square'] = this.sound.add('choose')
+
+
 		document.addEventListener("visibilitychange", event => {
 			if (document.visibilityState == "visible") {
-				console.log("tab is active -game")
 
 
 				this.stopcurrentaction = false;
@@ -150,7 +212,6 @@ export default class Game extends Phaser.Scene {
 
 
 			} else {
-				console.log("tab is inactive -game")
 
 				this.stopcurrentaction = true;
 
@@ -177,11 +238,12 @@ export default class Game extends Phaser.Scene {
 
 
 
-		const { server, onGameOver, currentcells, name, multiplayer } = data
+		const { server, onGameOver, currentcells, level, multiplayer } = data
+
 
 		this.multiplayer = multiplayer
 		this.server = server
-
+		this.level = level
 
 		if (!this.server) {
 			throw new Error('server instance missing')
@@ -193,43 +255,65 @@ export default class Game extends Phaser.Scene {
 
 
 
-		this.events.on('wake', (sys: Phaser.Scenes.Systems, data: any) => {
 
-			console.log('game onStart event START')
-			if (!this.server)
-				return
+		let name = BKG.Storage.get('BKG-player')
 
-			this.time.delayedCall(200, () => {
-				if (this.server?.playerId) {
 
-					this.displayPlayers(true)
-				}
-			})
-			this.server?.playerReady(this.server?.playerId)
-			console.log('game onStart event END')
-		})
 
-		this.server.join(name, multiplayer)
+		this.server.join(name, level, multiplayer)
 
 	}
 
 	private createBoard(state: ITicTacToeState) {
-		const screenCenterX = this.cameras.main.worldView.x + this.cameras.main.width / 2;
-		const screenCenterY = this.cameras.main.worldView.y + this.cameras.main.height / 2;
 
-		var fontScore = { font: '24px ' + BKG.text['FONT'], fill: 'white', stroke: 'black', strokeThickness: 4 }
-		var fontTitle = { font: '32px ' + BKG.text['FONT'], fill: 'white', stroke: 'black', strokeThickness: 6 }
+
+
+
+		this.fontTitle = { font: '32px ' + BKG.text['FONT'], fill: 'white', stroke: 'black', strokeThickness: 6 }
+
 
 		if (this.game.device.os.desktop) {
-			this.add.image(0, 0, 'background2').setDisplaySize(this.game.scale.width, this.game.scale.height).setOrigin(0)
+			this.add.image(0, 0, 'background2').setDisplaySize(BKG.world.width, BKG.world.height).setOrigin(0)
 
 		} else {
-			this.add.image(-120, 0, 'background2').setDisplaySize(this.game.scale.width + 250, this.game.scale.height).setOrigin(0)
+			this.add.image(-120, 0, 'background2').setDisplaySize(BKG.world.width + 250, BKG.world.height).setOrigin(0)
 		}
-		let notification = this.add.image(screenCenterX, 10, 'notification')
-		this.turnText = this.add.text(screenCenterX, 30, 'Waiting for another player', fontTitle)
+		let notification = this.add.image(BKG.world.centerX, 10, 'notification')
+		let message = this.multiplayer ? 'Waiting for another player' : 'Bible Knowledge Game'
+		this.turnText = this.add.text(BKG.world.centerX, 30, message, this.fontTitle)
 			.setOrigin(0.5).setWordWrapWidth(notification.width - 20)
 
+
+
+
+		this.homebtn = this.game.device.os.desktop
+			? new Button(BKG.world.width - 50, BKG.world.height / 4, 'button-pause', this.managePause, this, false).setOrigin(0.5)
+			: new Button(50, BKG.world.height - 100, 'button-pause', this.managePause, this, false).setOrigin(0.5)
+
+
+		this.homebtn.on('pointerover', () => {
+			this.tweens.add({ targets: this.homebtn, duration: 500, scale: 1.2, ease: 'Sine.easeInOut' })
+
+		}).on('pointerout', () => {
+			this.tweens.add({ targets: this.homebtn, duration: 500, scale: 1, ease: 'Sine.easeInOut' })
+
+		})
+
+		this.settingsbtn = this.game.device.os.desktop
+			? new Button(BKG.world.width - 50, BKG.world.height / 4 + this.homebtn.height * 1.5, 'button-settings', this.clickSettings, this, false).setOrigin(0.5).setScale(0.9)
+			: new Button(50 + this.homebtn.width * 1.5, BKG.world.height - 100, 'button-settings', this.clickSettings, this, false).setOrigin(0.5).setScale(0.9)
+
+
+		this.settingsbtn.on('pointerover', () => {
+			this.tweens.add({ targets: this.settingsbtn, duration: 500, scale: 1.1, ease: 'Sine.easeInOut' })
+
+		}).on('pointerout', () => {
+			this.tweens.add({ targets: this.settingsbtn, duration: 500, scale: 0.9, ease: 'Sine.easeInOut' })
+
+		})
+
+
+		this.createPlayerIcons()
 		this.tweens.add({ targets: this.turnText, duration: 1000, scale: 1.05, ease: 'Sine.easeInOut', yoyo: true, loop: -1 });
 
 		const { width, height } = this.scale
@@ -251,6 +335,26 @@ export default class Game extends Phaser.Scene {
 		var fontSquares = { font: '42px ' + BKG.text['GAMEFONT'], fill: '#cd934a', stroke: 'black', strokeThickness: 6 }
 		var fontCategories = { font: '24px ' + BKG.text['GAMEFONT'], fill: 'white', stroke: 'black', strokeThickness: 4 }
 
+
+		state.categories.forEach((category, idx) => {
+
+
+			let cellposx = x * sizex + sizex / 2
+			let cellposy = y * sizey + sizey / 2 + 12
+
+			if (x == 0)
+				cellposx -= 1
+
+			const catsquare = this.add.image(cellposx, cellposy, 'header').setOrigin(0.5, 0.5).setDisplaySize(sizex - 5, sizey - 5)
+			let category_text = this.add.text(cellposx, cellposy, category.title, fontCategories)
+				.setWordWrapWidth(sizex - 10).setAlign('left').setOrigin(0.5)
+
+			x++
+		})
+
+		x = this.game.device.os.desktop ? 1 : 0
+		y++
+
 		state.board.forEach((cellState, idx) => {
 
 			let cellposx = x * sizex + sizex / 2
@@ -260,9 +364,9 @@ export default class Game extends Phaser.Scene {
 				cellposx -= 1
 
 			const cell = this.add.image(cellposx, cellposy, 'square').setOrigin(0.5, 0.5).setDisplaySize(sizex - 5, sizey - 5)
-			let text = cellState.type == 0 ? this.add.text(cellposx, cellposy, '', fontCategories) : this.add.text(cellposx, cellposy, '', fontSquares)
+			let text = this.add.text(cellposx, cellposy, '', fontSquares)
 
-			console.log(cellposx, cellposy)
+
 			this.cells.push({
 				display: cell,
 				value: cellState,
@@ -279,63 +383,64 @@ export default class Game extends Phaser.Scene {
 			}
 			else {
 
-				if (cellState.type == 0) {
+				/* if (cellState.type == 0) {
 					cell.setTexture('header')
 					text.setText(cellState.category)
 
 					text.setWordWrapWidth(sizex - 10).setAlign('left').setOrigin(0.5)
 
-				}
-				else {
+				} */
+				//else {
+				cell.setTexture('square')
+				text.setOrigin(0.5)
+				text.setText('$' + (cellState.value).toString())
+				text.setPipeline('Light2D')
+				text.setInteractive({ useHandCursor: true }).on('pointerover', () => {
+
+					cell.setTexture('header')
+					text.setFontSize(48)
+				})
+				text.setInteractive().on('pointerout', function () {
+
 					cell.setTexture('square')
-					text.setOrigin(0.5)
-					text.setText('$' + (cellState.value).toString())
-					text.setPipeline('Light2D')
-					text.setInteractive().on('pointerover', () => {
-
-						cell.setTexture('header')
-						text.setFontSize(48)
-					})
-					text.setInteractive().on('pointerout', function () {
-
-						cell.setTexture('square')
-						text.setFontSize(42)
-					}).on(Phaser.Input.Events.GAMEOBJECT_POINTER_UP, () => {
+					text.setFontSize(42)
+				}).on(Phaser.Input.Events.GAMEOBJECT_POINTER_UP, () => {
 
 
 
 
-						let turn = this.server?.makeSelection(Number.parseInt(idx))
-						BKG.Sfx.play('choose')
-						console.log(turn)
-						if (turn?.result == false) {
+					let turn = this.server?.makeSelection(Number.parseInt(idx))
+					BKG.Sfx.play('choose')
 
-							this.waitMessage?.setPosition(screenCenterX, 0)
-							this.waitMessage?.setText(turn.message)
-							this.waitMessage?.setVisible(true)
+					if (turn?.result == false) {
 
-							var _this = this
-							var tween = this.tweens.add({
-								targets: this.waitMessage,
-								y: screenCenterY,
-								ease: 'Bounce',
-								duration: 2000,
-								yoyo: false,
-								repeat: 0,
-								onStart: function () { },
-								onComplete: function () { _this.waitMessage?.setVisible(false).setPosition(screenCenterX, 0) },
-								onYoyo: function () { console.log('onYoyo'); console.log(arguments); },
-								onRepeat: function () { console.log('onRepeat'); console.log(arguments); },
-							});
-						}
+						this.waitMessage?.setPosition(BKG.world.centerX, 0)
+						this.waitMessage?.setText(turn.message)
+						this.waitMessage?.setVisible(true)
+						this.server?.playerReady(this.server?.playerId)
 
-					})
+						var _this = this
+						var tween = this.tweens.add({
+							targets: this.waitMessage,
+							y: BKG.world.centerY,
+							ease: 'Bounce',
+							duration: 2000,
+							yoyo: false,
+							repeat: 0,
+							onStart: function () { },
+							onComplete: function () { _this.waitMessage?.setVisible(false).setPosition(BKG.world.centerX, 0) },
+							onYoyo: function () { console.log('onYoyo'); console.log(arguments); },
+							onRepeat: function () { console.log('onRepeat'); console.log(arguments); },
+						});
+					}
+
+				})
 
 
 
-					this.cells[Number.parseInt(idx)].text = text
-					this.cells[Number.parseInt(idx)].score = squareval
-				}
+				this.cells[Number.parseInt(idx)].text = text
+				this.cells[Number.parseInt(idx)].score = squareval
+				//	}
 			}
 
 			x++
@@ -377,7 +482,7 @@ export default class Game extends Phaser.Scene {
 			})
 		}
 
-		this.waitMessage = this.add.text(screenCenterX, 0, 'Not your turn yet').setFontSize(72).setFontFamily('impact').setVisible(false).setOrigin(0.5).setShadow(2, 2, 'black', 2, true)
+		this.waitMessage = this.add.text(BKG.world.centerX, 0, 'Not your turn yet').setFontSize(72).setFontFamily('impact').setVisible(false).setOrigin(0.5).setShadow(2, 2, 'black', 2, true)
 		this.server?.onBoardChanged(this.handleBoardChanged, this)
 		this.server?.onPlayerTurnChanged(this.handlePlayerTurnChanged, this)
 		this.server?.onPlayerWon(this.handlePlayerWon, this)
@@ -385,59 +490,120 @@ export default class Game extends Phaser.Scene {
 
 		this.createAnswerEffect()
 
-		
-
-		let startbtn = this.game.device.os.desktop 
-			? new Button(BKG.world.width - 50, BKG.world.height /4, 'button-home', this.clickHome, this, false).setOrigin(0.5)
-			: new Button(50, BKG.world.height - 100, 'button-home',this.clickHome, this, false).setOrigin(0.5)
 
 
-		startbtn.on('pointerover',()=>{
-            this.tweens.add({ targets:  startbtn, duration: 500, scale: 1.2, ease: 'Sine.easeInOut' })
-
-        }).on('pointerout', ()=> {
-            this.tweens.add({ targets:  startbtn, duration: 500, scale: 1, ease: 'Sine.easeInOut' })
-           
-        })
-
-		let settingsbtn = this.game.device.os.desktop 
-			? new Button(BKG.world.width - 50, BKG.world.height /4 + startbtn.height * 1.5, 'button-settings', this.clickSettings, this, false).setOrigin(0.5).setScale(0.9)
-			: new Button(50 + startbtn.width * 1.5, BKG.world.height - 100, 'button-settings',this.clickSettings, this, false).setOrigin(0.5).setScale(0.9)
 
 
-		settingsbtn.on('pointerover',()=>{
-            this.tweens.add({ targets:  settingsbtn, duration: 500, scale: 1.1, ease: 'Sine.easeInOut' })
+		var fontScoreWhite = { font: '38px ' + BKG.text['FONT'], fill: '#000', stroke: '#ffde00', strokeThickness: 5 };
 
-        }).on('pointerout', ()=> {
-            this.tweens.add({ targets:  settingsbtn, duration: 500, scale: 0.9, ease: 'Sine.easeInOut' })
-           
-        })
+
+		if (this.server) {
+			let player = this.server.players?.get(this.server.playerId)
+
+
+
+			this.screenPausedGroup = this.add.group();
+			this.screenPausedBg = this.add.sprite(0, 0, 'overlay').setDisplaySize(BKG.world.width, BKG.world.height)
+
+			this.screenPausedBg.setAlpha(0.95);
+			this.screenPausedBg.setOrigin(0, 0);
+			this.screenPausedText = this.add.text(BKG.world.centerX, 100, BKG.text['gameplay-paused'], this.fontTitle);
+			this.screenPausedText.setOrigin(0.5, 0);
+			this.screenPausedMessage = this.add.text(BKG.world.centerX, 300, 'What would you like to do?', fontScoreWhite).setWordWrapWidth(BKG.world.width - 60).setAlign('center')
+			this.screenPausedMessage.setOrigin(0.5, 0.5);
+			this.screenPausedBack = new Button(100, BKG.world.height - 100, 'button-mainmenu', this.stateBack, this);
+			this.screenPausedBack.setOrigin(0, 1);
+			this.screenPausedContinue = new Button(BKG.world.width - 100, BKG.world.height - 100, 'button-continue', this.managePause, this);
+			this.screenPausedContinue.setOrigin(0, 1);
+			this.screenPausedGroup.add(this.screenPausedBg);
+			this.screenPausedGroup.add(this.screenPausedText);
+			this.screenPausedGroup.add(this.screenPausedMessage);
+			this.screenPausedGroup.add(this.screenPausedBack);
+			this.screenPausedGroup.add(this.screenPausedContinue);
+			this.screenPausedGroup.toggleVisible();
+
+			this.screenGameoverGroup = this.add.group();
+			this.screenGameoverBg = this.add.sprite(0, 0, 'overlay').setDisplaySize(BKG.world.width, BKG.world.height)
+			this.screenGameoverBg.setAlpha(0.95);
+			this.screenGameoverBg.setOrigin(0, 0);
+			this.screenGameoverText = this.add.text(BKG.world.centerX, 100, BKG.text['gameplay-gameover'], this.fontTitle);
+			this.screenGameoverText.setOrigin(0.5, 0);
+			this.screenGameoverBack = new Button(100, BKG.world.height - 100, 'button-mainmenu', this.stateBack, this);
+			this.screenGameoverBack.setOrigin(0, 1);
+			this.screenGameoverRestart = new Button(BKG.world.width - 100, BKG.world.height - 100, 'button-restart', this.stateRestart, this);
+			this.screenGameoverRestart.setOrigin(1, 1);
+			this.screenGameoverScore = this.add.text(BKG.world.centerX, 300, 'Oops, you got one wrong. You must nswer all questions correctly in order to reach the next level', fontScoreWhite).setWordWrapWidth(BKG.world.width - 60).setAlign('center')
+			this.screenGameoverScore.setOrigin(0.5, 0.5);
+			this.screenGameoverGroup.add(this.screenGameoverBg);
+			this.screenGameoverGroup.add(this.screenGameoverText);
+			this.screenGameoverGroup.add(this.screenGameoverBack);
+			this.screenGameoverGroup.add(this.screenGameoverRestart);
+			this.screenGameoverGroup.add(this.screenGameoverScore);
+			this.screenGameoverGroup.toggleVisible();
+		}
 
 		this.cameras.main.fadeIn(2000, 0, 0, 0)
 
 
 	}
+	managePause() {
+		this._gamePaused = !this._gamePaused;
 
+		BKG.Sfx.play('click');
+		if (this._gamePaused) {
+
+			this.homebtn!.input.enabled = false
+			this.settingsbtn!.input.enabled = false
+
+			this.cells.forEach((value: { text: Phaser.GameObjects.Text }) => {
+
+				value.text.input.enabled = false
+
+			})
+
+
+			this.screenPausedGroup?.setVisible(true)
+			this.screenPausedBack.x = -this.screenPausedBack.width - 20;
+			this.tweens.add({ targets: this.screenPausedBack, x: 100, duration: 500, delay: 250, ease: 'Back' });
+			this.screenPausedContinue!.x = BKG.world.width + this.screenPausedContinue!.width + 20;
+			this.tweens.add({ targets: this.screenPausedContinue, x: BKG.world.width - 250, duration: 500, delay: 250, ease: 'Back' });
+		}
+		else {
+			this.homebtn!.input.enabled = true
+			this.settingsbtn!.input.enabled = true
+
+			this.cells.forEach((value: { text: Phaser.GameObjects.Text }) => {
+
+				value.text.input.enabled = true
+			})
+			this.screenPausedBack.x = 100;
+			this.tweens.add({ targets: this.screenPausedBack, x: -this.screenPausedBack.width - 20, duration: 500, ease: 'Back' });
+			this.screenPausedContinue!.x = BKG.world.width - 100;
+			this.tweens.add({ targets: this.screenPausedContinue, x: BKG.world.width + this.screenPausedContinue!.width + 20, duration: 500, ease: 'Back' });
+			this.screenPausedGroup?.setVisible(false)
+		}
+	}
 	private clickSettings: () => void
 		= () => {
 
 			this.scene.sleep()
-			this.scene.launch('settings', {screen: 'game'})
+			this.scene.launch('settings', { screen: 'game' })
 		}
 
 	private clickHome: () => void
 		= () => {
 
-			let name = this.server?.playerId
-			this.server?.leave()
-			this.scene.start('title', {
-				server: this.server,
-				onGameOver: this.onGameOver,
-				cells: null,
-				name: name
-				
+			if (!this.onGameOver) {
+				return
+			}
 
-			})
+
+
+
+			this.scene.sleep()
+			this.scene.launch('restart', { winner: false, onGameOver: this.onGameOver, server: this.server })
+
+
 		}
 
 	private displayPlayers(effect: boolean) {
@@ -451,96 +617,54 @@ export default class Game extends Phaser.Scene {
 
 		this.server.players?.forEach((player: Player, key: string) => {
 
-			if (player.id === this.server?.playerId) {
-
-				// Me - I'm always going to be player1score
-				if (player.lastscore < player.score) {
-
-					console.log('I answered correct')
-					if (this.lastSquare != null && this.player1score) {
-						console.log(this.stopEffect)
-						if (!this.stopEffect)
-							this.handleCollectMoney(this.lastSquare, this.player1score, player.score)
-						else {
-							this.player1score.setText(player.score.toString())
-							this.player1score.setColor(player.score < 0 ? 'red' : 'white')
-						}
-					}
-
-
-				}
-				else {
-
-					console.log('I answered wrong')
-					this.player1score?.setText(player.score.toString())
-					this.player1score?.setColor(player.score >= 0 ? 'white' : 'red')
-				}
-
-			}
-			else {
-				if (player.lastscore < player.score) {
-
-					console.log('other player answered correct')
-					if (this.lastSquare != null && this.player2score) {
-						if (!this.stopEffect)
-							this.handleCollectMoney(this.lastSquare, this.player2score, player.score)
-					}
-
-
-				}
-				else {
-					console.log('other player answered wrong')
-					this.player2score?.setText(player.score.toString())
-					this.player2score?.setColor(player.score >= 0 ? 'white' : 'red')
-				}
-
-			}
-
+			let playerscore = this.server?.playerId == player.id ? this.player1score : this.player2score
+			playerscore?.setText(player.score.toString())
+			playerscore?.setColor(player.score < 0 ? 'red' : 'white')
 		})
 
-		if (this.server.players.size > 1) {
-			let x, y = 0
+		let x, y = 0
+		if (this.multiplayer == true) {
 
 
-			if (this.multiplayer) {
-				if (this.server.activePlayer === this.server?.playerId) {
+			if (this.server.activePlayer === this.server?.playerId) {
 
-					this.turnText?.setText("It's your turn!")
+				this.turnText?.setText("It's your turn!")
 
-					if (this.player1img) {
-						x = this.player1img.x - this.player1img.width / 2
-						y = this.player1img.y - this.player1img.height / 2
-					}
-				}
-				else {
-					this.turnText?.setText("It's your opponents turn")
-
-					if (this.player2img) {
-						x = this.player2img.x - this.player2img.width / 2
-						y = this.player2img.y - this.player2img.height / 2
-					}
+				if (this.player1img) {
+					x = this.player1img.x - this.player1img.width / 2
+					y = this.player1img.y - this.player1img.height / 2
 				}
 			}
 			else {
-				this.turnText?.setText('Bible Knowledge Game')
+				this.turnText?.setText("It's your opponents turn")
+
+				if (this.player2img) {
+					x = this.player2img.x - this.player2img.width / 2
+					y = this.player2img.y - this.player2img.height / 2
+				}
+
 			}
-
-			this.emitter?.setPosition(x, y)
-			this.stopEffect = true
-
 		}
-
-
-
-
-
+		else {
+			this.turnText?.setText('Bible Knowledge Game')
+			if (this.player1img) {
+				x = this.player1img.x - this.player1img.width / 2
+				y = this.player1img.y - this.player1img.height / 2
+			}
+		}
+		this.emitter?.setPosition(x, y)
 	}
 
 	private handleBoardChanged(newValue: Cell, idx: string, players: MapSchema<IPlayer>) {
 
 
 
-		this.stopEffect = false
+		if (idx === undefined || this._gamePaused)
+			return
+
+
+		console.log('unlock stop effect')
+
 		const cell = this.cells[idx]
 		this.lastSquare = cell.display
 		//this.displayPlayers()
@@ -592,20 +716,15 @@ export default class Game extends Phaser.Scene {
 	private locked: boolean = false
 	private handlePlayersReady(ready: boolean) {
 
-		console.log('player ready!')
 
 		this.locked = !ready
-		if (ready == true) {
-			console.log('control unlocked')
-		}
-		else {
-			console.log('control locked')
-		}
+
 
 
 
 	}
 	private handlePlayerWon(playerId: string) {
+
 		this.time.delayedCall(1000, () => {
 			if (!this.onGameOver) {
 				return
@@ -613,17 +732,70 @@ export default class Game extends Phaser.Scene {
 
 			if (this.server) {
 				this.onGameOver({
+					winningPlayerId: playerId,
 					winner: playerId == this.server?.playerId,
-					server: this.server
+					playerReset: false,
+					server: this.server,
+					multiplayer: this.multiplayer
 				})
 			}
 		})
 	}
 
+	private createPlayerIcons() {
+
+		let col1 = 60
+		let col2 = this.game.scale.width - col1
+
+		if (this.emitter)
+			this.emitter.stop()
+
+		var particles = this.add.particles('flares')
+
+		var fontScore = { font: '32px ' + BKG.text['FONT'], fill: 'white', stroke: 'black', strokeThickness: 4 }
+
+		this.player1DisplayGroup = this.add.group()
+		this.player1Nametag = this.add.image(col1, 120, 'nametag').setOrigin(0.5).setAlpha(0.7)
+
+		this.player1img = this.add.image(col1, 50, 'player').setOrigin(0.5, 0.5).setAlpha(0.7)
+		this.player1score = this.add.text(60, 115, '0', fontScore).setOrigin(0.5)
+		this.player1name = this.add.text(col1, 80, BKG.Storage.get('BKG-player'), fontScore).setOrigin(0.5, 0.5)
+		var shape3 = new Phaser.Geom.Rectangle(0, 0, this.player1img.width, this.player1img.height)
+		this.player1DisplayGroup.add(this.player1Nametag)
+		this.player1DisplayGroup.add(this.player1img)
+		this.player1DisplayGroup.add(this.player1score)
+		this.player1DisplayGroup.add(this.player1name)
+
+		this.player2DisplayGroup = this.add.group()
+		this.player2Nametag = this.add.image(col2, 120, 'nametag').setOrigin(0.5).setAlpha(0.7)
+		this.player2img = this.add.image(col2, 50, 'player').setOrigin(0.5, 0.5).setAlpha(0.7)
+		this.player2score = this.add.text(col2, 115, '0', fontScore).setOrigin(0.5)
+		this.player2name = this.add.text(col2, 80, '', fontScore).setOrigin(0.5)
+
+		this.player2DisplayGroup.add(this.player2Nametag)
+		this.player2DisplayGroup.add(this.player2img)
+		this.player2DisplayGroup.add(this.player2score)
+		this.player2DisplayGroup.add(this.player2name)
+		this.player2DisplayGroup.setVisible(false)
+
+		this.emitter = particles.createEmitter({
+			frame: { frames: ['red', 'green', 'blue'], cycle: true },
+			x: this.player1img.x - this.player1img.width / 2,
+			y: this.player1img.y - this.player1img.height / 2,
+			scale: { start: 0.5, end: 0 },
+
+
+			blendMode: 'ADD',
+			emitZone: { type: 'random', source: shape3, quantity: 42, yoyo: false }
+		})
+
+	}
+
 	private handleGameStateChanged(state: GameState) {
+
+
 		if (state === GameState.Playing) {
 
-			var fontScore = { font: '32px ' + BKG.text['FONT'], fill: 'white', stroke: 'black', strokeThickness: 4 }
 
 			if (!this.server)
 				return
@@ -631,65 +803,81 @@ export default class Game extends Phaser.Scene {
 				return
 
 			// The game has begun create and display the player names and scores
+			if (this.multiplayer) {
 
 
+				this.server.players.forEach((value: IPlayer, key: string) => {
 
-			let col1 = 60
-			let col2 = this.game.scale.width - col1
+					if (key !== this.server?.playerId) {
 
-			console.log('HANDLE GAMESTATE CHANGE!')
-
-			let player = this.server.players.get(this.server.playerId)
-			if (player) {
-				this.add.image(col1, 120, 'nametag').setOrigin(0.5).setDepth(998).alpha = 0.7
-				this.player1img = this.add.image(col1, 50, 'player').setOrigin(0.5, 0.5).setDepth(998)
-				this.player1img.alpha = 0.7
-				this.player1score = this.add.text(60, 115, '', fontScore).setOrigin(0.5).setDepth(999)
-				this.add.text(col1, 80, player.name, fontScore).setOrigin(0.5, 0.5).setDepth(999)
-
-				var shape3 = new Phaser.Geom.Rectangle(0, 0, this.player1img.width, this.player1img.height)
-				var particles = this.add.particles('flares')
-
-				if (this.emitter)
-					this.emitter.stop()
-
-				this.emitter = particles.createEmitter({
-					frame: { frames: ['red', 'green', 'blue'], cycle: true },
-					x: this.player1img.x - this.player1img.width / 2,
-					y: this.player1img.y - this.player1img.height / 2,
-					scale: { start: 0.5, end: 0 },
-
-
-					blendMode: 'ADD',
-					emitZone: { type: 'random', source: shape3, quantity: 42, yoyo: false }
+						this.player1name?.setText(value.name)
+						this.player1score?.setText(value.score.toString())
+						this.player2DisplayGroup?.setVisible(true)
+					}
 				})
 
-
-
-
-
-				if (this.multiplayer) {
-					let opponent: Player | undefined
-					this.server.players.forEach((player2: Player, key: string) => {
-						if (key !== player?.id)
-							opponent = player2
-					})
-
-
-					if (opponent !== undefined) {
-						this.add.image(col2, 120, 'nametag').setOrigin(0.5).setDepth(998).alpha = 0.7
-						this.player2img = this.add.image(col2, 50, 'player').setOrigin(0.5, 0.5).setDepth(998)
-						this.player2img.alpha = 0.7
-						this.player2score = this.add.text(col2, 115, '', fontScore).setOrigin(0.5).setDepth(999)
-						this.add.text(col2, 80, opponent.name, fontScore).setDepth(999).setOrigin(0.5)
-
-					}
-				}
 			}
-
-			
-
 			this.displayPlayers(false)
+		}
+	}
+	stateRestart() {
+		BKG.Sfx.play('click');
+
+		this.server?.leave()
+		this.server = new Server()
+
+		this.scene.stop()
+		this.scene.start('game', {
+			server: this.server,
+			onGameOver: this.onGameOver,
+			currentcells: null,
+			level: this.level,
+			multiplayer: false
+		})
+
+	}
+	stateBack() {
+
+
+		BKG.Sfx.play('click');
+		this.scene.stop()
+
+
+		this.server?.leave()
+		this.server = new Server()
+		this.scene.start('levelselect', {
+			server: this.server,
+			onGameOver: this.onGameOver,
+			currentcells: null,
+			multiplayer: false
+		})
+
+	}
+	stateGameover() {
+
+		this.homebtn!.input.enabled = false
+		this.settingsbtn!.input.enabled = false
+
+		this.cells.forEach((value: { text: Phaser.GameObjects.Text }) => {
+
+			value.text.input.enabled = false
+
+		})
+
+		//EPT.Storage.setHighscore('EPT-highscore',this._score);
+		BKG.fadeOutIn(function (self) {
+			self.screenGameoverGroup.setVisible(true);
+			//self.buttonPause.input.enabled = false;
+			//self.buttonDummy.input.enabled = false;
+			//self.screenGameoverScore.setText();
+			//this.gameoverScoreTween();
+		}, this);
+
+		if (this.screenGameoverBack && this.screenGameoverRestart) {
+			this.screenGameoverBack.x = -this.screenGameoverBack.width - 20;
+			this.tweens.add({ targets: this.screenGameoverBack, x: 100, duration: 500, delay: 250, ease: 'Back' });
+			this.screenGameoverRestart.x = BKG.world.width + this.screenGameoverRestart.width + 20;
+			this.tweens.add({ targets: this.screenGameoverRestart, x: BKG.world.width - 100, duration: 500, delay: 250, ease: 'Back' });
 		}
 	}
 }

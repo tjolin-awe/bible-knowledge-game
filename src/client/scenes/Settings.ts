@@ -88,9 +88,9 @@ export default class Settings extends Phaser.Scene {
         this.tweens.add({ targets: this.textServer, scaleX: 1, scaleY: 1, duration: 500, delay: 500, ease: 'Cubic.easeOut' });
 
         this.buttonCredits.setScale(0.5);
-        this.tweens.add({ targets: this.buttonCredits, scaleX: 1, scaleY: 1, duration: 500, delay: 500, ease: 'Cubic.easeOut' });
+        this.tweens.add({ targets: this.buttonCredits, scaleX: 1, scaleY: 1, duration: 500, delay: 725, ease: 'Cubic.easeOut' });
         this.textCredits.setScale(0.5);
-        this.tweens.add({ targets: this.textCredits, scaleX: 1, scaleY: 1, duration: 500, delay: 500, ease: 'Cubic.easeOut' });
+        this.tweens.add({ targets: this.textCredits, scaleX: 1, scaleY: 1, duration: 500, delay: 725, ease: 'Cubic.easeOut' });
 
 
         var offsetTopCredits = 20;

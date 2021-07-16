@@ -1,0 +1,70 @@
+﻿@model BKGLevelGenerator.Models.Square
+
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="_Square">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Question" class="control-label"></label>
+                <input asp-for="Question" class="form-control" />
+                <span asp-validation-for="Question" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Value" class="control-label"></label>
+                <input asp-for="Value" class="form-control" />
+                <span asp-validation-for="Value" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Category.Title" class="control-label"></label>
+                <input asp-for="Category.Title" class="form-control" readonly />
+                <span asp-validation-for="CategoryId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Image" class="control-label"></label>
+                <input asp-for="Image" class="form-control" />
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+
+
+        </form>
+
+    </div>
+
+
+    <div class="col-md-6">
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        Id
+                    </th>
+                    <th>
+                        Answer
+                    </th>
+                    <th>
+                        Correct
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var answer in Model.Answers)
+                {
+                <tr>
+                    <td><input asp-for="@answer" class="form-control"/></td>
+                    <td><input asp-for="@answer" class="checkbox" /></td>
+
+                </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

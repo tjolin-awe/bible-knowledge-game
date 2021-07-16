@@ -1,5 +1,5 @@
 import { Schema, MapSchema, type } from '@colyseus/schema'
-import ITicTacToeState, { GameState, IAnswer, IBKGSinglePlayerState, ICell, IPlayer, } from '../types/ITicTacToeState'
+import ITicTacToeState, { GameState, IAnswer, IBKGSinglePlayerState, ICategory, ICell, IPlayer, } from '../types/ITicTacToeState'
 
 
 
@@ -81,7 +81,11 @@ export const StringFormat = (str: string, ...args: string[]) =>
 str.replace(/{(\d+)}/g, (match, index) => args[index] || '')
 
 
-
+export class Category extends Schema implements ICategory
+{
+	@type('string')
+	title = ''
+}
 
 export default class TicTacToeState extends Schema implements ITicTacToeState
 {
@@ -116,12 +120,20 @@ export default class TicTacToeState extends Schema implements ITicTacToeState
 	@type('boolean')
 	playersReady = true 
 
-	
+	@type('number')
+	level = 0
 
-	constructor()
+	@type({ map: Category})
+	categories: MapSchema<Category>
+
+	@type('boolean')
+	multiplayer = true
+
+	public constructor(level: string)
 	{
 		super()
 
+		this.categories = new MapSchema<Category>()
 		//this.lastAnswer = new Answer()
 		this.board = new MapSchema<Cell>()
 		this.players = new MapSchema<Player>()
@@ -131,55 +143,82 @@ export default class TicTacToeState extends Schema implements ITicTacToeState
 
 
 
+		console.log(level)
 		let self = this
 	
-		fs.readFile('test.xml', (err: any, data: any)=> {
+		fs.readFile(`levels/${level}/level.xml`, (err: any, data: any)=> {
 			
 
 			var json = JSON.parse(parser.toJson(data));
 
-			json['root']['board']['cell'].forEach((cell: any)=> {
+		    console.log(json);
+			let xmlboard = json['Board']
+
+			this.level = xmlboard.level
+		
+
+			json['Board']['Categories']['Category'].forEach((cat: any)=> {
+				
+			
+
+					console.log(cat.Title);
+					let category = new Category()
+			
+					
+					category.title = cat.Title;
+					this.categories.set(cat.Title, category)
+					console.log('set succesfully')
+				
+				
+			})
+
+			json['Board']['Squares']['Square'].forEach((cell: any)=> {
 			
 				
 
 				let square = new Cell()
 
-			
+									
+					square.image = cell.ImageFilename
 
-
-			
-					square.image = cell.image
-					square.value = 0
+					if (square.image === undefined) {
+						square.image = "missing.png"
+					}
+					
+					square.value = Number.parseInt(cell.Value)
 					square.result = false
-					square.question = cell.question 
-					square.type = parseInt(cell.type)
-					square.category = cell.category
-					square.value = parseInt(cell.score)
+					square.question = cell.Question
+					square.type = 1
+					square.category = cell.Category.Title
+					//square.value = parseInt(cell.score)
 
-					let answers = cell['answer']
+					let answers = cell['Answers']
 
 
 					
 					if (answers != null) {
 						let index = 0
-						cell['answer'].forEach((answer: any) => {
+						cell['Answers']['Answer'].forEach((answer: any) => {
 
 								
 								let nAnswer = new Answer()
-								nAnswer.name = answer.value,
-								nAnswer.correct = answer.correct == "1" ? true : false
+								nAnswer.name = answer.Display
+								
+								nAnswer.correct = answer.Correct == "true" ? true : false
 								nAnswer.id = index
-								nAnswer.cellId = Number.parseInt(cell.id)
+								nAnswer.cellId = Number.parseInt(cell.SquareId)
 
 								index++
  
 							
 								square.answers.set(nAnswer.id.toString(), nAnswer)
+
+								
 							
 						});
 					}
 				
-					self.board.set(cell.id.toString(), square)
+					self.board.set(cell.SquareId.toString(), square)
 					
 			})
 
@@ -204,6 +243,9 @@ export default class TicTacToeState extends Schema implements ITicTacToeState
 		     
 			var json = JSON.parse(parser.toJson(data));
 
+
+			
+
 			json['root']['board']['cell'].forEach((cell: any)=> {
 			
 				
@@ -221,8 +263,8 @@ export default class TicTacToeState extends Schema implements ITicTacToeState
 		});
 
 	}
-	
 
+	
 	private saveState()
 	{
 		let fs = require('fs');
@@ -317,12 +359,20 @@ export class BKGSinglePlayerState extends Schema implements IBKGSinglePlayerStat
 	@type('boolean')
 	playersReady = true 
 
-	
+	@type('number')
+	level = 0	
 
-	constructor()
+	@type({map: Category})
+	categories: MapSchema<Category>
+
+	@type('boolean')
+	multiplayer = false
+
+	public constructor(level: string)
 	{
 		super()
 
+		this.categories = new MapSchema<Category>()
 		//this.lastAnswer = new Answer()
 		this.board = new MapSchema<Cell>()
 		this.players = new MapSchema<Player>()
@@ -333,54 +383,81 @@ export class BKGSinglePlayerState extends Schema implements IBKGSinglePlayerStat
 
 
 		let self = this
-	
-		fs.readFile('test.xml', (err: any, data: any)=> {
+		console.log(level)
+		fs.readFile(`levels/${level}/level.xml`, (err: any, data: any)=> {
 			
 
+		
 			var json = JSON.parse(parser.toJson(data));
 
-			json['root']['board']['cell'].forEach((cell: any)=> {
+		    console.log(json);
+			let xmlboard = json['Board']
+
+			this.level = xmlboard.level
+		
+
+			json['Board']['Categories']['Category'].forEach((cat: any)=> {
+				
+			
+
+					console.log(cat.Title);
+					let category = new Category()
+			
+					
+					category.title = cat.Title;
+					this.categories.set(cat.Title, category)
+					console.log('set succesfully')
+				
+				
+			})
+
+			json['Board']['Squares']['Square'].forEach((cell: any)=> {
 			
 				
 
 				let square = new Cell()
 
-			
+									
+					square.image = cell.ImageFilename
 
-
-			
-					square.image = cell.image
-					square.value = 0
+					if (square.image === undefined) {
+						square.image = "missing.png"
+					}
+					
+					square.value = Number.parseInt(cell.Value)
 					square.result = false
-					square.question = cell.question 
-					square.type = parseInt(cell.type)
-					square.category = cell.category
-					square.value = parseInt(cell.score)
+					square.question = cell.Question
+					square.type = 1
+					square.category = cell.Category.Title
+					//square.value = parseInt(cell.score)
 
-					let answers = cell['answer']
+					let answers = cell['Answers']
 
 
 					
 					if (answers != null) {
 						let index = 0
-						cell['answer'].forEach((answer: any) => {
+						cell['Answers']['Answer'].forEach((answer: any) => {
 
 								
 								let nAnswer = new Answer()
-								nAnswer.name = answer.value,
-								nAnswer.correct = answer.correct == "1" ? true : false
+								nAnswer.name = answer.Display
+								
+								nAnswer.correct = answer.Correct == "true" ? true : false
 								nAnswer.id = index
-								nAnswer.cellId = Number.parseInt(cell.id)
+								nAnswer.cellId = Number.parseInt(cell.SquareId)
 
 								index++
  
 							
 								square.answers.set(nAnswer.id.toString(), nAnswer)
+
+								
 							
 						});
 					}
 				
-					self.board.set(cell.id.toString(), square)
+					self.board.set(cell.SquareId.toString(), square)
 					
 			})
 
@@ -404,6 +481,9 @@ export class BKGSinglePlayerState extends Schema implements IBKGSinglePlayerStat
 
 		     
 			var json = JSON.parse(parser.toJson(data));
+
+
+			
 
 			json['root']['board']['cell'].forEach((cell: any)=> {
 			

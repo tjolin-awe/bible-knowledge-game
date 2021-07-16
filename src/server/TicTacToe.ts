@@ -16,10 +16,10 @@ export default class TicTacToe extends Room<TicTacToeState>
 {
 	private dispatcher = new Dispatcher(this)
 
-	onCreate()
+	onCreate(options: { name:string, level: string})
 	{
 		this.maxClients = 2
-		this.setState(new TicTacToeState())
+		this.setState(new TicTacToeState(options.level))
 		console.log('created new state')
 		this.onMessage(Message.PlayerSelection, (client, message: {  cellId: number } ) => {
 			this.dispatcher.dispatch(new PlayerSelectionCommand(), {
@@ -110,10 +110,14 @@ export class BKGSingle extends Room<BKGSinglePlayerState>
 {
 	private dispatcher = new Dispatcher(this)
 
-	onCreate()
+	onCreate(options: { name:string, level: string})
 	{
+		console.log("creating new game")
+		console.log(options.name)
+		console.log(options.level)
 		this.maxClients = 1
-		this.setState(new BKGSinglePlayerState())
+		
+		this.setState(new BKGSinglePlayerState(options.level))
 		console.log('created new state')
 		this.onMessage(Message.PlayerSelection, (client, message: {  cellId: number } ) => {
 			this.dispatcher.dispatch(new PlayerSelectionCommand(), {
@@ -147,6 +151,8 @@ export class BKGSingle extends Room<BKGSinglePlayerState>
 
 	
 		console.log('player disconnected!')
+	
+		/*
 		let player = this.state.players.get(client.sessionId)
 		if (player ==null)
 			return 
@@ -171,16 +177,27 @@ export class BKGSingle extends Room<BKGSinglePlayerState>
 		  
 		  this.state.players.delete(player.id);
 		}
+		*/
 	  }
 
-	onJoin(client: Client, options: { name:string} )
+	private loadLevel(level: string)
+	{
+		
+	}
+
+	onJoin(client: Client, options: { name:string, level: string} )
 	{
 
+
 		console.log('OnJoin - SINGLE PLAYER!')
+
 		const idx = this.clients.findIndex(c => c.sessionId === client.sessionId)
 		
+		
+
+
 		this.state.activePlayer = client.sessionId 
-		client.send(Message.PlayerIndex, { playerId: client.sessionId, playerIndex: idx, name: options.name  })
+		client.send(Message.PlayerIndex, { playerId: client.sessionId, level:options.level, playerIndex: idx, name: options.name  })
 
 		
 		

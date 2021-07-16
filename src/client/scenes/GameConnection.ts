@@ -187,7 +187,7 @@ export default class GameConnection extends Phaser.Scene
     create(data: IGameSceneData) {           
       
         
-		const { server, onGameOver, currentcells, name, multiplayer } = data
+		const { server, onGameOver, currentcells, multiplayer } = data
 
        
         let background = this.add.image(0,0,'loginbackground').setOrigin(0).setDisplaySize(BKG.world.width, BKG.world.height)
