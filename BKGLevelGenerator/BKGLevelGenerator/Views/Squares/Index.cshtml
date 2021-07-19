@@ -24,14 +24,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.Category)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Image)
-            </th>
+            
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.OrderBy(x=>x.CategoryId).ThenBy(x=>x.SquareId)) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.SquareId)
@@ -45,9 +43,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Category.Id)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Image)
-            </td>
+         
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |

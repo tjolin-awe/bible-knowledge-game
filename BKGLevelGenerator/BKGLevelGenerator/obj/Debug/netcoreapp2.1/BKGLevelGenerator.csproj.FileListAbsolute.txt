@@ -94,3 +94,4 @@ C:\Users\tom\Documents\GitHub\bible-knowledge-game\BKGLevelGenerator\BKGLevelGen
 C:\Users\tom\Documents\GitHub\bible-knowledge-game\BKGLevelGenerator\BKGLevelGenerator\obj\Debug\netcoreapp2.1\BKGLevelGenerator.dll
 C:\Users\tom\Documents\GitHub\bible-knowledge-game\BKGLevelGenerator\BKGLevelGenerator\obj\Debug\netcoreapp2.1\BKGLevelGenerator.pdb
 C:\Users\tom\Documents\GitHub\bible-knowledge-game\BKGLevelGenerator\BKGLevelGenerator\obj\Debug\netcoreapp2.1\BKGLevelGenerator.csproj.CopyComplete
+C:\Users\tom\Documents\GitHub\bible-knowledge-game\BKGLevelGenerator\BKGLevelGenerator\bin\Debug\netcoreapp2.1\appsettings.json

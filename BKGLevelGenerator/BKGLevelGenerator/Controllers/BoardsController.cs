@@ -10,6 +10,7 @@ using BKGLevelGenerator.Models;
 using System.Collections;
 using System.Xml.Serialization;
 using System.IO;
+using Microsoft.Extensions.Configuration;
 
 namespace BKGLevelGenerator.Controllers
 {
@@ -25,6 +26,36 @@ namespace BKGLevelGenerator.Controllers
             _context = context;
         }
 
+        public ActionResult SaveBoard(int? id)
+        {
+            var board = _context.Boards.Include(x => x.Categories).Include(x => x.Squares).ThenInclude(x => x.Answers).FirstOrDefault(x => x.Id == id);
+
+
+            Board b = new Board();
+
+            b.Categories = board.Categories.OrderBy(x => x.OrderId).ToList();
+            b.Id = board.Id;
+            b.Title = board.Title;
+            b.Level = board.Level;
+            b.Squares = board.Squares.OrderBy(x => x.SquareId).ToList();
+
+
+
+            var config = new ConfigurationBuilder()
+                .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+                .AddJsonFile("appsettings.json").Build();
+
+
+            var section = config.GetSection(nameof(EditorClientConfig));
+            var editorClientConfig = section.Get<EditorClientConfig>();
+            var path = editorClientConfig.GamePath;
+
+            var serializer = new XmlSerializer(typeof(Board));
+            Stream filestream = new FileStream($"{path}/levels/level{board}/level.xml", FileMode.Create);
+            serializer.Serialize(filestream, b);
+
+            return View();
+        }
       
         public FileResult ExportBoard(int? id)
         {
@@ -113,7 +144,7 @@ namespace BKGLevelGenerator.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title")] Board board)
+        public async Task<IActionResult> Create([Bind("Id,Title,Level")] Board board)
         {
             if (ModelState.IsValid)
             {

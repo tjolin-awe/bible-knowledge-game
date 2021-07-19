@@ -21,6 +21,7 @@ namespace BKGLevelGenerator
                 database.Database.EnsureCreated();
             
             Configuration = configuration;
+            
         }
 
         public IConfiguration Configuration { get; }

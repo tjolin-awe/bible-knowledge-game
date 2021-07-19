@@ -114,7 +114,7 @@ namespace BKGLevelGenerator.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction("Edit","boards",new { id=board });
+                return RedirectToAction("Details","boards",new { id=board });
             }
             return View(category);
         }

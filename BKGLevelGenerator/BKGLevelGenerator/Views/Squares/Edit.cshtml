@@ -9,7 +9,7 @@
 <h2>Square</h2>
 <hr />
 <div class="row">
-    <form enctype="multipart/form-data" asp-action="Edit">
+    <form enctype="multipart/form-data" asp-action="Edit" id="myform">
         <div class="form-group">
             <div class="col-md-4">
                 <div class="panel panel-default">
@@ -65,8 +65,8 @@
                                             </td>
                                             <td>
 
-                                                <input id="answerCorrect_@i" value="@Model.Answers.ElementAt(i).Correct" name="Answers[@i].Correct" type="checkbox" class="checkbox" checked="@Model.Answers.ElementAt(i).Correct" />
-                                                <input id="answerCorrect_@i" type="hidden" name="Answers[@i].Correct" value="@Model.Answers.ElementAt(i).Correct" />
+                                                <input id="answerCorrect_@i" value="true" name="Answers[@i].Correct" type="checkbox" class="checkbox" checked="@Model.Answers.ElementAt(i).Correct" />
+                                                <input id="answerCorrect_@i" value="false" type="hidden" />
                                             </td>
 
                                         </tr>
@@ -121,5 +121,10 @@
                 $(this).val(false);
             }
         });
+
+        /* Get input values from form */
+        var values = $("#myform").serializeArray();
+
+      
     });</script>
 }

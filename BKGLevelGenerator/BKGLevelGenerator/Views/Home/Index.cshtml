@@ -10,38 +10,26 @@
     </ol>
     <div class="carousel-inner" role="listbox">
         <div class="item active">
-            <img src="~/images/banner1.svg" alt="ASP.NET" class="img-responsive" />
+            <img src="~/images/slide1.PNG" alt="ASP.NET" class="img-responsive" style="width:100%;height:100%" />
             <div class="carousel-caption" role="option">
                 <p>
-                    Learn how to build ASP.NET apps that can run anywhere.
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525028&clcid=0x409">
-                        Learn More
-                    </a>
+                    A Bible Trivia Game.
+                   
                 </p>
             </div>
         </div>
         <div class="item">
-            <img src="~/images/banner2.svg" alt="Visual Studio" class="img-responsive" />
+            <img src="~/images/slide2.png" alt="Visual Studio" class="img-responsive" style="width:100%;height:100%" />
             <div class="carousel-caption" role="option">
                 <p>
-                    There are powerful new features in Visual Studio for building modern web apps.
+                    Bible Character Match.
                     <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525030&clcid=0x409">
-                        Learn More
+                        Coming Soon
                     </a>
                 </p>
             </div>
         </div>
-        <div class="item">
-            <img src="~/images/banner3.svg" alt="Microsoft Azure" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    Learn how Microsoft's Azure cloud platform allows you to build, deploy, and scale web apps.
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525027&clcid=0x409">
-                        Learn More
-                    </a>
-                </p>
-            </div>
-        </div>
+       
     </div>
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -53,4 +41,49 @@
     </a>
 </div>
 
+<div class="row" style="margin-top:30px">
+    <div class="col-md-4">
+        <div class="card mb-4 box-shadow">
+            <a asp-action="Index" asp-controller="boards" class="btn btn-primary">Manage Levels</a>
 
+
+            <div class="card-body">
+                <p class="card-text">Manage levels including it's categories and questions.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card mb-4 box-shadow">
+
+            <a asp-action="Index" asp-controller="categories" class="btn btn-primary">Manage Categories</a>
+
+            <div class="card-body">
+                <p class="card-text">This area will list all categories available across all levels.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card mb-4 box-shadow">
+
+
+            <a asp-action="Index" asp-controller="squares" class="btn btn-primary">Manage Questions</a>
+            <div class="card-body">
+                <p class="card-text">This area lists all "squares" or questions across all levels.</p>
+                <div class="d-flex justify-content-between align-items-center">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+    <div class="row">
+        <div class="col-md-3">
+       
+        </div>
+    </div>

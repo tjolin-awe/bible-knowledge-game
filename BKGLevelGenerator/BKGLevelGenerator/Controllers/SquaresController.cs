@@ -11,6 +11,8 @@ using Microsoft.AspNetCore.Http;
 using System.IO;
 using System.Diagnostics;
 using System.Collections.ObjectModel;
+using Microsoft.Extensions.Configuration;
+using System.Xml.Serialization;
 
 namespace BKGLevelGenerator.Controllers
 {
@@ -44,6 +46,13 @@ namespace BKGLevelGenerator.Controllers
             if (square == null)
             {
                 return NotFound();
+            }
+
+            if (square.Image != null)
+            {
+                var base64 = Convert.ToBase64String(square.Image);
+                var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+                ViewBag.ImageBase64 = imgSrc;
             }
 
             return View(square);
@@ -112,6 +121,16 @@ namespace BKGLevelGenerator.Controllers
                 return NotFound();
             }
 
+
+            var config = new ConfigurationBuilder()
+                     .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+                     .AddJsonFile("appsettings.json").Build();
+
+
+            var section = config.GetSection(nameof(EditorClientConfig));
+            var editorClientConfig = section.Get<EditorClientConfig>();
+            var path = editorClientConfig.GamePath;
+
             var boardobj = _context.Boards.FirstOrDefault(x => x.Id == board);
            
             if (file != null)        
@@ -126,7 +145,7 @@ namespace BKGLevelGenerator.Controllers
                         square.Image = stream.ToArray();
                         square.ImageFilename = file.FileName;
 
-                        var levelpath = $"C:\\Users\\tom\\Documents\\GitHub\\bible-knowledge-game\\public\\assets\\levels\\level{boardobj.Level}\\";
+                        var levelpath = $"{path}/public/assets/levels/level{boardobj.Level}/";
                         if (!Directory.Exists(levelpath))
                             Directory.CreateDirectory(levelpath);
 
@@ -134,12 +153,30 @@ namespace BKGLevelGenerator.Controllers
                     }
 
 
+                    var board_output = _context.Boards.Include(x => x.Categories).Include(x => x.Squares).ThenInclude(x => x.Answers).FirstOrDefault(x => x.Id == board);
 
+
+                    Board b = new Board();
+
+                    b.Categories = board_output.Categories.OrderBy(x => x.OrderId).ToList();
+                    b.Id = board_output.Id;
+                    b.Title = board_output.Title;
+                    b.Level = board_output.Level;
+                    b.Squares = board_output.Squares.OrderBy(x => x.SquareId).ToList();
+
+
+
+
+                    var serializer = new XmlSerializer(typeof(Board));
+
+
+                    Stream filestream = new FileStream($"{path}/levels/level{board}/level.xml",FileMode.Create);
+                    serializer.Serialize(filestream, b);
                 }
 
-            
-            
-                try
+
+
+            try
                 {
                     Debug.WriteLine(square.SquareId);
 

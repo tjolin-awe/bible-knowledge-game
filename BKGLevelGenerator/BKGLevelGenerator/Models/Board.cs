@@ -31,7 +31,6 @@ namespace BKGLevelGenerator.Models
         [Required]
         public string Title { get; set; }
 
-
         public List<Category> Categories { get; set; } = new List<Category>();
         public List<Square> Squares { get; set; } = new List<Square>();
 
