@@ -2,6 +2,7 @@ import Phaser from 'phaser'
 import { Player } from '~/server/TicTacToeState'
 import { BKG, Button } from '../../types/BKG'
 import { IGameOverSceneData, IGameSceneData } from '../../types/scenes'
+import Server from '../services/Server'
 
 export default class GameOver extends Phaser.Scene
 {
@@ -20,7 +21,7 @@ export default class GameOver extends Phaser.Scene
 	{
 
 		
-		const { winningPlayerId, winner , onRestart, server } = data
+		const { winningName, winningPlayerId, winner , onRestart, server } = data
 
 		this.onRestart= onRestart
 		
@@ -28,12 +29,14 @@ export default class GameOver extends Phaser.Scene
 	
 		
 	    let winningPlayer = server.players?.get(winningPlayerId)
-		const text = `${winningPlayer?.name} Wins!`
+
+		let text = data.winner == true ? 'You Won!' : 'You Lost!'
 
 		this._score = winningPlayer?.score
 
 		
 
+		if (data.winner) {
 			var p0 = new Phaser.Math.Vector2(BKG.world.centerX - 400, 500);
 			var p1 = new Phaser.Math.Vector2(BKG.world.centerX - 400, 150);
 			var p2 = new Phaser.Math.Vector2(BKG.world.centerX + 400, 150);
@@ -81,7 +84,7 @@ export default class GameOver extends Phaser.Scene
 					blendMode: 'SCREEN'
 				});
 			}
-		
+		}
 		
 		var fontScoreWhite = { font: '38px ' + BKG.text['FONT'], fill: '#000', stroke: '#ffde00', strokeThickness: 5 };
 
@@ -92,7 +95,7 @@ export default class GameOver extends Phaser.Scene
 		
 		let restart = new Button(BKG.world.centerX, BKG.world.centerY + 200,'button-restart', this.restart,this)
 
-		
+		server.leave()
 
 		if (data.winner) {
 			this.screenGameoverScore = this.add.text(BKG.world.centerX, BKG.world.centerY + 50,'0', fontScoreWhite).setOrigin(0.5)
@@ -151,6 +154,7 @@ export default class GameOver extends Phaser.Scene
 					
 					BKG.Storage.setHighscore('BKG-highscore',Number.parseInt(self.screenGameoverScore!.text));
 					emitter.explode(50,BKG.world.centerX,BKG.world.centerY);
+				
 				}
 			});
 		}

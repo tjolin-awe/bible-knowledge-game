@@ -63,6 +63,8 @@ export default class Game extends Phaser.Scene {
 	private screenPausedContinue?: Button
 	private _gamePaused: any
 	private screenPausedMessage?: Phaser.GameObjects.Text
+	private screenPausedHome: any
+	
 
 	private handleCollectMoney(obj1: Phaser.GameObjects.Image, obj2: Phaser.GameObjects.Text, score: number) {
 
@@ -87,7 +89,7 @@ export default class Game extends Phaser.Scene {
 
 		this.events.on('trail-to', (data: TrailToData) => {
 
-			const trail = particles.createEmitter({
+			let trail = particles.createEmitter({
 				x: data.fromX,
 				y: data.fromY,
 				quantity: 5,
@@ -112,17 +114,18 @@ export default class Game extends Phaser.Scene {
 					const x = Phaser.Math.Interpolation.CatmullRom(xVals, v)
 					const y = Phaser.Math.Interpolation.CatmullRom(yVals, v)
 
-					trail.setPosition(x, y)
+					trail?.setPosition(x, y)
 				},
 				onComplete: () => {
-					trail.explode(50, data.toX, data.toY)
-					trail.stop()
-
+					trail?.explode(200, data.toX, data.toY)
+					trail?.stop()
+				
 
 					data.display.setText(data.score.toString())
 					data.display?.setColor(data.score >= 0 ? 'white' : 'red')
 					this.time.delayedCall(1000, () => {
-						particles.removeEmitter(trail)
+						
+							particles.removeEmitter(trail)
 					})
 
 					this.tweens.add({ targets: data.display, duration: 1000, scale: 1.3, ease: 'Sine.easeInOut', yoyo: true });
@@ -189,6 +192,7 @@ export default class Game extends Phaser.Scene {
 	create(data: IGameSceneData) {
 
 
+		this._gamePaused = false
 		BKG.Sfx.sounds['correct_answer'] = this.sound.add('correct_answer');
 		//this.answersound = this.sound.add('correct_answer')
 
@@ -396,7 +400,6 @@ export default class Game extends Phaser.Scene {
 				text.setText('$' + (cellState.value).toString())
 				text.setPipeline('Light2D')
 				text.setInteractive({ useHandCursor: true }).on('pointerover', () => {
-
 					cell.setTexture('header')
 					text.setFontSize(48)
 				})
@@ -511,6 +514,9 @@ export default class Game extends Phaser.Scene {
 			this.screenPausedText.setOrigin(0.5, 0);
 			this.screenPausedMessage = this.add.text(BKG.world.centerX, 300, 'What would you like to do?', fontScoreWhite).setWordWrapWidth(BKG.world.width - 60).setAlign('center')
 			this.screenPausedMessage.setOrigin(0.5, 0.5);
+			this.screenPausedHome = new Button(100, 100, 'button-home', this.stateHome, this);
+			this.screenPausedHome.setOrigin(0, 1);
+		
 			this.screenPausedBack = new Button(100, BKG.world.height - 100, 'button-mainmenu', this.stateBack, this);
 			this.screenPausedBack.setOrigin(0, 1);
 			this.screenPausedContinue = new Button(BKG.world.width - 100, BKG.world.height - 100, 'button-continue', this.managePause, this);
@@ -518,9 +524,10 @@ export default class Game extends Phaser.Scene {
 			this.screenPausedGroup.add(this.screenPausedBg);
 			this.screenPausedGroup.add(this.screenPausedText);
 			this.screenPausedGroup.add(this.screenPausedMessage);
+			this.screenPausedGroup.add(this.screenPausedHome)
 			this.screenPausedGroup.add(this.screenPausedBack);
 			this.screenPausedGroup.add(this.screenPausedContinue);
-			this.screenPausedGroup.toggleVisible();
+			this.screenPausedGroup.setVisible(false)
 
 			this.screenGameoverGroup = this.add.group();
 			this.screenGameoverBg = this.add.sprite(0, 0, 'overlay').setDisplaySize(BKG.world.width, BKG.world.height)
@@ -539,7 +546,7 @@ export default class Game extends Phaser.Scene {
 			this.screenGameoverGroup.add(this.screenGameoverBack);
 			this.screenGameoverGroup.add(this.screenGameoverRestart);
 			this.screenGameoverGroup.add(this.screenGameoverScore);
-			this.screenGameoverGroup.toggleVisible();
+			this.screenGameoverGroup.setVisible(false)
 		}
 
 		this.cameras.main.fadeIn(2000, 0, 0, 0)
@@ -564,7 +571,8 @@ export default class Game extends Phaser.Scene {
 
 			this.screenPausedGroup?.setVisible(true)
 			this.screenPausedBack.x = -this.screenPausedBack.width - 20;
-			this.tweens.add({ targets: this.screenPausedBack, x: 100, duration: 500, delay: 250, ease: 'Back' });
+			this.screenPausedHome.x = -this.screenPausedHome.width - 20;
+			this.tweens.add({ targets: [this.screenPausedBack,this.screenPausedHome], x: 100, duration: 500, delay: 250, ease: 'Back' });
 			this.screenPausedContinue!.x = BKG.world.width + this.screenPausedContinue!.width + 20;
 			this.tweens.add({ targets: this.screenPausedContinue, x: BKG.world.width - 250, duration: 500, delay: 250, ease: 'Back' });
 		}
@@ -577,7 +585,8 @@ export default class Game extends Phaser.Scene {
 				value.text.input.enabled = true
 			})
 			this.screenPausedBack.x = 100;
-			this.tweens.add({ targets: this.screenPausedBack, x: -this.screenPausedBack.width - 20, duration: 500, ease: 'Back' });
+			this.screenPausedHome.x = 100;
+			this.tweens.add({ targets: [this.screenPausedBack,this.screenPausedHome], x: -this.screenPausedBack.width - 20, duration: 500, ease: 'Back' });
 			this.screenPausedContinue!.x = BKG.world.width - 100;
 			this.tweens.add({ targets: this.screenPausedContinue, x: BKG.world.width + this.screenPausedContinue!.width + 20, duration: 500, ease: 'Back' });
 			this.screenPausedGroup?.setVisible(false)
@@ -671,8 +680,9 @@ export default class Game extends Phaser.Scene {
 
 		if (cell.value.result !== newValue.result) {
 			if (newValue.result) {
-				var particles = this.add.particles('green').setPosition(cell.display.x + 120 / 2, cell.display.y + 60 / 2)
+				/*var particles = this.add.particles('green').setPosition(cell.display.x + 120 / 2, cell.display.y + 60 / 2)
 
+				
 				var emitter = particles.createEmitter({
 					speed: 100,
 					lifespan: 2000,
@@ -681,7 +691,7 @@ export default class Game extends Phaser.Scene {
 				})
 
 
-				emitter.stop()
+				emitter.stop()*/
 				//cell.display.setVisible(false)
 				this.cells[idx].text.setVisible(false)
 
@@ -731,7 +741,15 @@ export default class Game extends Phaser.Scene {
 			}
 
 			if (this.server) {
+
+				let winname = ''
+				this.server?.players?.forEach((value: IPlayer, key: string)=>{
+					if (key == playerId)
+						winname = value.name
+				})
+
 				this.onGameOver({
+					winningName: winname,
 					winningPlayerId: playerId,
 					winner: playerId == this.server?.playerId,
 					playerReset: false,
@@ -755,11 +773,11 @@ export default class Game extends Phaser.Scene {
 		var fontScore = { font: '32px ' + BKG.text['FONT'], fill: 'white', stroke: 'black', strokeThickness: 4 }
 
 		this.player1DisplayGroup = this.add.group()
-		this.player1Nametag = this.add.image(col1, 120, 'nametag').setOrigin(0.5).setAlpha(0.7)
+		this.player1Nametag = this.add.image(col1, 125, 'nametag').setOrigin(0.5).setAlpha(0.7)
 
 		this.player1img = this.add.image(col1, 50, 'player').setOrigin(0.5, 0.5).setAlpha(0.7)
-		this.player1score = this.add.text(60, 115, '0', fontScore).setOrigin(0.5)
-		this.player1name = this.add.text(col1, 80, BKG.Storage.get('BKG-player'), fontScore).setOrigin(0.5, 0.5)
+		this.player1score = this.add.text(60, 120, '0', fontScore).setOrigin(0.5)
+		this.player1name = this.add.text(col1, 75, BKG.Storage.get('BKG-player'), fontScore).setOrigin(0.5, 0.5)
 		var shape3 = new Phaser.Geom.Rectangle(0, 0, this.player1img.width, this.player1img.height)
 		this.player1DisplayGroup.add(this.player1Nametag)
 		this.player1DisplayGroup.add(this.player1img)
@@ -767,10 +785,10 @@ export default class Game extends Phaser.Scene {
 		this.player1DisplayGroup.add(this.player1name)
 
 		this.player2DisplayGroup = this.add.group()
-		this.player2Nametag = this.add.image(col2, 120, 'nametag').setOrigin(0.5).setAlpha(0.7)
+		this.player2Nametag = this.add.image(col2, 125, 'nametag').setOrigin(0.5).setAlpha(0.7)
 		this.player2img = this.add.image(col2, 50, 'player').setOrigin(0.5, 0.5).setAlpha(0.7)
-		this.player2score = this.add.text(col2, 115, '0', fontScore).setOrigin(0.5)
-		this.player2name = this.add.text(col2, 80, '', fontScore).setOrigin(0.5)
+		this.player2score = this.add.text(col2, 120, '0', fontScore).setOrigin(0.5)
+		this.player2name = this.add.text(col2, 75, '', fontScore).setOrigin(0.5)
 
 		this.player2DisplayGroup.add(this.player2Nametag)
 		this.player2DisplayGroup.add(this.player2img)
@@ -810,8 +828,8 @@ export default class Game extends Phaser.Scene {
 
 					if (key !== this.server?.playerId) {
 
-						this.player1name?.setText(value.name)
-						this.player1score?.setText(value.score.toString())
+						this.player2name?.setText(value.name)
+						this.player2score?.setText(value.score.toString())
 						this.player2DisplayGroup?.setVisible(true)
 					}
 				})
@@ -836,6 +854,23 @@ export default class Game extends Phaser.Scene {
 		})
 
 	}
+	stateHome() {
+
+
+		BKG.Sfx.play('click');
+		this.scene.stop()
+
+
+		this.server?.leave()
+		this.server = new Server()
+
+		this.scene.start('title', {
+			server: this.server,
+			onGameOver: this.onGameOver,
+			currentcells: null,
+	
+		})
+	}
 	stateBack() {
 
 
@@ -845,6 +880,7 @@ export default class Game extends Phaser.Scene {
 
 		this.server?.leave()
 		this.server = new Server()
+
 		this.scene.start('levelselect', {
 			server: this.server,
 			onGameOver: this.onGameOver,

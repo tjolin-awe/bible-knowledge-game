@@ -24,9 +24,10 @@ export default class Story extends Phaser.Scene
         this.add.text(BKG.world.centerX,50,`Hi ${name}, \n Please select game mode`, fontTitle).setOrigin(0.5,0).setAlign('center')
 
 
+
         this.player1Nametag = this.add.image(100, 125, 'nametag').setOrigin(0.5).setAlpha(0.7)
 
-		this.player1img = this.add.image(100, 50, 'player').setOrigin(0.5, 0.5).setAlpha(0.7).setInteractive().on('pointerup',()=>{
+		this.player1img = this.add.image(100, 50, 'player').setOrigin(0.5, 0.5).setAlpha(0.7).on('pointerup',()=>{
             
             BKG.Storage.set('BKG-player','')
             this.scene.stop()
@@ -37,10 +38,19 @@ export default class Story extends Phaser.Scene
             })
         })
 	
+        var highscore = BKG.Storage.get('BKG-highscore');
+
+
+        var fontHighscore = { font: '38px '+BKG.text['FONT'], fill: '#ffde00', stroke: '#000', strokeThickness: 5 };
+		var textHighscore = this.add.text(BKG.world.width-20, 20, BKG.text['menu-highscore']+highscore, fontHighscore);
+		textHighscore.setOrigin(1, 0);
+
+    
 		this.player1name = this.add.text(100, 120, BKG.Storage.get('BKG-player'), fontMenu).setOrigin(0.5, 0.5)
 
         let singleMenuItem = this.add.image(BKG.world.centerX,BKG.world.centerY - 100, 'singleplayer_button')
         .setOrigin(0.5).on('pointerup',()=>{
+            this.scene.stop()
             this.scene.start('levelselect', {
                 server: server,
                 onGameOver: onGameOver,
@@ -85,6 +95,7 @@ export default class Story extends Phaser.Scene
 
             multiMenuItem.setInteractive()
             singleMenuItem.setInteractive()
+            this.player1img?.setInteractive()
         })
 		
         this.cameras.main.fadeIn(500, 0, 0, 0)

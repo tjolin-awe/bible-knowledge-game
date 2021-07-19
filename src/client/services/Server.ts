@@ -71,6 +71,11 @@ export default class Server
 		return this.room?.state.answeringPlayer
 	}
 
+	get multiplayer()
+	{
+		return this._multiplayer
+	}
+
 	get players()
 	{
 		if (!this.room)
@@ -80,14 +85,14 @@ export default class Server
 		return this.room?.state.players
 	}
 
-
+	
 
 	constructor()
 	{
 
 		let server_address = BKG.Storage.get('gameserver')
 	
-		console.log(server_address)
+		
 		//this.client = new Client('ws://34.72.31.244:9091')
 		this.client = new Client('ws://' + server_address + ':9091')
 		this.events = new Phaser.Events.EventEmitter()
@@ -99,12 +104,13 @@ export default class Server
 		this._multiplayer = multiplayer
 		this._name = name
 
-		console.log(multiplayer)
 		
-		if (multiplayer)
+		if (multiplayer) {
+			console.log('Joining multi-player room')
 			this.room = await this.client.joinOrCreate<ITicTacToeState>('tic-tac-toe', { name: name, level:level, multiplayer: multiplayer})
+		}
 		else {
-			console.log('joining single player')
+			console.log('Joining single-player room')
 			this.room = await this.client.joinOrCreate<IBKGSinglePlayerState>('bkg-single-player-game', {name: name, level: level, multiplayer: multiplayer})
 		}
 		this.room.onMessage(Message.PlayerIndex, (message: { playerId: string, level:string, playerIndex: number, name: string }) => {
@@ -113,6 +119,7 @@ export default class Server
 				this._playerId = message.playerId
 				this._name = message.name
 				this._level = level
+			
 				
 		})
 
@@ -124,7 +131,7 @@ export default class Server
 
 		this.room.state.onChange = (changes) => {
 			changes.forEach(change => {
-				console.log(change)
+			
 				const { field, value } = change
 
 				switch (field)
@@ -136,7 +143,7 @@ export default class Server
 					
 					case 'lastAnswer':
 						    
-					console.log('lastAnswer')				
+							
 						this.events.emit('player-answered', value)
 						break;
 
@@ -227,8 +234,7 @@ export default class Server
 		if (!this.room)
 			return
 
-		console.log('player ready fired on server')
-
+		
 	
 		this.room.send(Message.PlayerReady,{ player: player, state: true })
 	}
@@ -256,14 +262,14 @@ export default class Server
 
 	onPlayersReady(cb: (ready: boolean) => void, context?: any)
 	{
-		console.log('player ready fired')
+	
 		this.events.on('players-ready', cb, context)
 	}
 
 	
 	onPlayerAnswered(cb: (answer: Answer) => void, context?: any)
 	{
-		console.log('player answered fired')
+		
 		this.events.on('player-answered', cb, context)
 	}
 

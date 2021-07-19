@@ -20,7 +20,7 @@ export default class TicTacToe extends Room<TicTacToeState>
 	{
 		this.maxClients = 2
 		this.setState(new TicTacToeState(options.level))
-		console.log('created new state')
+		
 		this.onMessage(Message.PlayerSelection, (client, message: {  cellId: number } ) => {
 			this.dispatcher.dispatch(new PlayerSelectionCommand(), {
 				client,
@@ -29,7 +29,7 @@ export default class TicTacToe extends Room<TicTacToeState>
 		})
 
 		this.onMessage(Message.AnswerGiven, (client, message: { cellId: number, answerId: number}) => {
-			console.log('onMessage')
+			
 			this.dispatcher.dispatch(new AnswerGivenCommand(), {
 				client,
 				cellId: message.cellId,
@@ -38,7 +38,7 @@ export default class TicTacToe extends Room<TicTacToeState>
 		})
 
 		this.onMessage(Message.PlayerReady, (client, message: { player: number }) => {
-			console.log('onMessage')
+			
 			this.dispatcher.dispatch(new PlayerReadyCommand(), {
 				client,
 				player: message.player
@@ -52,7 +52,7 @@ export default class TicTacToe extends Room<TicTacToeState>
 		// flag client as inactive for other users
 
 	
-		console.log('player disconnected!')
+	
 		let player = this.state.players.get(client.sessionId)
 		if (player ==null)
 			return 
@@ -82,7 +82,6 @@ export default class TicTacToe extends Room<TicTacToeState>
 	onJoin(client: Client, options: { name:string} )
 	{
 
-		console.log('OnJoin')
 		const idx = this.clients.findIndex(c => c.sessionId === client.sessionId)
 		
 		this.state.activePlayer = client.sessionId 
@@ -112,13 +111,12 @@ export class BKGSingle extends Room<BKGSinglePlayerState>
 
 	onCreate(options: { name:string, level: string})
 	{
-		console.log("creating new game")
-		console.log(options.name)
-		console.log(options.level)
+	
+		
 		this.maxClients = 1
 		
 		this.setState(new BKGSinglePlayerState(options.level))
-		console.log('created new state')
+	
 		this.onMessage(Message.PlayerSelection, (client, message: {  cellId: number } ) => {
 			this.dispatcher.dispatch(new PlayerSelectionCommand(), {
 				client,
@@ -127,7 +125,7 @@ export class BKGSingle extends Room<BKGSinglePlayerState>
 		})
 
 		this.onMessage(Message.AnswerGiven, (client, message: { cellId: number, answerId: number}) => {
-			console.log('onMessage')
+			
 			this.dispatcher.dispatch(new AnswerGivenCommand(), {
 				client,
 				cellId: message.cellId,
@@ -136,7 +134,7 @@ export class BKGSingle extends Room<BKGSinglePlayerState>
 		})
 
 		this.onMessage(Message.PlayerReady, (client, message: { player: number }) => {
-			console.log('onMessage')
+		
 			this.dispatcher.dispatch(new PlayerReadyCommand(), {
 				client,
 				player: message.player
@@ -189,7 +187,6 @@ export class BKGSingle extends Room<BKGSinglePlayerState>
 	{
 
 
-		console.log('OnJoin - SINGLE PLAYER!')
 
 		const idx = this.clients.findIndex(c => c.sessionId === client.sessionId)
 		

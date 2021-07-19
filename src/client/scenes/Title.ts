@@ -79,14 +79,7 @@ export default class Title extends Phaser.Scene {
 
         BKG.Storage.initUnset('BKG-active-level',1);
         BKG.Storage.initUnset('BKG-highscore', 0);
-		var highscore = BKG.Storage.get('BKG-highscore');
-
-
-        var fontHighscore = { font: '38px '+BKG.text['FONT'], fill: '#ffde00', stroke: '#000', strokeThickness: 5 };
-		var textHighscore = this.add.text(BKG.world.width-20, 20, BKG.text['menu-highscore']+highscore, fontHighscore);
-		textHighscore.setOrigin(1, 0);
-
-    
+		
        //this.tweens.add({targets: bible, angle: title.angle-2, duration: 1000, ease: 'Sine.easeInOut' });
        //this.tweens.add({targets: bible, angle: title.angle+4, duration: 2000, ease: 'Sine.easeInOut', yoyo: 1, loop: -1, delay: 1000 });
 

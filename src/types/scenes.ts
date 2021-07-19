@@ -4,12 +4,14 @@ import { Answer } from '~/server/TicTacToeState'
 import { Schema, ArraySchema, MapSchema, type } from '@colyseus/schema'
 export interface IGameOverSceneData
 {
+	winningName: string
 	winningPlayerId: string
 	winner: boolean
 	playerReset: boolean
 	onRestart?: () => void
 	server: Server
 	multiplayer: boolean
+	
 }
 
 export interface IGameWakeSceneData

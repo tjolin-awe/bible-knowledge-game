@@ -50,6 +50,7 @@ export default class Preloader extends Phaser.Scene {
 				['multiplayer_button','assets/multiplayer_button.png'],
 				['answerbackground', 'assets/answerbackground.png'],
 				['answerbutton','assets/answerbutton.png'],
+				['answerbutton_select', 'assets/button_answer_select.png'],
 				['phaser','assets/phaser.png'],
 				['loginbackground','assets/loginbackground.png'],
 				['levelmodebg','assets/levelmodebg.png'],
@@ -61,6 +62,7 @@ export default class Preloader extends Phaser.Scene {
 				['level1_img', 'assets/levels/level1_img1.png'],
 				['level2_img', 'assets/levels/level2_img1.png'],
 				['level3_img', 'assets/levels/level3_img1.png'],
+				['level4_img', 'assets/levels/level4_img1.png'],
 				['particle','assets/particle.png'],
 				
 				

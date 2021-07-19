@@ -70,7 +70,9 @@ export default class AnswerScreen extends Phaser.Scene {
 		this.container.setPosition(BKG.world.centerX, BKG.world.height + this.container.height / 2)
 
 		// ask the LoaderPlugin to load the answer's texture
-		this.load.image(image, `assets/levels/${this.server.level}/${image}`)
+	
+		
+		this.load.image(image,`assets/levels/${image}`)
 		this.load.once(Phaser.Loader.Events.COMPLETE, () => {
 			this.picture = this.add.image(BKG.world.centerX, BKG.world.centerY + 80, 'image')
 				.setOrigin(0.5)

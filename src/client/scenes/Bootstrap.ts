@@ -106,11 +106,9 @@ export default class Bootstrap extends Phaser.Scene
 	private handleGameOver = (data: IGameOverSceneData) => {
 		
 		
-		this.server.leave()
+	
 		this.scene.stop('game')
 
-		console.log('game over')
-		console.log(data)
 
 		let screen = data.multiplayer ? 'game-over' : 'levelcomplete'
 			this.scene.launch(screen, {

@@ -8,7 +8,7 @@ BKG.Sfx = {
         BKG.Sfx.status = BKG.Sfx.status || [];
         BKG.Sfx.status[type] = BKG.Storage.get('BKG-'+type);
 
-        console.log(type)
+       
         if(type == 'sound') {
           BKG.Sfx.sounds = [];
           BKG.Sfx.sounds['click'] = game.sound.add('click');

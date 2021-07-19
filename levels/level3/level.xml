@@ -1,0 +1,564 @@
+<?xml version="1.0"?>
+<Board xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Level>3</Level>
+  <Title>Level 3</Title>
+  <Categories>
+    <Category>
+      <Title>Apostles 1</Title>
+    </Category>
+    <Category>
+      <Title>Apostles 2</Title>
+    </Category>
+    <Category>
+      <Title>Apostles 3</Title>
+    </Category>
+    <Category>
+      <Title>Jesus</Title>
+    </Category>
+    <Category>
+      <Title>Christ</Title>
+    </Category>
+  </Categories>
+  <Squares>
+    <Square>
+      <SquareId>0</SquareId>
+      <Question>Which Apostle betrayed Jesus for 30 pieces of silver?</Question>
+      <Value>100</Value>
+      <Category>
+        <Title>Apostles 1</Title>
+      </Category>
+      <ImageFilename>005-ls-judas.jpg</ImageFilename>
+      <Answers>
+        <Answer>
+          <Display>Judas</Display>
+          <Correct>true</Correct>
+        </Answer>
+        <Answer>
+          <Display>Peter</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>John</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>Matthew</Display>
+          <Correct>false</Correct>
+        </Answer>
+      </Answers>
+    </Square>
+    <Square>
+      <SquareId>1</SquareId>
+      <Question>Which Apostle denied Jesus 3 times before the Rooster crowed?</Question>
+      <Value>100</Value>
+      <Category>
+        <Title>Apostles 2</Title>
+      </Category>
+      <ImageFilename>001-gnpi-091-peter-denials.jpg</ImageFilename>
+      <Answers>
+        <Answer>
+          <Display>Peter</Display>
+          <Correct>true</Correct>
+        </Answer>
+        <Answer>
+          <Display>Paul</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>Thomas</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>Andrew</Display>
+          <Correct>false</Correct>
+        </Answer>
+      </Answers>
+    </Square>
+    <Square>
+      <SquareId>2</SquareId>
+      <Question>A fisherman with his brother James; who was the disciple "whom Jesus loved"?</Question>
+      <Value>100</Value>
+      <Category>
+        <Title>Apostles 3</Title>
+      </Category>
+      <ImageFilename>006-gnpi-032-jesus-disciples.jpg</ImageFilename>
+      <Answers>
+        <Answer>
+          <Display>John</Display>
+          <Correct>true</Correct>
+        </Answer>
+        <Answer>
+          <Display>Peter</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>Andrew</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>Philip</Display>
+          <Correct>false</Correct>
+        </Answer>
+      </Answers>
+    </Square>
+    <Square>
+      <SquareId>3</SquareId>
+      <Question>How did the 3 wise men find baby Jesus?</Question>
+      <Value>100</Value>
+      <Category>
+        <Title>Jesus</Title>
+      </Category>
+      <ImageFilename>001-wise-men.jpg</ImageFilename>
+      <Answers>
+        <Answer>
+          <Display>A Star</Display>
+          <Correct>true</Correct>
+        </Answer>
+        <Answer>
+          <Display>The Burning Bush</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>Angels</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>Pillar of Fire</Display>
+          <Correct>false</Correct>
+        </Answer>
+      </Answers>
+    </Square>
+    <Square>
+      <SquareId>4</SquareId>
+      <Question>How was Jesus killed?</Question>
+      <Value>100</Value>
+      <Category>
+        <Title>Christ</Title>
+      </Category>
+      <ImageFilename>008-tis-jesus-cross.jpg</ImageFilename>
+      <Answers>
+        <Answer>
+          <Display>Crucified</Display>
+          <Correct>true</Correct>
+        </Answer>
+        <Answer>
+          <Display>Stabbed</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>Burned</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>Beaten</Display>
+          <Correct>false</Correct>
+        </Answer>
+      </Answers>
+    </Square>
+    <Square>
+      <SquareId>5</SquareId>
+      <Question>Who didn't believe Jesus had risen until He let him touch the nail wounds?</Question>
+      <Value>200</Value>
+      <Category>
+        <Title>Apostles 1</Title>
+      </Category>
+      <ImageFilename>003-resurrection-appearances.jpg</ImageFilename>
+      <Answers>
+        <Answer>
+          <Display>Thomas</Display>
+          <Correct>true</Correct>
+        </Answer>
+        <Answer>
+          <Display>Matthew</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>Peter</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>John</Display>
+          <Correct>false</Correct>
+        </Answer>
+      </Answers>
+    </Square>
+    <Square>
+      <SquareId>6</SquareId>
+      <Question>Which Apostle called himself Nathanael of the Gospel of John?</Question>
+      <Value>200</Value>
+      <Category>
+        <Title>Apostles 2</Title>
+      </Category>
+      <ImageFilename>008-gnpi-032-jesus-disciples.jpg</ImageFilename>
+      <Answers>
+        <Answer>
+          <Display>Bartholomew</Display>
+          <Correct>true</Correct>
+        </Answer>
+        <Answer>
+          <Display>Andrew</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>Simon</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>Thomas</Display>
+          <Correct>false</Correct>
+        </Answer>
+      </Answers>
+    </Square>
+    <Square>
+      <SquareId>7</SquareId>
+      <Question>Who was a tax collector before meeting Jesus?</Question>
+      <Value>200</Value>
+      <Category>
+        <Title>Apostles 3</Title>
+      </Category>
+      <ImageFilename>009-gnpi-032-jesus-disciples.jpg</ImageFilename>
+      <Answers>
+        <Answer>
+          <Display>Matthew</Display>
+          <Correct>true</Correct>
+        </Answer>
+        <Answer>
+          <Display>Philip</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>Thomas</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>Simon</Display>
+          <Correct>false</Correct>
+        </Answer>
+      </Answers>
+    </Square>
+    <Square>
+      <SquareId>8</SquareId>
+      <Question>Who are in the trinity?</Question>
+      <Value>200</Value>
+      <Category>
+        <Title>Jesus</Title>
+      </Category>
+      <ImageFilename>009-john-baptist-jesus.jpg</ImageFilename>
+      <Answers>
+        <Answer>
+          <Display>Father, Son &amp; Holy Spirit</Display>
+          <Correct>true</Correct>
+        </Answer>
+        <Answer>
+          <Display>Peter, Paul &amp; Philip</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>Sons of Thunder</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>Moses, Elijah &amp; Jesus</Display>
+          <Correct>false</Correct>
+        </Answer>
+      </Answers>
+    </Square>
+    <Square>
+      <SquareId>9</SquareId>
+      <Question>How much time passed before Christ rose again?</Question>
+      <Value>200</Value>
+      <Category>
+        <Title>Christ</Title>
+      </Category>
+      <ImageFilename>008-rr-resurrection.jpg</ImageFilename>
+      <Answers>
+        <Answer>
+          <Display>Three Days</Display>
+          <Correct>true</Correct>
+        </Answer>
+        <Answer>
+          <Display>Forty Days</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>One Day</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>Four Days</Display>
+          <Correct>false</Correct>
+        </Answer>
+      </Answers>
+    </Square>
+    <Square>
+      <SquareId>10</SquareId>
+      <Question>Who was among the first Apostles to follow Jesus, along with his brother Peter?</Question>
+      <Value>300</Value>
+      <Category>
+        <Title>Apostles 1</Title>
+      </Category>
+      <ImageFilename>005-andrew-philip-nathanael.jpg</ImageFilename>
+      <Answers>
+        <Answer>
+          <Display>Andrew</Display>
+          <Correct>true</Correct>
+        </Answer>
+        <Answer>
+          <Display>Matthew</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>Thomas</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>John</Display>
+          <Correct>false</Correct>
+        </Answer>
+      </Answers>
+    </Square>
+    <Square>
+      <SquareId>11</SquareId>
+      <Question>Who did Jesus ask where to buy bread before the miracle of the loaves and fish?</Question>
+      <Value>300</Value>
+      <Category>
+        <Title>Apostles 2</Title>
+      </Category>
+      <ImageFilename>007-gnpi-032-jesus-disciples.jpg</ImageFilename>
+      <Answers>
+        <Answer>
+          <Display>Philip</Display>
+          <Correct>true</Correct>
+        </Answer>
+        <Answer>
+          <Display>Peter</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>Simon</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>Matthew</Display>
+          <Correct>false</Correct>
+        </Answer>
+      </Answers>
+    </Square>
+    <Square>
+      <SquareId>12</SquareId>
+      <Question>Who was the brother of John and the first Apostle to be Martyred?</Question>
+      <Value>300</Value>
+      <Category>
+        <Title>Apostles 3</Title>
+      </Category>
+      <ImageFilename>005-gnpi-032-jesus-disciples.jpg</ImageFilename>
+      <Answers>
+        <Answer>
+          <Display>James</Display>
+          <Correct>true</Correct>
+        </Answer>
+        <Answer>
+          <Display>Peter</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>John</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>Andrew</Display>
+          <Correct>false</Correct>
+        </Answer>
+      </Answers>
+    </Square>
+    <Square>
+      <SquareId>13</SquareId>
+      <Question>What are the ABCs to Salvation?</Question>
+      <Value>300</Value>
+      <Category>
+        <Title>Jesus</Title>
+      </Category>
+      <ImageFilename>070-redemption-story.jpg</ImageFilename>
+      <Answers>
+        <Answer>
+          <Display>Admit, Believe, Confess</Display>
+          <Correct>true</Correct>
+        </Answer>
+        <Answer>
+          <Display>Abstain, Beg, Condemn</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>Ask, Bow, Cower</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>Answer, Battle, Conquer</Display>
+          <Correct>false</Correct>
+        </Answer>
+      </Answers>
+    </Square>
+    <Square>
+      <SquareId>14</SquareId>
+      <Question>What sins will Jesus forgive?</Question>
+      <Value>300</Value>
+      <Category>
+        <Title>Christ</Title>
+      </Category>
+      <ImageFilename>009-tis-last-supper.jpg</ImageFilename>
+      <Answers>
+        <Answer>
+          <Display>All of them</Display>
+          <Correct>true</Correct>
+        </Answer>
+        <Answer>
+          <Display>Past sins</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>Minor sins</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>Future sins</Display>
+          <Correct>false</Correct>
+        </Answer>
+      </Answers>
+    </Square>
+    <Square>
+      <SquareId>15</SquareId>
+      <Question>Who was the brother of Thaddaous, called ____ the Younger?</Question>
+      <Value>400</Value>
+      <Category>
+        <Title>Apostles 1</Title>
+      </Category>
+      <ImageFilename>James_the_Younger.jpg</ImageFilename>
+      <Answers>
+        <Answer>
+          <Display>James</Display>
+          <Correct>true</Correct>
+        </Answer>
+        <Answer>
+          <Display>Joesph</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>Joshua</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>Simon</Display>
+          <Correct>false</Correct>
+        </Answer>
+      </Answers>
+    </Square>
+    <Square>
+      <SquareId>16</SquareId>
+      <Question>Who was known as the Zealot?</Question>
+      <Value>400</Value>
+      <Category>
+        <Title>Apostles 2</Title>
+      </Category>
+      <ImageFilename>012-gnpi-032-jesus-disciples.jpg</ImageFilename>
+      <Answers>
+        <Answer>
+          <Display>Simon</Display>
+          <Correct>true</Correct>
+        </Answer>
+        <Answer>
+          <Display>Judas</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>Peter</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>Philip</Display>
+          <Correct>false</Correct>
+        </Answer>
+      </Answers>
+    </Square>
+    <Square>
+      <SquareId>17</SquareId>
+      <Question>Which Apostle is only mentioned two times in the Bible?</Question>
+      <Value>400</Value>
+      <Category>
+        <Title>Apostles 3</Title>
+      </Category>
+      <ImageFilename>011-gnpi-032-jesus-disciples.jpg</ImageFilename>
+      <Answers>
+        <Answer>
+          <Display>Thadeous</Display>
+          <Correct>true</Correct>
+        </Answer>
+        <Answer>
+          <Display>Philip</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>Thomas</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>Simon</Display>
+          <Correct>false</Correct>
+        </Answer>
+      </Answers>
+    </Square>
+    <Square>
+      <SquareId>18</SquareId>
+      <Question>Jesus healed the blind to ___ and the deaf to ___.</Question>
+      <Value>400</Value>
+      <Category>
+        <Title>Jesus</Title>
+      </Category>
+      <ImageFilename>003-gnpi-046-blind-mute.jpg</ImageFilename>
+      <Answers>
+        <Answer>
+          <Display>See / Hear</Display>
+          <Correct>true</Correct>
+        </Answer>
+        <Answer>
+          <Display>Happy / Sad</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>Hope / Live</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>Give / Care</Display>
+          <Correct>false</Correct>
+        </Answer>
+      </Answers>
+    </Square>
+    <Square>
+      <SquareId>19</SquareId>
+      <Question>I can do all things through ___ who strengthens me.</Question>
+      <Value>400</Value>
+      <Category>
+        <Title>Christ</Title>
+      </Category>
+      <ImageFilename>068-redemption-story.jpg</ImageFilename>
+      <Answers>
+        <Answer>
+          <Display>Christ</Display>
+          <Correct>true</Correct>
+        </Answer>
+        <Answer>
+          <Display>Heaven</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>My spirit</Display>
+          <Correct>false</Correct>
+        </Answer>
+        <Answer>
+          <Display>Angels</Display>
+          <Correct>false</Correct>
+        </Answer>
+      </Answers>
+    </Square>
+  </Squares>
+</Board>

@@ -1,7 +1,7 @@
 import type Server from '../services/Server'
 import Phaser from 'phaser'
 import { IGameOverSceneData, IGameSceneData } from '../../types/scenes'
-import { BKG } from '../../types/BKG'
+import { BKG, Button } from '../../types/BKG'
 export default class LevelSelect extends Phaser.Scene {
 
     private server?: Server
@@ -15,6 +15,7 @@ export default class LevelSelect extends Phaser.Scene {
     private levelBackground?: Phaser.GameObjects.Image
     private levelFrame?: Phaser.GameObjects.Image
     private levelTitle?: Phaser.GameObjects.Text
+    backBtn: any
 
     constructor() {
         super('levelselect')
@@ -40,7 +41,11 @@ export default class LevelSelect extends Phaser.Scene {
 
         this.add.text(BKG.world.centerX, 50, `Select a Level`, fontTitle).setOrigin(0.5, 0).setAlign('center')
 
-        let levels = 6
+        this.backBtn = new Button(0, 100, 'button-back', this.stateBack, this);
+		this.backBtn.setOrigin(0, 1);
+        this.backBtn.setPosition(-this.backBtn.width - 20,100)
+
+        let levels = 8
 
         let xpos = BKG.world.width / 4
         let ypos = BKG.world.centerY
@@ -92,11 +97,25 @@ export default class LevelSelect extends Phaser.Scene {
             this.levelFrame?.setInteractive({ useHandCursor: true })
     
 
+            if (this.backBtn){
+               
+                this.backBtn.x = -this.backBtn.width - 20
+                this.tweens.add({ targets:  this.backBtn, x: 100, duration: 500, delay: 250, ease: 'Back' });
+            }
+
         })
         this.cameras.main.fadeIn(500)
 
     }
 
+    private stateBack(){
+        this.scene.stop()
+        this.scene.start('story', {
+            server: this.server,
+            onGameOver: this.onGameOver,
+            currentcells: null,
+        })
+    }
 
 
     private loadLevel(index: number) {
