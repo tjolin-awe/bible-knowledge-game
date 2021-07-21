@@ -306,6 +306,8 @@ export default class Login extends Phaser.Scene
 
 	private startgame() {
       
+        BKG.Sfx.play('click')
+    
         if (this.particles)
             this.particles.destroy()
        

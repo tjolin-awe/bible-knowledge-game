@@ -24,7 +24,6 @@ export interface IGameWakeSceneData
 
 export interface ILevelOverSceneData
 {
-	winner: boolean
 	onRestart?: () => void
 	onGameOver: (data: IGameOverSceneData) => void
 	server: Server
@@ -35,7 +34,7 @@ export interface IGameSceneData
 	server: Server
 	onGameOver: (data: IGameOverSceneData) => void
 	currentcells: { display: Phaser.GameObjects.Graphics, value: Cell }[] 
-	level: string,
+	level: number,
 	multiplayer: boolean
 }
 

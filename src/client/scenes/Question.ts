@@ -192,8 +192,7 @@ export default class Question extends Phaser.Scene {
                         self.time.delayedCall(2000, () => {
                             self.scene.stop('answer')
                             self.scene.stop()
-                            BKG.Sfx.playMusic('opening')
-
+                         
                             self.scene.start('answer', {
                                 server: self.server,
                                 question: self.question,
@@ -224,7 +223,7 @@ export default class Question extends Phaser.Scene {
         let fontAnswer = { font: '46px ' + BKG.text['FONT'], fill: 'white', stroke: 'black', strokeThickness: 6 }
         let fontTimeout = { font: '120px ' + BKG.text['FONT'], fill: '#cd934a', stroke: 'black', strokeThickness: 24 }
 
-
+      
         BKG.Sfx.stopMusic('opening')
         BKG.Sfx.playMusic("question-music");
 

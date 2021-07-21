@@ -28,7 +28,8 @@ export default class Story extends Phaser.Scene
         this.player1Nametag = this.add.image(100, 125, 'nametag').setOrigin(0.5).setAlpha(0.7)
 
 		this.player1img = this.add.image(100, 50, 'player').setOrigin(0.5, 0.5).setAlpha(0.7).on('pointerup',()=>{
-            
+            BKG.Sfx.play('click')
+    
             BKG.Storage.set('BKG-player','')
             this.scene.stop()
             this.scene.start('login', {
@@ -50,6 +51,8 @@ export default class Story extends Phaser.Scene
 
         let singleMenuItem = this.add.image(BKG.world.centerX,BKG.world.centerY - 100, 'singleplayer_button')
         .setOrigin(0.5).on('pointerup',()=>{
+            BKG.Sfx.play('click')
+    
             this.scene.stop()
             this.scene.start('levelselect', {
                 server: server,
@@ -70,6 +73,8 @@ export default class Story extends Phaser.Scene
 
         let multiMenuItem = this.add.image(BKG.world.centerX,BKG.world.centerY + 100, 'multiplayer_button')
         .setOrigin(0.5).on('pointerup',()=>{
+            BKG.Sfx.play('click')
+    
             this.scene.start('game', {
                 server: server,
                 onGameOver: onGameOver,

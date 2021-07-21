@@ -51,6 +51,10 @@ export default class Attribution extends Phaser.Scene
     }
 
     clickBack(){
+      
+
+        BKG.Sfx.play('click');
+
         BKG.fadeOutScene('settings', this);
     }
 }

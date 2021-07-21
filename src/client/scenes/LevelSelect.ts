@@ -77,7 +77,8 @@ export default class LevelSelect extends Phaser.Scene {
 
         this.backbtn.on('pointerup', () => {
             let newLevel = Number.parseInt(BKG.Storage.get('BKG-active-level')) - 1
-
+            BKG.Sfx.play('click')
+    
            
             BKG.Storage.set('BKG-active-level', newLevel)
             this.loadLevel(newLevel)
@@ -85,6 +86,8 @@ export default class LevelSelect extends Phaser.Scene {
 
         this.nextbtn.on('pointerup', () => {
             let newLevel = Number.parseInt(BKG.Storage.get('BKG-active-level')) + 1
+            BKG.Sfx.play('click')
+    
             BKG.Storage.set('BKG-active-level', newLevel)
             this.loadLevel(newLevel)
         })
@@ -109,6 +112,8 @@ export default class LevelSelect extends Phaser.Scene {
     }
 
     private stateBack(){
+        BKG.Sfx.play('click')
+    
         this.scene.stop()
         this.scene.start('story', {
             server: this.server,
@@ -120,6 +125,7 @@ export default class LevelSelect extends Phaser.Scene {
 
     private loadLevel(index: number) {
 
+        
         this.emitter?.stop()
 
         if (index <= 1) {
@@ -128,7 +134,7 @@ export default class LevelSelect extends Phaser.Scene {
             this.backbtn?.setVisible(true)
         }
 
-        if (index >= 6) {
+        if (index >= 8) {
             this.nextbtn?.setVisible(false)
         } else {
             this.nextbtn?.setVisible(true)
@@ -152,15 +158,14 @@ export default class LevelSelect extends Phaser.Scene {
         this.levelFrame?.on('pointerup', () => {
             if (unlocked) {
 
-                console.log(`level${index}`)
-                
-              
+                BKG.Sfx.play('click')
+    
                
                     this.scene.start('game', {
                         server: this.server,
                         onGameOver: this.onGameOver,
                         currentcells: null,
-                        level: `level${index}`,
+                        level: index,
                         multiplayer: false
                     })
                 

@@ -80,7 +80,7 @@ using BKGLevelGenerator.Models;
             ");
             EndContext();
             BeginContext(484, 101, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "39ac641d70bc479b980ac3f1d34b7516", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "6786c00081684cd5a2d4f2648862e881", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -101,7 +101,7 @@ using BKGLevelGenerator.Models;
             WriteLiteral("\r\n            <div class=\"carousel-caption\" role=\"option\">\r\n                <p>\r\n                    A Bible Trivia Game.\r\n                   \r\n                </p>\r\n            </div>\r\n        </div>\r\n        <div class=\"item\">\r\n            ");
             EndContext();
             BeginContext(827, 107, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "c73dbe918a6b4b20a976812f48943dfb", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "e611cafa0ba8445f8ddd0ceaf8201745", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -147,7 +147,7 @@ using BKGLevelGenerator.Models;
             ");
             EndContext();
             BeginContext(1911, 87, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d9423e6726704781894bca1aeda744ea", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bebb5cca314848a6acf44d691d03edce", async() => {
                 BeginContext(1981, 13, true);
                 WriteLiteral("Manage Levels");
                 EndContext();
@@ -186,7 +186,7 @@ using BKGLevelGenerator.Models;
             ");
             EndContext();
             BeginContext(2399, 95, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e467a99cec324cb9bcdfc1c310863fed", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "62ce2ffacfe54b128d12bf77f93b0eda", async() => {
                 BeginContext(2473, 17, true);
                 WriteLiteral("Manage Categories");
                 EndContext();
@@ -225,7 +225,7 @@ using BKGLevelGenerator.Models;
             ");
             EndContext();
             BeginContext(2904, 91, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "afec1022e8cd4706a59969f487946587", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "12f046cbc1fe4d709cc808a7edb89c8f", async() => {
                 BeginContext(2975, 16, true);
                 WriteLiteral("Manage Questions");
                 EndContext();

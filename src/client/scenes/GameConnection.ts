@@ -215,6 +215,8 @@ export default class GameConnection extends Phaser.Scene
     }
 
     changeServer() {
+        BKG.Sfx.play('click')
+    
         let server = BKG.Storage.get('gameserver')
       
             BKG.Storage.set('gameserver', this.textGameServer.text)
@@ -223,7 +225,8 @@ export default class GameConnection extends Phaser.Scene
     }
  
 	clickBack() {
-      
+        BKG.Sfx.play('click')
+    
         BKG.fadeOutScene('settings', this);
 
     }

@@ -112,7 +112,8 @@ export default class GameOver extends Phaser.Scene
 		//this.add.image(400, 400, 'background2');
 	}
 	restart(){
-	
+		BKG.Sfx.play('click')
+    
 			this.onRestart?.call(this)
 			
 			

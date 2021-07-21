@@ -106,7 +106,19 @@ export default class Preloader extends Phaser.Scene {
     }
     create(data: IGameSceneData) {
 
-		
+	
+        BKG.Sfx.manage('sound', 'init', this);
+
+		for (let i = 2; i <= 8; i++) {
+            BKG.Storage.initUnset(`BKG-level-${i}`, false)
+        }
+
+        //BKG.Storage.set('BKG-level-2', true)
+
+        BKG.Storage.initUnset('BKG-player', '')
+        BKG.Storage.initUnset('BKG-active-level', 1);
+        BKG.Storage.initUnset('BKG-highscore', 0);
+
 		BKG.fadeOutScene('title', this, data);
 	}
 }

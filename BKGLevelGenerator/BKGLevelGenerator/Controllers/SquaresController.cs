@@ -121,19 +121,16 @@ namespace BKGLevelGenerator.Controllers
                 return NotFound();
             }
 
-
+            var boardobj = _context.Boards.FirstOrDefault(x => x.Id == board);
             var config = new ConfigurationBuilder()
-                     .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-                     .AddJsonFile("appsettings.json").Build();
+                 .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+                 .AddJsonFile("appsettings.json").Build();
 
 
             var section = config.GetSection(nameof(EditorClientConfig));
             var editorClientConfig = section.Get<EditorClientConfig>();
             var path = editorClientConfig.GamePath;
-
-            var boardobj = _context.Boards.FirstOrDefault(x => x.Id == board);
-           
-            if (file != null)        
+            if (file != null)
                 if (file.Length > 0)
                 {
                     // full path to file in temp location
@@ -145,13 +142,42 @@ namespace BKGLevelGenerator.Controllers
                         square.Image = stream.ToArray();
                         square.ImageFilename = file.FileName;
 
+
                         var levelpath = $"{path}/public/assets/levels/level{boardobj.Level}/";
+
                         if (!Directory.Exists(levelpath))
                             Directory.CreateDirectory(levelpath);
 
                         System.IO.File.WriteAllBytes(levelpath + file.FileName, square.Image);
                     }
 
+
+
+
+                    try
+                    {
+                  
+                  
+                   
+                    _context.Update(square);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!SquareExists(square.Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+
+          
+
+            
+           
 
                     var board_output = _context.Boards.Include(x => x.Categories).Include(x => x.Squares).ThenInclude(x => x.Answers).FirstOrDefault(x => x.Id == board);
 
@@ -169,34 +195,16 @@ namespace BKGLevelGenerator.Controllers
 
                     var serializer = new XmlSerializer(typeof(Board));
 
+                    if (!Directory.Exists($"{path}/levels/level{board}"))
+                        Directory.CreateDirectory($"{path}/levels/level{board}");
 
-                    Stream filestream = new FileStream($"{path}/levels/level{board}/level.xml",FileMode.Create);
-                    serializer.Serialize(filestream, b);
-                }
-
-
-
-            try
-                {
-                    Debug.WriteLine(square.SquareId);
-
-                  
-                   
-                    _context.Update(square);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!SquareExists(square.Id))
+                    using (Stream filestream = new FileStream($"{path}/levels/level{board}/level.xml", FileMode.Create))
                     {
-                        return NotFound();
+                        serializer.Serialize(filestream, b);
                     }
-                    else
-                    {
-                        throw;
-                    }
+
                 }
-                return RedirectToAction(nameof(Details),"boards",new { id=board });
+            return RedirectToAction(nameof(Details),"boards",new { id=board });
             
             
         }

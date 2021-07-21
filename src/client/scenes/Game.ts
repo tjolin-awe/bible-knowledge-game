@@ -43,7 +43,7 @@ export default class Game extends Phaser.Scene {
 	private screenGameoverRestart?: Button
 	private screenGameoverScore?: Phaser.GameObjects.Text
 	private player1DisplayGroup?: Phaser.GameObjects.Group
-	private level?: string
+	private level?: number
 	private player1Nametag?: Phaser.GameObjects.Image
 	private animationPlayer = false
 	private stopcurrentaction: boolean = false
@@ -242,12 +242,13 @@ export default class Game extends Phaser.Scene {
 
 
 
-		const { server, onGameOver, currentcells, level, multiplayer } = data
+		const { server, onGameOver, level, multiplayer } = data
 
 
 		this.multiplayer = multiplayer
 		this.server = server
 		this.level = level
+		BKG.Storage.set('BKG-active-level', level)
 
 		if (!this.server) {
 			throw new Error('server instance missing')
@@ -262,9 +263,9 @@ export default class Game extends Phaser.Scene {
 
 		let name = BKG.Storage.get('BKG-player')
 
+		
 
-
-		this.server.join(name, level, multiplayer)
+		this.server.join(name, `level${this.level}`, multiplayer)
 
 	}
 
@@ -594,7 +595,8 @@ export default class Game extends Phaser.Scene {
 	}
 	private clickSettings: () => void
 		= () => {
-
+			BKG.Sfx.play('click')
+    
 			this.scene.sleep()
 			this.scene.launch('settings', { screen: 'game' })
 		}
@@ -602,6 +604,8 @@ export default class Game extends Phaser.Scene {
 	private clickHome: () => void
 		= () => {
 
+			BKG.Sfx.play('click')
+    
 			if (!this.onGameOver) {
 				return
 			}
@@ -844,7 +848,9 @@ export default class Game extends Phaser.Scene {
 		this.server?.leave()
 		this.server = new Server()
 
-		this.scene.stop()
+		this.scene.stop('question')
+		this.scene.stop('answer')
+		this.scene.stop('levelcomplete')
 		this.scene.start('game', {
 			server: this.server,
 			onGameOver: this.onGameOver,

@@ -51,6 +51,10 @@ namespace BKGLevelGenerator.Controllers
             var path = editorClientConfig.GamePath;
 
             var serializer = new XmlSerializer(typeof(Board));
+
+            if (!Directory.Exists($"{path}/levels/level{board}/level.xml"))
+                Directory.CreateDirectory($"{path}/levels/level{board}");
+
             Stream filestream = new FileStream($"{path}/levels/level{board}/level.xml", FileMode.Create);
             serializer.Serialize(filestream, b);
 

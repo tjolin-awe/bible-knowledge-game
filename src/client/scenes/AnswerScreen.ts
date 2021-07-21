@@ -38,6 +38,8 @@ export default class AnswerScreen extends Phaser.Scene {
 
 	create(data: IAnswerData) {
 
+		BKG.Sfx.playMusic('opening')
+
 		let { server, question, image, answer, correctAnswer, timeout } = data
 		this.server = server
 		this.answer = answer
