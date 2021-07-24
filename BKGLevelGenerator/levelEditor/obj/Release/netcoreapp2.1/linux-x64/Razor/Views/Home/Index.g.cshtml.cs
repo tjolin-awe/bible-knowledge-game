@@ -107,7 +107,7 @@ using levelEditor.Models;
         ");
             EndContext();
             BeginContext(1706, 85, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "60b59640d21f475a9ad1f87674cdddb4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4116d18fd4dc4349b905080365e2d1c5", async() => {
                 BeginContext(1775, 12, true);
                 WriteLiteral("Manage Games");
                 EndContext();
@@ -180,7 +180,7 @@ WriteAttributeValue("", 1995, Url.Action("RenderImage", new { id = game.Id}), 19
             WriteLiteral("                        ");
             EndContext();
             BeginContext(2354, 87, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a0a92676c86845cdb9f4d666f06465b0", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4e9e4f0ce9994170ac811165c8eb1b2d", async() => {
                 BeginContext(2433, 4, true);
                 WriteLiteral("Play");
                 EndContext();
@@ -216,7 +216,7 @@ WriteAttributeValue("", 1995, Url.Action("RenderImage", new { id = game.Id}), 19
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(2467, 89, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d25a717d73334ca1b06027d5e5e8dd78", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e45b8fe57654d22b81452dbcfd1cd78", async() => {
                 BeginContext(2546, 6, true);
                 WriteLiteral("Manage");
                 EndContext();

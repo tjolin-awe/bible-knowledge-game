@@ -80,12 +80,12 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("    ");
             EndContext();
             BeginContext(185, 589, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "12ef1819a7fe4a788878306fe9f50375", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aed83a4e9e5e4e8d98a51e81cefec2ba", async() => {
                 BeginContext(338, 123, true);
                 WriteLiteral("\r\n        <ul class=\"navbar-nav flex-row ml-md-auto d-none d-md-flex\">\r\n            <li class=\"nav-item\">\r\n                ");
                 EndContext();
                 BeginContext(461, 112, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7ba20776d3904921999b57a509313cf1", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0612eb68f3b2408a99200dc6f099a27e", async() => {
                     BeginContext(532, 6, true);
                     WriteLiteral("Hello ");
                     EndContext();
@@ -167,7 +167,7 @@ else
             WriteLiteral("    <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">\r\n       <!-- <li class=\"nav-item\"><a class=\"btn btn-outline-secondary mr-2\" asp-area=\"Identity\" asp-page=\"/Account/Register\">Register</a></li>-->\r\n        <li class=\"nav-item\">");
             EndContext();
             BeginContext(1013, 95, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ebe3f3a6ee764e6f981a3738808cd27d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bee755a3aa414cd3aaa5b576ae7663b8", async() => {
                 BeginContext(1099, 5, true);
                 WriteLiteral("Login");
                 EndContext();
