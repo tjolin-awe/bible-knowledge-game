@@ -112,7 +112,7 @@
       <Answers>
         <Answer>
           <Display>A Star</Display>
-          <Correct>true</Correct>
+          <Correct>false</Correct>
         </Answer>
         <Answer>
           <Display>The Burning Bush</Display>
@@ -432,7 +432,7 @@
       <Category>
         <Title>Apostles 1</Title>
       </Category>
-      <ImageFilename>James_the_Younger.jpg</ImageFilename>
+      <ImageFilename>011-gnpi-032-jesus-disciples.jpg</ImageFilename>
       <Answers>
         <Answer>
           <Display>James</Display>

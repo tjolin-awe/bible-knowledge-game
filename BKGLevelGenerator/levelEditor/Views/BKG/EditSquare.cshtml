@@ -21,6 +21,7 @@
                     <input type="hidden" asp-for="Id" />
                     <input type="hidden" asp-for="CategoryId" />
                     <input type="hidden" asp-for="SquareId" />
+                
                     <input type="hidden" name="board" value="@ViewBag.Board" />
 
                     <div class="form-group">
@@ -91,10 +92,12 @@
                             <div class="form-group">
 
 
+
                                 <img class="img-thumbnail" src="@ViewBag.ImageBase64" />
                                 <label class="control-label">Upload New Image</label>
 
                                 <input id="file" name="file" class="form-control" type="file" />
+                                <input asp-for="ImageFilename" type="hidden" />
 
 
                             </div>

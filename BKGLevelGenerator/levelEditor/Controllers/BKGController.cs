@@ -29,20 +29,22 @@ namespace levelEditor.Controllers
             _context = context;
         }
 
-        public ActionResult SaveBoard(int? id)
+        public ActionResult UpdateGame(int? id)
         {
             var board = _context.Boards.Include(x => x.Categories).Include(x => x.Squares).ThenInclude(x => x.Answers).FirstOrDefault(x => x.Id == id);
 
-
-            Board b = new Board();
-
-            b.Categories = board.Categories.OrderBy(x => x.OrderId).ToList();
-            b.Id = board.Id;
-            b.Title = board.Title;
-            b.Level = board.Level;
-            b.Squares = board.Squares.OrderBy(x => x.SquareId).ToList();
+            if (board == null)
+            {
+                return NotFound();
+            }
 
 
+            var serializedBoard = new Board();
+            serializedBoard.Categories = board.Categories.ToList();
+            serializedBoard.Id = board.Id;
+            serializedBoard.Level = board.Level;
+            serializedBoard.Squares = board.Squares.OrderBy(x => x.SquareId).ToList();
+            serializedBoard.Title = board.Title;
 
             var config = new ConfigurationBuilder()
                 .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
@@ -55,13 +57,19 @@ namespace levelEditor.Controllers
 
             var serializer = new XmlSerializer(typeof(Board));
 
-            if (!Directory.Exists($"{path}/levels/level{board}/level.xml"))
-                Directory.CreateDirectory($"{path}/levels/level{board}");
+            string levelDir = $"{path}/levels/level{serializedBoard.Level}";
+            string levelFile = levelDir + "/level.xml";
+            if (!Directory.Exists(levelDir))
+                Directory.CreateDirectory(levelDir);
 
-            Stream filestream = new FileStream($"{path}/levels/level{board}/level.xml", FileMode.Create);
-            serializer.Serialize(filestream, b);
+           
+                if (System.IO.File.Exists(levelFile))
+                    System.IO.File.Delete(levelFile);
 
-            return View();
+                using (Stream filestream = new FileStream(levelFile, FileMode.Create))
+                    serializer.Serialize(filestream, serializedBoard);
+           
+            return View("Details",board);
         }
 
         public FileResult ExportBoard(int? id)
@@ -467,7 +475,7 @@ namespace levelEditor.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> EditSquare(int id, [Bind("Id,SquareId,Question,Value,CategoryId,Image,Answers")] Square square, int board, IFormFile file)
+        public async Task<IActionResult> EditSquare(int id, [Bind("Id,SquareId,Question,Value,CategoryId,Image,ImageFilename,Answers")] Square square, int board, IFormFile file)
         {
             if (id != square.Id)
             {
@@ -484,6 +492,7 @@ namespace levelEditor.Controllers
             var editorClientConfig = section.Get<EditorClientConfig>();
             var path = editorClientConfig.GamePath;
             if (file != null)
+            {
                 if (file.Length > 0)
                 {
                     // full path to file in temp location
@@ -503,52 +512,31 @@ namespace levelEditor.Controllers
 
                         System.IO.File.WriteAllBytes(levelpath + file.FileName, square.Image);
                     }
-
-
-
-
-                    try
-                    {
-
-
-
-                        _context.Update(square);
-                        await _context.SaveChangesAsync();
-                    }
-                    catch (DbUpdateConcurrencyException)
-                    {
-                        if (!SquareExists(square.Id))
-                        {
-                            return NotFound();
-                        }
-                        else
-                        {
-                            throw;
-                        }
-                    }
-
-                    var board_output = _context.Boards.Include(x => x.Categories).Include(x => x.Squares).ThenInclude(x => x.Answers).FirstOrDefault(x => x.Id == board);
-
-
-                    Board b = new Board();
-
-                    b.Categories = board_output.Categories.OrderBy(x => x.OrderId).ToList();
-                    b.Id = board_output.Id;
-                    b.Title = board_output.Title;
-                    b.Level = board_output.Level;
-                    b.Squares = board_output.Squares.OrderBy(x => x.SquareId).ToList();
-
-                    var serializer = new XmlSerializer(typeof(Board));
-
-                    if (!Directory.Exists($"{path}/levels/level{board}"))
-                        Directory.CreateDirectory($"{path}/levels/level{board}");
-
-                    using (Stream filestream = new FileStream($"{path}/levels/level{board}/level.xml", FileMode.Create))
-                    {
-                        serializer.Serialize(filestream, b);
-                    }
-
                 }
+            }
+
+            try
+            {
+
+               
+
+                _context.Update(square);
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!SquareExists(square.Id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            
+
             return RedirectToAction(nameof(Details), "BKG", new { id = board });
 
 

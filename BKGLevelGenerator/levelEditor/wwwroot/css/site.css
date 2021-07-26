@@ -29,15 +29,14 @@ body {
 }
 
 .category-container {
-    display: inline-block;
+    display: inline-flex;
 }
 
 .category {
     background: url('/images/header.png') no-repeat no-repeat;
-    height: 200px;
-    width: 200px;
-    background-size: contain !important;
-    display: inline-block;
+    height: 150px;
+    width: 150px;
+    background-size: cover!important;
     margin: 2px;
     cursor: pointer;
 }
@@ -47,17 +46,17 @@ body {
 }
 
 .square-container {
-    display: inline-block;
+    display: inline-flex;
 }
 
 .square {
     background: url('/images/square.png') no-repeat no-repeat;
-    background-size: contain !important;
-    height: 200px;
-    width: 200px;
-    margin: -70px 2px 6px 2px;
+    background-size: cover !important;
+    height: 150px;
+    width: 150px;
+    margin:2px;
     cursor: pointer;
-    display: inline-block;
+   
 }
 
 .square-value {
