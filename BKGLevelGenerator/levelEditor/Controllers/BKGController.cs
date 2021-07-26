@@ -506,11 +506,19 @@ namespace levelEditor.Controllers
 
 
                         var levelpath = $"{path}/public/assets/levels/level{boardobj.Level}/";
+                        var distLevelPath = $"{path}/dist/assets/levels/level{boardobj.Level}/";
 
                         if (!Directory.Exists(levelpath))
                             Directory.CreateDirectory(levelpath);
 
+                        if (!Directory.Exists(distLevelPath))
+                            Directory.CreateDirectory(distLevelPath);
+
+
                         System.IO.File.WriteAllBytes(levelpath + file.FileName, square.Image);
+                        System.IO.File.WriteAllBytes(distLevelPath + file.FileName, square.Image);
+
+
                     }
                 }
             }
