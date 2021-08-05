@@ -63,6 +63,10 @@ export default class Preloader extends Phaser.Scene {
 				['level2_img', 'assets/levels/level2_img1.png'],
 				['level3_img', 'assets/levels/level3_img1.png'],
 				['level4_img', 'assets/levels/level4_img1.png'],
+				['level5_img', 'assets/levels/level5_img1.png'],
+				['level6_img', 'assets/levels/level6_img1.png'],
+				['level7_img', 'assets/levels/level7_img1.png'],
+				['level8_img', 'assets/levels/level8_img1.png'],
 				['particle','assets/particle.png'],
 				
 				
@@ -117,6 +121,7 @@ export default class Preloader extends Phaser.Scene {
 
         BKG.Storage.initUnset('BKG-player', '')
         BKG.Storage.initUnset('BKG-active-level', 1);
+		BKG.Storage.initUnset('BKG-level-1', true);
         BKG.Storage.initUnset('BKG-highscore', 0);
 
 		BKG.fadeOutScene('title', this, data);

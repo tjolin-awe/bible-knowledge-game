@@ -35,7 +35,12 @@ export default class GameOver extends Phaser.Scene {
 		this.container.setPosition(BKG.world.centerX, BKG.world.height + this.container.height / 2)
 
 		let activeLevel = BKG.Storage.get('BKG-active-level')
+
+		
 		let nextLevel = Number.parseInt(activeLevel) + 1
+		
+		if (nextLevel > 8)
+			nextLevel = 8
 
 		BKG.Storage.set('BKG-active-level', nextLevel)
 		BKG.Storage.set(`BKG-level-${nextLevel}`, true);

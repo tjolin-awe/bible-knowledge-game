@@ -21,6 +21,6 @@ namespace levelEditor.Models
 
         public bool Active { get; set; }
 
-       
+        public bool Featured { get; set; }
     }
 }
