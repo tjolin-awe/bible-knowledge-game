@@ -88,6 +88,4 @@ C:\Users\tom\Documents\GitHub\bible-knowledge-game\BKGLevelGenerator\levelEditor
 C:\Users\tom\Documents\GitHub\bible-knowledge-game\BKGLevelGenerator\levelEditor\obj\Release\netcoreapp2.1\linux-x64\levelEditor.dll
 C:\Users\tom\Documents\GitHub\bible-knowledge-game\BKGLevelGenerator\levelEditor\obj\Release\netcoreapp2.1\linux-x64\levelEditor.pdb
 C:\Users\tom\Documents\GitHub\bible-knowledge-game\BKGLevelGenerator\levelEditor\obj\Release\netcoreapp2.1\linux-x64\levelEditor.csproj.CopyComplete
-C:\Users\tom\Documents\GitHub\bible-knowledge-game\BKGLevelGenerator\levelEditor\bin\Release\netcoreapp2.1\linux-x64\auth.db
-C:\Users\tom\Documents\GitHub\bible-knowledge-game\BKGLevelGenerator\levelEditor\bin\Release\netcoreapp2.1\linux-x64\gameDB.db
 C:\Users\tom\Documents\GitHub\bible-knowledge-game\BKGLevelGenerator\levelEditor\obj\Release\netcoreapp2.1\linux-x64\Razor\Views\Shared\_Layout_Manage.g.cshtml.cs
