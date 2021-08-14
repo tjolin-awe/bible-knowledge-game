@@ -1389,12 +1389,15 @@ ol {
 }
 
 .blog__item__text {
-	position: absolute;
-	left: 0;
-	bottom: 25px;
-	text-align: center;
-	width: 100%;
-	padding: 0 105px;
+    position: absolute;
+    left: 0;
+    bottom: 25px;
+    text-align: center;
+    width: 100%;
+    padding: 0 105px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-bottom: 10px !important;
+    padding-top: 10px;
 }
 
 .blog__item__text p {
