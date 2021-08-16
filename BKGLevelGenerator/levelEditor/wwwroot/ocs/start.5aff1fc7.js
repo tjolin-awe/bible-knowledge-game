@@ -41075,6 +41075,8 @@ var Preloader = /*#__PURE__*/function (_Phaser$Scene) {
       }
 
       ;
+      this.load.atlas('bible_spritesheet', 'assets/bible_spritesheet.png', 'assets/bible_spritesheet.json');
+      this.load.json('characters', 'assets/bible_spritesheet.json');
       console.log('Preloader preload END');
     }
   }, {
@@ -41393,6 +41395,8 @@ var Game = /*#__PURE__*/function (_Phaser$Scene) {
   }, {
     key: "create",
     value: function create() {
+      this.add.image(0, 0, 'game').setOrigin(0);
+      this.allcharacters = this.cache.json.get('characters');
       this._gamePaused = false;
       this.fontScore = {
         font: '52px ' + _utils.EPT.text['FONT'],
@@ -41400,8 +41404,161 @@ var Game = /*#__PURE__*/function (_Phaser$Scene) {
         stroke: '#000',
         strokeThickness: 5
       };
-      this.initUI();
+      this.fontName = {
+        font: '32px ' + _utils.EPT.text['FONT'],
+        fill: '#fff',
+        stroke: '#000',
+        strokeThickness: 5
+      };
+      this.fontTitle = {
+        font: '52px ' + _utils.EPT.text['FONT'],
+        fill: '#3E2016',
+        stroke: '#fff',
+        strokeThickness: 10
+      };
+      this.fontScroll = {
+        font: '42px ' + _utils.EPT.text['FONT'],
+        fill: '#3E2016',
+        stroke: '#fff',
+        strokeThickness: 5
+      };
+      this.fontScrollTitle = {
+        font: '48px ' + _utils.EPT.text['FONT'],
+        fill: '#6A2D1B'
+      };
+      this.fontRank = {
+        font: '42px ' + _utils.EPT.text['FONT'],
+        fill: '#3E2016',
+        stroke: '#fff',
+        strokeThickness: 10
+      };
+      this.levelText = this.add.text(160, 30, 'LEVEL 01', this.fontTitle).setOrigin(0.5); //this.levelText.setStroke('#ddd', 3);
+      //this.levelText.setShadow(5, 5, 'rgba(1,1,1,0.5)', 30,true,false);
+
+      this.rankText = this.add.text(_utils.EPT.world.width + 200, 30, 'Rank: Private', this.fontRank).setOrigin(0.5); //this.rankText.setShadow(5, 5, 'rgba(1,1,1,0.5)', 30,true,false);
+
+      this.tweens.add({
+        targets: this.rankText,
+        x: 500,
+        duration: 500,
+        delay: 100,
+        ease: 'Back'
+      }); //this.lights.enable();
+      //this.lights.setAmbientColor(0xffffff);
+      //this.spotlight = this.lights.addLight(100, 300, 280).setIntensity(1);
+      //this.spotlight.x = -500;
+
+      this.person1 = this.add.sprite(180, 180, 'bible_spritesheet', 'Esther-Colour.jpg').setScale(1.5).setOrigin(0.5);
+      this.person1name = this.add.text(180, 305, 'Esther', this.fontName).setOrigin(0.5);
+      this.person2 = this.add.sprite(465, 180, 'bible_spritesheet', 'Sarah.gif').setScale(1.5).setOrigin(0.5);
+      this.person2.x -= 25; //offset
+
+      this.person2name = this.add.text(465, 305, 'Sarah', this.fontName).setOrigin(0.5).setAlign('center');
+      this.person3 = this.add.sprite(180, 460, 'bible_spritesheet', 'Ruth-Colour.gif').setScale(1.5).setOrigin(0.5);
+      this.person3.x -= 5; //offset
+
+      this.person3name = this.add.text(180, 578, 'Ruth', this.fontName).setOrigin(0.5).setAlign('center');
+      this.person4 = this.add.sprite(465, 460, 'bible_spritesheet', 'Mary-Magdalene-Colour.gif').setScale(1.5).setOrigin(0.5); //this.person4.x-=5; //offset
+
+      this.person4name = this.add.text(465, 578, 'Mary Magdalene', this.fontName).setOrigin(0.5).setAlign('center');
+      this.person4name.setFontSize(28);
+      this.person4name.x -= 5;
+      self = this;
+      this.person1.setInteractive().on('pointerover', function () {
+        self.tweens.add({
+          targets: [this],
+          scale: 1.6,
+          ease: 'sine.inout',
+          duration: 200
+        }); //self.spotlight.x = this.x
+        //self.spotlight.y = this.y;
+      });
+      this.person1.setInteractive().on('pointerout', function () {
+        self.tweens.add({
+          targets: [this],
+          scale: 1.5,
+          ease: 'sine.inout',
+          duration: 200
+        }); //self.spotlight.x = -500
+      });
+      this.person2.setInteractive().on('pointerover', function () {
+        self.tweens.add({
+          targets: [this],
+          scale: 1.6,
+          ease: 'sine.inout',
+          duration: 200
+        });
+      });
+      this.person2.setInteractive().on('pointerout', function () {
+        self.tweens.add({
+          targets: [this],
+          scale: 1.5,
+          ease: 'sine.inout',
+          duration: 200
+        });
+      });
+      this.person3.setInteractive().on('pointerover', function () {
+        self.tweens.add({
+          targets: [this],
+          scale: 1.6,
+          ease: 'sine.inout',
+          duration: 200
+        });
+      });
+      this.person3.setInteractive().on('pointerout', function () {
+        self.tweens.add({
+          targets: [this],
+          scale: 1.5,
+          ease: 'sine.inout',
+          duration: 200
+        });
+      });
+      this.person4.setInteractive().on('pointerover', function () {
+        self.tweens.add({
+          targets: [this],
+          scale: 1.6,
+          ease: 'sine.inout',
+          duration: 200
+        });
+      });
+      this.person4.setInteractive().on('pointerout', function () {
+        self.tweens.add({
+          targets: [this],
+          scale: 1.5,
+          ease: 'sine.inout',
+          duration: 200
+        });
+      });
+      this.tweens.add({
+        targets: [this.person4, this.person1, this.person2, this.person3],
+        scale: {
+          start: 0,
+          from: 0,
+          to: 1.5
+        },
+        ease: 'Back',
+        duration: 600,
+        onComplete: function onComplete() {}
+      });
+      this.tweens.add({
+        targets: [this.person4name, this.person1name, this.person2name, this.person3name],
+        alpha: {
+          start: 0,
+          from: 0,
+          to: 1
+        },
+        ease: 'Back',
+        duration: 600,
+        onComplete: function onComplete() {}
+      });
+      this.scrollTextTitle = this.add.text(120, 650, 'QUESTION 1 OF 10', this.fontScrollTitle).setAlign('center');
+      this.scrollText = this.add.text(180, 730, '', this.fontScroll).setWordWrapWidth(300).setAlign('center');
       this.cameras.main.fadeIn(250);
+      self = this;
+      this.cameras.main.once('camerafadeincomplete', function (camera) {
+        self.typeWriterText('Who lied when she said "I did not laugh"?');
+      }, this);
+      this.initUI();
     }
   }, {
     key: "update",
@@ -41517,7 +41674,6 @@ var Game = /*#__PURE__*/function (_Phaser$Scene) {
   }, {
     key: "initUI",
     value: function initUI() {
-      this.add.image(0, 0, 'game').setOrigin(0);
       this.buttonPause = new _utils.Button(-40, _utils.EPT.world.height - 125, 'button-pause', this.managePause, this);
       this.buttonPause.setOrigin(0, 0).setScale(1.1);
       this.buttonRestart = new _utils.Button(_utils.EPT.world.width + 40, _utils.EPT.world.height - 125, 'button-continue', this.stateRestart, this);
@@ -41536,13 +41692,13 @@ var Game = /*#__PURE__*/function (_Phaser$Scene) {
       };
       this.tweens.add({
         targets: [this.buttonPause],
-        x: 10,
+        x: 100,
         duration: 500,
         ease: 'Back'
       });
       this.tweens.add({
         targets: [this.buttonRestart],
-        x: _utils.EPT.world.width - 85,
+        x: _utils.EPT.world.width - 180,
         duration: 500,
         ease: 'Back'
       });
@@ -41599,6 +41755,22 @@ var Game = /*#__PURE__*/function (_Phaser$Scene) {
       _utils.EPT.Sfx.play('click');
 
       _utils.EPT.fadeOutScene('MainMenu', this);
+    }
+  }, {
+    key: "typeWriterText",
+    value: function typeWriterText(text) {
+      var _this = this;
+
+      var length = text.length;
+      var i = 0;
+      this.time.addEvent({
+        callback: function callback() {
+          _this.scrollText.text += text[i];
+          ++i;
+        },
+        repeat: length - 1,
+        delay: 50
+      });
     }
   }]);
 
@@ -42413,7 +42585,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51379" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64630" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
