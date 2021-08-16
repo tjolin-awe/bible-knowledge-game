@@ -1,0 +1,2459 @@
+{
+	"textures": [
+		{
+			"image": "bible_spritesheet",
+			"format": "RGBA8888",
+			"size": {
+				"w": 2048,
+				"h": 2048
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "Guardian-Angel.gif",
+					"name":"Angel",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 146,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 145,
+						"h": 120
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 145,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Jesus-Loaves-and-fish-Colour.gif",
+					"name": "Jesus",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 145,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 1,
+						"w": 145,
+						"h": 117
+					},
+					"frame": {
+						"x": 145,
+						"y": 0,
+						"w": 145,
+						"h": 117
+					}
+				},
+				{
+					"filename": "Jesus-Walk-On-Water.gif",
+					"name":"Jesus",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 145,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 1,
+						"w": 144,
+						"h": 118
+					},
+					"frame": {
+						"x": 290,
+						"y": 0,
+						"w": 144,
+						"h": 118
+					}
+				},
+				{
+					"filename": "Jesus-Judge-Not.gif",
+					"name": "Jesus",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 137,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 1,
+						"w": 137,
+						"h": 118
+					},
+					"frame": {
+						"x": 145,
+						"y": 117,
+						"w": 137,
+						"h": 118
+					}
+				},
+				{
+					"filename": "Mini-Angel-Colour.gif",
+					"name":"Angel",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 133,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 131,
+						"h": 120
+					},
+					"frame": {
+						"x": 0,
+						"y": 120,
+						"w": 131,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Herod-A-Colour.gif",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 130,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 130,
+						"h": 120
+					},
+					"frame": {
+						"x": 434,
+						"y": 0,
+						"w": 130,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Goliath-Colour.gif",
+					"name": "Goliath",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 131,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 129,
+						"h": 120
+					},
+					"frame": {
+						"x": 282,
+						"y": 118,
+						"w": 129,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Elisha-the-Prophet-Colour.jpg",
+					"name": "Elisha",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 125,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 125,
+						"h": 120
+					},
+					"frame": {
+						"x": 131,
+						"y": 235,
+						"w": 125,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Pilate-Colour.gif",
+					"name": "Pontius Pilate",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 125,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 125,
+						"h": 120
+					},
+					"frame": {
+						"x": 0,
+						"y": 240,
+						"w": 125,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Herod-Colour.gif",
+					"name":"Herod",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 124,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 1,
+						"w": 123,
+						"h": 119
+					},
+					"frame": {
+						"x": 564,
+						"y": 0,
+						"w": 123,
+						"h": 119
+					}
+				},
+				{
+					"filename": "Mini-Satan-Colour.gif",
+					"name":"Satan",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 122,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 121,
+						"h": 120
+					},
+					"frame": {
+						"x": 687,
+						"y": 0,
+						"w": 121,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Rich-Man-Colour.gif",
+					"name":"Rich Man",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 121,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 121,
+						"h": 120
+					},
+					"frame": {
+						"x": 564,
+						"y": 119,
+						"w": 121,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Jesus-Baby-Colour.gif",
+					"name":"Jesus",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 119,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 119,
+						"h": 120
+					},
+					"frame": {
+						"x": 411,
+						"y": 120,
+						"w": 119,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Nathan-Colour.gif",
+					"name": "Nathan",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 120,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 119,
+						"h": 119
+					},
+					"frame": {
+						"x": 411,
+						"y": 240,
+						"w": 119,
+						"h": 119
+					}
+				},
+				{
+					"filename": "Moses.gif",
+					"name": "Moses",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 120,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 118,
+						"h": 120
+					},
+					"frame": {
+						"x": 256,
+						"y": 238,
+						"w": 118,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Wiseman-2-Colour.gif",
+					"name": "Wiseman Two",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 119,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 118,
+						"h": 120
+					},
+					"frame": {
+						"x": 125,
+						"y": 355,
+						"w": 118,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Good-Samaritan-Colour.gif",
+					"name":"Good Samarian",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 117,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 117,
+						"h": 120
+					},
+					"frame": {
+						"x": 0,
+						"y": 360,
+						"w": 117,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Peter-Colour.gif",
+					"name": "Peter",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 117,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 117,
+						"h": 120
+					},
+					"frame": {
+						"x": 243,
+						"y": 358,
+						"w": 117,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Gideon.gif",
+					"name":"Gideon",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 119,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 116,
+						"h": 120
+					},
+					"frame": {
+						"x": 117,
+						"y": 475,
+						"w": 116,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Solomon-Colour.gif",
+					"name": "Solomon-Colour",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 116,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 116,
+						"h": 120
+					},
+					"frame": {
+						"x": 0,
+						"y": 480,
+						"w": 116,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Jesus-Welcome.gif",
+					"name":"Jesus",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 117,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 116,
+						"h": 119
+					},
+					"frame": {
+						"x": 808,
+						"y": 0,
+						"w": 116,
+						"h": 119
+					}
+				},
+				{
+					"filename": "Clipart-Jesus-Christ-Mini.gif",
+					"name":"Jesus",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 118,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 1,
+						"w": 116,
+						"h": 117
+					},
+					"frame": {
+						"x": 924,
+						"y": 0,
+						"w": 116,
+						"h": 117
+					}
+				},
+				{
+					"filename": "Joseph.gif",
+					"name":"Joesph",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 117,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 5,
+						"w": 114,
+						"h": 115
+					},
+					"frame": {
+						"x": 1040,
+						"y": 0,
+						"w": 114,
+						"h": 115
+					}
+				},
+				{
+					"filename": "Asahel-Colour.gif",
+					"name":"Asahel",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 116,
+						"h": 105
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 114,
+						"h": 99
+					},
+					"frame": {
+						"x": 1154,
+						"y": 0,
+						"w": 114,
+						"h": 99
+					}
+				},
+				{
+					"filename": "Deborah.gif",
+					"name": "Deborah",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 114,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 113,
+						"h": 120
+					},
+					"frame": {
+						"x": 1268,
+						"y": 0,
+						"w": 113,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Joseph-PM.gif",
+					"name" : "Joesph",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 115,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 113,
+						"h": 120
+					},
+					"frame": {
+						"x": 1154,
+						"y": 99,
+						"w": 113,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Job-Colour.gif",
+					"name": "Job",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 112,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 112,
+						"h": 120
+					},
+					"frame": {
+						"x": 1040,
+						"y": 115,
+						"w": 112,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Shepherd-Colour.gif",
+					"name": "Shepherd",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 113,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 112,
+						"h": 120
+					},
+					"frame": {
+						"x": 924,
+						"y": 117,
+						"w": 112,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Benaiah-Colour.gif",
+					"name": "Benaiah",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 112,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 111,
+						"h": 119
+					},
+					"frame": {
+						"x": 808,
+						"y": 119,
+						"w": 111,
+						"h": 119
+					}
+				},
+				{
+					"filename": "David.gif",
+					"name": "David",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 113,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 111,
+						"h": 119
+					},
+					"frame": {
+						"x": 685,
+						"y": 120,
+						"w": 111,
+						"h": 119
+					}
+				},
+				{
+					"filename": "Jesus-Pointing.gif",
+					"name": "Jesus",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 118,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 3,
+						"w": 111,
+						"h": 117
+					},
+					"frame": {
+						"x": 1381,
+						"y": 0,
+						"w": 111,
+						"h": 117
+					}
+				},
+				{
+					"filename": "Jehu-Colour.jpg",
+					"name": "Jehu",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 110,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 110,
+						"h": 120
+					},
+					"frame": {
+						"x": 1492,
+						"y": 0,
+						"w": 110,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Job-Sick-Colour.gif",
+					"name" : "Job",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 111,
+						"h": 110
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 110,
+						"h": 110
+					},
+					"frame": {
+						"x": 1381,
+						"y": 117,
+						"w": 110,
+						"h": 110
+					}
+				},
+				{
+					"filename": "High-Priest.gif",
+					"name" : "High Priest",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 110,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 109,
+						"h": 120
+					},
+					"frame": {
+						"x": 1267,
+						"y": 120,
+						"w": 109,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Jacob.gif",
+					"name": "Jacob",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 111,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 109,
+						"h": 120
+					},
+					"frame": {
+						"x": 1152,
+						"y": 219,
+						"w": 109,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Wounded-Man-Colour.gif",
+					"name" : "Wounded Man",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 108,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 1,
+						"w": 108,
+						"h": 119
+					},
+					"frame": {
+						"x": 1036,
+						"y": 235,
+						"w": 108,
+						"h": 119
+					}
+				},
+				{
+					"filename": "Amalekite-Raider-Colour.gif",
+					"name" : "Amalekite Raider",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 110,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 107,
+						"h": 119
+					},
+					"frame": {
+						"x": 919,
+						"y": 237,
+						"w": 107,
+						"h": 119
+					}
+				},
+				{
+					"filename": "Elijah-Colour.gif",
+					"name":"Elijah",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 109,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 1,
+						"w": 107,
+						"h": 118
+					},
+					"frame": {
+						"x": 796,
+						"y": 238,
+						"w": 107,
+						"h": 118
+					}
+				},
+				{
+					"filename": "Nebuchadnezzar.gif",
+					"name": "Nebuchadnezzar",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 106,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 106,
+						"h": 120
+					},
+					"frame": {
+						"x": 530,
+						"y": 239,
+						"w": 106,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Sampson.gif",
+					"name" : "Sampson",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 108,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 106,
+						"h": 120
+					},
+					"frame": {
+						"x": 636,
+						"y": 239,
+						"w": 106,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Ishbosheth-Colour.gif",
+					"name" : "Ishbosheth",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 109,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 106,
+						"h": 119
+					},
+					"frame": {
+						"x": 1602,
+						"y": 0,
+						"w": 106,
+						"h": 119
+					}
+				},
+				{
+					"filename": "John-the-Baptist.gif",
+					"name" : "John the Baptist",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 108,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 1,
+						"w": 106,
+						"h": 119
+					},
+					"frame": {
+						"x": 1708,
+						"y": 0,
+						"w": 106,
+						"h": 119
+					}
+				},
+				{
+					"filename": "Priest-Uzzah-Colour.gif",
+					"name" : "Priest-Uzzah",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 106,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 1,
+						"w": 106,
+						"h": 118
+					},
+					"frame": {
+						"x": 1814,
+						"y": 0,
+						"w": 106,
+						"h": 118
+					}
+				},
+				{
+					"filename": "Elijah-Running-Colour.gif",
+					"name" : "Elijah Running",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 107,
+						"h": 110
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 2,
+						"w": 106,
+						"h": 105
+					},
+					"frame": {
+						"x": 1920,
+						"y": 0,
+						"w": 106,
+						"h": 105
+					}
+				},
+				{
+					"filename": "Pharoah.gif",
+					"name" : "Pharoah",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 107,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 105,
+						"h": 120
+					},
+					"frame": {
+						"x": 1920,
+						"y": 105,
+						"w": 105,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Jonah-Colour.gif",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 107,
+						"h": 115
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 1,
+						"w": 104,
+						"h": 113
+					},
+					"frame": {
+						"x": 1814,
+						"y": 118,
+						"w": 104,
+						"h": 113
+					}
+				},
+				{
+					"filename": "Jesus-on-Donkey-Colour.gif",
+					"name" : "Jesus",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 103,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 103,
+						"h": 120
+					},
+					"frame": {
+						"x": 1918,
+						"y": 225,
+						"w": 103,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Mordecai-Colour.jpg",
+					"name" : "Mordecai",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 103,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 103,
+						"h": 120
+					},
+					"frame": {
+						"x": 1602,
+						"y": 119,
+						"w": 103,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Wiseman-3-Colour.gif",
+					"name" : "Wiseman Three",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 104,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 103,
+						"h": 120
+					},
+					"frame": {
+						"x": 1705,
+						"y": 119,
+						"w": 103,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Jesus-Teaching-Colour.gif",
+					"name": "Jesus",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 102,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 101,
+						"h": 120
+					},
+					"frame": {
+						"x": 1808,
+						"y": 231,
+						"w": 101,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Egypt-Guard.gif",
+					"name" : "Egyptian Guard",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 0,
+						"w": 100,
+						"h": 120
+					},
+					"frame": {
+						"x": 1808,
+						"y": 351,
+						"w": 100,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Moses-Baby.gif",
+					"name" : "Moses",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 102,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 100,
+						"h": 120
+					},
+					"frame": {
+						"x": 1491,
+						"y": 120,
+						"w": 100,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Sarah.gif",
+					"name":"Sarah",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 101,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 100,
+						"h": 120
+					},
+					"frame": {
+						"x": 1376,
+						"y": 227,
+						"w": 100,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Nabal-Colour.gif",
+					"name" : "Nabal",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 102,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 1,
+						"w": 100,
+						"h": 118
+					},
+					"frame": {
+						"x": 1376,
+						"y": 347,
+						"w": 100,
+						"h": 118
+					}
+				},
+				{
+					"filename": "Isaac.gif",
+					"name" : "Isaac",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 102,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 8,
+						"w": 100,
+						"h": 111
+					},
+					"frame": {
+						"x": 1261,
+						"y": 240,
+						"w": 100,
+						"h": 111
+					}
+				},
+				{
+					"filename": "Jesus-Young-Colour.gif",
+					"name" : "Jesus",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 101,
+						"h": 110
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 100,
+						"h": 110
+					},
+					"frame": {
+						"x": 1261,
+						"y": 351,
+						"w": 100,
+						"h": 110
+					}
+				},
+				{
+					"filename": "Abraham.gif",
+					"name":"Abraham",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 99,
+						"h": 120
+					},
+					"frame": {
+						"x": 1144,
+						"y": 339,
+						"w": 99,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Joseph-Mary-Colour.gif",
+					"name":"Joesph & Mary",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 99,
+						"h": 120
+					},
+					"frame": {
+						"x": 1026,
+						"y": 354,
+						"w": 99,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Samuel-Colour.gif",
+					"name": "Samuel",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 103,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 99,
+						"h": 119
+					},
+					"frame": {
+						"x": 1026,
+						"y": 474,
+						"w": 99,
+						"h": 119
+					}
+				},
+				{
+					"filename": "Job's-Wife-Colour.gif",
+					"name" : "Job's Wife",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 98,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 98,
+						"h": 120
+					},
+					"frame": {
+						"x": 1026,
+						"y": 593,
+						"w": 98,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Jesus-Washing-Colour.gif",
+					"name":"Jesus",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 99,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 97,
+						"h": 120
+					},
+					"frame": {
+						"x": 1243,
+						"y": 461,
+						"w": 97,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Mary-Jesus-Colour.gif",
+					"name":"Mary & Jesus",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 101,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 1,
+						"w": 97,
+						"h": 119
+					},
+					"frame": {
+						"x": 1125,
+						"y": 579,
+						"w": 97,
+						"h": 119
+					}
+				},
+				{
+					"filename": "Pharisee-Colour.gif",
+					"name":"Pharisee",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 96,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 96,
+						"h": 120
+					},
+					"frame": {
+						"x": 1125,
+						"y": 698,
+						"w": 96,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Shepherd-Boy-Colour.gif",
+					"name":"Shepherd Boy",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 97,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 13,
+						"w": 96,
+						"h": 107
+					},
+					"frame": {
+						"x": 1909,
+						"y": 345,
+						"w": 96,
+						"h": 107
+					}
+				},
+				{
+					"filename": "Witch-of-Endor-Colour.gif",
+					"name":"Witch of Endor",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 97,
+						"h": 105
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 2,
+						"w": 96,
+						"h": 103
+					},
+					"frame": {
+						"x": 1909,
+						"y": 452,
+						"w": 96,
+						"h": 103
+					}
+				},
+				{
+					"filename": "King-Jehoshaphat-Colour.jpg",
+					"name":"Jehoshaphat",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 95,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 95,
+						"h": 120
+					},
+					"frame": {
+						"x": 1908,
+						"y": 555,
+						"w": 95,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Martha-Colour.gif",
+					"name": "Martha",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 95,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 95,
+						"h": 120
+					},
+					"frame": {
+						"x": 1591,
+						"y": 239,
+						"w": 95,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Ruth-Colour.gif",
+					"name": "Ruth",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 99,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 0,
+						"w": 95,
+						"h": 119
+					},
+					"frame": {
+						"x": 1476,
+						"y": 240,
+						"w": 95,
+						"h": 119
+					}
+				},
+				{
+					"filename": "Jesus-Breaking-Bread-Colour.gif",
+					"name": "Jesus",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 97,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 1,
+						"w": 95,
+						"h": 118
+					},
+					"frame": {
+						"x": 1476,
+						"y": 359,
+						"w": 95,
+						"h": 118
+					}
+				},
+				{
+					"filename": "Jezebel-Colour.gif",
+					"name" : "Jezebel",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 94,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 94,
+						"h": 120
+					},
+					"frame": {
+						"x": 1686,
+						"y": 239,
+						"w": 94,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Joab-Colour.gif",
+					"name": "Joab",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 97,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 94,
+						"h": 120
+					},
+					"frame": {
+						"x": 1340,
+						"y": 465,
+						"w": 94,
+						"h": 120
+					}
+				},
+				{
+					"filename": "David-Warrior-Colour.gif",
+					"name": "David",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 94,
+						"h": 119
+					},
+					"frame": {
+						"x": 1222,
+						"y": 581,
+						"w": 94,
+						"h": 119
+					}
+				},
+				{
+					"filename": "Uriah-the-Hittite-Colour.gif",
+					"name" : "Uriah",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 97,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 1,
+						"w": 94,
+						"h": 118
+					},
+					"frame": {
+						"x": 1571,
+						"y": 359,
+						"w": 94,
+						"h": 118
+					}
+				},
+				{
+					"filename": "Jonathan-Colour.gif",
+					"name": "Jonathan",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 93,
+						"h": 119
+					},
+					"frame": {
+						"x": 1665,
+						"y": 359,
+						"w": 93,
+						"h": 119
+					}
+				},
+				{
+					"filename": "Abner-Colour.gif",
+					"name": "Abner",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 94,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 1,
+						"w": 93,
+						"h": 118
+					},
+					"frame": {
+						"x": 1758,
+						"y": 471,
+						"w": 93,
+						"h": 118
+					}
+				},
+				{
+					"filename": "Roman-Soldier-Colour.gif",
+					"name": "Roman Soldier",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 92,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 91,
+						"h": 120
+					},
+					"frame": {
+						"x": 1434,
+						"y": 477,
+						"w": 91,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Lazarus-risen-Colour.gif",
+					"name": "Lazarus",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 92,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 89,
+						"h": 120
+					},
+					"frame": {
+						"x": 1316,
+						"y": 585,
+						"w": 89,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Moses-Eygpt.gif",
+					"name": "Moses",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 91,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 89,
+						"h": 120
+					},
+					"frame": {
+						"x": 1221,
+						"y": 700,
+						"w": 89,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Jesus-Baby-Colour-3.gif",
+					"name": "Jesus",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 90,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 88,
+						"h": 120
+					},
+					"frame": {
+						"x": 1525,
+						"y": 477,
+						"w": 88,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Jesus-on-Cross-Colour.gif",
+					"name": "Jesus",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 88,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 88,
+						"h": 120
+					},
+					"frame": {
+						"x": 1613,
+						"y": 478,
+						"w": 88,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Teacher-Colour.gif",
+					"name": "Teacher",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 89,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 88,
+						"h": 120
+					},
+					"frame": {
+						"x": 1701,
+						"y": 589,
+						"w": 88,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Rooster-Crowing-Colour.gif",
+					"name": "Rooster",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 87,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 87,
+						"h": 120
+					},
+					"frame": {
+						"x": 1789,
+						"y": 598,
+						"w": 87,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Lazarus-Colour.gif",
+					"name":"Lazarus",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 88,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 86,
+						"h": 120
+					},
+					"frame": {
+						"x": 1876,
+						"y": 709,
+						"w": 86,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Apostle-Paul-Col.gif",
+					"name":"Paul",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 87,
+						"h": 110
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 86,
+						"h": 110
+					},
+					"frame": {
+						"x": 1962,
+						"y": 709,
+						"w": 86,
+						"h": 110
+					}
+				},
+				{
+					"filename": "Joshua.gif",
+					"name": "Joshua",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 88,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 85,
+						"h": 120
+					},
+					"frame": {
+						"x": 1962,
+						"y": 819,
+						"w": 85,
+						"h": 120
+					}
+				},
+				{
+					"filename": "King-David.gif",
+					"name" : "David",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 87,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 85,
+						"h": 120
+					},
+					"frame": {
+						"x": 1405,
+						"y": 597,
+						"w": 85,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Jesus-Lamb-of-God.gif",
+					"name": "Jesus",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 88,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 2,
+						"w": 85,
+						"h": 116
+					},
+					"frame": {
+						"x": 1310,
+						"y": 709,
+						"w": 85,
+						"h": 116
+					}
+				},
+				{
+					"filename": "Queen-Sheba-Colour.gif",
+					"name":"Queen Sheba",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 84,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 84,
+						"h": 120
+					},
+					"frame": {
+						"x": 1490,
+						"y": 597,
+						"w": 84,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Jesus-Ascending-Colour.gif",
+					"name": "Jesus",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 83,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 83,
+						"h": 120
+					},
+					"frame": {
+						"x": 1574,
+						"y": 598,
+						"w": 83,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Wiseman-1-Colour.gif",
+					"name": "Wiseman",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 84,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 82,
+						"h": 120
+					},
+					"frame": {
+						"x": 1574,
+						"y": 718,
+						"w": 82,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Goliath-Giant-Colour.gif",
+					"name" : "Goliath",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 85,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 81,
+						"h": 120
+					},
+					"frame": {
+						"x": 1657,
+						"y": 709,
+						"w": 81,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Mephibosheth-Colour.gif",
+					"name" : "Mephibosheth",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 87,
+						"h": 105
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 1,
+						"w": 81,
+						"h": 103
+					},
+					"frame": {
+						"x": 1657,
+						"y": 829,
+						"w": 81,
+						"h": 103
+					}
+				},
+				{
+					"filename": "Bathsheba-Colour.gif",
+					"name" : "Bathsheba",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 80,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 80,
+						"h": 120
+					},
+					"frame": {
+						"x": 1738,
+						"y": 718,
+						"w": 80,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Daniel.gif",
+					"name": "Daniel",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 79,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 79,
+						"h": 120
+					},
+					"frame": {
+						"x": 1738,
+						"y": 838,
+						"w": 79,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Judas-Colour.gif",
+					"name": "Judas",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 79,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 79,
+						"h": 120
+					},
+					"frame": {
+						"x": 1818,
+						"y": 829,
+						"w": 79,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Jesus-On-Trial-Colour.gif",
+					"name" : "Jesus",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 80,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 1,
+						"w": 78,
+						"h": 119
+					},
+					"frame": {
+						"x": 1818,
+						"y": 949,
+						"w": 78,
+						"h": 119
+					}
+				},
+				{
+					"filename": "Mary-Mother-Colour.gif",
+					"name":"Mother Mary",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 78,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 78,
+						"h": 119
+					},
+					"frame": {
+						"x": 1897,
+						"y": 939,
+						"w": 78,
+						"h": 119
+					}
+				},
+				{
+					"filename": "Delilah.gif",
+					"name" : "Delilah",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 76,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 73,
+						"h": 120
+					},
+					"frame": {
+						"x": 1975,
+						"y": 939,
+						"w": 73,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Nails-and-Hammer-Colour.gif",
+					"name": "Nails and Hammer",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 73,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 73,
+						"h": 120
+					},
+					"frame": {
+						"x": 1975,
+						"y": 1059,
+						"w": 73,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Egypt-Queen.gif",
+					"name": "Egyptian Queen",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 76,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 72,
+						"h": 120
+					},
+					"frame": {
+						"x": 1975,
+						"y": 1179,
+						"w": 72,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Boaz-Colour.gif",
+					"name": "Boaz",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 79,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 76,
+						"h": 120
+					},
+					"frame": {
+						"x": 1896,
+						"y": 1058,
+						"w": 76,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Esther-Colour.jpg",
+					"name": "Esther",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 76,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 76,
+						"h": 120
+					},
+					"frame": {
+						"x": 1896,
+						"y": 1178,
+						"w": 76,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Mary-Martha-sister-Colour.gif",
+					"name": "Mary & Martha",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 77,
+						"h": 110
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 75,
+						"h": 110
+					},
+					"frame": {
+						"x": 1395,
+						"y": 717,
+						"w": 75,
+						"h": 110
+					}
+				},
+				{
+					"filename": "Mouse-Colour.gif",
+					"name" : "Mouse",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 78,
+						"h": 100
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 1,
+						"w": 75,
+						"h": 99
+					},
+					"frame": {
+						"x": 1470,
+						"y": 717,
+						"w": 75,
+						"h": 99
+					}
+				},
+				{
+					"filename": "Saul-Colour.gif",
+					"name": "Saul",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 77,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 1,
+						"w": 74,
+						"h": 117
+					},
+					"frame": {
+						"x": 1470,
+						"y": 816,
+						"w": 74,
+						"h": 117
+					}
+				},
+				{
+					"filename": "Mary-Magdalene-Colour.gif",
+					"name": "Mary Magdalene",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 72,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 72,
+						"h": 120
+					},
+					"frame": {
+						"x": 1544,
+						"y": 838,
+						"w": 72,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Jesus-Praying.gif",
+					"name": "Jesus",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 74,
+						"h": 110
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 1,
+						"w": 72,
+						"h": 107
+					},
+					"frame": {
+						"x": 1544,
+						"y": 958,
+						"w": 72,
+						"h": 107
+					}
+				},
+				{
+					"filename": "Ahab-Colour.gif",
+					"name" : "Ahab",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 71,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 71,
+						"h": 120
+					},
+					"frame": {
+						"x": 1616,
+						"y": 932,
+						"w": 71,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Absalom-Colour.gif",
+					"name": "Absalom",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 72,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 1,
+						"w": 70,
+						"h": 119
+					},
+					"frame": {
+						"x": 1616,
+						"y": 1052,
+						"w": 70,
+						"h": 119
+					}
+				},
+				{
+					"filename": "Hannah-Colour.gif",
+					"name": "Hannah",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 71,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 1,
+						"w": 69,
+						"h": 118
+					},
+					"frame": {
+						"x": 1687,
+						"y": 958,
+						"w": 69,
+						"h": 118
+					}
+				},
+				{
+					"filename": "Mary-Colour.gif",
+					"name":"Mary",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 71,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 0,
+						"w": 67,
+						"h": 119
+					},
+					"frame": {
+						"x": 1687,
+						"y": 1076,
+						"w": 67,
+						"h": 119
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "http://free-tex-packer.com",
+		"version": "0.6.7"
+	}
+}
