@@ -1,0 +1,138 @@
+{
+    "levels": [
+        {
+            "number": 1,
+            "name": "ÒDEM",           
+            "stone": "levi.png",
+            "tribe": "Levi",
+            "modifier": 100,
+            "spritesheet": "biblegems_north",
+            "color":"0xFF0012",
+            "background":"background",
+            "gems":4
+            
+        },
+        {
+            "number": 2,
+            "name": "PITDÀH",           
+            "stone": "Zebulun.png",
+            "tribe": "Zebulun",
+            "modifier": 80,
+            "spritesheet": "biblegems_north",
+            "color":"0xEB62BD",
+            "background":"background",
+            "gems":4
+        },
+        {
+            "number": 3,
+            "name": "YASHFÈH",
+            "stone": "rueben.png",
+            "tribe": "Rueben",
+            "modifier": 70,
+            "spritesheet": "biblegems_north",
+            "color":"0x009245",
+            "background":"background",
+            "gems":4
+        },
+        {
+            "number": 4,
+            "name": "ÒDEM",           
+            "stone": "Issachar.png",
+            "tribe": "Issachar",
+            "modifier": 70,
+            "spritesheet": "biblegems_east",
+            "color":"0x0AE1FF",
+            "background":"background",
+            "gems": 5
+        },
+        {
+            "number": 5,
+            "name": "SAPÌR",           
+            "stone": "Benjamin.png",
+            "tribe": "Benjamin",
+            "modifier":65,
+            "spritesheet": "biblegems_east",
+            "color":"0x0A4EFF",
+            "background": "background",
+            "gems": 5
+            
+        },
+        {
+            "number": 6,
+            "name": "YAHALÒM",
+            "stone": "Dan.png",
+            "tribe": "Dan",
+            "modifier": 60,
+            "spritesheet": "biblegems_east",
+            "color":"0xE3DEE3",
+            "background":"background",
+            "gems": 5
+        },
+        {
+            "number": 7,
+            "name": "LÈSHEM",           
+            "stone": "Naphtali.png",
+            "tribe": "Naphtali",
+            "modifier": 100,
+            "spritesheet": "biblegems_west",
+            "color":"0xB60D79",
+            "background":"background",
+            "gems": 6
+        },
+        {
+            "number": 8,
+            "name": "SH’VÒ",           
+            "stone": "Gad.png",
+            "tribe": "Gad",
+            "modifier": 95,
+            "spritesheet": "biblegems_west",
+            "color":"0x1CED22",
+            "background": "background",
+            "gems":6
+        },
+        {
+            "number": 9,
+            "name": "AKH’LAMÀH",
+            "stone": "Asher.png",
+            "tribe": "Asher",
+            "modifier": 90,
+            "spritesheet": "biblegems_west",
+            "color":"0xDE007B",
+            "background":"background",
+            "gems":6
+        },
+        {
+            "number": 10,
+            "name": "Simeon",           
+            "stone": "Simeon.png",
+            "tribe": "Simeon",
+            "modifier": 100,
+            "spritesheet": "biblegems_south",
+            "color":"0xF7931E",
+            "background":"background",
+            "gems":6
+        },
+        {
+            "number": 11,
+            "name": "SHÒHAM",           
+            "stone": "Judah.png",
+            "tribe": "Judah",
+            "modifier": 90,
+            "spritesheet": "biblegems_south",
+            "color":"0xFFA096",
+            "background": "background",
+            "gems":6
+        },
+        {
+            "number": 12,
+            "name": "AKH’LAMÀH",
+            "stone": "Joesph.png",
+            "tribe": "Joesph",
+            "modifier": 80,
+            "spritesheet": "biblegems_south",
+            "color":"0x8CC63F",
+            "background":"background",
+            "gems":6
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "levels": [
+        {
+            "number": 1,
+            "name": "YASHFÈH",
+            "stone": "stone_green.png",
+            "tribe": "Rueben",
+            "modifier": 50,
+            "spritesheet": "biblegems",
+            "color":"0x009245"
+        },
+        {
+            "number": 2,
+            "name": "SHÒHAM",           
+            "stone": "stone_pink.png",
+            "tribe": "Judah",
+            "modifier": 45,
+            "spritesheet": "biblegems",
+            "color":"0xEB62BD"
+        }
+    ]
+}
