@@ -98,12 +98,12 @@ using levelEditor.Models;
             WriteLiteral("</h4>\r\n<hr />\r\n<div class=\"row\">\r\n    <div class=\"col-md-12\">\r\n        ");
             EndContext();
             BeginContext(265, 3400, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b00897ece1354f61852f7c1dd31bb2eb", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "62b9a0a1e8874069b5a1a780b1134a78", async() => {
                 BeginContext(289, 14, true);
                 WriteLiteral("\r\n            ");
                 EndContext();
                 BeginContext(303, 66, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d5288a9acada4ec6b3f50058a38fcbb2", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e06a4ae7872f425cb4059e508f56fd4a", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationSummaryTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationSummaryTagHelper>();
@@ -127,7 +127,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationSummaryTagHelper.ValidationSumma
                 WriteLiteral("\r\n            ");
                 EndContext();
                 BeginContext(383, 36, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1ef01e6aa1b345b3872898c3f391c21b", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "efe295142ad14137866ad13d80c0fb40", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -200,7 +200,7 @@ WriteAttributeValue("", 674, Url.Action("EditCategory","BKG",new { Id= category.
                 WriteLiteral("                        ");
                 EndContext();
                 BeginContext(1114, 362, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d18254314c444a86bbe173bc4a62ef76", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "440c040a0f3f4bfe8b7bd73990f76068", async() => {
                     BeginContext(1271, 69, true);
                     WriteLiteral("\r\n\r\n                            <p class=\"square-value text-center\">$");
                     EndContext();
@@ -294,7 +294,7 @@ WriteAttributeValue("", 674, Url.Action("EditCategory","BKG",new { Id= category.
                 WriteLiteral("                        ");
                 EndContext();
                 BeginContext(1723, 362, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7d74f3172fa041208ec8fa34fd37c56f", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c8dc140235aa4a53a20209cfd8e315ff", async() => {
                     BeginContext(1880, 69, true);
                     WriteLiteral("\r\n\r\n                            <p class=\"square-value text-center\">$");
                     EndContext();
@@ -388,7 +388,7 @@ WriteAttributeValue("", 674, Url.Action("EditCategory","BKG",new { Id= category.
                 WriteLiteral("                        ");
                 EndContext();
                 BeginContext(2333, 362, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2dafcd723f124b58a542f5f306b879aa", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c598687dfde644eea0fe6572278c43e3", async() => {
                     BeginContext(2490, 69, true);
                     WriteLiteral("\r\n\r\n                            <p class=\"square-value text-center\">$");
                     EndContext();
@@ -482,7 +482,7 @@ WriteAttributeValue("", 674, Url.Action("EditCategory","BKG",new { Id= category.
                 WriteLiteral("                        ");
                 EndContext();
                 BeginContext(2943, 362, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7cb72bd8a9c243709f59fb757db00551", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7d9fdb26b4c04cd2bf14027f7fc4170e", async() => {
                     BeginContext(3100, 69, true);
                     WriteLiteral("\r\n\r\n                            <p class=\"square-value text-center\">$");
                     EndContext();
@@ -566,7 +566,7 @@ WriteAttributeValue("", 674, Url.Action("EditCategory","BKG",new { Id= category.
                 WriteLiteral("                </div>\r\n            </div>\r\n            <div class=\"form-group\">\r\n                ");
                 EndContext();
                 BeginContext(3428, 91, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "49477e3cd59d4b37a1a3a714c0563059", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6f0ccbf43d6a4b218be57b259be50d70", async() => {
                     BeginContext(3504, 11, true);
                     WriteLiteral("Update Game");
                     EndContext();
@@ -602,7 +602,7 @@ WriteAttributeValue("", 674, Url.Action("EditCategory","BKG",new { Id= category.
                 WriteLiteral("\r\n                ");
                 EndContext();
                 BeginContext(3537, 89, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "671bc7db5c694779b300a7f7e8931069", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8e82fbd0346d4348b7027abe0fa8f1e8", async() => {
                     BeginContext(3616, 6, true);
                     WriteLiteral("Export");
                     EndContext();
@@ -657,7 +657,7 @@ WriteAttributeValue("", 674, Url.Action("EditCategory","BKG",new { Id= category.
             WriteLiteral("\r\n    </div>\r\n\r\n\r\n</div>\r\n<div>\r\n    ");
             EndContext();
             BeginContext(3702, 38, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "86734177b5a74ff9ac7d9b90d8161438", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b9d0742838d340bea415f364a8e85d59", async() => {
                 BeginContext(3724, 12, true);
                 WriteLiteral("Back to List");
                 EndContext();
