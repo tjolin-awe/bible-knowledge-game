@@ -1,0 +1,111 @@
+{
+    "levels": [
+        {
+            "number": 1,
+            "name": "Level 01",           
+            "rank": "Private", 
+            "character_spritesheet": "bible_spritesheet",
+            "background":"background",
+            "quiz": [
+                {
+                    "question": "Who lied when she said 'I did not laugh'?",
+                    "correct_picture":"Sarah.gif",
+                    "characters": [
+                        {
+                            "name": "Esther",
+                            "picture": "Esther-Colour.jpg" ,
+                            "scale": 1.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Sarah",
+                            "picture": "Sarah.gif",   
+                            "scale": 1.5,
+                            "xoffset":-25,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Ruth",
+                            "picture": "Ruth-Colour.gif", 
+                            "scale": 1.5,
+                            "xoffset":-5,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary-Magdalene-Colour.gif",
+                            "scale": 1.5,
+                            "xoffset":-5,
+                            "yoffset":0,
+                            "labelxoffset":-5,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        }
+                        
+                    ]
+                }
+                
+                
+            ]
+        },
+        {
+            "number": 2,
+            "name": "Level 02",           
+            "rank": "Private", 
+            "character_spritesheet": "bible_spritesheet",
+            "background":"background",
+            "quiz": [
+                {
+                    "question": "Who lied when she said 'I did not laugh'?",
+                    "correct_picture":"Sarah.gif",
+                    "characters": [
+                        {
+                            "name": "Sarah",
+                            "picture": "Sarah.gif",   
+                            "scale": 1.5,
+                            "x-offset":0,
+                            "y-offset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Ruth",
+                            "picture": "Ruth-Colour.gif", 
+                            "scale": 1.5,
+                            "x-offset":0,
+                            "y-offset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary-Magdalene-Colour.gif",
+                            "scale": 1.5,
+                            "x-offset":0,
+                            "y-offset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Esther",
+                            "picture": "Esther-Colour.jpg" ,
+                            "scale": 1.5,
+                            "x-offset":0,
+                            "y-offset":0,
+                            "fontSize": 32   
+                        }
+                    ]
+                }
+                
+                
+            ]
+        }
+    ]
+}
