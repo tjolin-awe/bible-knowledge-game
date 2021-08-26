@@ -4,7 +4,12 @@
             "number": 1,
             "name": "Level 01",           
             "rank": "Private", 
+            "rank_texture": "girl",
+            "level_message": "Good Job!",
             "character_spritesheet": "bible_spritesheet",
+            "award_texture":"helmet",
+            "award_desc":"The Helmet of Salvation",
+            "award_verse":"Take the helmet of salvation...",
             "background":"background",
             "quiz": [
                 {
@@ -61,8 +66,391 @@
         {
             "number": 2,
             "name": "Level 02",           
-            "rank": "Private", 
+            "rank": "Specialist", 
+            "rank_texture": "girl_helmet",
+            "level_message": "Well Done!",
             "character_spritesheet": "bible_spritesheet",
+            "award_texture":"boots",
+            "award_desc":"Boots of Peace",
+            "award_verse":"...and with your feet fitted with the readiness that comes from the gospel of peace.",
+            "background":"background",
+            "quiz": [
+                {
+                    "question": "Who lied when she said 'I did not laugh'?",
+                    "correct_picture":"Sarah.gif",
+                    "characters": [
+                        {
+                            "name": "Sarah",
+                            "picture": "Sarah.gif",   
+                            "scale": 1.5,
+                            "x-offset":0,
+                            "y-offset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Ruth",
+                            "picture": "Ruth-Colour.gif", 
+                            "scale": 1.5,
+                            "x-offset":0,
+                            "y-offset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary-Magdalene-Colour.gif",
+                            "scale": 1.5,
+                            "x-offset":0,
+                            "y-offset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Esther",
+                            "picture": "Esther-Colour.jpg" ,
+                            "scale": 1.5,
+                            "x-offset":0,
+                            "y-offset":0,
+                            "fontSize": 32   
+                        }
+                    ]
+                }
+                
+                
+            ]
+        },
+        {
+            "number": 3,
+            "name": "Level 03",           
+            "rank": "Corporal", 
+            "rank_texture": "girl_boots",
+            "level_message": "Amazing!",
+            "character_spritesheet": "bible_spritesheet",
+            "award_texture":"breastplate",
+            "award_desc":"Breastplate of Righteousness",
+            "award_verse":"...with the breastplate of righteousness in place,...",
+            "background":"background",
+            "quiz": [
+                {
+                    "question": "Who lied when she said 'I did not laugh'?",
+                    "correct_picture":"Sarah.gif",
+                    "characters": [
+                        {
+                            "name": "Sarah",
+                            "picture": "Sarah.gif",   
+                            "scale": 1.5,
+                            "x-offset":0,
+                            "y-offset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Ruth",
+                            "picture": "Ruth-Colour.gif", 
+                            "scale": 1.5,
+                            "x-offset":0,
+                            "y-offset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary-Magdalene-Colour.gif",
+                            "scale": 1.5,
+                            "x-offset":0,
+                            "y-offset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Esther",
+                            "picture": "Esther-Colour.jpg" ,
+                            "scale": 1.5,
+                            "x-offset":0,
+                            "y-offset":0,
+                            "fontSize": 32   
+                        }
+                    ]
+                }
+                
+                
+            ]
+        },
+        {
+            "number": 4,
+            "name": "Level 04",           
+            "rank": "Sergeant", 
+            "rank_texture": "girl_breastplate",
+            "level_message": "Awesome!",
+            "character_spritesheet": "bible_spritesheet",
+            "award_texture":"belt",
+            "award_desc":"Belt of Truth",
+            "award_verse":"Stand firm then, with the belt of truth buckled around your waist,...",
+            "background":"background",
+            "quiz": [
+                {
+                    "question": "Who lied when she said 'I did not laugh'?",
+                    "correct_picture":"Sarah.gif",
+                    "characters": [
+                        {
+                            "name": "Sarah",
+                            "picture": "Sarah.gif",   
+                            "scale": 1.5,
+                            "x-offset":0,
+                            "y-offset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Ruth",
+                            "picture": "Ruth-Colour.gif", 
+                            "scale": 1.5,
+                            "x-offset":0,
+                            "y-offset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary-Magdalene-Colour.gif",
+                            "scale": 1.5,
+                            "x-offset":0,
+                            "y-offset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Esther",
+                            "picture": "Esther-Colour.jpg" ,
+                            "scale": 1.5,
+                            "x-offset":0,
+                            "y-offset":0,
+                            "fontSize": 32   
+                        }
+                    ]
+                }
+                
+                
+            ]
+        },
+        {
+            "number": 5,
+            "name": "Level 05",           
+            "rank": "Lieutenant", 
+            "rank_texture": "girl_belt",
+            "level_message": "Nice Work!",
+            "character_spritesheet": "bible_spritesheet",
+            "award_texture":"shield",
+            "award_desc":"Shield of Faith",
+            "award_verse":"... take up the shield of faith, with which you can extinguish all the flaming arrows of the evil one.",
+            "background":"background",
+            "quiz": [
+                {
+                    "question": "Who lied when she said 'I did not laugh'?",
+                    "correct_picture":"Sarah.gif",
+                    "characters": [
+                        {
+                            "name": "Sarah",
+                            "picture": "Sarah.gif",   
+                            "scale": 1.5,
+                            "x-offset":0,
+                            "y-offset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Ruth",
+                            "picture": "Ruth-Colour.gif", 
+                            "scale": 1.5,
+                            "x-offset":0,
+                            "y-offset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary-Magdalene-Colour.gif",
+                            "scale": 1.5,
+                            "x-offset":0,
+                            "y-offset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Esther",
+                            "picture": "Esther-Colour.jpg" ,
+                            "scale": 1.5,
+                            "x-offset":0,
+                            "y-offset":0,
+                            "fontSize": 32   
+                        }
+                    ]
+                }
+                
+                
+            ]
+        },
+        {
+            "number": 6,
+            "name": "Level 06",           
+            "rank": "Colonel", 
+            "rank_texture": "girl_shield",
+            "level_message": "Woo hoo!",
+            "character_spritesheet": "bible_spritesheet",
+            "award_texture":"sword",
+            "award_desc":"Sword of the\n Spirit",
+            "award_verse":"...and the sword of the Spirit, which is the word of God.",
+            "background":"background",
+            "quiz": [
+                {
+                    "question": "Who lied when she said 'I did not laugh'?",
+                    "correct_picture":"Sarah.gif",
+                    "characters": [
+                        {
+                            "name": "Sarah",
+                            "picture": "Sarah.gif",   
+                            "scale": 1.5,
+                            "x-offset":0,
+                            "y-offset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Ruth",
+                            "picture": "Ruth-Colour.gif", 
+                            "scale": 1.5,
+                            "x-offset":0,
+                            "y-offset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary-Magdalene-Colour.gif",
+                            "scale": 1.5,
+                            "x-offset":0,
+                            "y-offset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Esther",
+                            "picture": "Esther-Colour.jpg" ,
+                            "scale": 1.5,
+                            "x-offset":0,
+                            "y-offset":0,
+                            "fontSize": 32   
+                        }
+                    ]
+                }
+                
+                
+            ]
+        },
+        {
+            "number": 7,
+            "name": "Level 07",           
+            "rank": "General", 
+            "rank_texture": "girl_sword",
+            "level_message": "Excellent!",
+            "character_spritesheet": "bible_spritesheet",
+            "award_texture":"halo",
+            "award_desc":"Halo",
+            "award_verse":"All around him was a glowing halo...",
+            "background":"background",
+            "quiz": [
+                {
+                    "question": "Who lied when she said 'I did not laugh'?",
+                    "correct_picture":"Sarah.gif",
+                    "characters": [
+                        {
+                            "name": "Sarah",
+                            "picture": "Sarah.gif",   
+                            "scale": 1.5,
+                            "x-offset":0,
+                            "y-offset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Ruth",
+                            "picture": "Ruth-Colour.gif", 
+                            "scale": 1.5,
+                            "x-offset":0,
+                            "y-offset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary-Magdalene-Colour.gif",
+                            "scale": 1.5,
+                            "x-offset":0,
+                            "y-offset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Esther",
+                            "picture": "Esther-Colour.jpg" ,
+                            "scale": 1.5,
+                            "x-offset":0,
+                            "y-offset":0,
+                            "fontSize": 32   
+                        }
+                    ]
+                }
+                
+                
+            ]
+        },
+        {
+            "number": 8,
+            "name": "Level 08",           
+            "rank": "Commander", 
+            "rank_texture": "girl_halo",
+            "level_message": "Fantastic!",
+            "character_spritesheet": "bible_spritesheet",
+            "award_texture":"wings",
+            "award_desc":"Wings",
+            "award_verse":"They will soar on wings like eagles...",
+            "background":"background",
+            "quiz": [
+                {
+                    "question": "Who lied when she said 'I did not laugh'?",
+                    "correct_picture":"Sarah.gif",
+                    "characters": [
+                        {
+                            "name": "Sarah",
+                            "picture": "Sarah.gif",   
+                            "scale": 1.5,
+                            "x-offset":0,
+                            "y-offset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Ruth",
+                            "picture": "Ruth-Colour.gif", 
+                            "scale": 1.5,
+                            "x-offset":0,
+                            "y-offset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary-Magdalene-Colour.gif",
+                            "scale": 1.5,
+                            "x-offset":0,
+                            "y-offset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Esther",
+                            "picture": "Esther-Colour.jpg" ,
+                            "scale": 1.5,
+                            "x-offset":0,
+                            "y-offset":0,
+                            "fontSize": 32   
+                        }
+                    ]
+                }
+                
+                
+            ]
+        },
+        {
+            "number": 9,
+            "name": "Level 09",           
+            "rank": "General", 
+            "rank_texture": "girl_wings",
+            "level_message": "Almost There!",
+            "character_spritesheet": "bible_spritesheet",
+            "award_texture":"wings",
+            "award_desc":"Wings",
+            "award_verse":"They will soar on wings like eagles...",
             "background":"background",
             "quiz": [
                 {
@@ -107,5 +495,6 @@
                 
             ]
         }
+        
     ]
 }
