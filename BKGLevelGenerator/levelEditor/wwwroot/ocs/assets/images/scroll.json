@@ -1,0 +1,124 @@
+{
+	"textures": [
+		{
+			"image": "scroll",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1920,
+				"h": 650
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "scroll1.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 640,
+						"h": 325
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 640,
+						"h": 325
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 640,
+						"h": 325
+					}
+				},
+				{
+					"filename": "scroll2.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 640,
+						"h": 325
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 640,
+						"h": 325
+					},
+					"frame": {
+						"x": 640,
+						"y": 0,
+						"w": 640,
+						"h": 325
+					}
+				},
+				{
+					"filename": "scroll3.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 640,
+						"h": 325
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 640,
+						"h": 325
+					},
+					"frame": {
+						"x": 1280,
+						"y": 0,
+						"w": 640,
+						"h": 325
+					}
+				},
+				{
+					"filename": "scroll4.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 640,
+						"h": 325
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 640,
+						"h": 325
+					},
+					"frame": {
+						"x": 0,
+						"y": 325,
+						"w": 640,
+						"h": 325
+					}
+				},
+				{
+					"filename": "scroll5.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 640,
+						"h": 325
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 640,
+						"h": 325
+					},
+					"frame": {
+						"x": 640,
+						"y": 325,
+						"w": 640,
+						"h": 325
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "http://free-tex-packer.com",
+		"version": "0.6.7"
+	}
+}

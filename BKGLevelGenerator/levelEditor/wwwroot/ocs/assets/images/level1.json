@@ -1,0 +1,418 @@
+{
+	"textures": [
+		{
+			"image": "level1",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1992,
+				"h": 2022
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "Ahab.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 255,
+						"h": 434
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 1,
+						"w": 251,
+						"h": 433
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 251,
+						"h": 433
+					}
+				},
+				{
+					"filename": "Mary.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 256,
+						"h": 433
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 2,
+						"w": 240,
+						"h": 427
+					},
+					"frame": {
+						"x": 0,
+						"y": 433,
+						"w": 240,
+						"h": 427
+					}
+				},
+				{
+					"filename": "Mary Magdalene.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 256,
+						"h": 427
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 2,
+						"w": 251,
+						"h": 422
+					},
+					"frame": {
+						"x": 0,
+						"y": 860,
+						"w": 251,
+						"h": 422
+					}
+				},
+				{
+					"filename": "Hannah.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 250,
+						"h": 423
+					},
+					"spriteSourceSize": {
+						"x": 9,
+						"y": 6,
+						"w": 239,
+						"h": 412
+					},
+					"frame": {
+						"x": 240,
+						"y": 433,
+						"w": 239,
+						"h": 412
+					}
+				},
+				{
+					"filename": "Esther.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 256,
+						"h": 403
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 3,
+						"w": 242,
+						"h": 395
+					},
+					"frame": {
+						"x": 251,
+						"y": 0,
+						"w": 242,
+						"h": 395
+					}
+				},
+				{
+					"filename": "Saul.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 255,
+						"h": 399
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 4,
+						"w": 242,
+						"h": 388
+					},
+					"frame": {
+						"x": 0,
+						"y": 1282,
+						"w": 242,
+						"h": 388
+					}
+				},
+				{
+					"filename": "KingDavid.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 255,
+						"h": 353
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 247,
+						"h": 352
+					},
+					"frame": {
+						"x": 0,
+						"y": 1670,
+						"w": 247,
+						"h": 352
+					}
+				},
+				{
+					"filename": "Judas.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 255,
+						"h": 389
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 1,
+						"w": 253,
+						"h": 386
+					},
+					"frame": {
+						"x": 242,
+						"y": 1282,
+						"w": 253,
+						"h": 386
+					}
+				},
+				{
+					"filename": "Joshua.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 256,
+						"h": 347
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 1,
+						"w": 246,
+						"h": 346
+					},
+					"frame": {
+						"x": 247,
+						"y": 1668,
+						"w": 246,
+						"h": 346
+					}
+				},
+				{
+					"filename": "Martha.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 256,
+						"h": 325
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 255,
+						"h": 324
+					},
+					"frame": {
+						"x": 493,
+						"y": 1668,
+						"w": 255,
+						"h": 324
+					}
+				},
+				{
+					"filename": "Paul.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 255,
+						"h": 323
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 2,
+						"w": 249,
+						"h": 320
+					},
+					"frame": {
+						"x": 748,
+						"y": 1668,
+						"w": 249,
+						"h": 320
+					}
+				},
+				{
+					"filename": "Jonathan.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 256,
+						"h": 320
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 2,
+						"w": 245,
+						"h": 314
+					},
+					"frame": {
+						"x": 997,
+						"y": 1668,
+						"w": 245,
+						"h": 314
+					}
+				},
+				{
+					"filename": "Ruth.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 256,
+						"h": 311
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 1,
+						"w": 245,
+						"h": 308
+					},
+					"frame": {
+						"x": 1242,
+						"y": 1668,
+						"w": 245,
+						"h": 308
+					}
+				},
+				{
+					"filename": "Sarah.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 256,
+						"h": 306
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 0,
+						"w": 251,
+						"h": 305
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1668,
+						"w": 251,
+						"h": 305
+					}
+				},
+				{
+					"filename": "Solomon.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 255,
+						"h": 263
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 1,
+						"w": 254,
+						"h": 262
+					},
+					"frame": {
+						"x": 1738,
+						"y": 1668,
+						"w": 254,
+						"h": 262
+					}
+				},
+				{
+					"filename": "John the Baptist.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 255,
+						"h": 283
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 3,
+						"w": 249,
+						"h": 279
+					},
+					"frame": {
+						"x": 251,
+						"y": 845,
+						"w": 249,
+						"h": 279
+					}
+				},
+				{
+					"filename": "David.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 256,
+						"h": 271
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 2,
+						"w": 250,
+						"h": 267
+					},
+					"frame": {
+						"x": 479,
+						"y": 395,
+						"w": 250,
+						"h": 267
+					}
+				},
+				{
+					"filename": "Peter.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 255,
+						"h": 262
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 1,
+						"w": 252,
+						"h": 261
+					},
+					"frame": {
+						"x": 500,
+						"y": 0,
+						"w": 252,
+						"h": 261
+					}
+				},
+				{
+					"filename": "Gideon.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 256,
+						"h": 259
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 0,
+						"w": 248,
+						"h": 259
+					},
+					"frame": {
+						"x": 752,
+						"y": 0,
+						"w": 248,
+						"h": 259
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "http://free-tex-packer.com",
+		"version": "0.6.7"
+	}
+}

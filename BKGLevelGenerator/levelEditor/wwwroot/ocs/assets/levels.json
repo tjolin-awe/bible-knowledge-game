@@ -6,20 +6,124 @@
             "rank": "Private", 
             "rank_texture": "girl",
             "level_message": "Good Job!",
-            "character_spritesheet": "bible_spritesheet",
+            "character_spritesheet": "level1",
             "award_texture":"helmet",
             "award_desc":"The Helmet of Salvation",
             "award_verse":"Take the helmet of salvation...",
             "background":"background",
             "quiz": [
                 {
-                    "question": "Who lied when she said 'I did not laugh'?",
-                    "correct_picture":"Sarah.gif",
+                    "question": "Who was the mother of Jesus?",
+                    "correct_picture":"Mary.png",
                     "characters": [
                         {
+                            "name": "Mary",
+                            "picture": "Mary.png" ,
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Martha",
+                            "picture": "Martha.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Ruth",
+                            "picture": "Ruth.png", 
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Hannah",
+                            "picture": "Hannah.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32  
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who killed Goliath'?",
+                    "correct_picture":"David.png",
+                    "characters": [
+                        {
+                            "name": "Joshua",
+                            "picture": "Joshua.png" ,
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Gideon",
+                            "picture": "Gideon.png",   
+                            "scale": 0.55,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Jonathan",
+                            "picture": "Jonathan.png", 
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "David",
+                            "picture": "David.png",
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was Abraham's wife?",
+                    "correct_picture":"Sarah.png",
+                    "characters": [
+                        {
+                            "name": "Ruth",
+                            "picture": "Ruth.png" ,
+                            "scale": 0.55,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
                             "name": "Esther",
-                            "picture": "Esther-Colour.jpg" ,
-                            "scale": 1.5,
+                            "picture": "Esther.png",   
+                            "scale": 0.45,
                             "xoffset":0,
                             "yoffset":0,
                             "labelxoffset":0,
@@ -28,19 +132,9 @@
                         },
                         {
                             "name": "Sarah",
-                            "picture": "Sarah.gif",   
-                            "scale": 1.5,
-                            "xoffset":-25,
-                            "yoffset":0,
-                            "labelxoffset":0,
-                            "labelyoffset":0,
-                            "fontSize": 32   
-                        },
-                        {
-                            "name": "Ruth",
-                            "picture": "Ruth-Colour.gif", 
-                            "scale": 1.5,
-                            "xoffset":-5,
+                            "picture": "Sarah.png", 
+                            "scale": 0.55,
+                            "xoffset":-15,
                             "yoffset":0,
                             "labelxoffset":0,
                             "labelyoffset":0,
@@ -48,13 +142,342 @@
                         },
                         {
                             "name": "Mary Magdalene",
-                            "picture": "Mary-Magdalene-Colour.gif",
-                            "scale": 1.5,
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
                             "xoffset":-5,
                             "yoffset":0,
                             "labelxoffset":-5,
                             "labelyoffset":0,
                             "fontSize": 28   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Which disciple denied Jesus three times?",
+                    "correct_picture":"Peter.png",
+                    "characters": [
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png" ,
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png", 
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "John the Baptist",
+                            "picture": "John the Baptist.png",
+                            "scale": 0.55,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was the first king of Israel?",
+                    "correct_picture":"Saul.png",
+                    "characters": [
+                        {
+                            "name": "David",
+                            "picture": "KingDavid.png" ,
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Solomon",
+                            "picture": "Solomon.png",   
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Saul",
+                            "picture": "Saul.png", 
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Ahab",
+                            "picture": "Ahab",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
                         }
                         
                     ]
@@ -69,51 +492,484 @@
             "rank": "Specialist", 
             "rank_texture": "girl_helmet",
             "level_message": "Well Done!",
-            "character_spritesheet": "bible_spritesheet",
+            "character_spritesheet": "level1",
             "award_texture":"boots",
             "award_desc":"Boots of Peace",
             "award_verse":"...and with your feet fitted with the readiness that comes from the gospel of peace.",
             "background":"background",
             "quiz": [
                 {
-                    "question": "Who lied when she said 'I did not laugh'?",
-                    "correct_picture":"Sarah.gif",
+                    "question": "Who was the mother of Jesus?",
+                    "correct_picture":"Mary.png",
                     "characters": [
                         {
-                            "name": "Sarah",
-                            "picture": "Sarah.gif",   
-                            "scale": 1.5,
-                            "x-offset":0,
-                            "y-offset":0,
+                            "name": "Mary",
+                            "picture": "Mary.png" ,
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Martha",
+                            "picture": "Martha.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
                             "fontSize": 32   
                         },
                         {
                             "name": "Ruth",
-                            "picture": "Ruth-Colour.gif", 
-                            "scale": 1.5,
-                            "x-offset":0,
-                            "y-offset":0,
+                            "picture": "Ruth.png", 
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Hannah",
+                            "picture": "Hannah.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32  
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who killed Goliath'?",
+                    "correct_picture":"David.png",
+                    "characters": [
+                        {
+                            "name": "Joshua",
+                            "picture": "Joshua.png" ,
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Gideon",
+                            "picture": "Gideon.png",   
+                            "scale": 0.55,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Jonathan",
+                            "picture": "Jonathan.png", 
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "David",
+                            "picture": "David.png",
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was Abraham's wife?",
+                    "correct_picture":"Sarah.png",
+                    "characters": [
+                        {
+                            "name": "Ruth",
+                            "picture": "Ruth.png" ,
+                            "scale": 0.55,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Esther",
+                            "picture": "Esther.png",   
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Sarah",
+                            "picture": "Sarah.png", 
+                            "scale": 0.55,
+                            "xoffset":-15,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
                             "fontSize": 32   
                         },
                         {
                             "name": "Mary Magdalene",
-                            "picture": "Mary-Magdalene-Colour.gif",
-                            "scale": 1.5,
-                            "x-offset":0,
-                            "y-offset":0,
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":-5,
+                            "yoffset":0,
+                            "labelxoffset":-5,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Which disciple denied Jesus three times?",
+                    "correct_picture":"Peter.png",
+                    "characters": [
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png" ,
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png", 
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "John the Baptist",
+                            "picture": "John the Baptist.png",
+                            "scale": 0.55,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was the first king of Israel?",
+                    "correct_picture":"Saul.png",
+                    "characters": [
+                        {
+                            "name": "David",
+                            "picture": "KingDavid.png" ,
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Solomon",
+                            "picture": "Solomon.png",   
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Saul",
+                            "picture": "Saul.png", 
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Ahab",
+                            "picture": "Ahab",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
                             "fontSize": 28   
                         },
                         {
-                            "name": "Esther",
-                            "picture": "Esther-Colour.jpg" ,
-                            "scale": 1.5,
-                            "x-offset":0,
-                            "y-offset":0,
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
                             "fontSize": 32   
                         }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
                     ]
                 }
                 
+           
                 
             ]
         },
@@ -123,48 +979,480 @@
             "rank": "Corporal", 
             "rank_texture": "girl_boots",
             "level_message": "Amazing!",
-            "character_spritesheet": "bible_spritesheet",
+            "character_spritesheet": "level1",
             "award_texture":"breastplate",
             "award_desc":"Breastplate of Righteousness",
             "award_verse":"...with the breastplate of righteousness in place,...",
             "background":"background",
             "quiz": [
                 {
-                    "question": "Who lied when she said 'I did not laugh'?",
-                    "correct_picture":"Sarah.gif",
+                    "question": "Who was the mother of Jesus?",
+                    "correct_picture":"Mary.png",
                     "characters": [
                         {
-                            "name": "Sarah",
-                            "picture": "Sarah.gif",   
-                            "scale": 1.5,
-                            "x-offset":0,
-                            "y-offset":0,
+                            "name": "Mary",
+                            "picture": "Mary.png" ,
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Martha",
+                            "picture": "Martha.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
                             "fontSize": 32   
                         },
                         {
                             "name": "Ruth",
-                            "picture": "Ruth-Colour.gif", 
-                            "scale": 1.5,
-                            "x-offset":0,
-                            "y-offset":0,
+                            "picture": "Ruth.png", 
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Hannah",
+                            "picture": "Hannah.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32  
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who killed Goliath'?",
+                    "correct_picture":"David.png",
+                    "characters": [
+                        {
+                            "name": "Joshua",
+                            "picture": "Joshua.png" ,
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Gideon",
+                            "picture": "Gideon.png",   
+                            "scale": 0.55,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Jonathan",
+                            "picture": "Jonathan.png", 
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "David",
+                            "picture": "David.png",
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was Abraham's wife?",
+                    "correct_picture":"Sarah.png",
+                    "characters": [
+                        {
+                            "name": "Ruth",
+                            "picture": "Ruth.png" ,
+                            "scale": 0.55,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Esther",
+                            "picture": "Esther.png",   
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Sarah",
+                            "picture": "Sarah.png", 
+                            "scale": 0.55,
+                            "xoffset":-15,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
                             "fontSize": 32   
                         },
                         {
                             "name": "Mary Magdalene",
-                            "picture": "Mary-Magdalene-Colour.gif",
-                            "scale": 1.5,
-                            "x-offset":0,
-                            "y-offset":0,
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":-5,
+                            "yoffset":0,
+                            "labelxoffset":-5,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Which disciple denied Jesus three times?",
+                    "correct_picture":"Peter.png",
+                    "characters": [
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png" ,
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png", 
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "John the Baptist",
+                            "picture": "John the Baptist.png",
+                            "scale": 0.55,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was the first king of Israel?",
+                    "correct_picture":"Saul.png",
+                    "characters": [
+                        {
+                            "name": "David",
+                            "picture": "KingDavid.png" ,
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Solomon",
+                            "picture": "Solomon.png",   
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Saul",
+                            "picture": "Saul.png", 
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Ahab",
+                            "picture": "Ahab",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
                             "fontSize": 28   
                         },
                         {
-                            "name": "Esther",
-                            "picture": "Esther-Colour.jpg" ,
-                            "scale": 1.5,
-                            "x-offset":0,
-                            "y-offset":0,
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
                             "fontSize": 32   
                         }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
                     ]
                 }
                 
@@ -177,48 +1465,480 @@
             "rank": "Sergeant", 
             "rank_texture": "girl_breastplate",
             "level_message": "Awesome!",
-            "character_spritesheet": "bible_spritesheet",
+            "character_spritesheet": "level1",
             "award_texture":"belt",
             "award_desc":"Belt of Truth",
             "award_verse":"Stand firm then, with the belt of truth buckled around your waist,...",
             "background":"background",
             "quiz": [
                 {
-                    "question": "Who lied when she said 'I did not laugh'?",
-                    "correct_picture":"Sarah.gif",
+                    "question": "Who was the mother of Jesus?",
+                    "correct_picture":"Mary.png",
                     "characters": [
                         {
-                            "name": "Sarah",
-                            "picture": "Sarah.gif",   
-                            "scale": 1.5,
-                            "x-offset":0,
-                            "y-offset":0,
+                            "name": "Mary",
+                            "picture": "Mary.png" ,
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Martha",
+                            "picture": "Martha.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
                             "fontSize": 32   
                         },
                         {
                             "name": "Ruth",
-                            "picture": "Ruth-Colour.gif", 
-                            "scale": 1.5,
-                            "x-offset":0,
-                            "y-offset":0,
+                            "picture": "Ruth.png", 
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Hannah",
+                            "picture": "Hannah.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32  
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who killed Goliath'?",
+                    "correct_picture":"David.png",
+                    "characters": [
+                        {
+                            "name": "Joshua",
+                            "picture": "Joshua.png" ,
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Gideon",
+                            "picture": "Gideon.png",   
+                            "scale": 0.55,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Jonathan",
+                            "picture": "Jonathan.png", 
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "David",
+                            "picture": "David.png",
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was Abraham's wife?",
+                    "correct_picture":"Sarah.png",
+                    "characters": [
+                        {
+                            "name": "Ruth",
+                            "picture": "Ruth.png" ,
+                            "scale": 0.55,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Esther",
+                            "picture": "Esther.png",   
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Sarah",
+                            "picture": "Sarah.png", 
+                            "scale": 0.55,
+                            "xoffset":-15,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
                             "fontSize": 32   
                         },
                         {
                             "name": "Mary Magdalene",
-                            "picture": "Mary-Magdalene-Colour.gif",
-                            "scale": 1.5,
-                            "x-offset":0,
-                            "y-offset":0,
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":-5,
+                            "yoffset":0,
+                            "labelxoffset":-5,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Which disciple denied Jesus three times?",
+                    "correct_picture":"Peter.png",
+                    "characters": [
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png" ,
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png", 
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "John the Baptist",
+                            "picture": "John the Baptist.png",
+                            "scale": 0.55,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was the first king of Israel?",
+                    "correct_picture":"Saul.png",
+                    "characters": [
+                        {
+                            "name": "David",
+                            "picture": "KingDavid.png" ,
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Solomon",
+                            "picture": "Solomon.png",   
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Saul",
+                            "picture": "Saul.png", 
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Ahab",
+                            "picture": "Ahab",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
                             "fontSize": 28   
                         },
                         {
-                            "name": "Esther",
-                            "picture": "Esther-Colour.jpg" ,
-                            "scale": 1.5,
-                            "x-offset":0,
-                            "y-offset":0,
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
                             "fontSize": 32   
                         }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
                     ]
                 }
                 
@@ -231,48 +1951,481 @@
             "rank": "Lieutenant", 
             "rank_texture": "girl_belt",
             "level_message": "Nice Work!",
-            "character_spritesheet": "bible_spritesheet",
+            "character_spritesheet": "level1",
             "award_texture":"shield",
             "award_desc":"Shield of Faith",
             "award_verse":"... take up the shield of faith, with which you can extinguish all the flaming arrows of the evil one.",
             "background":"background",
+            
             "quiz": [
                 {
-                    "question": "Who lied when she said 'I did not laugh'?",
-                    "correct_picture":"Sarah.gif",
+                    "question": "Who was the mother of Jesus?",
+                    "correct_picture":"Mary.png",
                     "characters": [
                         {
-                            "name": "Sarah",
-                            "picture": "Sarah.gif",   
-                            "scale": 1.5,
-                            "x-offset":0,
-                            "y-offset":0,
+                            "name": "Mary",
+                            "picture": "Mary.png" ,
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Martha",
+                            "picture": "Martha.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
                             "fontSize": 32   
                         },
                         {
                             "name": "Ruth",
-                            "picture": "Ruth-Colour.gif", 
-                            "scale": 1.5,
-                            "x-offset":0,
-                            "y-offset":0,
+                            "picture": "Ruth.png", 
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Hannah",
+                            "picture": "Hannah.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32  
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who killed Goliath'?",
+                    "correct_picture":"David.png",
+                    "characters": [
+                        {
+                            "name": "Joshua",
+                            "picture": "Joshua.png" ,
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Gideon",
+                            "picture": "Gideon.png",   
+                            "scale": 0.55,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Jonathan",
+                            "picture": "Jonathan.png", 
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "David",
+                            "picture": "David.png",
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was Abraham's wife?",
+                    "correct_picture":"Sarah.png",
+                    "characters": [
+                        {
+                            "name": "Ruth",
+                            "picture": "Ruth.png" ,
+                            "scale": 0.55,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Esther",
+                            "picture": "Esther.png",   
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Sarah",
+                            "picture": "Sarah.png", 
+                            "scale": 0.55,
+                            "xoffset":-15,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
                             "fontSize": 32   
                         },
                         {
                             "name": "Mary Magdalene",
-                            "picture": "Mary-Magdalene-Colour.gif",
-                            "scale": 1.5,
-                            "x-offset":0,
-                            "y-offset":0,
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":-5,
+                            "yoffset":0,
+                            "labelxoffset":-5,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Which disciple denied Jesus three times?",
+                    "correct_picture":"Peter.png",
+                    "characters": [
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png" ,
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png", 
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "John the Baptist",
+                            "picture": "John the Baptist.png",
+                            "scale": 0.55,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was the first king of Israel?",
+                    "correct_picture":"Saul.png",
+                    "characters": [
+                        {
+                            "name": "David",
+                            "picture": "KingDavid.png" ,
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Solomon",
+                            "picture": "Solomon.png",   
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Saul",
+                            "picture": "Saul.png", 
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Ahab",
+                            "picture": "Ahab",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
                             "fontSize": 28   
                         },
                         {
-                            "name": "Esther",
-                            "picture": "Esther-Colour.jpg" ,
-                            "scale": 1.5,
-                            "x-offset":0,
-                            "y-offset":0,
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
                             "fontSize": 32   
                         }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
                     ]
                 }
                 
@@ -285,48 +2438,480 @@
             "rank": "Colonel", 
             "rank_texture": "girl_shield",
             "level_message": "Woo hoo!",
-            "character_spritesheet": "bible_spritesheet",
+            "character_spritesheet": "level1",
             "award_texture":"sword",
             "award_desc":"Sword of the\n Spirit",
             "award_verse":"...and the sword of the Spirit, which is the word of God.",
             "background":"background",
             "quiz": [
                 {
-                    "question": "Who lied when she said 'I did not laugh'?",
-                    "correct_picture":"Sarah.gif",
+                    "question": "Who was the mother of Jesus?",
+                    "correct_picture":"Mary.png",
                     "characters": [
                         {
-                            "name": "Sarah",
-                            "picture": "Sarah.gif",   
-                            "scale": 1.5,
-                            "x-offset":0,
-                            "y-offset":0,
+                            "name": "Mary",
+                            "picture": "Mary.png" ,
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Martha",
+                            "picture": "Martha.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
                             "fontSize": 32   
                         },
                         {
                             "name": "Ruth",
-                            "picture": "Ruth-Colour.gif", 
-                            "scale": 1.5,
-                            "x-offset":0,
-                            "y-offset":0,
+                            "picture": "Ruth.png", 
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Hannah",
+                            "picture": "Hannah.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32  
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who killed Goliath'?",
+                    "correct_picture":"David.png",
+                    "characters": [
+                        {
+                            "name": "Joshua",
+                            "picture": "Joshua.png" ,
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Gideon",
+                            "picture": "Gideon.png",   
+                            "scale": 0.55,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Jonathan",
+                            "picture": "Jonathan.png", 
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "David",
+                            "picture": "David.png",
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was Abraham's wife?",
+                    "correct_picture":"Sarah.png",
+                    "characters": [
+                        {
+                            "name": "Ruth",
+                            "picture": "Ruth.png" ,
+                            "scale": 0.55,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Esther",
+                            "picture": "Esther.png",   
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Sarah",
+                            "picture": "Sarah.png", 
+                            "scale": 0.55,
+                            "xoffset":-15,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
                             "fontSize": 32   
                         },
                         {
                             "name": "Mary Magdalene",
-                            "picture": "Mary-Magdalene-Colour.gif",
-                            "scale": 1.5,
-                            "x-offset":0,
-                            "y-offset":0,
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":-5,
+                            "yoffset":0,
+                            "labelxoffset":-5,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Which disciple denied Jesus three times?",
+                    "correct_picture":"Peter.png",
+                    "characters": [
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png" ,
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png", 
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "John the Baptist",
+                            "picture": "John the Baptist.png",
+                            "scale": 0.55,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was the first king of Israel?",
+                    "correct_picture":"Saul.png",
+                    "characters": [
+                        {
+                            "name": "David",
+                            "picture": "KingDavid.png" ,
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Solomon",
+                            "picture": "Solomon.png",   
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Saul",
+                            "picture": "Saul.png", 
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Ahab",
+                            "picture": "Ahab",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
                             "fontSize": 28   
                         },
                         {
-                            "name": "Esther",
-                            "picture": "Esther-Colour.jpg" ,
-                            "scale": 1.5,
-                            "x-offset":0,
-                            "y-offset":0,
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
                             "fontSize": 32   
                         }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
                     ]
                 }
                 
@@ -339,48 +2924,480 @@
             "rank": "General", 
             "rank_texture": "girl_sword",
             "level_message": "Excellent!",
-            "character_spritesheet": "bible_spritesheet",
+            "character_spritesheet": "level1",
             "award_texture":"halo",
             "award_desc":"Halo",
             "award_verse":"All around him was a glowing halo...",
             "background":"background",
             "quiz": [
                 {
-                    "question": "Who lied when she said 'I did not laugh'?",
-                    "correct_picture":"Sarah.gif",
+                    "question": "Who was the mother of Jesus?",
+                    "correct_picture":"Mary.png",
                     "characters": [
                         {
-                            "name": "Sarah",
-                            "picture": "Sarah.gif",   
-                            "scale": 1.5,
-                            "x-offset":0,
-                            "y-offset":0,
+                            "name": "Mary",
+                            "picture": "Mary.png" ,
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Martha",
+                            "picture": "Martha.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
                             "fontSize": 32   
                         },
                         {
                             "name": "Ruth",
-                            "picture": "Ruth-Colour.gif", 
-                            "scale": 1.5,
-                            "x-offset":0,
-                            "y-offset":0,
+                            "picture": "Ruth.png", 
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Hannah",
+                            "picture": "Hannah.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32  
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who killed Goliath'?",
+                    "correct_picture":"David.png",
+                    "characters": [
+                        {
+                            "name": "Joshua",
+                            "picture": "Joshua.png" ,
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Gideon",
+                            "picture": "Gideon.png",   
+                            "scale": 0.55,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Jonathan",
+                            "picture": "Jonathan.png", 
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "David",
+                            "picture": "David.png",
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was Abraham's wife?",
+                    "correct_picture":"Sarah.png",
+                    "characters": [
+                        {
+                            "name": "Ruth",
+                            "picture": "Ruth.png" ,
+                            "scale": 0.55,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Esther",
+                            "picture": "Esther.png",   
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Sarah",
+                            "picture": "Sarah.png", 
+                            "scale": 0.55,
+                            "xoffset":-15,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
                             "fontSize": 32   
                         },
                         {
                             "name": "Mary Magdalene",
-                            "picture": "Mary-Magdalene-Colour.gif",
-                            "scale": 1.5,
-                            "x-offset":0,
-                            "y-offset":0,
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":-5,
+                            "yoffset":0,
+                            "labelxoffset":-5,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Which disciple denied Jesus three times?",
+                    "correct_picture":"Peter.png",
+                    "characters": [
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png" ,
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png", 
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "John the Baptist",
+                            "picture": "John the Baptist.png",
+                            "scale": 0.55,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was the first king of Israel?",
+                    "correct_picture":"Saul.png",
+                    "characters": [
+                        {
+                            "name": "David",
+                            "picture": "KingDavid.png" ,
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Solomon",
+                            "picture": "Solomon.png",   
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Saul",
+                            "picture": "Saul.png", 
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Ahab",
+                            "picture": "Ahab",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
                             "fontSize": 28   
                         },
                         {
-                            "name": "Esther",
-                            "picture": "Esther-Colour.jpg" ,
-                            "scale": 1.5,
-                            "x-offset":0,
-                            "y-offset":0,
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
                             "fontSize": 32   
                         }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
                     ]
                 }
                 
@@ -393,48 +3410,480 @@
             "rank": "Commander", 
             "rank_texture": "girl_halo",
             "level_message": "Fantastic!",
-            "character_spritesheet": "bible_spritesheet",
+            "character_spritesheet": "level1",
             "award_texture":"wings",
             "award_desc":"Wings",
             "award_verse":"They will soar on wings like eagles...",
             "background":"background",
             "quiz": [
                 {
-                    "question": "Who lied when she said 'I did not laugh'?",
-                    "correct_picture":"Sarah.gif",
+                    "question": "Who was the mother of Jesus?",
+                    "correct_picture":"Mary.png",
                     "characters": [
                         {
-                            "name": "Sarah",
-                            "picture": "Sarah.gif",   
-                            "scale": 1.5,
-                            "x-offset":0,
-                            "y-offset":0,
+                            "name": "Mary",
+                            "picture": "Mary.png" ,
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Martha",
+                            "picture": "Martha.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
                             "fontSize": 32   
                         },
                         {
                             "name": "Ruth",
-                            "picture": "Ruth-Colour.gif", 
-                            "scale": 1.5,
-                            "x-offset":0,
-                            "y-offset":0,
+                            "picture": "Ruth.png", 
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Hannah",
+                            "picture": "Hannah.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32  
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who killed Goliath'?",
+                    "correct_picture":"David.png",
+                    "characters": [
+                        {
+                            "name": "Joshua",
+                            "picture": "Joshua.png" ,
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Gideon",
+                            "picture": "Gideon.png",   
+                            "scale": 0.55,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Jonathan",
+                            "picture": "Jonathan.png", 
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "David",
+                            "picture": "David.png",
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was Abraham's wife?",
+                    "correct_picture":"Sarah.png",
+                    "characters": [
+                        {
+                            "name": "Ruth",
+                            "picture": "Ruth.png" ,
+                            "scale": 0.55,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Esther",
+                            "picture": "Esther.png",   
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Sarah",
+                            "picture": "Sarah.png", 
+                            "scale": 0.55,
+                            "xoffset":-15,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
                             "fontSize": 32   
                         },
                         {
                             "name": "Mary Magdalene",
-                            "picture": "Mary-Magdalene-Colour.gif",
-                            "scale": 1.5,
-                            "x-offset":0,
-                            "y-offset":0,
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":-5,
+                            "yoffset":0,
+                            "labelxoffset":-5,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Which disciple denied Jesus three times?",
+                    "correct_picture":"Peter.png",
+                    "characters": [
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png" ,
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png", 
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "John the Baptist",
+                            "picture": "John the Baptist.png",
+                            "scale": 0.55,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was the first king of Israel?",
+                    "correct_picture":"Saul.png",
+                    "characters": [
+                        {
+                            "name": "David",
+                            "picture": "KingDavid.png" ,
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Solomon",
+                            "picture": "Solomon.png",   
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Saul",
+                            "picture": "Saul.png", 
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Ahab",
+                            "picture": "Ahab",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
                             "fontSize": 28   
                         },
                         {
-                            "name": "Esther",
-                            "picture": "Esther-Colour.jpg" ,
-                            "scale": 1.5,
-                            "x-offset":0,
-                            "y-offset":0,
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
                             "fontSize": 32   
                         }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
                     ]
                 }
                 
@@ -447,48 +3896,480 @@
             "rank": "General", 
             "rank_texture": "girl_wings",
             "level_message": "Almost There!",
-            "character_spritesheet": "bible_spritesheet",
+            "character_spritesheet": "level1",
             "award_texture":"wings",
             "award_desc":"Wings",
             "award_verse":"They will soar on wings like eagles...",
             "background":"background",
             "quiz": [
                 {
-                    "question": "Who lied when she said 'I did not laugh'?",
-                    "correct_picture":"Sarah.gif",
+                    "question": "Who was the mother of Jesus?",
+                    "correct_picture":"Mary.png",
                     "characters": [
                         {
-                            "name": "Sarah",
-                            "picture": "Sarah.gif",   
-                            "scale": 1.5,
-                            "x-offset":0,
-                            "y-offset":0,
+                            "name": "Mary",
+                            "picture": "Mary.png" ,
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Martha",
+                            "picture": "Martha.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
                             "fontSize": 32   
                         },
                         {
                             "name": "Ruth",
-                            "picture": "Ruth-Colour.gif", 
-                            "scale": 1.5,
-                            "x-offset":0,
-                            "y-offset":0,
+                            "picture": "Ruth.png", 
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Hannah",
+                            "picture": "Hannah.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32  
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who killed Goliath'?",
+                    "correct_picture":"David.png",
+                    "characters": [
+                        {
+                            "name": "Joshua",
+                            "picture": "Joshua.png" ,
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Gideon",
+                            "picture": "Gideon.png",   
+                            "scale": 0.55,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Jonathan",
+                            "picture": "Jonathan.png", 
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "David",
+                            "picture": "David.png",
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was Abraham's wife?",
+                    "correct_picture":"Sarah.png",
+                    "characters": [
+                        {
+                            "name": "Ruth",
+                            "picture": "Ruth.png" ,
+                            "scale": 0.55,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Esther",
+                            "picture": "Esther.png",   
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Sarah",
+                            "picture": "Sarah.png", 
+                            "scale": 0.55,
+                            "xoffset":-15,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
                             "fontSize": 32   
                         },
                         {
                             "name": "Mary Magdalene",
-                            "picture": "Mary-Magdalene-Colour.gif",
-                            "scale": 1.5,
-                            "x-offset":0,
-                            "y-offset":0,
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":-5,
+                            "yoffset":0,
+                            "labelxoffset":-5,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Which disciple denied Jesus three times?",
+                    "correct_picture":"Peter.png",
+                    "characters": [
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png" ,
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png", 
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "John the Baptist",
+                            "picture": "John the Baptist.png",
+                            "scale": 0.55,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was the first king of Israel?",
+                    "correct_picture":"Saul.png",
+                    "characters": [
+                        {
+                            "name": "David",
+                            "picture": "KingDavid.png" ,
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Solomon",
+                            "picture": "Solomon.png",   
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Saul",
+                            "picture": "Saul.png", 
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Ahab",
+                            "picture": "Ahab",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
                             "fontSize": 28   
                         },
                         {
-                            "name": "Esther",
-                            "picture": "Esther-Colour.jpg" ,
-                            "scale": 1.5,
-                            "x-offset":0,
-                            "y-offset":0,
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
                             "fontSize": 32   
                         }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was converted by Jesus on the road to Damascus?",
+                    "correct_picture":"Paul.png",
+                    "characters": [
+                        {
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Judas",
+                            "picture": "Judas.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
                     ]
                 }
                 
