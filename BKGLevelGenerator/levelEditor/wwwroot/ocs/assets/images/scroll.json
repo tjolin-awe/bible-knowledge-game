@@ -4,114 +4,114 @@
 			"image": "scroll",
 			"format": "RGBA8888",
 			"size": {
-				"w": 1920,
-				"h": 650
+				"w": 1829,
+				"h": 310
 			},
 			"scale": 1,
 			"frames": [
 				{
-					"filename": "scroll1.png",
+					"filename": "scroll5.png",
 					"rotated": false,
-					"trimmed": false,
+					"trimmed": true,
 					"sourceSize": {
 						"w": 640,
 						"h": 325
 					},
 					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 640,
-						"h": 325
+						"x": 27,
+						"y": 6,
+						"w": 590,
+						"h": 310
 					},
 					"frame": {
 						"x": 0,
 						"y": 0,
-						"w": 640,
-						"h": 325
-					}
-				},
-				{
-					"filename": "scroll2.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 640,
-						"h": 325
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 640,
-						"h": 325
-					},
-					"frame": {
-						"x": 640,
-						"y": 0,
-						"w": 640,
-						"h": 325
-					}
-				},
-				{
-					"filename": "scroll3.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 640,
-						"h": 325
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 640,
-						"h": 325
-					},
-					"frame": {
-						"x": 1280,
-						"y": 0,
-						"w": 640,
-						"h": 325
+						"w": 590,
+						"h": 310
 					}
 				},
 				{
 					"filename": "scroll4.png",
 					"rotated": false,
-					"trimmed": false,
+					"trimmed": true,
 					"sourceSize": {
 						"w": 640,
 						"h": 325
 					},
 					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 640,
-						"h": 325
+						"x": 27,
+						"y": 6,
+						"w": 478,
+						"h": 310
 					},
 					"frame": {
-						"x": 0,
-						"y": 325,
-						"w": 640,
-						"h": 325
+						"x": 590,
+						"y": 0,
+						"w": 478,
+						"h": 310
 					}
 				},
 				{
-					"filename": "scroll5.png",
+					"filename": "scroll3.png",
 					"rotated": false,
-					"trimmed": false,
+					"trimmed": true,
 					"sourceSize": {
 						"w": 640,
 						"h": 325
 					},
 					"spriteSourceSize": {
-						"x": 0,
+						"x": 27,
+						"y": 6,
+						"w": 366,
+						"h": 310
+					},
+					"frame": {
+						"x": 1068,
 						"y": 0,
+						"w": 366,
+						"h": 310
+					}
+				},
+				{
+					"filename": "scroll2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
 						"w": 640,
 						"h": 325
 					},
+					"spriteSourceSize": {
+						"x": 27,
+						"y": 6,
+						"w": 254,
+						"h": 310
+					},
 					"frame": {
-						"x": 640,
-						"y": 325,
+						"x": 1434,
+						"y": 0,
+						"w": 254,
+						"h": 310
+					}
+				},
+				{
+					"filename": "scroll1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
 						"w": 640,
 						"h": 325
+					},
+					"spriteSourceSize": {
+						"x": 27,
+						"y": 6,
+						"w": 141,
+						"h": 310
+					},
+					"frame": {
+						"x": 1688,
+						"y": 0,
+						"w": 141,
+						"h": 310
 					}
 				}
 			]
