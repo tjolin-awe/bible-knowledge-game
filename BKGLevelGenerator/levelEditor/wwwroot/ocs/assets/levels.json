@@ -3,7 +3,7 @@
         {
             "number": 1,
             "name": "Level 01",           
-            "rank": "Private", 
+            "rank": "Private Angel", 
             "rank_texture": "girl",
             "level_message": "Good Job!",
             "character_spritesheet": "level1",
@@ -509,7 +509,7 @@
         {
             "number": 2,
             "name": "Level 02",           
-            "rank": "Specialist", 
+            "rank": "Specialist Angel", 
             "rank_texture": "girl_helmet",
             "level_message": "Well Done!",
             "character_spritesheet": "level1",
@@ -1016,7 +1016,7 @@
         {
             "number": 3,
             "name": "Level 03",           
-            "rank": "Corporal", 
+            "rank": "Corporal Angel", 
             "rank_texture": "girl_boots",
             "level_message": "Amazing!",
             "character_spritesheet": "level1",
@@ -1524,7 +1524,7 @@
         {
             "number": 4,
             "name": "Level 04",           
-            "rank": "Sergeant", 
+            "rank": "Sergeant Angel", 
             "rank_texture": "girl_breastplate",
             "level_message": "Awesome!",
             "character_spritesheet": "level1",
@@ -2010,7 +2010,7 @@
         {
             "number": 5,
             "name": "Level 05",           
-            "rank": "Lieutenant", 
+            "rank": "Lieutenant Angel", 
             "rank_texture": "girl_belt",
             "level_message": "Nice Work!",
             "character_spritesheet": "level1",
@@ -2497,7 +2497,7 @@
         {
             "number": 6,
             "name": "Level 06",           
-            "rank": "Colonel", 
+            "rank": "Colonel Angel", 
             "rank_texture": "girl_shield",
             "level_message": "Woo hoo!",
             "character_spritesheet": "level1",
@@ -2983,7 +2983,7 @@
         {
             "number": 7,
             "name": "Level 07",           
-            "rank": "General", 
+            "rank": "General Angel", 
             "rank_texture": "girl_sword",
             "level_message": "Excellent!",
             "character_spritesheet": "level1",
@@ -3469,7 +3469,7 @@
         {
             "number": 8,
             "name": "Level 08",           
-            "rank": "Commander", 
+            "rank": "Commander Angel", 
             "rank_texture": "girl_halo",
             "level_message": "Fantastic!",
             "character_spritesheet": "level1",
@@ -3955,7 +3955,7 @@
         {
             "number": 9,
             "name": "Level 09",           
-            "rank": "General", 
+            "rank": "Arch Angel", 
             "rank_texture": "girl_wings",
             "level_message": "Almost There!",
             "character_spritesheet": "level1",
