@@ -1077,7 +1077,7 @@
                 {
                     "question": " Who said \"Do not think that I have come to abolish the Law or the Prophets; I have not come to abolish them but to fulfill them.?\"",
                     "correct_picture":"JesusTeaching.png",
-                    "additional_info": "\"Therefore the law was our tutor to bring us to Christ, that we might be justified by faith\"",                
+                    "additional_info": "Jesus kept all the commandments perfectly and fullfilled all the Old Testament prophecies.",                
                     "info_fontsize": 36,
                     "characters": [
                         {
@@ -1126,7 +1126,7 @@
                 {
                     "question": "In Jesus' parable about righteousness who was NOT justified before God?",
                     "correct_picture":"Pharisee.png",
-                    "additional_info": "\"For God made Christ, who never sinned, to be the offering for our sin, so that we could be made right with God through Christ.\"",                
+                    "additional_info": "We are not saved by the good things we do, rather we are to do good things because we are saved.",                
                     "info_fontsize": 32,
                     "characters": [
                         {
@@ -1175,7 +1175,7 @@
                 {
                     "question": "Who wrote \"There is none righteous, no, not one; there is no one who understands; there is no one who seeks after God.\"",
                     "correct_picture":"KingDavid.png",
-                    "additional_info":"\"Blessed are those who hunger and thirst for righteousness,for they will be filled.\n" ,
+                    "additional_info":"If you break one commandment, you have broken them all. Only Jesus is truely righteous." ,
                     "info_fontsize": 36,
                     "characters": [
                         {
@@ -1271,9 +1271,9 @@
                     ]
                 },
                 {
-                    "question": "Which prophet rubuked David for his evil actions?",
+                    "question": "Which prophet rebuked David for his evil actions?",
                     "correct_picture":"Nathan.png",
-                    "additional_info": "Our salvation comes from Jesus, but God expects us to live righteous lives that reflect who we say we are.",
+                    "additional_info": "God still expects us to live righteous lives that reflect who we say we are.",
                     "info_fontsize": 36,
                     "characters": [
                         {
@@ -1322,7 +1322,7 @@
                 {
                     "question": "Who said \"I have not come to call the righteous, but sinners to repentance\"?",
                     "correct_picture":"JesusWashing.png",
-                    "additional_info": "Only those that admit there sin, change their mind and follow Jesus are in right standing with God.",
+                    "additional_info": "Only those that admit there sin, change their mind and accept Jesus are in right standing with God.",
                     "info_fontsize": 36,
                     "characters": [
                         {
@@ -1372,7 +1372,7 @@
 
                     "question": "Who said to Jesus \"You are the Messiah, the Son of the living God.\"?",
                     "correct_picture":"Peter.png",
-                    "additional_info": "I am the Lord, I have called You in righteousness..",
+                    "additional_info": "Jesus has called us into righteousness.",
                     "info_fontsize": 36,
                     "characters": [
                         {
@@ -1470,7 +1470,7 @@
                 {
                     "question": "Who wrote \"This righteousness is given through faith in Jesus Christ to all who believe.\"?",
                     "correct_picture":"Paul.png",
-                    "additional_info": "The LORD is righteous in everything he does; he is filled with kindness.",                   
+                    "additional_info": "God is good! He has made a way for us. Jesus",                   
                     "info_fontsize": 36,
 
                     "characters": [
@@ -1534,12 +1534,14 @@
             "background":"background",
             "quiz": [
                 {
-                    "question": "Who was the mother of Jesus?",
-                    "correct_picture":"Mary.png",
+                    "question": "Who said \"I am the way and the truth and the life.\"",
+                    "correct_picture":"JesusLamb.png",
+                    "additional_info": "The Truth is that Jesus is the only way to heaven.",                   
+                    "info_fontsize": 36,
                     "characters": [
                         {
-                            "name": "Mary",
-                            "picture": "Mary.png" ,
+                            "name": "Jesus",
+                            "picture": "JesusLamb.png" ,
                             "scale": 0.38,
                             "xoffset":0,
                             "yoffset":0,
@@ -1548,8 +1550,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Martha",
-                            "picture": "Martha.png",   
+                            "name": "Moses",
+                            "picture": "Moses.png",   
                             "scale": 0.5,
                             "xoffset":-5,
                             "yoffset":0,
@@ -1558,8 +1560,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Ruth",
-                            "picture": "Ruth.png", 
+                            "name": "Abraham",
+                            "picture": "Abraham.png", 
                             "scale": 0.55,
                             "xoffset":0,
                             "yoffset":0,
@@ -1568,8 +1570,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Hannah",
-                            "picture": "Hannah.png",
+                            "name": "Mary",
+                            "picture": "Mary.png",
                             "scale": 0.45,
                             "xoffset":0,
                             "yoffset":-10,
@@ -1581,8 +1583,10 @@
                     ]
                 },
                 {
-                    "question": "Who killed Goliath'?",
-                    "correct_picture":"David.png",
+                    "question": "Who wrote in Proverbs: \"The LORD detests lying lips, but he delights in those who tell the truth.\"'?",
+                    "correct_picture":"Solomon.png",
+                    "additional_info": "God wants His words on our lips. His Word is Truth!",                   
+                    "info_fontsize": 36,
                     "characters": [
                         {
                             "name": "Joshua",
@@ -1595,8 +1599,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Gideon",
-                            "picture": "Gideon.png",   
+                            "name": "Solomon",
+                            "picture": "Solomon.png",   
                             "scale": 0.55,
                             "xoffset":0,
                             "yoffset":0,
@@ -1628,12 +1632,14 @@
                     ]
                 },
                 {
-                    "question": "Who was Abraham's wife?",
-                    "correct_picture":"Sarah.png",
+                    "question": "To whom did the Widow say \"...you are a man of God and that the word of the LORD from your mouth is the truth.\"",
+                    "correct_picture":"Elijah2.png",
+                    "additional_info": "God is the Word! God isn't just truthful, God is Truth!",                   
+                    "info_fontsize": 36,
                     "characters": [
                         {
-                            "name": "Ruth",
-                            "picture": "Ruth.png" ,
+                            "name": "Elijah",
+                            "picture": "Elijah2.png" ,
                             "scale": 0.55,
                             "xoffset":0,
                             "yoffset":0,
@@ -1642,8 +1648,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Esther",
-                            "picture": "Esther.png",   
+                            "name": "Elisha",
+                            "picture": "Elisha.png",   
                             "scale": 0.45,
                             "xoffset":0,
                             "yoffset":0,
@@ -1652,8 +1658,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Sarah",
-                            "picture": "Sarah.png", 
+                            "name": "Nathan",
+                            "picture": "Nathan.png", 
                             "scale": 0.55,
                             "xoffset":-15,
                             "yoffset":-5,
@@ -1662,8 +1668,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Mary Magdalene",
-                            "picture": "Mary Magdalene.png",
+                            "name": "Samuel",
+                            "picture": "Samuel.png",
                             "scale": 0.4,
                             "xoffset":0,
                             "yoffset":0,
@@ -1675,12 +1681,14 @@
                     ]
                 },
                 {
-                    "question": "Which disciple denied Jesus three times?",
-                    "correct_picture":"Peter.png",
+                    "question": "Who wrote \"The tongue has the power of life and death, and those who love it will eat its fruit.\"",
+                    "correct_picture":"Solomon.png",
+                    "additional_info": "Words have power! We have the choice to agree with what God says.",                   
+                    "info_fontsize": 36,
                     "characters": [
                         {
-                            "name": "Judas",
-                            "picture": "Judas.png" ,
+                            "name": "Solomon",
+                            "picture": "Solomon.png" ,
                             "scale": 0.45,
                             "xoffset":0,
                             "yoffset":0,
@@ -1722,12 +1730,14 @@
                     ]
                 },
                 {
-                    "question": "Who was the first king of Israel?",
-                    "correct_picture":"Saul.png",
+                    "question": "Who said \"Then you will know the truth, and the truth will set you free.\"?",
+                    "correct_picture":"JesusTeaching.png",
+                    "additional_info": "This is so true! Don't just think about it. Follow Jesus and get set free!",                   
+                    "info_fontsize": 36,
                     "characters": [
                         {
-                            "name": "David",
-                            "picture": "KingDavid.png" ,
+                            "name": "Jesus",
+                            "picture": "JesusTeaching.png" ,
                             "scale": 0.45,
                             "xoffset":0,
                             "yoffset":-5,
@@ -1746,8 +1756,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Saul",
-                            "picture": "Saul.png", 
+                            "name": "Paul",
+                            "picture": "Paul.png", 
                             "scale": 0.45,
                             "xoffset":0,
                             "yoffset":0,
@@ -1756,8 +1766,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Ahab",
-                            "picture": "Ahab",
+                            "name": "David",
+                            "picture": "KingDavid.png",
                             "scale": 0.4,
                             "xoffset":0,
                             "yoffset":0,
@@ -1769,22 +1779,26 @@
                     ]
                 },
                 {
-                    "question": "Who was converted by Jesus on the road to Damascus?",
-                    "correct_picture":"Paul.png",
+                    "question": "To whom did Jesus say \"I was born and came into the world is to testify to the truth. Everyone on the side of truth listens to me.\"",
+                    "correct_picture":"Pilate.png",
+                    "additional_info": "We testify that Jesus is Lord! That He is the Truth",                   
+                    "info_fontsize": 36,
                     "characters": [
                         {
-                            "name": "Peter",
-                            "picture": "Peter.png" ,
-                            "scale": 0.6,
-                            "xoffset":0,
-                            "yoffset":-5,
-                            "labelxoffset":0,
-                            "labelyoffset":0,
-                            "fontSize": 32   
+                            
+                                "name": "Pontius Pilate",
+                                "picture": "Pilate.png" ,
+                                "scale": 0.6,
+                                "xoffset":0,
+                                "yoffset":0,
+                                "labelxoffset":0,
+                                "labelyoffset":0,
+                                "fontSize": 32   
+                           
                         },
                         {
-                            "name": "Paul",
-                            "picture": "Paul.png",   
+                            "name": "Joseph",
+                            "picture": "JosephFather.png",   
                             "scale": 0.5,
                             "xoffset":10,
                             "yoffset":0,
@@ -1816,13 +1830,15 @@
                     ]
                 },
                 {
-                    "question": "Who was converted by Jesus on the road to Damascus?",
-                    "correct_picture":"Paul.png",
+                    "question": "Who said \nMy sheep listen to my voice; I know them, and they follow me.\"?",
+                    "correct_picture":"JesusLamb.png",
+                    "additional_info": "God speaks! If we listen we will know His will for our lives.",                   
+                    "info_fontsize": 36,
                     "characters": [
                         {
-                            "name": "Peter",
-                            "picture": "Peter.png" ,
-                            "scale": 0.6,
+                            "name": "Jesus",
+                            "picture": "JesusLamb.png" ,
+                            "scale": 0.38,
                             "xoffset":0,
                             "yoffset":0,
                             "labelxoffset":0,
@@ -1830,8 +1846,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Paul",
-                            "picture": "Paul.png",   
+                            "name": "Moses",
+                            "picture": "Moses.png",   
                             "scale": 0.5,
                             "xoffset":10,
                             "yoffset":0,
@@ -1840,8 +1856,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Mary Magdalene",
-                            "picture": "Mary Magdalene.png",
+                            "name": "Elisha",
+                            "picture": "Elisha.png",
                             "scale": 0.4,
                             "xoffset":0,
                             "yoffset":0,
@@ -1850,8 +1866,8 @@
                             "fontSize": 28   
                         },
                         {
-                            "name": "Judas",
-                            "picture": "Judas.png",
+                            "name": "David",
+                            "picture": "KingDavid.png",
                             "scale": 0.45,
                             "xoffset":0,
                             "yoffset":0,
@@ -1863,12 +1879,14 @@
                     ]
                 },
                 {
-                    "question": "Who was converted by Jesus on the road to Damascus?",
-                    "correct_picture":"Paul.png",
+                    "question": "Who said \"Speak, for your servant is listening\"?",
+                    "correct_picture":"Samuel.png",
+                    "additional_info": "To hear God, we need to listen!",                   
+                    "info_fontsize": 36,
                     "characters": [
                         {
-                            "name": "Peter",
-                            "picture": "Peter.png" ,
+                            "name": "Samuel",
+                            "picture": "Samuel.png" ,
                             "scale": 0.6,
                             "xoffset":0,
                             "yoffset":0,
@@ -1877,8 +1895,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Paul",
-                            "picture": "Paul.png",   
+                            "name": "Moses",
+                            "picture": "Moses.png",   
                             "scale": 0.5,
                             "xoffset":0,
                             "yoffset":0,
@@ -1887,8 +1905,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Mary Magdalene",
-                            "picture": "Mary Magdalene.png",
+                            "name": "Elijah",
+                            "picture": "Elijah2.png",
                             "scale": 0.4,
                             "xoffset":0,
                             "yoffset":0,
@@ -1897,8 +1915,8 @@
                             "fontSize": 28   
                         },
                         {
-                            "name": "Judas",
-                            "picture": "Judas.png",
+                            "name": "Nathan",
+                            "picture": "Nathan.png",
                             "scale": 0.45,
                             "xoffset":0,
                             "yoffset":0,
@@ -1910,12 +1928,14 @@
                     ]
                 },
                 {
-                    "question": "Who was converted by Jesus on the road to Damascus?",
-                    "correct_picture":"Paul.png",
+                    "question": "Who did God speak to in a \"small still voice\"?",
+                    "correct_picture": "Elijah2.png",
+                    "additional_info":"God favors small things! A word from God changes everything!",                   
+                    "info_fontsize": 36,
                     "characters": [
                         {
-                            "name": "Peter",
-                            "picture": "Peter.png" ,
+                            "name": "Elijah",
+                            "picture": "Elijah2.png" ,
                             "scale": 0.6,
                             "xoffset":0,
                             "yoffset":0,
@@ -1924,8 +1944,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Paul",
-                            "picture": "Paul.png",   
+                            "name": "Peter",
+                            "picture": "Peter.png",   
                             "scale": 0.5,
                             "xoffset":0,
                             "yoffset":0,
@@ -1934,8 +1954,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Mary Magdalene",
-                            "picture": "Mary Magdalene.png",
+                            "name": "David",
+                            "picture": "David.png",
                             "scale": 0.4,
                             "xoffset":0,
                             "yoffset":0,
@@ -1944,8 +1964,8 @@
                             "fontSize": 28   
                         },
                         {
-                            "name": "Judas",
-                            "picture": "Judas.png",
+                            "name": "Esther",
+                            "picture": "Esther.png",
                             "scale": 0.45,
                             "xoffset":0,
                             "yoffset":0,
@@ -1957,12 +1977,14 @@
                     ]
                 },
                 {
-                    "question": "Who was converted by Jesus on the road to Damascus?",
-                    "correct_picture":"Paul.png",
+                    "question": "Who prayed \"Sanctify them by the truth; your word is truth.\"?",
+                    "correct_picture":"JesusPraying.png",
+                    "additional_info": "Thank you Jesus!",                   
+                    "info_fontsize": 36,
                     "characters": [
                         {
-                            "name": "Peter",
-                            "picture": "Peter.png" ,
+                            "name": "Jesus",
+                            "picture": "JesusPraying.png" ,
                             "scale": 0.6,
                             "xoffset":0,
                             "yoffset":0,
@@ -1971,8 +1993,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Paul",
-                            "picture": "Paul.png",   
+                            "name": "Moses",
+                            "picture": "Moses.png",   
                             "scale": 0.5,
                             "xoffset":0,
                             "yoffset":0,
@@ -1981,8 +2003,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Mary Magdalene",
-                            "picture": "Mary Magdalene.png",
+                            "name": "David",
+                            "picture": "KingDavid.png",
                             "scale": 0.4,
                             "xoffset":0,
                             "yoffset":0,
@@ -1991,8 +2013,8 @@
                             "fontSize": 28   
                         },
                         {
-                            "name": "Judas",
-                            "picture": "Judas.png",
+                            "name": "Solomon",
+                            "picture": "Solomon.png",
                             "scale": 0.45,
                             "xoffset":0,
                             "yoffset":0,
