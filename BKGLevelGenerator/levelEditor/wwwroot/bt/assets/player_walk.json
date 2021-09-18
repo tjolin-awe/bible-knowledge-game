@@ -1,0 +1,229 @@
+{
+	"textures": [
+		{
+			"image": "player_walk",
+			"format": "RGBA8888",
+			"size": {
+				"w": 2075,
+				"h": 2028
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "Run0.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 415,
+						"h": 507
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 415,
+						"h": 507
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 415,
+						"h": 507
+					}
+				},
+				{
+					"filename": "Run1.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 415,
+						"h": 507
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 415,
+						"h": 507
+					},
+					"frame": {
+						"x": 0,
+						"y": 507,
+						"w": 415,
+						"h": 507
+					}
+				},
+				{
+					"filename": "Run2.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 415,
+						"h": 507
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 415,
+						"h": 507
+					},
+					"frame": {
+						"x": 0,
+						"y": 1014,
+						"w": 415,
+						"h": 507
+					}
+				},
+				{
+					"filename": "Run3.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 415,
+						"h": 507
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 415,
+						"h": 507
+					},
+					"frame": {
+						"x": 0,
+						"y": 1521,
+						"w": 415,
+						"h": 507
+					}
+				},
+				{
+					"filename": "Run4.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 415,
+						"h": 507
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 415,
+						"h": 507
+					},
+					"frame": {
+						"x": 415,
+						"y": 0,
+						"w": 415,
+						"h": 507
+					}
+				},
+				{
+					"filename": "Run5.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 415,
+						"h": 507
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 415,
+						"h": 507
+					},
+					"frame": {
+						"x": 830,
+						"y": 0,
+						"w": 415,
+						"h": 507
+					}
+				},
+				{
+					"filename": "Run6.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 415,
+						"h": 507
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 415,
+						"h": 507
+					},
+					"frame": {
+						"x": 1245,
+						"y": 0,
+						"w": 415,
+						"h": 507
+					}
+				},
+				{
+					"filename": "Run7.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 415,
+						"h": 507
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 415,
+						"h": 507
+					},
+					"frame": {
+						"x": 1660,
+						"y": 0,
+						"w": 415,
+						"h": 507
+					}
+				},
+				{
+					"filename": "Run8.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 415,
+						"h": 507
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 415,
+						"h": 507
+					},
+					"frame": {
+						"x": 415,
+						"y": 507,
+						"w": 415,
+						"h": 507
+					}
+				},
+				{
+					"filename": "Run9.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 415,
+						"h": 507
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 415,
+						"h": 507
+					},
+					"frame": {
+						"x": 415,
+						"y": 1014,
+						"w": 415,
+						"h": 507
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "http://free-tex-packer.com",
+		"version": "0.6.7"
+	}
+}
