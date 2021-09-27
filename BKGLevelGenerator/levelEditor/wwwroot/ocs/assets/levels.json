@@ -2043,12 +2043,14 @@
             
             "quiz": [
                 {
-                    "question": "Who was the mother of Jesus?",
-                    "correct_picture":"Mary.png",
+                    "question": "Who does the bible say \"believed the Lord, and he credited it to him as righteousness.\"?",
+                    "correct_picture":"Abraham.png",
+                    "additional_info": "We are saved by grace through faith in Jesus!",                   
+                    "info_fontsize": 36,
                     "characters": [
                         {
-                            "name": "Mary",
-                            "picture": "Mary.png" ,
+                            "name": "Abraham",
+                            "picture": "Abraham.png" ,
                             "scale": 0.38,
                             "xoffset":0,
                             "yoffset":0,
@@ -2057,8 +2059,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Martha",
-                            "picture": "Martha.png",   
+                            "name": "Joseph",
+                            "picture": "Joseph.png",   
                             "scale": 0.5,
                             "xoffset":-5,
                             "yoffset":0,
@@ -2067,8 +2069,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Ruth",
-                            "picture": "Ruth.png", 
+                            "name": "Isaac",
+                            "picture": "Isaac.png", 
                             "scale": 0.55,
                             "xoffset":0,
                             "yoffset":0,
@@ -2077,8 +2079,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Hannah",
-                            "picture": "Hannah.png",
+                            "name": "Jacob",
+                            "picture": "Jacob.png",
                             "scale": 0.4,
                             "xoffset":0,
                             "yoffset":10,
@@ -2090,12 +2092,14 @@
                     ]
                 },
                 {
-                    "question": "Who killed Goliath'?",
-                    "correct_picture":"David.png",
+                    "question": "Who was Abraham's wife and said \"God has made laughter for me; everyone who hears will laugh over me.\"",
+                    "correct_picture":"Sarah.png",
+                    "additional_info": "God is always faithful! He keeps His promises",                   
+                    "info_fontsize": 36,
                     "characters": [
                         {
-                            "name": "Joshua",
-                            "picture": "Joshua.png" ,
+                            "name": "Sarah",
+                            "picture": "Sarah.png" ,
                             "scale": 0.5,
                             "xoffset":0,
                             "yoffset":-10,
@@ -2104,8 +2108,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Gideon",
-                            "picture": "Gideon.png",   
+                            "name": "Ruth",
+                            "picture": "Ruth.png",   
                             "scale": 0.55,
                             "xoffset":0,
                             "yoffset":0,
@@ -2114,8 +2118,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Jonathan",
-                            "picture": "Jonathan.png", 
+                            "name": "Esther",
+                            "picture": "Esther.png", 
                             "scale": 0.5,
                             "xoffset":0,
                             "yoffset":0,
@@ -2124,8 +2128,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "David",
-                            "picture": "David.png",
+                            "name": "Deborah",
+                            "picture": "Deborah.png",
                             "scale": 0.5,
                             "xoffset":0,
                             "yoffset":0,
@@ -2137,12 +2141,14 @@
                     ]
                 },
                 {
-                    "question": "Who was Abraham's wife?",
-                    "correct_picture":"Sarah.png",
+                    "question": "Who built an ark to save his family and the animals because God told him to?",
+                    "correct_picture":"Noah.png",
+                    "additional_info": "Sometimes it takes longer than we would like but what God says He will do, He does!",                   
+                    "info_fontsize": 36,
                     "characters": [
                         {
-                            "name": "Ruth",
-                            "picture": "Ruth.png" ,
+                            "name": "Noah",
+                            "picture": "Noah.png" ,
                             "scale": 0.55,
                             "xoffset":0,
                             "yoffset":0,
@@ -2151,8 +2157,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Esther",
-                            "picture": "Esther.png",   
+                            "name": "Abraham",
+                            "picture": "Abraham.png",   
                             "scale": 0.45,
                             "xoffset":0,
                             "yoffset":0,
@@ -2161,8 +2167,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Sarah",
-                            "picture": "Sarah.png", 
+                            "name": "Moses",
+                            "picture": "Moses.png", 
                             "scale": 0.55,
                             "xoffset":-15,
                             "yoffset":-5,
@@ -2171,8 +2177,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Mary Magdalene",
-                            "picture": "Mary Magdalene.png",
+                            "name": "Jacob",
+                            "picture": "Jacob.png",
                             "scale": 0.4,
                             "xoffset":-5,
                             "yoffset":0,
@@ -2184,12 +2190,14 @@
                     ]
                 },
                 {
-                    "question": "Which disciple denied Jesus three times?",
-                    "correct_picture":"Peter.png",
+                    "question": "Who said \"As were the days of Noah, so will be the coming of the Son of Man.?\"",
+                    "correct_picture":"JesusHorse.png",
+                    "additional_info": "One day Jesus will come back to set things right! Make sure you get in this boat!",                   
+                    "info_fontsize": 36,
                     "characters": [
                         {
-                            "name": "Judas",
-                            "picture": "Judas.png" ,
+                            "name": "Jesus",
+                            "picture": "JesusHorse.png" ,
                             "scale": 0.45,
                             "xoffset":0,
                             "yoffset":0,
@@ -2208,8 +2216,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Peter",
-                            "picture": "Peter.png", 
+                            "name": "Daniel",
+                            "picture": "Daniel.png", 
                             "scale": 0.6,
                             "xoffset":0,
                             "yoffset":0,
@@ -2218,8 +2226,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "John the Baptist",
-                            "picture": "John the Baptist.png",
+                            "name": "Moses",
+                            "picture": "Moses.png",
                             "scale": 0.55,
                             "xoffset":10,
                             "yoffset":0,
@@ -2231,12 +2239,14 @@
                     ]
                 },
                 {
-                    "question": "Who was the first king of Israel?",
-                    "correct_picture":"Saul.png",
+                    "question": "Who said \"There is no one holy like the LORD; there is no one besides you; there is no Rock like our God.\"?",
+                    "correct_picture":"Hannah.png",
+                    "additional_info": "The Lord cares for us. He hears and answers our prayers!",                   
+                    "info_fontsize": 36,
                     "characters": [
                         {
-                            "name": "David",
-                            "picture": "KingDavid.png" ,
+                            "name": "Hannah",
+                            "picture": "Hannah.png" ,
                             "scale": 0.45,
                             "xoffset":0,
                             "yoffset":-5,
@@ -2245,8 +2255,96 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Solomon",
-                            "picture": "Solomon.png",   
+                            "name": "Sarah",
+                            "picture": "Sarah.png",   
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Esther",
+                            "picture": "Esther.png", 
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary",
+                            "picture": "Mary.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who said \"...if you have faith as small as a mustard seed, you can say to this mountain ‘Move from here to there,’ and it will move.",
+                    "correct_picture":"JesusPointing.png",
+                    "additional_info": "All things are possible with God!",                   
+                    "info_fontsize": 36,
+                    "characters": [
+                        {
+                            "name": "Gideon",
+                            "picture": "Gideon.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Jesus",
+                            "picture": "JesusPointing.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Moses",
+                            "picture": "Moses.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Abraham",
+                            "picture": "Abraham.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who sang \"The Lord is my rock, my fortress and my deliverer...in whom I take refuge, my shield and the horn my salvation.\"?",
+                    "correct_picture":"DavidWarrior.png",
+                    "additional_info": "Our God is our great defender!",                   
+                    "info_fontsize": 36,
+                    "characters": [
+                        {
+                            "name": "David",
+                            "picture": "DavidWarrior.png" ,
                             "scale": 0.6,
                             "xoffset":0,
                             "yoffset":0,
@@ -2256,8 +2354,8 @@
                         },
                         {
                             "name": "Saul",
-                            "picture": "Saul.png", 
-                            "scale": 0.45,
+                            "picture": "Saul.png",   
+                            "scale": 0.5,
                             "xoffset":0,
                             "yoffset":0,
                             "labelxoffset":0,
@@ -2265,9 +2363,19 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Ahab",
-                            "picture": "Ahab",
+                            "name": "Ruth",
+                            "picture": "Ruth.png",
                             "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Jacob",
+                            "picture": "Jacob.png",
+                            "scale": 0.45,
                             "xoffset":0,
                             "yoffset":0,
                             "labelxoffset":0,
@@ -2278,12 +2386,14 @@
                     ]
                 },
                 {
-                    "question": "Who was converted by Jesus on the road to Damascus?",
-                    "correct_picture":"Paul.png",
+                    "question": "Who said \"Everyone then who hears these words of mine and does them will be like a wise man who built his house on the rock.\"?",
+                    "correct_picture":"JesusTeaching.png",
+                    "additional_info": "When Jesus is the foundation of our life, nothing can overcome us. We overcome because of His sacrifice and our testimony!",                   
+                    "info_fontsize": 32,
                     "characters": [
                         {
-                            "name": "Peter",
-                            "picture": "Peter.png" ,
+                            "name": "Jesus",
+                            "picture": "JesusTeaching.png" ,
                             "scale": 0.6,
                             "xoffset":0,
                             "yoffset":0,
@@ -2302,8 +2412,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Mary Magdalene",
-                            "picture": "Mary Magdalene.png",
+                            "name": "Nathan",
+                            "picture": "Nathan.png",
                             "scale": 0.4,
                             "xoffset":0,
                             "yoffset":0,
@@ -2312,8 +2422,8 @@
                             "fontSize": 28   
                         },
                         {
-                            "name": "Judas",
-                            "picture": "Judas.png",
+                            "name": "Samuel",
+                            "picture": "Samuel.png",
                             "scale": 0.45,
                             "xoffset":0,
                             "yoffset":0,
@@ -2325,12 +2435,63 @@
                     ]
                 },
                 {
-                    "question": "Who was converted by Jesus on the road to Damascus?",
-                    "correct_picture":"Paul.png",
+                    "question": "Who was told to \"Strike the rock, and water will come out of it for the people to drink.\"?",
+                    "correct_picture":"Moses.png",
+                    "additional_info": "Jesus is our rock!",                   
+                    "info_fontsize": 36,
                     "characters": [
                         {
-                            "name": "Peter",
-                            "picture": "Peter.png" ,
+                            "name": "Moses",
+                            "picture": "Moses.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Elisha",
+                            "picture": "Elisha.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "David",
+                            "picture": "KingDavid.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Elijah",
+                            "picture": "Elijah2.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who wrote \"...for they drank from the spiritual rock that accompanied them and that rock was Christ.\"?",
+                    "correct_picture":"Paul.png",
+                    "additional_info": "Faith in Jesus leads to a life of purpose and fulfillment. Our God is always faithful!",                   
+                    "info_fontsize": 36,
+                    "characters": [
+                        {
+                            "name": "Moses",
+                            "picture": "Moses.png" ,
                             "scale": 0.6,
                             "xoffset":0,
                             "yoffset":0,
@@ -2349,8 +2510,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Mary Magdalene",
-                            "picture": "Mary Magdalene.png",
+                            "name": "David",
+                            "picture": "DavidWarrior.png",
                             "scale": 0.4,
                             "xoffset":0,
                             "yoffset":0,
@@ -2359,149 +2520,8 @@
                             "fontSize": 28   
                         },
                         {
-                            "name": "Judas",
-                            "picture": "Judas.png",
-                            "scale": 0.45,
-                            "xoffset":0,
-                            "yoffset":0,
-                            "labelxoffset":0,
-                            "labelyoffset":0,
-                            "fontSize": 32   
-                        }
-                        
-                    ]
-                },
-                {
-                    "question": "Who was converted by Jesus on the road to Damascus?",
-                    "correct_picture":"Paul.png",
-                    "characters": [
-                        {
-                            "name": "Peter",
-                            "picture": "Peter.png" ,
-                            "scale": 0.6,
-                            "xoffset":0,
-                            "yoffset":0,
-                            "labelxoffset":0,
-                            "labelyoffset":0,
-                            "fontSize": 32   
-                        },
-                        {
-                            "name": "Paul",
-                            "picture": "Paul.png",   
-                            "scale": 0.5,
-                            "xoffset":0,
-                            "yoffset":0,
-                            "labelxoffset":0,
-                            "labelyoffset":0,
-                            "fontSize": 32   
-                        },
-                        {
-                            "name": "Mary Magdalene",
-                            "picture": "Mary Magdalene.png",
-                            "scale": 0.4,
-                            "xoffset":0,
-                            "yoffset":0,
-                            "labelxoffset":0,
-                            "labelyoffset":0,
-                            "fontSize": 28   
-                        },
-                        {
-                            "name": "Judas",
-                            "picture": "Judas.png",
-                            "scale": 0.45,
-                            "xoffset":0,
-                            "yoffset":0,
-                            "labelxoffset":0,
-                            "labelyoffset":0,
-                            "fontSize": 32   
-                        }
-                        
-                    ]
-                },
-                {
-                    "question": "Who was converted by Jesus on the road to Damascus?",
-                    "correct_picture":"Paul.png",
-                    "characters": [
-                        {
-                            "name": "Peter",
-                            "picture": "Peter.png" ,
-                            "scale": 0.6,
-                            "xoffset":0,
-                            "yoffset":0,
-                            "labelxoffset":0,
-                            "labelyoffset":0,
-                            "fontSize": 32   
-                        },
-                        {
-                            "name": "Paul",
-                            "picture": "Paul.png",   
-                            "scale": 0.5,
-                            "xoffset":0,
-                            "yoffset":0,
-                            "labelxoffset":0,
-                            "labelyoffset":0,
-                            "fontSize": 32   
-                        },
-                        {
-                            "name": "Mary Magdalene",
-                            "picture": "Mary Magdalene.png",
-                            "scale": 0.4,
-                            "xoffset":0,
-                            "yoffset":0,
-                            "labelxoffset":0,
-                            "labelyoffset":0,
-                            "fontSize": 28   
-                        },
-                        {
-                            "name": "Judas",
-                            "picture": "Judas.png",
-                            "scale": 0.45,
-                            "xoffset":0,
-                            "yoffset":0,
-                            "labelxoffset":0,
-                            "labelyoffset":0,
-                            "fontSize": 32   
-                        }
-                        
-                    ]
-                },
-                {
-                    "question": "Who was converted by Jesus on the road to Damascus?",
-                    "correct_picture":"Paul.png",
-                    "characters": [
-                        {
-                            "name": "Peter",
-                            "picture": "Peter.png" ,
-                            "scale": 0.6,
-                            "xoffset":0,
-                            "yoffset":0,
-                            "labelxoffset":0,
-                            "labelyoffset":0,
-                            "fontSize": 32   
-                        },
-                        {
-                            "name": "Paul",
-                            "picture": "Paul.png",   
-                            "scale": 0.5,
-                            "xoffset":0,
-                            "yoffset":0,
-                            "labelxoffset":0,
-                            "labelyoffset":0,
-                            "fontSize": 32   
-                        },
-                        {
-                            "name": "Mary Magdalene",
-                            "picture": "Mary Magdalene.png",
-                            "scale": 0.4,
-                            "xoffset":0,
-                            "yoffset":0,
-                            "labelxoffset":0,
-                            "labelyoffset":0,
-                            "fontSize": 28   
-                        },
-                        {
-                            "name": "Judas",
-                            "picture": "Judas.png",
+                            "name": "Samuel",
+                            "picture": "Samuel.png",
                             "scale": 0.45,
                             "xoffset":0,
                             "yoffset":0,
@@ -2529,12 +2549,14 @@
             "background":"background",
             "quiz": [
                 {
-                    "question": "Who was the mother of Jesus?",
-                    "correct_picture":"Mary.png",
+                    "question": "Who said \"Heaven and earth will pass away, but my words will never pass away.\"?",
+                    "correct_picture":"JesusHorse.png",
+                    "additional_info": "The bible is always true. It is God's Word.",                   
+                    "info_fontsize": 36,
                     "characters": [
                         {
-                            "name": "Mary",
-                            "picture": "Mary.png" ,
+                            "name": "Jesus",
+                            "picture": "JesusHorse.png" ,
                             "scale": 0.38,
                             "xoffset":0,
                             "yoffset":0,
@@ -2543,8 +2565,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Martha",
-                            "picture": "Martha.png",   
+                            "name": "Abraham",
+                            "picture": "Abraham.png",   
                             "scale": 0.5,
                             "xoffset":-5,
                             "yoffset":0,
@@ -2553,8 +2575,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Ruth",
-                            "picture": "Ruth.png", 
+                            "name": "Moses",
+                            "picture": "Moses.png", 
                             "scale": 0.55,
                             "xoffset":0,
                             "yoffset":0,
@@ -2563,8 +2585,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Hannah",
-                            "picture": "Hannah.png",
+                            "name": "Elijah",
+                            "picture": "Elijah2.png",
                             "scale": 0.4,
                             "xoffset":0,
                             "yoffset":0,
@@ -2576,12 +2598,14 @@
                     ]
                 },
                 {
-                    "question": "Who killed Goliath'?",
-                    "correct_picture":"David.png",
+                    "question": "Who wrote \"...but the word of the Lord endures forever. And this is the word that was preached to you.\"?",
+                    "correct_picture":"Peter.png",
+                    "additional_info": "God's word never fails! God never fails!",                   
+                    "info_fontsize": 36,
                     "characters": [
                         {
-                            "name": "Joshua",
-                            "picture": "Joshua.png" ,
+                            "name": "Peter",
+                            "picture": "Peter.png" ,
                             "scale": 0.5,
                             "xoffset":0,
                             "yoffset":-10,
@@ -2590,8 +2614,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Gideon",
-                            "picture": "Gideon.png",   
+                            "name": "Paul",
+                            "picture": "Paul.png",   
                             "scale": 0.55,
                             "xoffset":0,
                             "yoffset":0,
@@ -2600,8 +2624,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Jonathan",
-                            "picture": "Jonathan.png", 
+                            "name": "Samuel",
+                            "picture": "Samuel.png", 
                             "scale": 0.5,
                             "xoffset":0,
                             "yoffset":0,
@@ -2610,8 +2634,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "David",
-                            "picture": "David.png",
+                            "name": "Elisha",
+                            "picture": "Elisha.png",
                             "scale": 0.5,
                             "xoffset":0,
                             "yoffset":0,
@@ -2623,12 +2647,14 @@
                     ]
                 },
                 {
-                    "question": "Who was Abraham's wife?",
-                    "correct_picture":"Sarah.png",
+                    "question": "Who said \"For the sake of your word and according to your will, you have done this great thing and made it known to your servant.\"?",
+                    "correct_picture":"KingDavid.png",
+                    "additional_info": "There is no one like our God!",                   
+                    "info_fontsize": 36,
                     "characters": [
                         {
-                            "name": "Ruth",
-                            "picture": "Ruth.png" ,
+                            "name": "David",
+                            "picture": "KingDavid.png" ,
                             "scale": 0.55,
                             "xoffset":0,
                             "yoffset":0,
@@ -2647,8 +2673,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Sarah",
-                            "picture": "Sarah.png", 
+                            "name": "Elisha",
+                            "picture": "Elisha.png", 
                             "scale": 0.55,
                             "xoffset":-15,
                             "yoffset":-5,
@@ -2657,8 +2683,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Mary Magdalene",
-                            "picture": "Mary Magdalene.png",
+                            "name": "Samuel",
+                            "picture": "Samuel.png",
                             "scale": 0.4,
                             "xoffset":-5,
                             "yoffset":0,
@@ -2670,12 +2696,14 @@
                     ]
                 },
                 {
-                    "question": "Which disciple denied Jesus three times?",
-                    "correct_picture":"Peter.png",
+                    "question": "Who, when the Lord appeared to him with a sword in His hand, removed his sandles and worshipped Him?",
+                    "correct_picture":"Joshua.png",
+                    "additional_info": "God is not here to take sides. He has come to take over. when we submit to Him the victory comes.",                   
+                    "info_fontsize": 32,    
                     "characters": [
                         {
-                            "name": "Judas",
-                            "picture": "Judas.png" ,
+                            "name": "Joshua",
+                            "picture": "Joshua.png" ,
                             "scale": 0.45,
                             "xoffset":0,
                             "yoffset":0,
@@ -2684,8 +2712,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Paul",
-                            "picture": "Paul.png",   
+                            "name": "Jonathan",
+                            "picture": "Jonathan.png",   
                             "scale": 0.5,
                             "xoffset":0,
                             "yoffset":0,
@@ -2694,8 +2722,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Peter",
-                            "picture": "Peter.png", 
+                            "name": "Gideon",
+                            "picture": "Gideon.png", 
                             "scale": 0.6,
                             "xoffset":0,
                             "yoffset":0,
@@ -2704,8 +2732,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "John the Baptist",
-                            "picture": "John the Baptist.png",
+                            "name": "Jacob",
+                            "picture": "Jacob.png",
                             "scale": 0.55,
                             "xoffset":10,
                             "yoffset":0,
@@ -2717,12 +2745,14 @@
                     ]
                 },
                 {
-                    "question": "Who was the first king of Israel?",
-                    "correct_picture":"Saul.png",
+                    "question": "Who is John describing \"In the beginning was the Word, and the Word was with God, and the Word was God.\"?",
+                    "correct_picture":"JesusWelcome.png",
+                    "additional_info": "Jesus was there in the beginning!",                   
+                    "info_fontsize": 32,    
                     "characters": [
                         {
-                            "name": "David",
-                            "picture": "KingDavid.png" ,
+                            "name": "Jesus",
+                            "picture": "JesusWelcome.png" ,
                             "scale": 0.45,
                             "xoffset":0,
                             "yoffset":-5,
@@ -2741,9 +2771,245 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Saul",
-                            "picture": "Saul.png", 
+                            "name": "Mary",
+                            "picture": "Mary.png", 
                             "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Moses",
+                            "picture": "Moses.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+               
+                {
+                    "question": "Who defeated the Satan by quoting God's word?",
+                    "correct_picture":"JesusScripture.png",
+                    "additional_info": "We also are given us authority over the enemy in Jesus' name!",                   
+                    "info_fontsize": 36,
+                    "characters": [
+                        {
+                            "name": "Jesus",
+                            "picture": "JesusScripture.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Paul",
+                            "picture": "Paul.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Elisha",
+                            "picture": "Elisha.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Nathan",
+                            "picture": "Nathan.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who said to Goliath \"I come against you in the name of the Living God\" before he killed him?",
+                    "correct_picture":"David.png",
+                    "additional_info": "Declare the word of God and watch your enemies fall!",                   
+                    "info_fontsize": 36,
+                    "characters": [
+                        {
+                            "name": "David",
+                            "picture": "David.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Jacob",
+                            "picture": "Jacob.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Abraham",
+                            "picture": "Abraham.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Jonathan",
+                            "picture": "Jonathan.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who was saved when God shut the mouths of the lions?",
+                    "correct_picture":"Daniel.png",
+                    "additional_info": "God is might to save! He is always with us.",                   
+                    "info_fontsize": 36,
+                    "characters": [
+                        {
+                            "name": "Daniel",
+                            "picture": "Daniel.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Samuel",
+                            "picture": "Samuel.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Mary Magdalene",
+                            "picture": "Mary Magdalene.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "Esther",
+                            "picture": "Esther.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who said\"Fear not! Stand firm! And see the salvation of the Lord, which He will show you today.\"",
+                    "correct_picture":"Moses.png",
+                    "additional_info": "Jesus said \"But be of good cheer. I have overcome the world.\". Amen!",                   
+                    "info_fontsize": 36,
+                    "characters": [
+                        {
+                            "name": "Moses",
+                            "picture": "Moses.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "David",
+                            "picture": "KingDavid.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Solomon",
+                            "picture": "Solomon.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
+                            "name": "John the Baptist",
+                            "picture": "John the Baptist.png",
+                            "scale": 0.45,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who is John describing \"He is dressed in a robe dipped in blood, and his name is the Word of God.?",
+                    "correct_picture":"JesusHorse.png",
+                    "additional_info": "When Jesus returns it is gonna be awesome!",                   
+                    "info_fontsize": 36,
+                    "characters": [
+                        {
+                            "name": "Jesus",
+                            "picture": "JesusHorse.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Moses",
+                            "picture": "Moses.png",   
+                            "scale": 0.5,
                             "xoffset":0,
                             "yoffset":0,
                             "labelxoffset":0,
@@ -2752,44 +3018,7 @@
                         },
                         {
                             "name": "Ahab",
-                            "picture": "Ahab",
-                            "scale": 0.4,
-                            "xoffset":0,
-                            "yoffset":0,
-                            "labelxoffset":0,
-                            "labelyoffset":0,
-                            "fontSize": 32   
-                        }
-                        
-                    ]
-                },
-                {
-                    "question": "Who was converted by Jesus on the road to Damascus?",
-                    "correct_picture":"Paul.png",
-                    "characters": [
-                        {
-                            "name": "Peter",
-                            "picture": "Peter.png" ,
-                            "scale": 0.6,
-                            "xoffset":0,
-                            "yoffset":0,
-                            "labelxoffset":0,
-                            "labelyoffset":0,
-                            "fontSize": 32   
-                        },
-                        {
-                            "name": "Paul",
-                            "picture": "Paul.png",   
-                            "scale": 0.5,
-                            "xoffset":0,
-                            "yoffset":0,
-                            "labelxoffset":0,
-                            "labelyoffset":0,
-                            "fontSize": 32   
-                        },
-                        {
-                            "name": "Mary Magdalene",
-                            "picture": "Mary Magdalene.png",
+                            "picture": "Ahab.png",
                             "scale": 0.4,
                             "xoffset":0,
                             "yoffset":0,
@@ -2798,196 +3027,8 @@
                             "fontSize": 28   
                         },
                         {
-                            "name": "Judas",
-                            "picture": "Judas.png",
-                            "scale": 0.45,
-                            "xoffset":0,
-                            "yoffset":0,
-                            "labelxoffset":0,
-                            "labelyoffset":0,
-                            "fontSize": 32   
-                        }
-                        
-                    ]
-                },
-                {
-                    "question": "Who was converted by Jesus on the road to Damascus?",
-                    "correct_picture":"Paul.png",
-                    "characters": [
-                        {
-                            "name": "Peter",
-                            "picture": "Peter.png" ,
-                            "scale": 0.6,
-                            "xoffset":0,
-                            "yoffset":0,
-                            "labelxoffset":0,
-                            "labelyoffset":0,
-                            "fontSize": 32   
-                        },
-                        {
-                            "name": "Paul",
-                            "picture": "Paul.png",   
-                            "scale": 0.5,
-                            "xoffset":0,
-                            "yoffset":0,
-                            "labelxoffset":0,
-                            "labelyoffset":0,
-                            "fontSize": 32   
-                        },
-                        {
-                            "name": "Mary Magdalene",
-                            "picture": "Mary Magdalene.png",
-                            "scale": 0.4,
-                            "xoffset":0,
-                            "yoffset":0,
-                            "labelxoffset":0,
-                            "labelyoffset":0,
-                            "fontSize": 28   
-                        },
-                        {
-                            "name": "Judas",
-                            "picture": "Judas.png",
-                            "scale": 0.45,
-                            "xoffset":0,
-                            "yoffset":0,
-                            "labelxoffset":0,
-                            "labelyoffset":0,
-                            "fontSize": 32   
-                        }
-                        
-                    ]
-                },
-                {
-                    "question": "Who was converted by Jesus on the road to Damascus?",
-                    "correct_picture":"Paul.png",
-                    "characters": [
-                        {
-                            "name": "Peter",
-                            "picture": "Peter.png" ,
-                            "scale": 0.6,
-                            "xoffset":0,
-                            "yoffset":0,
-                            "labelxoffset":0,
-                            "labelyoffset":0,
-                            "fontSize": 32   
-                        },
-                        {
-                            "name": "Paul",
-                            "picture": "Paul.png",   
-                            "scale": 0.5,
-                            "xoffset":0,
-                            "yoffset":0,
-                            "labelxoffset":0,
-                            "labelyoffset":0,
-                            "fontSize": 32   
-                        },
-                        {
-                            "name": "Mary Magdalene",
-                            "picture": "Mary Magdalene.png",
-                            "scale": 0.4,
-                            "xoffset":0,
-                            "yoffset":0,
-                            "labelxoffset":0,
-                            "labelyoffset":0,
-                            "fontSize": 28   
-                        },
-                        {
-                            "name": "Judas",
-                            "picture": "Judas.png",
-                            "scale": 0.45,
-                            "xoffset":0,
-                            "yoffset":0,
-                            "labelxoffset":0,
-                            "labelyoffset":0,
-                            "fontSize": 32   
-                        }
-                        
-                    ]
-                },
-                {
-                    "question": "Who was converted by Jesus on the road to Damascus?",
-                    "correct_picture":"Paul.png",
-                    "characters": [
-                        {
-                            "name": "Peter",
-                            "picture": "Peter.png" ,
-                            "scale": 0.6,
-                            "xoffset":0,
-                            "yoffset":0,
-                            "labelxoffset":0,
-                            "labelyoffset":0,
-                            "fontSize": 32   
-                        },
-                        {
-                            "name": "Paul",
-                            "picture": "Paul.png",   
-                            "scale": 0.5,
-                            "xoffset":0,
-                            "yoffset":0,
-                            "labelxoffset":0,
-                            "labelyoffset":0,
-                            "fontSize": 32   
-                        },
-                        {
-                            "name": "Mary Magdalene",
-                            "picture": "Mary Magdalene.png",
-                            "scale": 0.4,
-                            "xoffset":0,
-                            "yoffset":0,
-                            "labelxoffset":0,
-                            "labelyoffset":0,
-                            "fontSize": 28   
-                        },
-                        {
-                            "name": "Judas",
-                            "picture": "Judas.png",
-                            "scale": 0.45,
-                            "xoffset":0,
-                            "yoffset":0,
-                            "labelxoffset":0,
-                            "labelyoffset":0,
-                            "fontSize": 32   
-                        }
-                        
-                    ]
-                },
-                {
-                    "question": "Who was converted by Jesus on the road to Damascus?",
-                    "correct_picture":"Paul.png",
-                    "characters": [
-                        {
-                            "name": "Peter",
-                            "picture": "Peter.png" ,
-                            "scale": 0.6,
-                            "xoffset":0,
-                            "yoffset":0,
-                            "labelxoffset":0,
-                            "labelyoffset":0,
-                            "fontSize": 32   
-                        },
-                        {
-                            "name": "Paul",
-                            "picture": "Paul.png",   
-                            "scale": 0.5,
-                            "xoffset":0,
-                            "yoffset":0,
-                            "labelxoffset":0,
-                            "labelyoffset":0,
-                            "fontSize": 32   
-                        },
-                        {
-                            "name": "Mary Magdalene",
-                            "picture": "Mary Magdalene.png",
-                            "scale": 0.4,
-                            "xoffset":0,
-                            "yoffset":0,
-                            "labelxoffset":0,
-                            "labelyoffset":0,
-                            "fontSize": 28   
-                        },
-                        {
-                            "name": "Judas",
-                            "picture": "Judas.png",
+                            "name": "David",
+                            "picture": "KingDavid.png",
                             "scale": 0.45,
                             "xoffset":0,
                             "yoffset":0,
@@ -3015,12 +3056,14 @@
             "background":"background",
             "quiz": [
                 {
-                    "question": "Who was the mother of Jesus?",
-                    "correct_picture":"Mary.png",
+                    "question": "Who prayed from inside a fish to the Lord his God?",
+                    "correct_picture":"Jonah.png",
+                    "additional_info": "No matter where you are or what is going on, God answers prayers! ",                   
+                    "info_fontsize": 36,
                     "characters": [
                         {
-                            "name": "Mary",
-                            "picture": "Mary.png" ,
+                            "name": "Jonah",
+                            "picture": "Jonah.png" ,
                             "scale": 0.38,
                             "xoffset":0,
                             "yoffset":0,
@@ -3029,8 +3072,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Martha",
-                            "picture": "Martha.png",   
+                            "name": "Gideon",
+                            "picture": "Gideon.png",   
                             "scale": 0.5,
                             "xoffset":-5,
                             "yoffset":0,
@@ -3039,8 +3082,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Ruth",
-                            "picture": "Ruth.png", 
+                            "name": "Peter",
+                            "picture": "Peter.png", 
                             "scale": 0.55,
                             "xoffset":0,
                             "yoffset":0,
@@ -3062,12 +3105,14 @@
                     ]
                 },
                 {
-                    "question": "Who killed Goliath'?",
-                    "correct_picture":"David.png",
+                    "question": "Who prayed, \"O Lord, now open their eyes and let them see.\"?",
+                    "correct_picture":"Elisha.png",
+                    "additional_info": "If we could see how things really are, we would see God's angels all around us.",                   
+                    "info_fontsize": 36,
                     "characters": [
                         {
-                            "name": "Joshua",
-                            "picture": "Joshua.png" ,
+                            "name": "Elisha",
+                            "picture": "Elisha.png" ,
                             "scale": 0.5,
                             "xoffset":0,
                             "yoffset":-10,
@@ -3076,8 +3121,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Gideon",
-                            "picture": "Gideon.png",   
+                            "name": "Elijah",
+                            "picture": "Elijah2.png",   
                             "scale": 0.55,
                             "xoffset":0,
                             "yoffset":0,
@@ -3096,8 +3141,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "David",
-                            "picture": "David.png",
+                            "name": "John the Baptist",
+                            "picture": "John the Baptist.png",
                             "scale": 0.5,
                             "xoffset":0,
                             "yoffset":0,
@@ -3109,12 +3154,14 @@
                     ]
                 },
                 {
-                    "question": "Who was Abraham's wife?",
-                    "correct_picture":"Sarah.png",
+                    "question": "Who prayed \"O my Lord, you only are our king; help me, who am alone and have no helper but you,... ",
+                    "correct_picture":"Esther.png",
+                    "additional_info": "God is near to the broken hearted. He",                   
+                    "info_fontsize": 36,
                     "characters": [
                         {
-                            "name": "Ruth",
-                            "picture": "Ruth.png" ,
+                            "name": "Mary",
+                            "picture": "Mary.png" ,
                             "scale": 0.55,
                             "xoffset":0,
                             "yoffset":0,
@@ -3156,12 +3203,14 @@
                     ]
                 },
                 {
-                    "question": "Which disciple denied Jesus three times?",
-                    "correct_picture":"Peter.png",
+                    "question": "Who said \"I will never leave you nor forsake you\"?",
+                    "correct_picture":"JesusLamb.png",
+                    "additional_info": "This is a promise of God!",                   
+                    "info_fontsize": 36,
                     "characters": [
                         {
-                            "name": "Judas",
-                            "picture": "Judas.png" ,
+                            "name": "Jesus",
+                            "picture": "JesusLamb.png" ,
                             "scale": 0.45,
                             "xoffset":0,
                             "yoffset":0,
@@ -3170,8 +3219,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Paul",
-                            "picture": "Paul.png",   
+                            "name": "Elisha",
+                            "picture": "Elisha.png",   
                             "scale": 0.5,
                             "xoffset":0,
                             "yoffset":0,
@@ -3180,8 +3229,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Peter",
-                            "picture": "Peter.png", 
+                            "name": "Samuel",
+                            "picture": "Samuel.png", 
                             "scale": 0.6,
                             "xoffset":0,
                             "yoffset":0,
@@ -3190,8 +3239,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "John the Baptist",
-                            "picture": "John the Baptist.png",
+                            "name": "David",
+                            "picture": "DavidWarrior.png",
                             "scale": 0.55,
                             "xoffset":10,
                             "yoffset":0,
@@ -3203,12 +3252,14 @@
                     ]
                 },
                 {
-                    "question": "Who was the first king of Israel?",
-                    "correct_picture":"Saul.png",
+                    "question": "Who prayed to God three times a day every day?",
+                    "correct_picture":"Daniel.png",
+                    "additional_info": "Prayer changes things!",                   
+                    "info_fontsize": 36,
                     "characters": [
                         {
-                            "name": "David",
-                            "picture": "KingDavid.png" ,
+                            "name": "Daniel",
+                            "picture": "Daniel.png" ,
                             "scale": 0.45,
                             "xoffset":0,
                             "yoffset":0,
@@ -3237,55 +3288,57 @@
                             "fontSize": 32   
                         },
                         {
+                            "name": "David",
+                            "picture": "David.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        }
+                        
+                    ]
+                },
+                {
+                    "question": "Who prayed \"Your name is in this temple. And we will cry out to You in our distress, and You will hear and deliver.\"?",
+                    "correct_picture":"Jehoshaphat.png",
+                    "additional_info": "The battle belongs to the Lord!",                   
+                    "info_fontsize": 36,
+                    "characters": [
+                        {
+                            "name": "Jehoshaphat",
+                            "picture": "Jehoshaphat.png" ,
+                            "scale": 0.6,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "David",
+                            "picture": "KingDavid.png",   
+                            "scale": 0.5,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 32   
+                        },
+                        {
+                            "name": "Saul",
+                            "picture": "Saul.png",
+                            "scale": 0.4,
+                            "xoffset":0,
+                            "yoffset":0,
+                            "labelxoffset":0,
+                            "labelyoffset":0,
+                            "fontSize": 28   
+                        },
+                        {
                             "name": "Ahab",
-                            "picture": "Ahab",
-                            "scale": 0.4,
-                            "xoffset":0,
-                            "yoffset":0,
-                            "labelxoffset":0,
-                            "labelyoffset":0,
-                            "fontSize": 32   
-                        }
-                        
-                    ]
-                },
-                {
-                    "question": "Who was converted by Jesus on the road to Damascus?",
-                    "correct_picture":"Paul.png",
-                    "characters": [
-                        {
-                            "name": "Peter",
-                            "picture": "Peter.png" ,
-                            "scale": 0.6,
-                            "xoffset":0,
-                            "yoffset":0,
-                            "labelxoffset":0,
-                            "labelyoffset":0,
-                            "fontSize": 32   
-                        },
-                        {
-                            "name": "Paul",
-                            "picture": "Paul.png",   
-                            "scale": 0.5,
-                            "xoffset":0,
-                            "yoffset":0,
-                            "labelxoffset":0,
-                            "labelyoffset":0,
-                            "fontSize": 32   
-                        },
-                        {
-                            "name": "Mary Magdalene",
-                            "picture": "Mary Magdalene.png",
-                            "scale": 0.4,
-                            "xoffset":0,
-                            "yoffset":0,
-                            "labelxoffset":0,
-                            "labelyoffset":0,
-                            "fontSize": 28   
-                        },
-                        {
-                            "name": "Judas",
-                            "picture": "Judas.png",
+                            "picture": "Ahab.png",
                             "scale": 0.45,
                             "xoffset":0,
                             "yoffset":0,
@@ -3297,12 +3350,14 @@
                     ]
                 },
                 {
-                    "question": "Who was converted by Jesus on the road to Damascus?",
-                    "correct_picture":"Paul.png",
+                    "question": "Who prayed \"Our Father in heaven, hallowed be your name, your kingdom come, your will be done...\"?",
+                    "correct_picture":"JesusPraying.png",
+                    "additional_info": "Our God is a good Father!",                   
+                    "info_fontsize": 36,
                     "characters": [
                         {
-                            "name": "Peter",
-                            "picture": "Peter.png" ,
+                            "name": "Jesus",
+                            "picture": "JesusPraying.png" ,
                             "scale": 0.6,
                             "xoffset":0,
                             "yoffset":0,
@@ -3321,8 +3376,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Mary Magdalene",
-                            "picture": "Mary Magdalene.png",
+                            "name": "Mary",
+                            "picture": "Mary.png",
                             "scale": 0.4,
                             "xoffset":0,
                             "yoffset":0,
@@ -3331,8 +3386,8 @@
                             "fontSize": 28   
                         },
                         {
-                            "name": "Judas",
-                            "picture": "Judas.png",
+                            "name": "Martha",
+                            "picture": "Martha.png",
                             "scale": 0.45,
                             "xoffset":0,
                             "yoffset":0,
@@ -3344,12 +3399,14 @@
                     ]
                 },
                 {
-                    "question": "Who was converted by Jesus on the road to Damascus?",
-                    "correct_picture":"Paul.png",
+                    "question": "Who prayed \"...answer me, so these people will know that you, Lord, are God, and that you are turning their hearts back again.\"?",
+                    "correct_picture":"Elijah2.png",
+                    "additional_info": "There really is a God! There really are answers! Jesus really does change hearts!",                   
+                    "info_fontsize": 36,
                     "characters": [
                         {
-                            "name": "Peter",
-                            "picture": "Peter.png" ,
+                            "name": "Elijah",
+                            "picture": "Elijah2.png" ,
                             "scale": 0.6,
                             "xoffset":0,
                             "yoffset":0,
@@ -3358,8 +3415,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Paul",
-                            "picture": "Paul.png",   
+                            "name": "Samuel",
+                            "picture": "Samuel.png",   
                             "scale": 0.5,
                             "xoffset":0,
                             "yoffset":0,
@@ -3368,8 +3425,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Mary Magdalene",
-                            "picture": "Mary Magdalene.png",
+                            "name": "Esther",
+                            "picture": "Esther.png",
                             "scale": 0.4,
                             "xoffset":0,
                             "yoffset":0,
@@ -3378,8 +3435,8 @@
                             "fontSize": 28   
                         },
                         {
-                            "name": "Judas",
-                            "picture": "Judas.png",
+                            "name": "Nathan",
+                            "picture": "Nathan.png",
                             "scale": 0.45,
                             "xoffset":0,
                             "yoffset":0,
@@ -3391,12 +3448,14 @@
                     ]
                 },
                 {
-                    "question": "Who was converted by Jesus on the road to Damascus?",
-                    "correct_picture":"Paul.png",
+                    "question": "Who prayed \"May the Lord our God be with us...may he never leave us nor forsake us. May he turn our hearts to him...\"?",
+                    "correct_picture":"Solomon.png",
+                    "additional_info": "That is a good prayer!",                   
+                    "info_fontsize": 36,
                     "characters": [
                         {
-                            "name": "Peter",
-                            "picture": "Peter.png" ,
+                            "name": "Solomon",
+                            "picture": "Solomon.png" ,
                             "scale": 0.6,
                             "xoffset":0,
                             "yoffset":0,
@@ -3405,8 +3464,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Paul",
-                            "picture": "Paul.png",   
+                            "name": "David",
+                            "picture": "KingDavid.png",   
                             "scale": 0.5,
                             "xoffset":0,
                             "yoffset":0,
@@ -3415,8 +3474,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Mary Magdalene",
-                            "picture": "Mary Magdalene.png",
+                            "name": "Gideon",
+                            "picture": "Gideon.png",
                             "scale": 0.4,
                             "xoffset":0,
                             "yoffset":0,
@@ -3425,8 +3484,8 @@
                             "fontSize": 28   
                         },
                         {
-                            "name": "Judas",
-                            "picture": "Judas.png",
+                            "name": "Peter",
+                            "picture": "Peter.png",
                             "scale": 0.45,
                             "xoffset":0,
                             "yoffset":0,
@@ -3438,12 +3497,14 @@
                     ]
                 },
                 {
-                    "question": "Who was converted by Jesus on the road to Damascus?",
-                    "correct_picture":"Paul.png",
+                    "question": "Who said \"I am the way and the truth and the life. No one comes to the Father except through me.\"?",
+                    "correct_picture":"JesusCross.png",
+                    "additional_info": "Jesus came to restore our relationship with the Father. The answer to all our prayers!",                   
+                    "info_fontsize": 36,
                     "characters": [
                         {
-                            "name": "Peter",
-                            "picture": "Peter.png" ,
+                            "name": "Jesus",
+                            "picture": "JesusCross.png" ,
                             "scale": 0.6,
                             "xoffset":0,
                             "yoffset":0,
@@ -3452,8 +3513,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Paul",
-                            "picture": "Paul.png",   
+                            "name": "Samuel",
+                            "picture": "Samuel.png",   
                             "scale": 0.5,
                             "xoffset":0,
                             "yoffset":0,
@@ -3462,8 +3523,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Mary Magdalene",
-                            "picture": "Mary Magdalene.png",
+                            "name": "Moses",
+                            "picture": "Moses.png",
                             "scale": 0.4,
                             "xoffset":0,
                             "yoffset":0,
@@ -3472,8 +3533,8 @@
                             "fontSize": 28   
                         },
                         {
-                            "name": "Judas",
-                            "picture": "Judas.png",
+                            "name": "Jacob",
+                            "picture": "Jacob.png",
                             "scale": 0.45,
                             "xoffset":0,
                             "yoffset":0,
@@ -3501,12 +3562,14 @@
             "background":"background",
             "quiz": [
                 {
-                    "question": "Who was the mother of Jesus?",
-                    "correct_picture":"Mary.png",
+                    "question": "Who, in a dream, saw a stairway going from earth to heaven with angels of God ascending and descending on it?",
+                    "correct_picture":"Jacob.png",
+                    "additional_info": "Our God has made a way for us to go to heaven!",                   
+                    "info_fontsize": 36,
                     "characters": [
                         {
-                            "name": "Mary",
-                            "picture": "Mary.png" ,
+                            "name": "Jacob",
+                            "picture": "Jacob.png" ,
                             "scale": 0.38,
                             "xoffset":0,
                             "yoffset":0,
@@ -3515,8 +3578,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Martha",
-                            "picture": "Martha.png",   
+                            "name": "Isaac",
+                            "picture": "Isaac.png",   
                             "scale": 0.5,
                             "xoffset":-5,
                             "yoffset":0,
@@ -3525,8 +3588,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Ruth",
-                            "picture": "Ruth.png", 
+                            "name": "Abraham",
+                            "picture": "Abraham.png", 
                             "scale": 0.55,
                             "xoffset":0,
                             "yoffset":0,
@@ -3535,8 +3598,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Hannah",
-                            "picture": "Hannah.png",
+                            "name": "Joseph",
+                            "picture": "Joseph.png",
                             "scale": 0.4,
                             "xoffset":0,
                             "yoffset":0,
@@ -3548,12 +3611,14 @@
                     ]
                 },
                 {
-                    "question": "Who killed Goliath'?",
-                    "correct_picture":"David.png",
+                    "question": "Who said \"...you will see heaven open, and the angels of God ascending and descending on the Son of Man.\"?",
+                    "correct_picture":"JesusResurrected.png",
+                    "additional_info": "Jesus is the \"Son of Man\" and He is our only ladder to heaven!",                   
+                    "info_fontsize": 36,
                     "characters": [
                         {
-                            "name": "Joshua",
-                            "picture": "Joshua.png" ,
+                            "name": "Jesus",
+                            "picture": "JesusResurrected.png" ,
                             "scale": 0.5,
                             "xoffset":0,
                             "yoffset":-10,
@@ -3595,12 +3660,14 @@
                     ]
                 },
                 {
-                    "question": "Who was Abraham's wife?",
-                    "correct_picture":"Sarah.png",
+                    "question": "Who saw the \"Son of Man\" be presented an everlasting Kingdom in a night vision?",
+                    "correct_picture":"Daniel.png",
+                    "additional_info": "\"and behold, with the clouds of heaven there came one like a son of man,and he came to the Ancient of Days!\"",                   
+                    "info_fontsize": 36,
                     "characters": [
                         {
-                            "name": "Ruth",
-                            "picture": "Ruth.png" ,
+                            "name": "Daniel",
+                            "picture": "Daniel.png" ,
                             "scale": 0.55,
                             "xoffset":0,
                             "yoffset":0,
@@ -3609,8 +3676,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Esther",
-                            "picture": "Esther.png",   
+                            "name": "Ruth",
+                            "picture": "Ruth.png",   
                             "scale": 0.45,
                             "xoffset":0,
                             "yoffset":0,
@@ -3629,8 +3696,8 @@
                             "fontSize": 32   
                         },
                         {
-                            "name": "Mary Magdalene",
-                            "picture": "Mary Magdalene.png",
+                            "name": "Mary",
+                            "picture": "Mary",
                             "scale": 0.4,
                             "xoffset":-5,
                             "yoffset":0,
@@ -3642,7 +3709,7 @@
                     ]
                 },
                 {
-                    "question": "Which disciple denied Jesus three times?",
+                    "question": "?",
                     "correct_picture":"Peter.png",
                     "characters": [
                         {
