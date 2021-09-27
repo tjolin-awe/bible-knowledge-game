@@ -70,12 +70,12 @@ namespace levelEditor
 
             app.UseAuthentication();
 
-            app.UseMvc(routes =>
+            /*app.Use(async (context2, next) =>
             {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
-            });
+                context2.Response.Headers.Add("Service-Worker-Allowed","/ocs/");
+                
+                await next();
+            });*/
         }
     }
 }

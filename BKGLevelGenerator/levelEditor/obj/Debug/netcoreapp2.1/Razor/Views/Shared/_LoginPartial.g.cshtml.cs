@@ -79,12 +79,12 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("    ");
             EndContext();
             BeginContext(185, 505, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8e101dc68a3f40d1afdbab396a7a5a90", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3f442d8b91684cab82830531c6fe207b", async() => {
                 BeginContext(338, 194, true);
                 WriteLiteral("\r\n        \r\n        <div style=\"display:inline-flex\">\r\n            <button type=\"submit\" class=\"btn btn-sm btn-outline-success mr-2\"><span class=\"fa fa-sign-out\"></span></button>\r\n\r\n            ");
                 EndContext();
                 BeginContext(532, 106, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5d84ed56018c45d48c6a56694bacc17e", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ae87277bf0c74704a09ef69b20854bd0", async() => {
                     BeginContext(603, 1, true);
                     WriteLiteral(" ");
                     EndContext();
@@ -163,7 +163,7 @@ else
             WriteLiteral("    <ul class=\"navbar-nav\">\r\n        <!-- <li class=\"nav-item\"><a class=\"btn btn-outline-secondary mr-2\" asp-area=\"Identity\" asp-page=\"/Account/Register\">Register</a></li>-->\r\n        <li class=\"nav-item\">");
             EndContext();
             BeginContext(909, 93, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0b1126964af241099e15c31de83749a1", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0affbc1deaba4a5cac4b8e793b5cbc9e", async() => {
                 BeginContext(958, 40, true);
                 WriteLiteral("<span class=\"icon_profile\"></span> Login");
                 EndContext();

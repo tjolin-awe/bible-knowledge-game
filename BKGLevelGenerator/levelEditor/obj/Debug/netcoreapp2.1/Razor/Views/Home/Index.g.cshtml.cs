@@ -96,7 +96,7 @@ using levelEditor.Models;
                                 <h2 class=""text-white"" style=""font-weight:bolder;text-shadow: 2px 2px 2px #000;"">");
             EndContext();
             BeginContext(1062, 82, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a2168e48487e4082affbe662e2e39913", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "31a0c3baa5b8406284a4145647ac6a9d", async() => {
                 BeginContext(1119, 21, true);
                 WriteLiteral("Bible Knowledge Games");
                 EndContext();
@@ -125,7 +125,7 @@ using levelEditor.Models;
             WriteLiteral("</h2>\r\n                                <br/>\r\n                                ");
             EndContext();
             BeginContext(1222, 111, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e3659b5fc25740bbb72c50f6f884e17a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c9f3752c94f04fb49df6036746b4289e", async() => {
                 BeginContext(1291, 38, true);
                 WriteLiteral("PLAY <i class=\"fa fa-play-circle\"></i>");
                 EndContext();
@@ -169,7 +169,7 @@ using levelEditor.Models;
                                 <h4 class=""text-white"" style=""font-weight:bolder"">");
             EndContext();
             BeginContext(2118, 81, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8e6c092300aa4868b3f3783fc1c4da97", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c9b6a0ea51bf4845830fa3b9096296c5", async() => {
                 BeginContext(2175, 20, true);
                 WriteLiteral("Breastplate of Aaron");
                 EndContext();
@@ -198,7 +198,7 @@ using levelEditor.Models;
             WriteLiteral("</h4>\r\n                                ");
             EndContext();
             BeginContext(2238, 105, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ecadbd247bd946f4a3c6733defa0d9a1", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2d6c7ba0ab9d40789d98960925e6945e", async() => {
                 BeginContext(2300, 39, true);
                 WriteLiteral("<i class=\"fa fa-play-circle fa-2x\"></i>");
                 EndContext();
@@ -235,7 +235,7 @@ using levelEditor.Models;
                                 <h4 class=""text-white"" style=""font-weight:bolder"">");
             EndContext();
             BeginContext(2739, 78, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c3b06fbfe44b440f97192b9f0b263535", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2a8fe3947e2b482cbf9758297163fffc", async() => {
                 BeginContext(2796, 17, true);
                 WriteLiteral("Shooting Promises");
                 EndContext();
@@ -264,7 +264,7 @@ using levelEditor.Models;
             WriteLiteral("</h4>\r\n                                ");
             EndContext();
             BeginContext(2856, 105, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d1b0394c8e104113b7bd473ce463fd1e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ca6b22e9b8304c3eb34975dbee5246fd", async() => {
                 BeginContext(2918, 39, true);
                 WriteLiteral("<i class=\"fa fa-play-circle fa-2x\"></i>");
                 EndContext();
@@ -318,7 +318,7 @@ using levelEditor.Models;
             WriteLiteral("blog__item small__item set-bg\" data-setbg=\"images/game-icons/bibleslide.png\">\r\n                            <div class=\"blog__item__text\">\r\n\r\n                                <h4 class=\"text-white\" style=\"font-weight:bolder\">");
             EndContext();
             BeginContext(4208, 73, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8bbcbe974ad74cc48186791ed33940b3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dd059fa029344e35922f787f89a1311a", async() => {
                 BeginContext(4265, 12, true);
                 WriteLiteral("Slide Puzzle");
                 EndContext();
@@ -347,7 +347,7 @@ using levelEditor.Models;
             WriteLiteral("</h4>\r\n                                ");
             EndContext();
             BeginContext(4320, 105, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ddc5e4094c87464881343ae46689eafb", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "265f6633b26944759b17c613e1ddd1f3", async() => {
                 BeginContext(4382, 39, true);
                 WriteLiteral("<i class=\"fa fa-play-circle fa-2x\"></i>");
                 EndContext();
@@ -385,7 +385,7 @@ using levelEditor.Models;
                                 <h4 class=""text-white"" style=""font-weight:bolder"">");
             EndContext();
             BeginContext(4868, 57, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d84f0221cc7f42c4b5ae429e822a1caf", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0eaaf0cba47643b09132981128afd3e0", async() => {
                 BeginContext(4906, 15, true);
                 WriteLiteral("Character Match");
                 EndContext();
@@ -413,7 +413,7 @@ using levelEditor.Models;
             WriteLiteral("</h4>\r\n                                ");
             EndContext();
             BeginContext(4964, 105, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4cf851ed5265420e8cb3c31524e23ea6", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3447a792627a4027bbb0e5ec50ca3fac", async() => {
                 BeginContext(5026, 39, true);
                 WriteLiteral("<i class=\"fa fa-play-circle fa-2x\"></i>");
                 EndContext();
@@ -451,7 +451,7 @@ using levelEditor.Models;
                                 <h2 style=""font-weight:bolder;text-shadow: 2px 2px 2px #000;color:goldenrod"">");
             EndContext();
             BeginContext(5516, 90, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0c9f84d03d0e4939896c1970e9aaa4f3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c327dbbef24a4dbb8272350bb8151dda", async() => {
                 BeginContext(5578, 24, true);
                 WriteLiteral("Onward Christian Soldier");
                 EndContext();
@@ -480,7 +480,7 @@ using levelEditor.Models;
             WriteLiteral("</h2>\r\n                                <h4 class=\"text-white\" style=\"text-shadow: 2px 2px 2px #000\"><strong>PROTOTYPE</strong></h4>\r\n                                <br />\r\n                                ");
             EndContext();
             BeginContext(5811, 122, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "24214489589b4edfaa65c543878c02b2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1fb8585562364ce895b84a3fff978a4d", async() => {
                 BeginContext(5891, 38, true);
                 WriteLiteral("VIEW <i class=\"fa fa-play-circle\"></i>");
                 EndContext();
